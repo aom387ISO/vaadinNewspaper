@@ -1,5 +1,0 @@
-package interfaz;
-
-public class Lista_de_noticias_que_no_estan_en__la_seccion_item {
-	public Lista_de_noticias_que_no_estan_en__la_seccion _lista_de_noticias_que_no_estan_en__la_seccion;
-}
