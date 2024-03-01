@@ -16,8 +16,11 @@ export class VistaUsuarionosuscrito extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-button id="vaadinButton" style="align-self: flex-end;">
-  Ver mis noticias
+ <vaadin-button id="vaadinButton" style="flex-shrink: 1;">
+   Ver mis noticias 
+ </vaadin-button>
+ <vaadin-button>
+  Suscribirse
  </vaadin-button>
 </vaadin-vertical-layout>
 `;
