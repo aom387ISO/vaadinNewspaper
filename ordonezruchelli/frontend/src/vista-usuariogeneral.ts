@@ -76,9 +76,6 @@ export class VistaUsuariogeneral extends LitElement {
  </div>
  <vaadin-vertical-layout theme="spacing">
   <vaadin-button>
-   Ver comentarios como editor
-  </vaadin-button>
-  <vaadin-button>
    Gestión editor
   </vaadin-button>
   <vaadin-button>
