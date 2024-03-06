@@ -16,32 +16,20 @@ export class VistaUsuarionosuscrito extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-button id="vaadinButton" style="flex-shrink: 1;">
-  Buscar noticia como no suscrito
+ <vaadin-button id="buscarNoticiaNoSuscrito" style="flex-shrink: 1;">
+   Buscar noticia como no suscrito 
  </vaadin-button>
- <vaadin-button>
-  Iniciar sesión
+ <vaadin-button id="iniciarSesion">
+   Iniciar sesión 
  </vaadin-button>
- <vaadin-button>
-  Ver anuncios
+ <vaadin-button id="verAnuncios">
+   Ver anuncios 
  </vaadin-button>
- <vaadin-button>
-  Ver noticia cortada
+ <vaadin-button id="verSeccionNoSuscrito">
+   Ver sección como usuario no suscrito 
  </vaadin-button>
- <vaadin-button>
-  Ver sección como usuario no suscrito
- </vaadin-button>
- <vaadin-button>
-  Ver comentarios como usuario no suscrito
- </vaadin-button>
- <vaadin-button>
-  Registrarse
- </vaadin-button>
- <vaadin-button>
-  Ver secciones cortadas
- </vaadin-button>
- <vaadin-button>
-  Ver noticias cortadas
+ <vaadin-button id="verNoticiaCortada">
+   Ver noticias cortadas 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

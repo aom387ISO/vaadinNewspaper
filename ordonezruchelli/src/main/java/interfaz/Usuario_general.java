@@ -1,8 +1,9 @@
 package interfaz;
 
+import vistas.VistaUsuariogeneral;
 import proyectoMDS.MainView;
 
-public class Usuario_general {
+public class Usuario_general extends VistaUsuariogeneral{
 	public Ver_noticia _ver_noticia;
 	public Buscar_noticia _buscar_noticia;
 	public Visualizar_seccion _visualizar_seccion;
@@ -61,13 +62,6 @@ public class Usuario_general {
 		this._personalizar_perfil = _personalizar_perfil;
 	}
 
-	public MainView getMainView() {
-		return MainView;
-	}
-
-	public void setMainView(MainView mainView) {
-		MainView = mainView;
-	}
 
 
 	
