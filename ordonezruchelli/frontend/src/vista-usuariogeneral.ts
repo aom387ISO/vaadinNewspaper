@@ -2,6 +2,7 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 
 @customElement('vista-usuariogeneral')
 export class VistaUsuariogeneral extends LitElement {
@@ -18,26 +19,35 @@ export class VistaUsuariogeneral extends LitElement {
     return html`
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
  <vaadin-vertical-layout theme="spacing">
-  <vaadin-button>
-   Personalizar perfil
+  <vaadin-button id="personalizar">
+    Personalizar perfil 
   </vaadin-button>
   <vaadin-button>
-   Buscar noticia
+    Buscar noticia 
   </vaadin-button>
   <vaadin-button>
-   Ver sección
+    Ver sección 
   </vaadin-button>
   <vaadin-button>
-   Ver noticia
+    Ver noticia 
   </vaadin-button>
   <vaadin-button>
-   Ver comentarios
+    Ver comentarios 
   </vaadin-button>
   <vaadin-button>
-   Ver listado secciones
+    Ver listado secciones 
   </vaadin-button>
   <vaadin-button>
-   Ver listado noticias
+    Ver listado noticias 
+  </vaadin-button>
+  <vaadin-text-area label="Write a description" placeholder="Add detailed explanation"></vaadin-text-area>
+ </vaadin-vertical-layout>
+ <div>
+   Div 
+ </div>
+ <vaadin-vertical-layout theme="spacing">
+  <vaadin-button>
+    Personalizar perfil como usuario suscrito 
   </vaadin-button>
  </vaadin-vertical-layout>
  <div>
@@ -45,7 +55,22 @@ export class VistaUsuariogeneral extends LitElement {
  </div>
  <vaadin-vertical-layout theme="spacing">
   <vaadin-button>
-   Personalizar perfil como usuario suscrito
+    Gestión periodista 
+  </vaadin-button>
+  <vaadin-button>
+    Introducir datos noticia 
+  </vaadin-button>
+  <vaadin-button>
+    Ver noticias propias 
+  </vaadin-button>
+  <vaadin-button>
+    Modificar noticias previas 
+  </vaadin-button>
+  <vaadin-button>
+    Modificiar noticia individual 
+  </vaadin-button>
+  <vaadin-button>
+    Elegir noticia 
   </vaadin-button>
  </vaadin-vertical-layout>
  <div>
@@ -53,66 +78,43 @@ export class VistaUsuariogeneral extends LitElement {
  </div>
  <vaadin-vertical-layout theme="spacing">
   <vaadin-button>
-   Gestión periodista
+    Gestión editor 
   </vaadin-button>
   <vaadin-button>
-   Introducir datos noticia
+    Gestionar noticia como editor 
   </vaadin-button>
   <vaadin-button>
-   Ver noticias propias
+    Añadir noticia a sección 
   </vaadin-button>
   <vaadin-button>
-   Modificar noticias previas
+    Eliminar noticia de sección 
   </vaadin-button>
   <vaadin-button>
-   Modificiar noticia individual
+    Gestionar sección 
   </vaadin-button>
   <vaadin-button>
-   Elegir noticia
-  </vaadin-button>
- </vaadin-vertical-layout>
- <div>
-   Div 
- </div>
- <vaadin-vertical-layout theme="spacing">
-  <vaadin-button>
-   Gestión editor
+    Crear sección 
   </vaadin-button>
   <vaadin-button>
-   Gestionar noticia como editor
+    Eliminar sección 
   </vaadin-button>
   <vaadin-button>
-   Añadir noticia a sección
+    Cambiar nombre a sección 
   </vaadin-button>
   <vaadin-button>
-   Eliminar noticia de sección
+    Gestión periodistas 
   </vaadin-button>
   <vaadin-button>
-   Gestionar sección
+    Ver lista de periodistas 
   </vaadin-button>
   <vaadin-button>
-   Crear sección
+    Añadir datos periodista 
   </vaadin-button>
   <vaadin-button>
-   Eliminar sección
+    Gestionar portada 
   </vaadin-button>
   <vaadin-button>
-   Cambiar nombre a sección
-  </vaadin-button>
-  <vaadin-button>
-   Gestión periodistas
-  </vaadin-button>
-  <vaadin-button>
-   Ver lista de periodistas
-  </vaadin-button>
-  <vaadin-button>
-   Añadir datos periodista
-  </vaadin-button>
-  <vaadin-button>
-   Gestionar portada
-  </vaadin-button>
-  <vaadin-button>
-   Añadir nueva posición portada
+    Añadir nueva posición portada 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
