@@ -9,7 +9,6 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 	public Ver_noticia_cortada _ver_noticia_cortada;
 	public Iniciar_sesion _iniciar_sesion;
 	public Buscar_noticia_de_no_suscrito _buscar_noticia_de_no_suscrito;
-	public Ver_anuncios _ver_anuncios;
 	public MainView MainView;
 	
 	public Usuario_no_suscrito(MainView MainView) {
@@ -32,9 +31,6 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 		throw new UnsupportedOperationException();
 	}
 
-	public void Ver_anuncios() {
-		throw new UnsupportedOperationException();
-	}
 
 	
 }
