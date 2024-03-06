@@ -8,6 +8,7 @@ public class Periodista extends Usuario_general {
 	public MainView MainView;
 	public Periodista(MainView MainView) {
 		super(MainView);
+		
 	}
 	
 	
