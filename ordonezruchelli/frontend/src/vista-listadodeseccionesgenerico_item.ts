@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 
-@customElement('vista-listadodeseccionesgenerico')
-export class VistaListadodeseccionesgenerico extends LitElement {
+@customElement('vista-listadodeseccionesgenerico_item')
+export class VistaListadodeseccionesgenerico_item extends LitElement {
   static get styles() {
     return css`
       :host {
