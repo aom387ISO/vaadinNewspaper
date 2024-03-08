@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.textfield.TextField;
 
 @Tag("vista-usuariogeneral")
 @JsModule("./src/vista-usuariogeneral.ts")
@@ -19,12 +20,14 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Button personalizarSuscrito;
 	@Id("verNoticia")
 	private Button verNoticia;
-	@Id("verSeccion")
-	private Button verSeccion;
 	@Id("buscarNoticia")
 	private Button buscarNoticia;
 	@Id("personalizar")
 	private Button personalizar;
+	@Id("barraBusqueda")
+	private TextField barraBusqueda;
+	@Id("verSeccion")
+	private Button verSeccion;
 
 	public VistaUsuariogeneral() {
         // You can initialise any data required for the connected UI components here.
