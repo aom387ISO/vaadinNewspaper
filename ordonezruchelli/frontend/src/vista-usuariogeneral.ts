@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-usuariogeneral')
 export class VistaUsuariogeneral extends LitElement {
@@ -18,7 +18,7 @@ export class VistaUsuariogeneral extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" style="height: 10%; align-self: flex-start; flex-grow: 0; flex-shrink: 0; width: 99%;">
+ <vaadin-horizontal-layout theme="spacing-xs" style="height: 10%; align-self: flex-start; flex-grow: 0; flex-shrink: 0; width: 100%;">
   <vaadin-button id="personalizar">
     Personalizar perfil 
   </vaadin-button>
@@ -32,18 +32,12 @@ export class VistaUsuariogeneral extends LitElement {
   <vaadin-button id="verNoticia">
     Ver noticia 
   </vaadin-button>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 10%;">
   <vaadin-button id="personalizarSuscrito" style="flex-grow: 0; flex-shrink: 0;">
     Personalizar perfil como usuario suscrito 
   </vaadin-button>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing">
   <vaadin-button id="gestionPeriodista">
     Gestión periodista 
   </vaadin-button>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing">
   <vaadin-button id="gestionEditor">
     Gestión editor 
   </vaadin-button>
