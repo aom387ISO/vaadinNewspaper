@@ -5,7 +5,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 
 @Tag("vista-noticiasenportada")
-@JsModule("./src/vista-noticiasenportada.ts")
+@JsModule("./src/vista-noticiasenportada_item.ts")
 public class VistaNoticiasenportada_item extends LitTemplate {
 
     public VistaNoticiasenportada_item() {
