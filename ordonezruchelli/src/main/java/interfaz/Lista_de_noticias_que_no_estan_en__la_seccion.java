@@ -1,8 +1,15 @@
 package interfaz;
 
 import java.util.Vector;
+import vistas.VistaListadenoticiasquenoestanenlaseccion;
 
-public class Lista_de_noticias_que_no_estan_en__la_seccion {
+public class Lista_de_noticias_que_no_estan_en__la_seccion extends VistaListadenoticiasquenoestanenlaseccion{
 	public Anadir_noticia_a_seccion _anadir_noticia_a_seccion;
 	public Vector<Lista_de_noticias_que_no_estan_en__la_seccion_item> _item = new Vector<Lista_de_noticias_que_no_estan_en__la_seccion_item>();
+	public Editor editor;
+	
+	public Lista_de_noticias_que_no_estan_en__la_seccion(Editor editor) {
+		super();
+		this.editor = editor;
+	}
 }
