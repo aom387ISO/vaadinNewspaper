@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 
-@customElement('vista-noticiasenportada')
-export class VistaNoticiasenportada extends LitElement {
+@customElement('vista-noticiasenportada_item')
+export class VistaNoticiasenportada_item extends LitElement {
   static get styles() {
     return css`
       :host {
