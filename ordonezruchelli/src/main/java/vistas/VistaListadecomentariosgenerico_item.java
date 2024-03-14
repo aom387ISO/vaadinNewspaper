@@ -6,7 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
 
-@Tag("vista-listadecomentariosgenerico")
+@Tag("vista-listadecomentariosgenerico_item")
 @JsModule("./src/vista-listadecomentariosgenerico_item.ts")
 public class VistaListadecomentariosgenerico_item extends LitTemplate {
 

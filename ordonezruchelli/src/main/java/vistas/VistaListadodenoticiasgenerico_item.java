@@ -6,7 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
 
-@Tag("vista-listadodenoticiasgenerico")
+@Tag("vista-listadodenoticiasgenerico_item")
 @JsModule("./src/vista-listadodenoticiasgenerico_item.ts")
 public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 

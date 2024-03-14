@@ -4,7 +4,7 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 
-@Tag("vista-listadenoticiasquenoestanenlaseccion")
+@Tag("vista-listadenoticiasquenoestanenlaseccion_item")
 @JsModule("./src/vista-listadenoticiasquenoestanenlaseccion_item.ts")
 public class VistaListadenoticiasquenoestanenlaseccion_item extends LitTemplate {
 

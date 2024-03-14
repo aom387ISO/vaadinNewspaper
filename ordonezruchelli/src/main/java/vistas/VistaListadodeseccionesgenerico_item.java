@@ -4,7 +4,7 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 
-@Tag("vista-listadodeseccionesgenerico")
+@Tag("vista-listadodeseccionesgenerico_item")
 @JsModule("./src/vista-listadodeseccionesgenerico_item.ts")
 public class VistaListadodeseccionesgenerico_item extends LitTemplate {
 
