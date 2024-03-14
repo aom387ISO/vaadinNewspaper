@@ -21,4 +21,28 @@ public class VistaListadecomentariosgenerico extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Button getEliminarComentario() {
+		return eliminarComentario;
+	}
+
+	public void setEliminarComentario(Button eliminarComentario) {
+		this.eliminarComentario = eliminarComentario;
+	}
+
+	public Button getValorarPositivamenteComentario() {
+		return valorarPositivamenteComentario;
+	}
+
+	public void setValorarPositivamenteComentario(Button valorarPositivamenteComentario) {
+		this.valorarPositivamenteComentario = valorarPositivamenteComentario;
+	}
+
+	public Button getValorarNegativamenteComentario() {
+		return valorarNegativamenteComentario;
+	}
+
+	public void setValorarNegativamenteComentario(Button valorarNegativamenteComentario) {
+		this.valorarNegativamenteComentario = valorarNegativamenteComentario;
+	}
+
 }

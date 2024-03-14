@@ -10,11 +10,6 @@ import com.vaadin.flow.component.template.Id;
 @JsModule("./src/vista-listadodeseccionesgenerico.ts")
 public class VistaListadodeseccionesgenerico extends LitTemplate {
 
-    @Id("eliminarSeccion")
-	private Button eliminarSeccion;
-	@Id("cambiarNombreSeccion")
-	private Button cambiarNombreSeccion;
-
 	public VistaListadodeseccionesgenerico() {
         // You can initialise any data required for the connected UI components here.
     }
