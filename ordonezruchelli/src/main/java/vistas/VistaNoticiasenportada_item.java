@@ -12,6 +12,8 @@ public class VistaNoticiasenportada_item extends LitTemplate {
 
     @Id("eliminarDePortada")
 	private Button eliminarDePortada;
+	@Id("cambiarPosicionBoton")
+	private Button cambiarPosicionBoton;
 	
     public VistaNoticiasenportada_item() {
         // You can initialise any data required for the connected UI components here.
@@ -24,5 +26,14 @@ public class VistaNoticiasenportada_item extends LitTemplate {
 	public void setEliminarDePortada(Button eliminarDePortada) {
 		this.eliminarDePortada = eliminarDePortada;
 	}
+
+	public Button getCambiarPosicionBoton() {
+		return cambiarPosicionBoton;
+	}
+
+	public void setCambiarPosicionBoton(Button cambiarPosicionBoton) {
+		this.cambiarPosicionBoton = cambiarPosicionBoton;
+	}
+	
 
 }
