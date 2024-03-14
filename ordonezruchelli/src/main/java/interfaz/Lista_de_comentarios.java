@@ -10,9 +10,6 @@ public class Lista_de_comentarios extends Lista_de_comentarios_generico {
 	public Lista_de_comentarios (Usuario_no_suscrito usuarioNoSuscrito) {
 		super();
 		this.usuarioNoSuscrito = usuarioNoSuscrito;
-		this.getEliminarComentario().setVisible(false);
-		this.getValorarNegativamenteComentario().setVisible(false);
-		this.getValorarPositivamenteComentario().setVisible(false);
 	}
 	
 }

@@ -10,19 +10,8 @@ import com.vaadin.flow.component.template.Id;
 @JsModule("./src/vista-listadeperiodistas.ts")
 public class VistaListadeperiodistas extends LitTemplate {
 
-    @Id("darDeBaja")
-	private Button darDeBaja;
-
 	public VistaListadeperiodistas() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Button getDarDeBaja() {
-		return darDeBaja;
-	}
-
-	public void setDarDeBaja(Button darDeBaja) {
-		this.darDeBaja = darDeBaja;
-	}
 	
 }

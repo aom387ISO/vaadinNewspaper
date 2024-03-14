@@ -20,14 +20,8 @@ export class VistaListadecomentariosgenerico extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-text-area id="listadoComentarios" label="Listado Comentarios"></vaadin-text-area>
  <vista-listadecomentariosgenerico_item></vista-listadecomentariosgenerico_item>
- <vaadin-button id="valorarNegativamenteComentario">
-  Valorar negativamente
- </vaadin-button>
- <vaadin-button id="valorarPositivamenteComentario">
-  Valorar positivamente
- </vaadin-button>
- <vaadin-button id="eliminarComentario">
-  Eliminar comentario
+ <vaadin-button id="Comentar">
+  Comentar
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

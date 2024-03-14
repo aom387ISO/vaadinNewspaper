@@ -10,7 +10,6 @@ public class Lista_comentarios_valorables extends Lista_de_comentarios_generico 
 	public Lista_comentarios_valorables(Usuario_general usuarioGeneral) {
 		super();
 		this.usuarioGeneral = usuarioGeneral;
-		this.getEliminarComentario().setVisible(false);
 	}
 	
 }
