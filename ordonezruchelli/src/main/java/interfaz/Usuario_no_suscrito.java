@@ -13,6 +13,11 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 	
 	public Usuario_no_suscrito(MainView MainView) {
 		this.MainView=MainView;
+		_iniciar_sesion = new Iniciar_sesion(this);
+		this.getIniciarSesion().addClickListener(event->{
+			this.MainView.removeAll();
+			Iniciar_sesion();
+		});
 	}
 	
 	public void Ver_seccion_de_Usuario_no_suscrito() {
@@ -24,7 +29,7 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 	}
 
 	public void Iniciar_sesion() {
-		throw new UnsupportedOperationException();
+		this.MainView.add(_iniciar_sesion);
 	}
 
 	public void Buscar_noticia_de_no_suscrito() {

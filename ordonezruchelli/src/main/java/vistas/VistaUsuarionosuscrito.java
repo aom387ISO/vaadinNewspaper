@@ -17,8 +17,6 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private Button verNoticiaCortada;
 	@Id("verSeccionNoSuscrito")
 	private Button verSeccionNoSuscrito;
-	@Id("verAnuncios")
-	private Button verAnuncios;
 	@Id("iniciarSesion")
 	private Button iniciarSesion;
 	@Id("buscarNoticiaNoSuscrito")
@@ -46,14 +44,6 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 
 	public void setVerSeccionNoSuscrito(Button verSeccionNoSuscrito) {
 		this.verSeccionNoSuscrito = verSeccionNoSuscrito;
-	}
-
-	public Button getVerAnuncios() {
-		return verAnuncios;
-	}
-
-	public void setVerAnuncios(Button verAnuncios) {
-		this.verAnuncios = verAnuncios;
 	}
 
 	public Button getIniciarSesion() {

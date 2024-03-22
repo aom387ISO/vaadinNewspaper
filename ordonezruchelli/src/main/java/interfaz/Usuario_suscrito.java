@@ -7,6 +7,7 @@ public class Usuario_suscrito extends Usuario_general {
 		super(MainView);
 		this.getGestionPeriodista().setVisible(false);
 		this.getGestionEditor().setVisible(false);
+		this.getPersonalizar().setVisible(false);
 	}
 	
 	public void Personalizar_perfil_de_Usuario_suscrito() {
