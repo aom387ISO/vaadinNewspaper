@@ -18,6 +18,8 @@ public class VistaIniciarsesion extends LitTemplate {
 	private PasswordField password;
 	@Id("botonLogin")
 	private Button botonLogin;
+	@Id("suscribirseIniciarSesion")
+	private Button suscribirseIniciarSesion;
 
 	public VistaIniciarsesion() {
         // You can initialise any data required for the connected UI components here.
@@ -46,5 +48,15 @@ public class VistaIniciarsesion extends LitTemplate {
 	public void setBotonLogin(Button botonLogin) {
 		this.botonLogin = botonLogin;
 	}
+
+	public Button getSuscribirseIniciarSesion() {
+		return suscribirseIniciarSesion;
+	}
+
+	public void setSuscribirseIniciarSesion(Button suscribirseIniciarSesion) {
+		this.suscribirseIniciarSesion = suscribirseIniciarSesion;
+	}
+	
+	
 
 }

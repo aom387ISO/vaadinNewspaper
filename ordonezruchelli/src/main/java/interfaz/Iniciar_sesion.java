@@ -20,11 +20,18 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 				_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 			}
 		});
+		_registrarse = new Registrarse();
+
+        getSuscribirseIniciarSesion().addClickListener(event -> {
+			Registrarse();
+        });
+
+		
 	}
 	
 	public void Registrarse() {
 		throw new UnsupportedOperationException();
-	}
+		}
 
 	public void Completar_Iniciar_sesion() {
 		throw new UnsupportedOperationException();

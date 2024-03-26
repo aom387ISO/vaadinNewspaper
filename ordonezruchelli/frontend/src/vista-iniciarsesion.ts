@@ -1,8 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
+import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-iniciarsesion')
@@ -23,8 +24,16 @@ export class VistaIniciarsesion extends LitElement {
   <vaadin-text-field label="Login" placeholder="usuario" id="login"></vaadin-text-field>
   <vaadin-password-field label="Password" placeholder="Enter password" value="secret1" id="password" has-value></vaadin-password-field>
   <vaadin-button id="botonLogin">
-   Login
+    Login 
   </vaadin-button>
+ </vaadin-form-layout>
+ <vaadin-form-layout style="flex-grow: 0; padding: var(--lumo-space-s);">
+  <vaadin-vertical-layout theme="spacing">
+   <vaadin-text-area label="Suscribirse al periódico" placeholder="Add detailed explanation"></vaadin-text-area>
+   <vaadin-button id="suscribirseIniciarSesion">
+    Suscribirse
+   </vaadin-button>
+  </vaadin-vertical-layout>
  </vaadin-form-layout>
 </vaadin-vertical-layout>
 `;
