@@ -1,4 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
+import './vista-listadodeseccionesgenerico';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-eliminarunaseccion')
 export class VistaEliminarunaseccion extends LitElement {
@@ -12,7 +16,16 @@ export class VistaEliminarunaseccion extends LitElement {
   }
 
   render() {
-    return html``;
+    return html`
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
+ <vaadin-combo-box>
+  <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
+ </vaadin-combo-box>
+ <vaadin-button id="eliminarSeccion">
+  Eliminar sección
+ </vaadin-button>
+</vaadin-vertical-layout>
+`;
   }
 
   // Remove this method to render the contents of this view inside Shadow DOM
