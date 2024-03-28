@@ -3,12 +3,20 @@ package vistas;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-crearnuevaseccion")
 @JsModule("./src/vista-crearnuevaseccion.ts")
 public class VistaCrearnuevaseccion extends LitTemplate {
 
-    public VistaCrearnuevaseccion() {
+    @Id("nombreSeccion")
+	private TextField nombreSeccion;
+	@Id("anadirSeccion")
+	private Button anadirSeccion;
+
+	public VistaCrearnuevaseccion() {
         // You can initialise any data required for the connected UI components here.
     }
 
