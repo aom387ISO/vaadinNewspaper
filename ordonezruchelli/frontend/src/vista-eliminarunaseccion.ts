@@ -18,11 +18,11 @@ export class VistaEliminarunaseccion extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-combo-box>
+ <vaadin-combo-box id="secciones">
   <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
  </vaadin-combo-box>
  <vaadin-button id="eliminarSeccion">
-  Eliminar sección
+   Eliminar sección 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

@@ -13,6 +13,14 @@ public class VistaElegirnoticia extends LitTemplate {
     @Id("elegirNoticia")
 	private Button elegirNoticia;
 
+	public Button getElegirNoticia() {
+		return elegirNoticia;
+	}
+
+	public void setElegirNoticia(Button elegirNoticia) {
+		this.elegirNoticia = elegirNoticia;
+	}
+
 	public VistaElegirnoticia() {
         // You can initialise any data required for the connected UI components here.
     }

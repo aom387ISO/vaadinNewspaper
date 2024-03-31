@@ -19,14 +19,14 @@ export class VistaEliminarnoticiadeseccion extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-combo-box>
+ <vaadin-combo-box id="secciones">
   <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
  </vaadin-combo-box>
- <vaadin-combo-box>
+ <vaadin-combo-box id="noticias">
   <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
  </vaadin-combo-box>
  <vaadin-button id="eliminarNoticiaSeccion">
-  Eliminar noticia en sección
+   Eliminar noticia en sección 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;
