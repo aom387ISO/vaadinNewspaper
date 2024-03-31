@@ -16,6 +16,22 @@ public class VistaCrearnuevaseccion extends LitTemplate {
 	@Id("anadirSeccion")
 	private Button anadirSeccion;
 
+	public TextField getNombreSeccion() {
+		return nombreSeccion;
+	}
+
+	public void setNombreSeccion(TextField nombreSeccion) {
+		this.nombreSeccion = nombreSeccion;
+	}
+
+	public Button getAnadirSeccion() {
+		return anadirSeccion;
+	}
+
+	public void setAnadirSeccion(Button anadirSeccion) {
+		this.anadirSeccion = anadirSeccion;
+	}
+
 	public VistaCrearnuevaseccion() {
         // You can initialise any data required for the connected UI components here.
     }

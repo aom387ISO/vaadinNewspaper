@@ -21,7 +21,7 @@ export class VistaAnadirnoticiaaseccion extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
- <vaadin-select value="Item one">
+ <vaadin-select value="Item one" id="seccion">
   <template>
    <vaadin-list-box selected="0">
     <vaadin-item selected>
@@ -37,10 +37,10 @@ export class VistaAnadirnoticiaaseccion extends LitElement {
    </vaadin-list-box>
   </template>
  </vaadin-select>
- <vaadin-select value="Item one">
+ <vaadin-select value="Item one" id="noticia">
   <template>
    <vaadin-list-box>
-    <vaadin-item>
+    <vaadin-item selected>
       Item one 
     </vaadin-item>
     <vaadin-item>
@@ -54,7 +54,7 @@ export class VistaAnadirnoticiaaseccion extends LitElement {
   <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
  </vaadin-select>
  <vaadin-button id="anadirNoticiaSeccion">
-  Añadir
+   Añadir 
  </vaadin-button>
 </vaadin-horizontal-layout>
 `;

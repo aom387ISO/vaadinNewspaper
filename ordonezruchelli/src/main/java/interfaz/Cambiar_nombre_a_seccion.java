@@ -1,9 +1,17 @@
 package interfaz;
 
-public class Cambiar_nombre_a_seccion {
+import vistas.VistaCambiarnombreaseccion;
+
+public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 //	private event _insertar_nuevo_nombre;
 	public Gestionar_seccion _gestionar_seccion;
 	public Listado_de_secciones _listado_de_secciones;
+	public Editor editor;
+	
+	public Cambiar_nombre_a_seccion (Editor editor) {
+		super();
+		this.editor = editor;
+	}
 
 	public void Listado_de_secciones() {
 		throw new UnsupportedOperationException();

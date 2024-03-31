@@ -16,6 +16,22 @@ public class VistaComentar extends LitTemplate {
 	@Id("introducirComentario")
 	private TextField introducirComentario;
 
+	public Button getEnviarComentario() {
+		return enviarComentario;
+	}
+
+	public void setEnviarComentario(Button enviarComentario) {
+		this.enviarComentario = enviarComentario;
+	}
+
+	public TextField getIntroducirComentario() {
+		return introducirComentario;
+	}
+
+	public void setIntroducirComentario(TextField introducirComentario) {
+		this.introducirComentario = introducirComentario;
+	}
+
 	public VistaComentar() {
         // You can initialise any data required for the connected UI components here.
     }
