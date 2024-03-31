@@ -16,6 +16,22 @@ public class VistaIntroducirnuevaposicionenportada extends LitTemplate {
 	@Id("nuevaPosicionBoton")
 	private Button nuevaPosicionBoton;
 
+	public TextField getNuevaPosicion() {
+		return nuevaPosicion;
+	}
+
+	public void setNuevaPosicion(TextField nuevaPosicion) {
+		this.nuevaPosicion = nuevaPosicion;
+	}
+
+	public Button getNuevaPosicionBoton() {
+		return nuevaPosicionBoton;
+	}
+
+	public void setNuevaPosicionBoton(Button nuevaPosicionBoton) {
+		this.nuevaPosicionBoton = nuevaPosicionBoton;
+	}
+
 	public VistaIntroducirnuevaposicionenportada() {
         // You can initialise any data required for the connected UI components here.
     }

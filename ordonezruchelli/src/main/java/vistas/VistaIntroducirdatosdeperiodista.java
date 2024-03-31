@@ -26,6 +26,62 @@ public class VistaIntroducirdatosdeperiodista extends LitTemplate {
 	@Id("darAltaPeriodista")
 	private Button darAltaPeriodista;
 
+	public TextField getCorreoPeriodista() {
+		return correoPeriodista;
+	}
+
+	public void setCorreoPeriodista(TextField correoPeriodista) {
+		this.correoPeriodista = correoPeriodista;
+	}
+
+	public TextField getContrasenaPeriodista() {
+		return contrasenaPeriodista;
+	}
+
+	public void setContrasenaPeriodista(TextField contrasenaPeriodista) {
+		this.contrasenaPeriodista = contrasenaPeriodista;
+	}
+
+	public TextField getApodoPeriodista() {
+		return apodoPeriodista;
+	}
+
+	public void setApodoPeriodista(TextField apodoPeriodista) {
+		this.apodoPeriodista = apodoPeriodista;
+	}
+
+	public TextField getDniPeriodista() {
+		return dniPeriodista;
+	}
+
+	public void setDniPeriodista(TextField dniPeriodista) {
+		this.dniPeriodista = dniPeriodista;
+	}
+
+	public TextField getFotoPeriodista() {
+		return fotoPeriodista;
+	}
+
+	public void setFotoPeriodista(TextField fotoPeriodista) {
+		this.fotoPeriodista = fotoPeriodista;
+	}
+
+	public Button getAnadirFotoPeriodista() {
+		return anadirFotoPeriodista;
+	}
+
+	public void setAnadirFotoPeriodista(Button anadirFotoPeriodista) {
+		this.anadirFotoPeriodista = anadirFotoPeriodista;
+	}
+
+	public Button getDarAltaPeriodista() {
+		return darAltaPeriodista;
+	}
+
+	public void setDarAltaPeriodista(Button darAltaPeriodista) {
+		this.darAltaPeriodista = darAltaPeriodista;
+	}
+
 	public VistaIntroducirdatosdeperiodista() {
         // You can initialise any data required for the connected UI components here.
     }

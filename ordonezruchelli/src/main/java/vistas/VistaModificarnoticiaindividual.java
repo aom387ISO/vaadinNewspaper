@@ -28,6 +28,70 @@ public class VistaModificarnoticiaindividual extends LitTemplate {
 	@Id("volverGestion")
 	private Button volverGestion;
 
+	public TextField getTituloNoticia() {
+		return tituloNoticia;
+	}
+
+	public void setTituloNoticia(TextField tituloNoticia) {
+		this.tituloNoticia = tituloNoticia;
+	}
+
+	public TextField getImagenes() {
+		return imagenes;
+	}
+
+	public void setImagenes(TextField imagenes) {
+		this.imagenes = imagenes;
+	}
+
+	public TextField getTematica() {
+		return tematica;
+	}
+
+	public void setTematica(TextField tematica) {
+		this.tematica = tematica;
+	}
+
+	public TextField getNoticia() {
+		return noticia;
+	}
+
+	public void setNoticia(TextField noticia) {
+		this.noticia = noticia;
+	}
+
+	public TextField getResumen() {
+		return resumen;
+	}
+
+	public void setResumen(TextField resumen) {
+		this.resumen = resumen;
+	}
+
+	public Button getCambiarNoticia() {
+		return cambiarNoticia;
+	}
+
+	public void setCambiarNoticia(Button cambiarNoticia) {
+		this.cambiarNoticia = cambiarNoticia;
+	}
+
+	public Button getEliminarNoticia() {
+		return eliminarNoticia;
+	}
+
+	public void setEliminarNoticia(Button eliminarNoticia) {
+		this.eliminarNoticia = eliminarNoticia;
+	}
+
+	public Button getVolverGestion() {
+		return volverGestion;
+	}
+
+	public void setVolverGestion(Button volverGestion) {
+		this.volverGestion = volverGestion;
+	}
+
 	public VistaModificarnoticiaindividual() {
         // You can initialise any data required for the connected UI components here.
     }

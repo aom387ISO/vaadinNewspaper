@@ -26,6 +26,62 @@ public class VistaIntroducirdatosnoticia extends LitTemplate {
 	@Id("volverGestionNoticia")
 	private Button volverGestionNoticia;
 
+	public TextField getTituloNoticia() {
+		return tituloNoticia;
+	}
+
+	public void setTituloNoticia(TextField tituloNoticia) {
+		this.tituloNoticia = tituloNoticia;
+	}
+
+	public TextField getImagenesNoticia() {
+		return imagenesNoticia;
+	}
+
+	public void setImagenesNoticia(TextField imagenesNoticia) {
+		this.imagenesNoticia = imagenesNoticia;
+	}
+
+	public TextField getTematicaNoticia() {
+		return tematicaNoticia;
+	}
+
+	public void setTematicaNoticia(TextField tematicaNoticia) {
+		this.tematicaNoticia = tematicaNoticia;
+	}
+
+	public TextField getCuerpoNoticia() {
+		return cuerpoNoticia;
+	}
+
+	public void setCuerpoNoticia(TextField cuerpoNoticia) {
+		this.cuerpoNoticia = cuerpoNoticia;
+	}
+
+	public TextField getResumenNoticia() {
+		return resumenNoticia;
+	}
+
+	public void setResumenNoticia(TextField resumenNoticia) {
+		this.resumenNoticia = resumenNoticia;
+	}
+
+	public Button getEnviarNoticia() {
+		return enviarNoticia;
+	}
+
+	public void setEnviarNoticia(Button enviarNoticia) {
+		this.enviarNoticia = enviarNoticia;
+	}
+
+	public Button getVolverGestionNoticia() {
+		return volverGestionNoticia;
+	}
+
+	public void setVolverGestionNoticia(Button volverGestionNoticia) {
+		this.volverGestionNoticia = volverGestionNoticia;
+	}
+
 	public VistaIntroducirdatosnoticia() {
         // You can initialise any data required for the connected UI components here.
     }

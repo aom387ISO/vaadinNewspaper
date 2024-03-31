@@ -13,6 +13,14 @@ public class VistaGestionarperiodistas extends LitTemplate {
     @Id("bajaPeriodista")
 	private Button bajaPeriodista;
 
+	public Button getBajaPeriodista() {
+		return bajaPeriodista;
+	}
+
+	public void setBajaPeriodista(Button bajaPeriodista) {
+		this.bajaPeriodista = bajaPeriodista;
+	}
+
 	public VistaGestionarperiodistas() {
         // You can initialise any data required for the connected UI components here.
     }

@@ -1,11 +1,18 @@
 package interfaz;
 
-public class Gestionar {
+import vistas.VistaGestionar;
+
+public class Gestionar extends VistaGestionar{
 	public Editor _editor;
 	public Gestionar_noticia_de_seccion _gestionar_noticia_de_seccion;
 	public Gestionar_periodistas _gestionar_periodistas;
 	public Gestionar_portada _gestionar_portada;
 	public Gestion_seccion _gestion_seccion;
+	
+	public Gestionar (Editor editor) {
+		super();
+		this._editor = editor;
+	}
 
 	public void Gestionar_noticia_de_seccion() {
 		throw new UnsupportedOperationException();

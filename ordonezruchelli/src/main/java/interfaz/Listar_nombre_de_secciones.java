@@ -1,4 +1,6 @@
 package interfaz;
 
-public class Listar_nombre_de_secciones {
+import vistas.VistaListarnombredesecciones;
+
+public class Listar_nombre_de_secciones extends VistaListarnombredesecciones{
 }

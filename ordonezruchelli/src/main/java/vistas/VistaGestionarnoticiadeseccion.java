@@ -13,6 +13,14 @@ public class VistaGestionarnoticiadeseccion extends LitTemplate {
     @Id("gestionarNoticiaDeSeccion")
 	private Button gestionarNoticiaDeSeccion;
 
+	public Button getGestionarNoticiaDeSeccion() {
+		return gestionarNoticiaDeSeccion;
+	}
+
+	public void setGestionarNoticiaDeSeccion(Button gestionarNoticiaDeSeccion) {
+		this.gestionarNoticiaDeSeccion = gestionarNoticiaDeSeccion;
+	}
+
 	public VistaGestionarnoticiadeseccion() {
         // You can initialise any data required for the connected UI components here.
     }

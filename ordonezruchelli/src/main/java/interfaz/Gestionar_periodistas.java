@@ -8,6 +8,11 @@ public class Gestionar_periodistas {
 	public Lista_de_periodistas _lista_de_periodistas;
 	public Introducir_datos_de_periodista _introducir_datos_de_periodista;
 
+	public Gestionar_periodistas(Editor editor) {
+		super();
+		this._gestionar._editor = editor;
+	}
+	
 	public void Lista_de_periodistas() {
 		throw new UnsupportedOperationException();
 	}

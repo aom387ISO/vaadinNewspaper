@@ -19,6 +19,38 @@ public class VistaGestionar extends LitTemplate {
 	@Id("gestionarPortada")
 	private Button gestionarPortada;
 
+	public Button getGestionarSeccion() {
+		return gestionarSeccion;
+	}
+
+	public void setGestionarSeccion(Button gestionarSeccion) {
+		this.gestionarSeccion = gestionarSeccion;
+	}
+
+	public Button getGestionarNoticia() {
+		return gestionarNoticia;
+	}
+
+	public void setGestionarNoticia(Button gestionarNoticia) {
+		this.gestionarNoticia = gestionarNoticia;
+	}
+
+	public Button getGestionarPeriodistas() {
+		return gestionarPeriodistas;
+	}
+
+	public void setGestionarPeriodistas(Button gestionarPeriodistas) {
+		this.gestionarPeriodistas = gestionarPeriodistas;
+	}
+
+	public Button getGestionarPortada() {
+		return gestionarPortada;
+	}
+
+	public void setGestionarPortada(Button gestionarPortada) {
+		this.gestionarPortada = gestionarPortada;
+	}
+
 	public VistaGestionar() {
         // You can initialise any data required for the connected UI components here.
     }
