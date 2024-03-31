@@ -8,7 +8,7 @@ public class Elegir_noticia extends VistaElegirnoticia{
 	
 	public Elegir_noticia(Periodista periodista) {
 		super();
-		this._noticias_propias._noticias_propias.periodista = periodista;
+		this._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista = periodista;
 	}
 	
 	public void Modificar_noticia_individual() {

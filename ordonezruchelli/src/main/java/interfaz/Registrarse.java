@@ -1,9 +1,16 @@
 package interfaz;
 
-public class Registrarse {
+import vistas.VistaRegistrarse;
+
+public class Registrarse extends VistaRegistrarse{
 	//	private event _completar_registro;
 	public Gestor_correo _gestor_correo;
 	public Iniciar_sesion _iniciar_sesion;
+	
+	public Registrarse(Usuario_no_suscrito usuarioNoSuscrito) {
+		super();
+		this._iniciar_sesion._usuario_no_suscrito = usuarioNoSuscrito;
+	}
 
 	public void Completar_registro() {
 		throw new UnsupportedOperationException();

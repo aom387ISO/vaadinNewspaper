@@ -10,7 +10,7 @@ public class Modificar_noticia_individual extends VistaModificarnoticiaindividua
 	
 	public Modificar_noticia_individual(Periodista periodista) {
 		super();
-		this._elegir_noticia._noticias_propias._noticias_propias.periodista = periodista;
+		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista= periodista;
 	}
 
 	public void Borrar_noticia() {

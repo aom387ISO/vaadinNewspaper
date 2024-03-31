@@ -1,11 +1,18 @@
 package interfaz;
 
-public class Personalizar_perfil {
+import vistas.VistaPersonalizarperfil;
+
+public class Personalizar_perfil extends VistaPersonalizarperfil{
 	//	private event _cambiar_apodo;
 	//	private event _volver_a_portada;
 	//	private event _cambiar_imagen;
 	//	private event _cerrar_sesion;
 	public Usuario_general _usuario_general;
+	
+	public Personalizar_perfil(Usuario_general usuarioGeneral) {
+		super();
+		this._usuario_general = usuarioGeneral;
+	}
 
 	public void Cambiar_apodo() {
 		throw new UnsupportedOperationException();
