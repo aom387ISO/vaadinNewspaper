@@ -20,7 +20,7 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 				_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 			}
 		});
-		_registrarse = new Registrarse();
+		_registrarse = new Registrarse(_usuario_no_suscrito);
 
         getSuscribirseIniciarSesion().addClickListener(event -> {
 			Registrarse();
