@@ -8,7 +8,7 @@ public class Gestionar_noticia_de_seccion extends VistaGestionarnoticiadeseccion
 	
 	public Gestionar_noticia_de_seccion(Editor editor) {
 		super();
-		_gestionar._editor = editor;
+		this._gestionar._editor = editor;
 	}
 
 	public void Gestionar_noticia_en_seccion() {

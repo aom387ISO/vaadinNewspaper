@@ -6,11 +6,10 @@ public class Eliminar_noticia_de_seccion extends VistaEliminarnoticiadeseccion{
 	//	private event _confirmar_eliminar_noticia;
 	public Gestionar_noticia_en_seccion _gestionar_noticia_en_seccion;
 	public Listado_de_secciones _listado_de_secciones;
-	public Editor editor;
 	
 	public Eliminar_noticia_de_seccion(Editor editor) {
 		super();
-		this.editor = editor;
+		this._gestionar_noticia_en_seccion._gestionar_noticia_de_seccion._gestionar._editor = editor;
 	}
 
 	public void Listado_de_secciones() {
