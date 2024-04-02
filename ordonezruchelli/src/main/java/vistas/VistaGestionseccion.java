@@ -17,4 +17,12 @@ public class VistaGestionseccion extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Button getGestionarSeccion() {
+		return gestionarSeccion;
+	}
+
+	public void setGestionarSeccion(Button gestionarSeccion) {
+		this.gestionarSeccion = gestionarSeccion;
+	}
+
 }

@@ -17,4 +17,12 @@ public class VistaVercomentarios extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Button getVerComentarios() {
+		return verComentarios;
+	}
+
+	public void setVerComentarios(Button verComentarios) {
+		this.verComentarios = verComentarios;
+	}
+
 }
