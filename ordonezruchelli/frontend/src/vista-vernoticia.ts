@@ -1,4 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import './vista-listadodenoticiasgenerico';
+import './vista-vercomentarios';
 
 @customElement('vista-vernoticia')
 export class VistaVernoticia extends LitElement {
@@ -12,7 +15,13 @@ export class VistaVernoticia extends LitElement {
   }
 
   render() {
-    return html``;
+    return html`
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
+ Imagen noticia
+ <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
+ <vista-vercomentarios></vista-vercomentarios>
+</vaadin-vertical-layout>
+`;
   }
 
   // Remove this method to render the contents of this view inside Shadow DOM
