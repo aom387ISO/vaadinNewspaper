@@ -8,7 +8,7 @@ public class Introducir_nueva_posicion_en_portada extends VistaIntroducirnuevapo
 	
 	public Introducir_nueva_posicion_en_portada (Editor editor) {
 		super();
-		this._noticias_en_portada._noticias_en_portada.editor = editor;
+		this._noticias_en_portada._noticias_en_portada._gestionar_portada._gestionar._editor = editor;
 	}
 
 	public void Cambiar_posicion() {
