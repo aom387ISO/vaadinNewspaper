@@ -24,8 +24,18 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private Button buscarNoticiaNoSuscrito;
 	@Id("barraBusqueda")
 	private TextField barraBusqueda;
+	public HorizontalLayout getBanner() {
+		return banner;
+	}
+
+	public void setBanner(HorizontalLayout banner) {
+		this.banner = banner;
+	}
+
 	@Id("bannerAnuncios")
 	private Element bannerAnuncios;
+	@Id("banner")
+	private HorizontalLayout banner;
 	public TextField getBarraBusqueda() {
 		return barraBusqueda;
 	}
@@ -42,37 +52,6 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		this.bannerAnuncios = bannerAnuncios;
 	}
 
-	public HorizontalLayout getLayoutBuscarNoSuscrito() {
-		return layoutBuscarNoSuscrito;
-	}
-
-	public void setLayoutBuscarNoSuscrito(HorizontalLayout layoutBuscarNoSuscrito) {
-		this.layoutBuscarNoSuscrito = layoutBuscarNoSuscrito;
-	}
-
-	public HorizontalLayout getLayoutIniciarSesion() {
-		return layoutIniciarSesion;
-	}
-
-	public void setLayoutIniciarSesion(HorizontalLayout layoutIniciarSesion) {
-		this.layoutIniciarSesion = layoutIniciarSesion;
-	}
-
-	public HorizontalLayout getLayoutVerSeccionNoSuscrito() {
-		return layoutVerSeccionNoSuscrito;
-	}
-
-	public void setLayoutVerSeccionNoSuscrito(HorizontalLayout layoutVerSeccionNoSuscrito) {
-		this.layoutVerSeccionNoSuscrito = layoutVerSeccionNoSuscrito;
-	}
-
-	@Id("layoutBuscarNoSuscrito")
-	private HorizontalLayout layoutBuscarNoSuscrito;
-	@Id("layoutIniciarSesion")
-	private HorizontalLayout layoutIniciarSesion;
-	@Id("layoutVerSeccionNoSuscrito")
-	private HorizontalLayout layoutVerSeccionNoSuscrito;
-	
 	public VistaUsuarionosuscrito() {
         // You can initialise any data required for the connected UI components here.
     }

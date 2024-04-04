@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.upload.Upload;
 
 @Tag("vista-introducirdatosnoticia")
 @JsModule("./src/vista-introducirdatosnoticia.ts")
@@ -13,8 +14,6 @@ public class VistaIntroducirdatosnoticia extends LitTemplate {
 
     @Id("tituloNoticia")
 	private TextField tituloNoticia;
-	@Id("imagenesNoticia")
-	private TextField imagenesNoticia;
 	@Id("tematicaNoticia")
 	private TextField tematicaNoticia;
 	@Id("cuerpoNoticia")
@@ -25,6 +24,8 @@ public class VistaIntroducirdatosnoticia extends LitTemplate {
 	private Button enviarNoticia;
 	@Id("volverGestionNoticia")
 	private Button volverGestionNoticia;
+	@Id("imagenesYvideos")
+	private Upload imagenesYvideos;
 
 	public TextField getTituloNoticia() {
 		return tituloNoticia;
@@ -32,14 +33,6 @@ public class VistaIntroducirdatosnoticia extends LitTemplate {
 
 	public void setTituloNoticia(TextField tituloNoticia) {
 		this.tituloNoticia = tituloNoticia;
-	}
-
-	public TextField getImagenesNoticia() {
-		return imagenesNoticia;
-	}
-
-	public void setImagenesNoticia(TextField imagenesNoticia) {
-		this.imagenesNoticia = imagenesNoticia;
 	}
 
 	public TextField getTematicaNoticia() {

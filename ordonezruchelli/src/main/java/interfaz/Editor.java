@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Editor extends Usuario_general {
 	
@@ -11,6 +12,11 @@ public class Editor extends Usuario_general {
 		super(MainView);
 		this.getGestionPeriodista().setVisible(false);
 		this.getPersonalizarSuscrito().setVisible(false);
+		
+		//Componente estático Gestionar
+		_gestionar = new Gestionar(this);
+		Gestionar();
+		
 	}
 	
 	public void Ver_comentarios_de_Editor() {
@@ -18,7 +24,7 @@ public class Editor extends Usuario_general {
 	}
 
 	public void Gestionar() {
-		throw new UnsupportedOperationException();
+		this.getLayoutGestionEditor().as(VerticalLayout.class).add(_gestionar);
 	}	
 	
 }
