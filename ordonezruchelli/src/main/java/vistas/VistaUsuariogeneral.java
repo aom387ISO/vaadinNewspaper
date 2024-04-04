@@ -21,6 +21,14 @@ public class VistaUsuariogeneral extends LitTemplate {
 		return barraBusqueda;
 	}
 
+	public Element getLayoutSeccionSuscrito() {
+		return layoutSeccionSuscrito;
+	}
+
+	public void setLayoutSeccionSuscrito(Element layoutSeccionSuscrito) {
+		this.layoutSeccionSuscrito = layoutSeccionSuscrito;
+	}
+
 	public void setBarraBusqueda(TextField barraBusqueda) {
 		this.barraBusqueda = barraBusqueda;
 	}
@@ -47,6 +55,8 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Button verSeccion;
 	@Id("layoutBuscarNoticiaSuscrito")
 	private HorizontalLayout layoutBuscarNoticiaSuscrito;
+	@Id("layoutSeccionSuscrito")
+	private Element layoutSeccionSuscrito;
 
 	public VistaUsuariogeneral() {
         // You can initialise any data required for the connected UI components here.

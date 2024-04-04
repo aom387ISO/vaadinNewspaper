@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-usuariogeneral')
 export class VistaUsuariogeneral extends LitElement {
@@ -28,9 +28,11 @@ export class VistaUsuariogeneral extends LitElement {
    </vaadin-button>
    <vaadin-text-field placeholder="noticia" id="barraBusqueda"></vaadin-text-field>
   </vaadin-horizontal-layout>
-  <vaadin-button id="verSeccion">
-    Ver sección 
-  </vaadin-button>
+  <vaadin-vertical-layout theme="spacing" id="layoutSeccionSuscrito">
+   <vaadin-button id="verSeccion">
+     Ver sección 
+   </vaadin-button>
+  </vaadin-vertical-layout>
   <vaadin-button id="verNoticia">
     Ver noticia 
   </vaadin-button>
