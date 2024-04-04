@@ -25,6 +25,10 @@ public class Usuario_general extends VistaUsuariogeneral{
 		//Componente estático para secciones.
 		_visualizar_seccion = new Visualizar_seccion(this);
 		Visualizar_seccion();
+		
+		//Componente estático para personalizar perfil.
+		_personalizar_perfil = new Personalizar_perfil(this);
+		Personalizar_perfil();
 	}
 	
 	public void Ver_noticia() {
@@ -40,7 +44,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 	}
 
 	public void Personalizar_perfil() {
-		throw new UnsupportedOperationException();
+		this.getLayoutPersonalizarGeneral().as(VerticalLayout.class).add(_personalizar_perfil);
 	}	
 	
 }

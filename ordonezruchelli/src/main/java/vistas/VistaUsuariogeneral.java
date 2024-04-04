@@ -21,6 +21,14 @@ public class VistaUsuariogeneral extends LitTemplate {
 		return barraBusqueda;
 	}
 
+	public Element getLayoutPersonalizarGeneral() {
+		return layoutPersonalizarGeneral;
+	}
+
+	public void setLayoutPersonalizarGeneral(Element layoutPersonalizarGeneral) {
+		this.layoutPersonalizarGeneral = layoutPersonalizarGeneral;
+	}
+
 	public Element getLayoutSeccionSuscrito() {
 		return layoutSeccionSuscrito;
 	}
@@ -55,8 +63,40 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Button verSeccion;
 	@Id("layoutBuscarNoticiaSuscrito")
 	private HorizontalLayout layoutBuscarNoticiaSuscrito;
+	public Element getLayoutPersonalizarSuscrito() {
+		return layoutPersonalizarSuscrito;
+	}
+
+	public void setLayoutPersonalizarSuscrito(Element layoutPersonalizarSuscrito) {
+		this.layoutPersonalizarSuscrito = layoutPersonalizarSuscrito;
+	}
+
+	public Element getLayoutGestionPeriodista() {
+		return layoutGestionPeriodista;
+	}
+
+	public void setLayoutGestionPeriodista(Element layoutGestionPeriodista) {
+		this.layoutGestionPeriodista = layoutGestionPeriodista;
+	}
+
+	public Element getLayoutGestionEditor() {
+		return layoutGestionEditor;
+	}
+
+	public void setLayoutGestionEditor(Element layoutGestionEditor) {
+		this.layoutGestionEditor = layoutGestionEditor;
+	}
+
 	@Id("layoutSeccionSuscrito")
 	private Element layoutSeccionSuscrito;
+	@Id("layoutPersonalizarSuscrito")
+	private Element layoutPersonalizarSuscrito;
+	@Id("layoutGestionPeriodista")
+	private Element layoutGestionPeriodista;
+	@Id("layoutGestionEditor")
+	private Element layoutGestionEditor;
+	@Id("layoutPersonalizarGeneral")
+	private Element layoutPersonalizarGeneral;
 
 	public VistaUsuariogeneral() {
         // You can initialise any data required for the connected UI components here.
