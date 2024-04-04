@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-usuariogeneral")
 @JsModule("./src/vista-usuariogeneral.ts")
@@ -16,6 +17,22 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Button gestionEditor;
 	@Id("gestionPeriodista")
 	private Button gestionPeriodista;
+	public TextField getBarraBusqueda() {
+		return barraBusqueda;
+	}
+
+	public void setBarraBusqueda(TextField barraBusqueda) {
+		this.barraBusqueda = barraBusqueda;
+	}
+
+	public HorizontalLayout getLayoutBuscarNoticiaSuscrito() {
+		return layoutBuscarNoticiaSuscrito;
+	}
+
+	public void setLayoutBuscarNoticiaSuscrito(HorizontalLayout layoutBuscarNoticiaSuscrito) {
+		this.layoutBuscarNoticiaSuscrito = layoutBuscarNoticiaSuscrito;
+	}
+
 	@Id("personalizarSuscrito")
 	private Button personalizarSuscrito;
 	@Id("verNoticia")
@@ -28,6 +45,8 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private TextField barraBusqueda;
 	@Id("verSeccion")
 	private Button verSeccion;
+	@Id("layoutBuscarNoticiaSuscrito")
+	private HorizontalLayout layoutBuscarNoticiaSuscrito;
 
 	public VistaUsuariogeneral() {
         // You can initialise any data required for the connected UI components here.
