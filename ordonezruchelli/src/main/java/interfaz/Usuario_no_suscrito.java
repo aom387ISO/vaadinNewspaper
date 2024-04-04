@@ -18,16 +18,15 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 	public Usuario_no_suscrito(MainView MainView) {
 		this.MainView=MainView;
 		_iniciar_sesion = new Iniciar_sesion(this);
-
 		this.getIniciarSesion().addClickListener(event->{
 			this.MainView.removeAll();
 			Iniciar_sesion();
 		});
 		
 		_buscar_noticia_de_no_suscrito = new Buscar_noticia_de_no_suscrito(this);
-		this.getBanner().add(_buscar_noticia_de_no_suscrito);
+		this._buscar_noticia_de_no_suscrito.getListadoBusqueda().setVisible(false);
+		Buscar_noticia_de_no_suscrito();
 
-		
 //		//Componente estático de buscar noticia.
 //		_buscar_noticia_de_no_suscrito = new Buscar_noticia_de_no_suscrito(this);
 //		Buscar_noticia_de_no_suscrito();

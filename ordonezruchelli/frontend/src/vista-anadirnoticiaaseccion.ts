@@ -4,8 +4,8 @@ import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-list-box/src/vaadin-list-box.js';
 import '@vaadin/vaadin-item/src/vaadin-item.js';
 import './vista-listadenoticiasquenoestanenlaseccion';
-import './vista-listadodeseccionesgenerico';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import './vista-listadodeseccionesgenerico';
 
 @customElement('vista-anadirnoticiaaseccion')
 export class VistaAnadirnoticiaaseccion extends LitElement {
@@ -20,7 +20,7 @@ export class VistaAnadirnoticiaaseccion extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="generalAnadir">
  <vaadin-select value="Item one" id="seccion">
   <template>
    <vaadin-list-box selected="0">
@@ -49,9 +49,9 @@ export class VistaAnadirnoticiaaseccion extends LitElement {
     <vaadin-item>
       Item three 
     </vaadin-item>
+    <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
    </vaadin-list-box>
   </template>
-  <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
  </vaadin-select>
  <vaadin-button id="anadirNoticiaSeccion">
    Añadir 

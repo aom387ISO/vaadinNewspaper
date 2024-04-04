@@ -18,7 +18,7 @@ public class Usuario_suscrito extends Usuario_general {
 	}
 	
 	public void Personalizar_perfil_de_Usuario_suscrito() {
-		this.getLayoutPersonalizarSuscrito().as(VerticalLayout.class).add(_personalizar_perfil_de_Usuario_suscrito);
+		//this.getLayoutPersonalizarSuscrito().as(VerticalLayout.class).add(_personalizar_perfil_de_Usuario_suscrito);
 	}
 	
 }

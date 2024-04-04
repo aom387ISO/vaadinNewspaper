@@ -1,10 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import './vista-listadodenoticiasgenerico';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import './vista-buscarnoticiadenosuscrito';
 
 @customElement('vista-usuarionosuscrito')
 export class VistaUsuarionosuscrito extends LitElement {
@@ -36,12 +35,7 @@ export class VistaUsuarionosuscrito extends LitElement {
   <vaadin-button id="verSeccionNoSuscrito">
     Ver sección como usuario no suscrito 
   </vaadin-button>
-  <vaadin-button id="buscarNoticiaNoSuscrito" style="flex-shrink: 1;">
-    Buscar noticia como no suscrito 
-  </vaadin-button>
-  <vaadin-text-field placeholder="Search" style="flex-grow: 1; flex-shrink: 0; align-self: flex-start;" id="barraBusqueda">
-   <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
-  </vaadin-text-field>
+  <vista-buscarnoticiadenosuscrito id="buscarNoticiaNoSuscrito"></vista-buscarnoticiadenosuscrito>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing">
   <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>

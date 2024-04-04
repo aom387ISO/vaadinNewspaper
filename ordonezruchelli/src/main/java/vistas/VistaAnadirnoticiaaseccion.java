@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-anadirnoticiaaseccion")
 @JsModule("./src/vista-anadirnoticiaaseccion.ts")
@@ -15,8 +16,22 @@ public class VistaAnadirnoticiaaseccion extends LitTemplate {
 	private Button anadirNoticiaSeccion;
 	@Id("seccion")
 	private Select seccion;
+	public HorizontalLayout getGeneralAnadir() {
+		return generalAnadir;
+	}
+
+
+
+	public void setGeneralAnadir(HorizontalLayout generalAnadir) {
+		this.generalAnadir = generalAnadir;
+	}
+
+
+
 	@Id("noticia")
 	private Select noticia;
+	@Id("generalAnadir")
+	private HorizontalLayout generalAnadir;
 	
 	public Button getAnadirNoticiaSeccion() {
 		return anadirNoticiaSeccion;

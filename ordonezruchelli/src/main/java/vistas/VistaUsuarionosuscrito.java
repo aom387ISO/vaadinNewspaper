@@ -20,10 +20,6 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private Button verSeccionNoSuscrito;
 	@Id("iniciarSesion")
 	private Button iniciarSesion;
-	@Id("buscarNoticiaNoSuscrito")
-	private Button buscarNoticiaNoSuscrito;
-	@Id("barraBusqueda")
-	private TextField barraBusqueda;
 	public HorizontalLayout getBanner() {
 		return banner;
 	}
@@ -36,13 +32,8 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private Element bannerAnuncios;
 	@Id("banner")
 	private HorizontalLayout banner;
-	public TextField getBarraBusqueda() {
-		return barraBusqueda;
-	}
-
-	public void setBarraBusqueda(TextField barraBusqueda) {
-		this.barraBusqueda = barraBusqueda;
-	}
+	@Id("buscarNoticiaNoSuscrito")
+	private Element buscarNoticiaNoSuscrito;
 
 	public Element getBannerAnuncios() {
 		return bannerAnuncios;
@@ -80,13 +71,12 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		this.iniciarSesion = iniciarSesion;
 	}
 
-	public Button getBuscarNoticiaNoSuscrito() {
+	public Element getBuscarNoticiaNoSuscrito() {
 		return buscarNoticiaNoSuscrito;
 	}
 
-	public void setBuscarNoticiaNoSuscrito(Button buscarNoticiaNoSuscrito) {
+	public void setBuscarNoticiaNoSuscrito(Element buscarNoticiaNoSuscrito) {
 		this.buscarNoticiaNoSuscrito = buscarNoticiaNoSuscrito;
 	}
-
 	
 }

@@ -17,86 +17,37 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Button gestionEditor;
 	@Id("gestionPeriodista")
 	private Button gestionPeriodista;
-	public TextField getBarraBusqueda() {
-		return barraBusqueda;
-	}
-
-	public Element getLayoutPersonalizarGeneral() {
-		return layoutPersonalizarGeneral;
-	}
-
-	public void setLayoutPersonalizarGeneral(Element layoutPersonalizarGeneral) {
-		this.layoutPersonalizarGeneral = layoutPersonalizarGeneral;
-	}
-
-	public Element getLayoutSeccionSuscrito() {
-		return layoutSeccionSuscrito;
-	}
-
-	public void setLayoutSeccionSuscrito(Element layoutSeccionSuscrito) {
-		this.layoutSeccionSuscrito = layoutSeccionSuscrito;
-	}
-
-	public void setBarraBusqueda(TextField barraBusqueda) {
-		this.barraBusqueda = barraBusqueda;
-	}
-
-	public HorizontalLayout getLayoutBuscarNoticiaSuscrito() {
-		return layoutBuscarNoticiaSuscrito;
-	}
-
-	public void setLayoutBuscarNoticiaSuscrito(HorizontalLayout layoutBuscarNoticiaSuscrito) {
-		this.layoutBuscarNoticiaSuscrito = layoutBuscarNoticiaSuscrito;
-	}
 
 	@Id("personalizarSuscrito")
 	private Button personalizarSuscrito;
 	@Id("verNoticia")
 	private Button verNoticia;
-	@Id("buscarNoticia")
-	private Button buscarNoticia;
 	@Id("personalizar")
 	private Button personalizar;
-	@Id("barraBusqueda")
-	private TextField barraBusqueda;
+	public Element getBuscarSuscrito() {
+		return buscarSuscrito;
+	}
+
+	public void setBuscarSuscrito(Element buscarSuscrito) {
+		this.buscarSuscrito = buscarSuscrito;
+	}
+
 	@Id("verSeccion")
 	private Button verSeccion;
-	@Id("layoutBuscarNoticiaSuscrito")
-	private HorizontalLayout layoutBuscarNoticiaSuscrito;
-	public Element getLayoutPersonalizarSuscrito() {
-		return layoutPersonalizarSuscrito;
+	@Id("bannerGeneral")
+	private HorizontalLayout bannerGeneral;
+	@Id("buscarSuscrito")
+	private Element buscarSuscrito;
+
+
+	public HorizontalLayout getBannerGeneral() {
+		return bannerGeneral;
 	}
 
-	public void setLayoutPersonalizarSuscrito(Element layoutPersonalizarSuscrito) {
-		this.layoutPersonalizarSuscrito = layoutPersonalizarSuscrito;
+	public void setBannerGeneral(HorizontalLayout bannerGeneral) {
+		this.bannerGeneral = bannerGeneral;
 	}
 
-	public Element getLayoutGestionPeriodista() {
-		return layoutGestionPeriodista;
-	}
-
-	public void setLayoutGestionPeriodista(Element layoutGestionPeriodista) {
-		this.layoutGestionPeriodista = layoutGestionPeriodista;
-	}
-
-	public Element getLayoutGestionEditor() {
-		return layoutGestionEditor;
-	}
-
-	public void setLayoutGestionEditor(Element layoutGestionEditor) {
-		this.layoutGestionEditor = layoutGestionEditor;
-	}
-
-	@Id("layoutSeccionSuscrito")
-	private Element layoutSeccionSuscrito;
-	@Id("layoutPersonalizarSuscrito")
-	private Element layoutPersonalizarSuscrito;
-	@Id("layoutGestionPeriodista")
-	private Element layoutGestionPeriodista;
-	@Id("layoutGestionEditor")
-	private Element layoutGestionEditor;
-	@Id("layoutPersonalizarGeneral")
-	private Element layoutPersonalizarGeneral;
 
 	public VistaUsuariogeneral() {
         // You can initialise any data required for the connected UI components here.
@@ -140,14 +91,6 @@ public class VistaUsuariogeneral extends LitTemplate {
 
 	public void setVerSeccion(Button verSeccion) {
 		this.verSeccion = verSeccion;
-	}
-
-	public Button getBuscarNoticia() {
-		return buscarNoticia;
-	}
-
-	public void setBuscarNoticia(Button buscarNoticia) {
-		this.buscarNoticia = buscarNoticia;
 	}
 
 	public Button getPersonalizar() {

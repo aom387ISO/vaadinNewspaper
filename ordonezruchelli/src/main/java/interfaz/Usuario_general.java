@@ -20,15 +20,16 @@ public class Usuario_general extends VistaUsuariogeneral{
 		
 		//Componente estático Buscar Noticia
 		_buscar = new Buscar_noticia(this);
+		this._buscar_noticia.getListadoBusqueda().setVisible(false);
 		Buscar_noticia();
 		
 		//Componente estático para secciones.
-		_visualizar_seccion = new Visualizar_seccion(this);
-		Visualizar_seccion();
-		
-		//Componente estático para personalizar perfil.
-		_personalizar_perfil = new Personalizar_perfil(this);
-		Personalizar_perfil();
+//		_visualizar_seccion = new Visualizar_seccion(this);
+//		Visualizar_seccion();
+//		
+//		//Componente estático para personalizar perfil.
+//		_personalizar_perfil = new Personalizar_perfil(this);
+//		Personalizar_perfil();
 	}
 	
 	public void Ver_noticia() {
@@ -36,15 +37,15 @@ public class Usuario_general extends VistaUsuariogeneral{
 	}
 
 	public void Buscar_noticia() {
-		this.getLayoutBuscarNoticiaSuscrito().add(_buscar);
+		this.getBannerGeneral().add(_buscar);
 	}
 
 	public void Visualizar_seccion() {
-		this.getLayoutSeccionSuscrito().as(VerticalLayout.class).add(_visualizar_seccion);
+//		this.getLayoutSeccionSuscrito().as(VerticalLayout.class).add(_visualizar_seccion);
 	}
 
 	public void Personalizar_perfil() {
-		this.getLayoutPersonalizarGeneral().as(VerticalLayout.class).add(_personalizar_perfil);
+		//this.getLayoutPersonalizarGeneral().as(VerticalLayout.class).add(_personalizar_perfil);
 	}	
 	
 }

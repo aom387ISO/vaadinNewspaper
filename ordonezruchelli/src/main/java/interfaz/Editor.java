@@ -24,7 +24,7 @@ public class Editor extends Usuario_general {
 	}
 
 	public void Gestionar() {
-		this.getLayoutGestionEditor().as(VerticalLayout.class).add(_gestionar);
+//		this.getBannerGeneral().add(_gestionar);
 	}	
 	
 }

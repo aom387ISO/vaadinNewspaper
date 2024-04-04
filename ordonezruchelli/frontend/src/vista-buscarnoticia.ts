@@ -27,7 +27,7 @@ export class VistaBuscarnoticia extends LitElement {
   <vaadin-button id="accederNoticiaBusqueda" style="width: 20%;">
     Acceder a noticia 
   </vaadin-button>
-  <vista-noticiasenbusqueda></vista-noticiasenbusqueda>
+  <vista-noticiasenbusqueda id="listadoBusqueda"></vista-noticiasenbusqueda>
  </vaadin-form-layout>
 </vaadin-horizontal-layout>
 `;

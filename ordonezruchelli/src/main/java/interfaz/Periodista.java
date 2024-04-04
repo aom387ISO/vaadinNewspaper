@@ -16,7 +16,7 @@ public class Periodista extends Usuario_general {
 	}
 	
 	public void Gestionar_noticia() {
-		this.getLayoutGestionPeriodista().as(VerticalLayout.class).add(_gestionar_noticia);
+		//this.getLayoutGestionPeriodista().as(VerticalLayout.class).add(_gestionar_noticia);
 	}
 
 	

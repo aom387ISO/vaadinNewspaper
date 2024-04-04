@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-buscarnoticia")
 @JsModule("./src/vista-buscarnoticia.ts")
@@ -15,6 +16,16 @@ public class VistaBuscarnoticia extends LitTemplate {
 	private TextField barraBusqueda;
 	@Id("accederNoticiaBusqueda")
 	private Button accederNoticiaBusqueda;
+	public Element getListadoBusqueda() {
+		return listadoBusqueda;
+	}
+
+	public void setListadoBusqueda(Element listadoBusqueda) {
+		this.listadoBusqueda = listadoBusqueda;
+	}
+
+	@Id("listadoBusqueda")
+	private Element listadoBusqueda;
 
 	public TextField getBarraBusqueda() {
 		return barraBusqueda;
