@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaEliminarunaseccion;
 
 public class Eliminar_una_seccion extends VistaEliminarunaseccion{
@@ -10,10 +12,14 @@ public class Eliminar_una_seccion extends VistaEliminarunaseccion{
 	public Eliminar_una_seccion(Editor editor) {
 		super();
 		this._gestionar_seccion._gestion_seccion._gestionar._editor = editor;
+		
+		
+		_listado_de_secciones = new Listado_de_secciones(editor);
+		Listado_de_secciones();
 	}
 
 	public void Listado_de_secciones() {
-		throw new UnsupportedOperationException();
+		this.getEliminarLayout().as(VerticalLayout.class).add(_listado_de_secciones);
 	}
 
 	public void Confirmar_eliminar() {

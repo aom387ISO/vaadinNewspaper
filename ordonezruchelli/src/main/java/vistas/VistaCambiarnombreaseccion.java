@@ -7,6 +7,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-cambiarnombreaseccion")
 @JsModule("./src/vista-cambiarnombreaseccion.ts")
@@ -18,6 +19,15 @@ public class VistaCambiarnombreaseccion extends LitTemplate {
 	private Button cambiarNombreSeccion;
 	@Id("seccionBox")
 	private ComboBox<String> seccionBox;
+	@Id("generalAnadir")
+	private Element generalAnadir;
+	public Element getGeneralAnadir() {
+		return generalAnadir;
+	}
+
+	public void setGeneralAnadir(Element generalAnadir) {
+		this.generalAnadir = generalAnadir;
+	}
 
 	public TextField getNuevoNombreSección() {
 		return nuevoNombreSección;

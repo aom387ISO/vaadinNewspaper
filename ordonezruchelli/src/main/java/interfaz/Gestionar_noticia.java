@@ -11,6 +11,7 @@ public class Gestionar_noticia extends VistaGestionarnoticia{
 	public Gestionar_noticia (Periodista periodista) {
 		super();
 		this._periodista = periodista;
+		
 	}
 
 	public void Ver_listado_propio_de_noticias() {

@@ -18,7 +18,7 @@ export class VistaCambiarnombreaseccion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="generalAnadir">
  <vaadin-combo-box id="seccionBox">
   <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
  </vaadin-combo-box>

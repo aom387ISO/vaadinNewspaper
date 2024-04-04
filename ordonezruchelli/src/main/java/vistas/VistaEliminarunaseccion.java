@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-eliminarunaseccion")
 @JsModule("./src/vista-eliminarunaseccion.ts")
@@ -15,6 +16,16 @@ public class VistaEliminarunaseccion extends LitTemplate {
 	private Button eliminarSeccion;
 	@Id("secciones")
 	private ComboBox<String> secciones;
+	@Id("eliminarLayout")
+	private Element eliminarLayout;
+
+	public Element getEliminarLayout() {
+		return eliminarLayout;
+	}
+
+	public void setEliminarLayout(Element eliminarLayout) {
+		this.eliminarLayout = eliminarLayout;
+	}
 
 	public Button getEliminarSeccion() {
 		return eliminarSeccion;

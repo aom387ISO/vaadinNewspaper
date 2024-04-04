@@ -15,7 +15,7 @@ export class VistaVisualizarnoticiapropias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="noticiasPropiasLayout">
  <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
 </vaadin-vertical-layout>
 `;

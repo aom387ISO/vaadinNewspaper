@@ -11,6 +11,9 @@ public class Gestionar_periodistas {
 	public Gestionar_periodistas(Editor editor) {
 		super();
 		this._gestionar._editor = editor;
+		
+		_lista_de_periodistas = new Lista_de_periodistas(editor);
+		Lista_de_periodistas();
 	}
 	
 	public void Lista_de_periodistas() {

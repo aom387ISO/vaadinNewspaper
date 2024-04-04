@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaCambiarnombreaseccion;
 
 public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
@@ -10,10 +12,14 @@ public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 	public Cambiar_nombre_a_seccion (Editor editor) {
 		super();
 		this._gestionar_seccion._gestion_seccion._gestionar._editor = editor;
+		
+		_listado_de_secciones = new Listado_de_secciones(editor);
+		Listado_de_secciones();
+		
 	}
 
 	public void Listado_de_secciones() {
-		throw new UnsupportedOperationException();
+		this.getGeneralAnadir().as(VerticalLayout.class).add(_listado_de_secciones);
 	}
 
 	public void Insertar_nuevo_nombre() {

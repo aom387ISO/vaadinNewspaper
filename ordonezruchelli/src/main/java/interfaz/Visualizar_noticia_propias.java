@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVisualizarnoticiapropias;
 
 public class Visualizar_noticia_propias extends VistaVisualizarnoticiapropias{
@@ -10,6 +12,9 @@ public class Visualizar_noticia_propias extends VistaVisualizarnoticiapropias{
 	public Visualizar_noticia_propias(Periodista periodista) {
 		super();
 		this._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista = periodista;
+		
+		_noticias_propias = new Noticias_propias(periodista);
+		Noticias_propias();
 	}
 
 	public void Volver_a_gestion() {
@@ -17,6 +22,6 @@ public class Visualizar_noticia_propias extends VistaVisualizarnoticiapropias{
 	}
 
 	public void Noticias_propias() {
-		throw new UnsupportedOperationException();
+		this.getNoticiasPropiasLayout().as(VerticalLayout.class).add(_noticias_propias);
 	}
 }
