@@ -9,7 +9,7 @@ public class Comentar extends VistaComentar{
 	
 	public Comentar (Usuario_general usuarioGeneral) {
 		super();
-		this.usuarioGeneral = usuarioGeneral;
+		this._lista_comentarios_valorables._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general = usuarioGeneral;
 	}
 
 	public void Escribir_comentario() {
