@@ -20,16 +20,16 @@ export class VistaGestionarseccion extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-form-layout>
-  <vaadin-vertical-layout theme="spacing">
-   Crear sección
+  <vaadin-vertical-layout theme="spacing" id="layoutCrear">
+    Crear sección 
    <vista-crearnuevaseccion></vista-crearnuevaseccion>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing">
-   Eliminar sección
+  <vaadin-vertical-layout theme="spacing" id="layoutEliminar">
+    Eliminar sección 
    <vista-eliminarunaseccion></vista-eliminarunaseccion>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing">
-   Cambiar nombre de la sección
+  <vaadin-vertical-layout theme="spacing" id="layoutCambiar">
+    Cambiar nombre de la sección 
    <vista-cambiarnombreaseccion></vista-cambiarnombreaseccion>
   </vaadin-vertical-layout>
  </vaadin-form-layout>

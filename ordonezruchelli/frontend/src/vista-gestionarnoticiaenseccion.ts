@@ -17,8 +17,8 @@ export class VistaGestionarnoticiaenseccion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-form-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutGeneral">
+ <vaadin-form-layout style="width: 100%; height: 100%;" id="layoutForm">
   <vista-anadirnoticiaaseccion></vista-anadirnoticiaaseccion>
   <vista-eliminarnoticiadeseccion></vista-eliminarnoticiadeseccion>
  </vaadin-form-layout>

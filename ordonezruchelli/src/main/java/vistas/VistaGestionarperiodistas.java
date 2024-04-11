@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.formlayout.FormLayout;
 
 @Tag("vista-gestionarperiodistas")
 @JsModule("./src/vista-gestionarperiodistas.ts")
@@ -15,6 +16,8 @@ public class VistaGestionarperiodistas extends LitTemplate {
 	private Button bajaPeriodista;
 	@Id("gestionarLayout")
 	private Element gestionarLayout;
+	@Id("periodistasLayout")
+	private FormLayout periodistasLayout;
 	public Button getBajaPeriodista() {
 		return bajaPeriodista;
 	}
@@ -29,6 +32,14 @@ public class VistaGestionarperiodistas extends LitTemplate {
 
 	public void setBajaPeriodista(Button bajaPeriodista) {
 		this.bajaPeriodista = bajaPeriodista;
+	}
+
+	public FormLayout getPeriodistasLayout() {
+		return periodistasLayout;
+	}
+
+	public void setPeriodistasLayout(FormLayout periodistasLayout) {
+		this.periodistasLayout = periodistasLayout;
 	}
 
 	public VistaGestionarperiodistas() {

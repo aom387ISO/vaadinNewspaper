@@ -15,7 +15,7 @@ export class VistaGestionarportada extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="listaPortadaLayout">
  <vista-noticiasenportada></vista-noticiasenportada>
 </vaadin-vertical-layout>
 `;

@@ -20,7 +20,7 @@ export class VistaGestionarperiodistas extends LitElement {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="gestionarLayout">
  <vista-introducirdatosdeperiodista></vista-introducirdatosdeperiodista>
- <vaadin-form-layout>
+ <vaadin-form-layout id="periodistasLayout">
   <vista-listadeperiodistas></vista-listadeperiodistas>
   <vaadin-button id="bajaPeriodista">
     Dar de baja periodista 

@@ -15,7 +15,7 @@ export class VistaIracomentarios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="layoutComentarios">
  <vista-listadecomentariosgenerico></vista-listadecomentariosgenerico>
 </vaadin-vertical-layout>
 `;

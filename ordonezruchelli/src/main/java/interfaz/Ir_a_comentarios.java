@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaIracomentarios;
 
 public class Ir_a_comentarios extends VistaIracomentarios{
@@ -9,9 +11,12 @@ public class Ir_a_comentarios extends VistaIracomentarios{
 	public Ir_a_comentarios (Usuario_no_suscrito usuarioNoSuscrito) {
 		super();
 		this._lista_de_comentarios.usuarioNoSuscrito = usuarioNoSuscrito;
+		
+		_lista_de_comentarios = new Lista_de_comentarios(usuarioNoSuscrito);
+		Lista_de_comentarios();
 	}
 
 	public void Lista_de_comentarios() {
-		throw new UnsupportedOperationException();
+		this.getLayoutComentarios().as(VerticalLayout.class).add(_lista_de_comentarios);
 	}
 }
