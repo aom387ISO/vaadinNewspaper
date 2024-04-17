@@ -13,7 +13,7 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 		this._usuario_no_suscrito = _usuario_no_suscrito;
 		
 		this.getBotonLogin().addClickListener(event->{
-			
+						
 			if(this.getLogin().getValue().equals("usuario")) {
 				_usuario_no_suscrito.MainView.removeAll();
 				Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView);

@@ -53,6 +53,9 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 	}
 
 	public void Ver_noticia_cortada() {
+		this.getNoticiasPortada().as(VerticalLayout.class).removeAll();
+		_ver_noticia_cortada = new Ver_noticia_cortada(this);
+		this.getNoticiasPortada().as(VerticalLayout.class).add(_ver_noticia_cortada);
 		this.MainView.add(_ver_noticia_cortada);
 	}
 

@@ -24,6 +24,14 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		return banner;
 	}
 
+	public Element getNoticiasPortada() {
+		return noticiasPortada;
+	}
+
+	public void setNoticiasPortada(Element noticiasPortada) {
+		this.noticiasPortada = noticiasPortada;
+	}
+
 	public void setBanner(HorizontalLayout banner) {
 		this.banner = banner;
 	}
@@ -34,6 +42,8 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private HorizontalLayout banner;
 	@Id("buscarNoticiaNoSuscrito")
 	private Element buscarNoticiaNoSuscrito;
+	@Id("noticiasPortada")
+	private Element noticiasPortada;
 
 	public Element getBannerAnuncios() {
 		return bannerAnuncios;

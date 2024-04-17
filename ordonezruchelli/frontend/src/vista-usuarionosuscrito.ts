@@ -37,7 +37,7 @@ export class VistaUsuarionosuscrito extends LitElement {
   </vaadin-button>
   <vista-buscarnoticiadenosuscrito id="buscarNoticiaNoSuscrito"></vista-buscarnoticiadenosuscrito>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing">
+ <vaadin-vertical-layout theme="spacing" id="noticiasPortada">
   <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
