@@ -23,17 +23,23 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 			Iniciar_sesion();
 		});
 		
+		_ver_noticia_cortada = new Ver_noticia_cortada(this);
+		this.getVerNoticiaCortada().addClickListener(event->{
+			this.MainView.removeAll();
+			Ver_noticia_cortada();
+		});		
+		
+		_ver_seccion_de_Usuario_no_suscrito = new Ver_seccion_de_Usuario_no_suscrito(this);
+		this.getVerSeccionNoSuscrito().addClickListener(event->{
+			this.MainView.removeAll();
+			Ver_seccion_de_Usuario_no_suscrito();
+		});		
+		
+		
 		_buscar_noticia_de_no_suscrito = new Buscar_noticia_de_no_suscrito(this);
 		this._buscar_noticia_de_no_suscrito.getListadoBusqueda().setVisible(false);
 		Buscar_noticia_de_no_suscrito();
 
-//		//Componente estático de buscar noticia.
-//		_buscar_noticia_de_no_suscrito = new Buscar_noticia_de_no_suscrito(this);
-//		Buscar_noticia_de_no_suscrito();
-//
-//		//Componente estático de ver secciones
-//		_ver_seccion_de_Usuario_no_suscrito = new Ver_seccion_de_Usuario_no_suscrito(this);
-//		this.getBanner().add(_ver_seccion_de_Usuario_no_suscrito);
 		
 		//Componente estático de ver anuncios.
 		Ver_anuncios _anuncio = new Ver_anuncios(this);
@@ -43,11 +49,11 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 
 	
 	public void Ver_seccion_de_Usuario_no_suscrito() {
-		throw new UnsupportedOperationException();
+		this.MainView.add(_ver_seccion_de_Usuario_no_suscrito);
 	}
 
 	public void Ver_noticia_cortada() {
-		throw new UnsupportedOperationException();
+		this.MainView.add(_ver_noticia_cortada);
 	}
 
 	public void Iniciar_sesion() {
@@ -56,6 +62,6 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 
 	public void Buscar_noticia_de_no_suscrito() {
 		this.getBanner().add(_buscar_noticia_de_no_suscrito);
-		}
+	}
 	
 }

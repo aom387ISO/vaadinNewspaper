@@ -1,5 +1,6 @@
 package interfaz;
 
+import proyectoMDS.MainView;
 import vistas.VistaPersonalizarperfil;
 
 public class Personalizar_perfil extends VistaPersonalizarperfil{
@@ -12,6 +13,11 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 	public Personalizar_perfil(Usuario_general usuarioGeneral) {
 		super();
 		this._usuario_general = usuarioGeneral;
+		
+		this.getCerrarSesion().addClickListener(event->{
+			Cerrar_sesion();
+		});
+		
 	}
 
 	public void Cambiar_apodo() {
@@ -27,6 +33,7 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 	}
 
 	public void Cerrar_sesion() {
-		throw new UnsupportedOperationException();
+		this._usuario_general.MainView.remove(this);
+		//MainView.add(MainView.Usuario_no_suscrito);
 	}
 }

@@ -22,15 +22,17 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 		});
 		_registrarse = new Registrarse(this, _usuario_no_suscrito);
 
-        getSuscribirseIniciarSesion().addClickListener(event -> {
+        this.getSuscribirseIniciarSesion().addClickListener(event -> {
+        	_usuario_no_suscrito.MainView.removeAll();
+        	
 			Registrarse();
         });
-
+        
 		
 	}
 	
 	public void Registrarse() {
-		throw new UnsupportedOperationException();
+		this._usuario_no_suscrito.MainView.add(_registrarse);
 		}
 
 	public void Completar_Iniciar_sesion() {

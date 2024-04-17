@@ -21,6 +21,62 @@ public class VistaPersonalizarperfil extends LitTemplate {
 	private Button cambiarApodo;
 	@Id("cerrarSesion")
 	private Button cerrarSesion;
+	public TextField getNuevaImagen() {
+		return nuevaImagen;
+	}
+
+	public void setNuevaImagen(TextField nuevaImagen) {
+		this.nuevaImagen = nuevaImagen;
+	}
+
+	public Button getCambiarImagen() {
+		return cambiarImagen;
+	}
+
+	public void setCambiarImagen(Button cambiarImagen) {
+		this.cambiarImagen = cambiarImagen;
+	}
+
+	public TextField getNuevoApodo() {
+		return nuevoApodo;
+	}
+
+	public void setNuevoApodo(TextField nuevoApodo) {
+		this.nuevoApodo = nuevoApodo;
+	}
+
+	public Button getCambiarApodo() {
+		return cambiarApodo;
+	}
+
+	public void setCambiarApodo(Button cambiarApodo) {
+		this.cambiarApodo = cambiarApodo;
+	}
+
+	public Button getCerrarSesion() {
+		return cerrarSesion;
+	}
+
+	public void setCerrarSesion(Button cerrarSesion) {
+		this.cerrarSesion = cerrarSesion;
+	}
+
+	public Button getVolverPortada() {
+		return volverPortada;
+	}
+
+	public void setVolverPortada(Button volverPortada) {
+		this.volverPortada = volverPortada;
+	}
+
+	public Button getBajaUsuarioSuscrito() {
+		return bajaUsuarioSuscrito;
+	}
+
+	public void setBajaUsuarioSuscrito(Button bajaUsuarioSuscrito) {
+		this.bajaUsuarioSuscrito = bajaUsuarioSuscrito;
+	}
+
 	@Id("volverPortada")
 	private Button volverPortada;
 	@Id("bajaUsuarioSuscrito")

@@ -11,6 +11,10 @@ public class Registrarse extends VistaRegistrarse{
 		super();
 		this._iniciar_sesion = iniciar_sesion;
 		this._iniciar_sesion._usuario_no_suscrito = usuarioNoSuscrito;
+		
+		
+		
+		
 	}
 
 	public void Completar_registro() {

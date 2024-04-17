@@ -10,7 +10,10 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
+import interfaz.Editor;
+import interfaz.Periodista;
 import interfaz.Usuario_no_suscrito;
+import interfaz.Usuario_suscrito;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,7 +38,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
 
-	Usuario_no_suscrito usuario_no_suscrito;
 	
     /**
      * Construct a new Vaadin view.
@@ -44,10 +46,18 @@ public class MainView extends VerticalLayout {
      *
      * @param service The message service. Automatically injected Spring managed bean.
      */
-    public MainView(@Autowired GreetService service) {
-
-    	usuario_no_suscrito = new Usuario_no_suscrito(this);
-    	add(usuario_no_suscrito);
-    }
-
+//    public MainView(@Autowired GreetService service) {
+//
+//    	usuario_no_suscrito = new Usuario_no_suscrito(this);
+//    	add(usuario_no_suscrito);
+//    }
+	 public Editor editor;
+	 public Periodista periodista;
+	 public Usuario_suscrito usuario_suscrito;
+	 public Usuario_no_suscrito usuario_no_suscrito;
+	 
+	 public MainView() {
+		 usuario_no_suscrito = new Usuario_no_suscrito(this);
+		 add(usuario_no_suscrito);
+	 }
 }

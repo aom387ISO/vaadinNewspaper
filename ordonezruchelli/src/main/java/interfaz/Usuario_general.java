@@ -20,20 +20,31 @@ public class Usuario_general extends VistaUsuariogeneral{
 		
 		//Componente estático Buscar Noticia
 		_buscar = new Buscar_noticia(this);
-		this._buscar_noticia.getListadoBusqueda().setVisible(false);
+		this._buscar.getListadoBusqueda().setVisible(false);
 		Buscar_noticia();
 		
-		//Componente estático para secciones.
-//		_visualizar_seccion = new Visualizar_seccion(this);
-//		Visualizar_seccion();
-//		
-//		//Componente estático para personalizar perfil.
-//		_personalizar_perfil = new Personalizar_perfil(this);
-//		Personalizar_perfil();
+		_ver_noticia = new Ver_noticia(this);
+		this.getVerNoticia().addClickListener(event->{
+			this.MainView.removeAll();
+			Ver_noticia();
+		});		
+		
+		_visualizar_seccion = new Visualizar_seccion(this);
+		this.getVerSeccion().addClickListener(event->{
+			this.MainView.removeAll();
+			Visualizar_seccion();
+		});		
+		
+		_personalizar_perfil = new Personalizar_perfil(this);
+		this.getPersonalizar().addClickListener(event->{
+			this.MainView.removeAll();
+			Personalizar_perfil();
+		});	
+		
 	}
 	
 	public void Ver_noticia() {
-		throw new UnsupportedOperationException();
+		this.MainView.add(_ver_noticia);
 	}
 
 	public void Buscar_noticia() {
@@ -41,11 +52,11 @@ public class Usuario_general extends VistaUsuariogeneral{
 	}
 
 	public void Visualizar_seccion() {
-//		this.getLayoutSeccionSuscrito().as(VerticalLayout.class).add(_visualizar_seccion);
+		this.MainView.add(_visualizar_seccion);
 	}
 
 	public void Personalizar_perfil() {
-		//this.getLayoutPersonalizarGeneral().as(VerticalLayout.class).add(_personalizar_perfil);
+		this.MainView.add(_personalizar_perfil);
 	}	
 	
 }
