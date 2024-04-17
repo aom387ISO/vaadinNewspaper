@@ -24,6 +24,14 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		return banner;
 	}
 
+	public Element getBannerAnuncios() {
+		return bannerAnuncios;
+	}
+
+	public void setBannerAnuncios(Element bannerAnuncios) {
+		this.bannerAnuncios = bannerAnuncios;
+	}
+
 	public Element getNoticiasPortada() {
 		return noticiasPortada;
 	}
@@ -36,23 +44,14 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		this.banner = banner;
 	}
 
-	@Id("bannerAnuncios")
-	private Element bannerAnuncios;
 	@Id("banner")
 	private HorizontalLayout banner;
 	@Id("buscarNoticiaNoSuscrito")
 	private Element buscarNoticiaNoSuscrito;
 	@Id("noticiasPortada")
 	private Element noticiasPortada;
-
-	public Element getBannerAnuncios() {
-		return bannerAnuncios;
-	}
-
-	public void setBannerAnuncios(Element bannerAnuncios) {
-		this.bannerAnuncios = bannerAnuncios;
-	}
-
+	@Id("bannerAnuncios")
+	private Element bannerAnuncios;
 	public VistaUsuarionosuscrito() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -72,6 +71,7 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	public void setVerSeccionNoSuscrito(Button verSeccionNoSuscrito) {
 		this.verSeccionNoSuscrito = verSeccionNoSuscrito;
 	}
+
 
 	public Button getIniciarSesion() {
 		return iniciarSesion;

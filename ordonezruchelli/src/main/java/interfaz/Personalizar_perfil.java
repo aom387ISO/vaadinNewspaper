@@ -33,8 +33,7 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 	}
 
 	public void Volver_a_portada() {
-		Usuario_general usuario_general = new Usuario_general(null);
-		this._usuario_general.MainView.add(usuario_general); //No me convence esto, revisar
+		throw new UnsupportedOperationException();
 	}
 
 	public void Cambiar_imagen() {

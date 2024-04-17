@@ -14,7 +14,7 @@ export class VistaVeranuncios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="anuncioLayout">
  <div>
    Div 
  </div> Text 
