@@ -3,7 +3,6 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-iniciarsesion')
@@ -20,18 +19,18 @@ export class VistaIniciarsesion extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-form-layout>
+ <vaadin-form-layout style="align-self: center;background:white;">
   <vaadin-text-field label="Login" placeholder="usuario" id="login"></vaadin-text-field>
   <vaadin-password-field label="Password" placeholder="Enter password" value="secret1" id="password" has-value></vaadin-password-field>
   <vaadin-button id="botonLogin">
     Login 
   </vaadin-button>
  </vaadin-form-layout>
- <vaadin-form-layout style="flex-grow: 0; padding: var(--lumo-space-s);">
-  <vaadin-vertical-layout theme="spacing">
-   <vaadin-text-area label="Suscribirse al periódico" placeholder="Add detailed explanation"></vaadin-text-area>
-   <vaadin-button id="suscribirseIniciarSesion">
-    Suscribirse
+ <vaadin-form-layout style="align-self: center; background:white; padding-top: var(--lumo-space-xs); padding-right: var(--lumo-space-xs);">
+  <vaadin-vertical-layout theme="spacing" style="align-self: center; font-size: 1.875em;font-weight: bold;">
+   <label>Suscribirse al periódico</label>
+   <vaadin-button id="suscribirseIniciarSesion" style="align-self: center;">
+     Suscribirse 
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-form-layout>

@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-buscarnoticiadenosuscrito';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import './vista-listadodenoticiasgenerico';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import './vista-veranuncios';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import './vista-buscarnoticiadenosuscrito';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-usuarionosuscrito')
@@ -25,19 +25,21 @@ render() {
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" style="position: absolute; right: 0;">
   <vaadin-button id="iniciarSesion" style="margin-left: 20px;">
-   Iniciar sesión
+    Iniciar sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; flex-grow: 0;">
-  <vista-buscarnoticiadenosuscrito id="buscarNoticiaNoSuscrito"></vista-buscarnoticiadenosuscrito>
+ <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;">
+  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; flex-grow: 0;">
+   <vista-buscarnoticiadenosuscrito id="buscarNoticiaNoSuscrito"></vista-buscarnoticiadenosuscrito>
+  </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; flex-grow: 0;" id="banner">
-  <vaadin-horizontal-layout theme="spacing">
+  <vaadin-horizontal-layout theme="spacing" style="margin: var(--lumo-space-m);">
    <vaadin-button id="verNoticiaCortada">
-    Ver noticias cortadas
+     Ver noticias cortadas 
    </vaadin-button>
    <vaadin-button id="verSeccionNoSuscrito">
-    Ver sección como usuario no suscrito
+     Ver sección como usuario no suscrito 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
