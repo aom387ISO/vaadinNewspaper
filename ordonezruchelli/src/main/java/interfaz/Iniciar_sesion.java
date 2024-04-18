@@ -21,6 +21,18 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 				Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView);
 				_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 			}
+			
+			if(this.getLogin().getValue().equals("editor")) {
+				_usuario_no_suscrito.MainView.removeAll();
+				Editor editor = new Editor(_usuario_no_suscrito.MainView);
+				_usuario_no_suscrito.MainView.add(editor);
+			}
+			
+			if(this.getLogin().getValue().equals("periodista")) {
+				_usuario_no_suscrito.MainView.removeAll();
+				Periodista periodista = new Periodista(_usuario_no_suscrito.MainView);
+				_usuario_no_suscrito.MainView.add(periodista);
+			}
 		});
 		_registrarse = new Registrarse(this, _usuario_no_suscrito);
 

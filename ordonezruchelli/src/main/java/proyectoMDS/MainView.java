@@ -59,5 +59,7 @@ public class MainView extends VerticalLayout {
 	 public MainView() {
 		 usuario_no_suscrito = new Usuario_no_suscrito(this);
 		 add(usuario_no_suscrito);
+//		 usuario_suscrito = new Usuario_suscrito(this);
+//		 add(usuario_suscrito);
 	 }
 }

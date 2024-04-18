@@ -24,9 +24,20 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Button verNoticia;
 	@Id("personalizar")
 	private Button personalizar;
+	public Element getNoticiasBanner() {
+		return noticiasBanner;
+	}
+
+
+	public void setNoticiasBanner(Element noticiasBanner) {
+		this.noticiasBanner = noticiasBanner;
+	}
+
+
 	public Element getBuscarSuscrito() {
 		return buscarSuscrito;
 	}
+
 
 	public void setBuscarSuscrito(Element buscarSuscrito) {
 		this.buscarSuscrito = buscarSuscrito;
@@ -38,8 +49,8 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private HorizontalLayout bannerGeneral;
 	@Id("buscarSuscrito")
 	private Element buscarSuscrito;
-
-
+	@Id("noticiasBanner")
+	private Element noticiasBanner;
 	public HorizontalLayout getBannerGeneral() {
 		return bannerGeneral;
 	}

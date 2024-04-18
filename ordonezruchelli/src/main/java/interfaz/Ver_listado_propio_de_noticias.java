@@ -8,6 +8,7 @@ public class Ver_listado_propio_de_noticias extends Listado_de_noticias_generico
 	
 	public Ver_listado_propio_de_noticias(Periodista periodista) {
 		super();
+        this._gestionar_noticia = new Gestionar_noticia(periodista);
 		this._gestionar_noticia._periodista = periodista;
 	}
 }

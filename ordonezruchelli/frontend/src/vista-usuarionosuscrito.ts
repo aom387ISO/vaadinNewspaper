@@ -1,10 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import './vista-listadodenoticiasgenerico';
 import './vista-veranuncios';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import './vista-buscarnoticiadenosuscrito';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-usuarionosuscrito')
 export class VistaUsuarionosuscrito extends LitElement {
@@ -19,16 +19,18 @@ export class VistaUsuarionosuscrito extends LitElement {
 
 render() {
   return html`
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; position: relative;">
- <vaadin-vertical-layout theme="spacing">
-  <img src="https://upload-static.hoyoverse.com/event/2023/03/28/77cb5426637574ba524ac458fa963da0_366369025300461262.png" alt="Descripción de la imagen" style="max-width: 100%; max-height: 100px;">
- </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" style="position: absolute; right: 0;">
-  <vaadin-button id="iniciarSesion" style="margin-left: 20px;">
-    Iniciar sesión 
-  </vaadin-button>
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
+ <vaadin-horizontal-layout theme="spacing">
+  <vaadin-vertical-layout theme="spacing" style=" border: 1px solid black;">
+   <img src="https://upload-static.hoyoverse.com/event/2023/03/28/77cb5426637574ba524ac458fa963da0_366369025300461262.png" alt="Descripción de la imagen" style="max-width: 100%; max-height: 100px;">
+  </vaadin-vertical-layout>
+  <vaadin-horizontal-layout theme="spacing" style="position: absolute; right: 0;">
+   <vaadin-button id="iniciarSesion" style="margin-left: 20px;">
+     Iniciar sesión 
+   </vaadin-button>
+  </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="align-self: flex-end;">
+ <vaadin-horizontal-layout theme="spacing" style="width: 200%; height: 100%;">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%; flex-grow: 0;">
    <vista-buscarnoticiadenosuscrito id="buscarNoticiaNoSuscrito"></vista-buscarnoticiadenosuscrito>
   </vaadin-horizontal-layout>

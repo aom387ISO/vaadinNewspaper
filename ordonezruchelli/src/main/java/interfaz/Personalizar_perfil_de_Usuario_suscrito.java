@@ -7,7 +7,7 @@ public class Personalizar_perfil_de_Usuario_suscrito extends Personalizar_perfil
 	public Personalizar_perfil_de_Usuario_suscrito(Usuario_suscrito usuarioSuscrito) {
 		super(usuarioSuscrito);
 		this._usuario_suscrito = usuarioSuscrito;
-		this.getCerrarSesion().setVisible(true);
+		this.getBajaUsuarioSuscrito().setVisible(true);
 	}
 
 	public void Dar_de_baja() {

@@ -2,6 +2,9 @@ package interfaz;
 
 import proyectoMDS.MainView;
 import vistas.VistaPersonalizarperfil;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import interfaz.Usuario_no_suscrito;
 
 public class Personalizar_perfil extends VistaPersonalizarperfil{
@@ -14,16 +17,18 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 	public Personalizar_perfil(Usuario_general usuarioGeneral) {
 		super();
 		this._usuario_general = usuarioGeneral;
-		this.getCerrarSesion().setVisible(false);
+		
+		this.getBajaUsuarioSuscrito().setVisible(false);
+		
 		this.getCerrarSesion().addClickListener(event->{
 			Cerrar_sesion();
 		});
+		
 		this.getCambiarApodo().addClickListener(event->{
-			this._usuario_general.MainView.removeAll();
 			Cambiar_apodo();
 		});	
+		
 		this.getVolverPortada().addClickListener(event->{
-			this._usuario_general.MainView.removeAll();
 			Volver_a_portada();
 		});	
 	}
@@ -41,8 +46,7 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 	}
 
 	public void Cerrar_sesion() {
-		this._usuario_general.MainView.remove(this);
-		Usuario_no_suscrito usuario_no_suscrito = new Usuario_no_suscrito(null);
-		this._usuario_general.MainView.add(usuario_no_suscrito);
+		this._usuario_general.MainView.removeAll();
+		this._usuario_general.MainView.add(_usuario_general.MainView.usuario_no_suscrito);
 	}
 }

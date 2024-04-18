@@ -11,12 +11,16 @@ public class Periodista extends Usuario_general {
 		this.getPersonalizarSuscrito().setVisible(false);
 		
 		//Componente estático Gestionar Noticia
-		_gestionar_noticia = new Gestionar_noticia(this);
-		Gestionar_noticia();
+		this._gestionar_noticia = new Gestionar_noticia(this);
+		this.getGestionPeriodista().addClickListener(event->{
+			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+
+			Gestionar_noticia();
+		});	
 	}
 	
 	public void Gestionar_noticia() {
-		//this.getLayoutGestionPeriodista().as(VerticalLayout.class).add(_gestionar_noticia);
+		this.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_noticia);
 	}
 
 	

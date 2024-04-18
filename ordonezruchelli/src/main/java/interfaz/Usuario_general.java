@@ -25,26 +25,35 @@ public class Usuario_general extends VistaUsuariogeneral{
 		
 		_ver_noticia = new Ver_noticia(this);
 		this.getVerNoticia().addClickListener(event->{
-			this.MainView.removeAll();
+			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this.MainView.remove(_ver_noticia);
+			this.MainView.remove(_visualizar_seccion);
+			this.MainView.remove(_personalizar_perfil);
 			Ver_noticia();
 		});		
 		
 		_visualizar_seccion = new Visualizar_seccion(this);
 		this.getVerSeccion().addClickListener(event->{
-			this.MainView.removeAll();
+			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this.MainView.remove(_ver_noticia);
+			this.MainView.remove(_visualizar_seccion);
+			this.MainView.remove(_personalizar_perfil);
 			Visualizar_seccion();
 		});		
 		
 		_personalizar_perfil = new Personalizar_perfil(this);
 		this.getPersonalizar().addClickListener(event->{
-			this.MainView.removeAll();
+			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this.MainView.remove(_ver_noticia);
+			this.MainView.remove(_visualizar_seccion);
+			this.MainView.remove(_personalizar_perfil);
 			Personalizar_perfil();
 		});	
 		
 	}
 	
 	public void Ver_noticia() {
-		this.MainView.add(_ver_noticia);
+		this.getNoticiasBanner().as(VerticalLayout.class).add(_ver_noticia);
 	}
 
 	public void Buscar_noticia() {
@@ -52,11 +61,12 @@ public class Usuario_general extends VistaUsuariogeneral{
 	}
 
 	public void Visualizar_seccion() {
-		this.MainView.add(_visualizar_seccion);
+		this.getNoticiasBanner().as(VerticalLayout.class).add(_visualizar_seccion);
 	}
 
 	public void Personalizar_perfil() {
-		this.MainView.add(_personalizar_perfil);
+		this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+		this.getNoticiasBanner().as(VerticalLayout.class).add(_personalizar_perfil);
 	}	
 	
 }
