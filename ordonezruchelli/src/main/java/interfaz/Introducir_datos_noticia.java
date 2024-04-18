@@ -7,9 +7,12 @@ public class Introducir_datos_noticia extends VistaIntroducirdatosnoticia{
 	//	private event _volver_a_gestion;
 	public Gestionar_noticia _gestionar_noticia;
 	
-	public Introducir_datos_noticia(Periodista periodista) {
+    public Introducir_datos_noticia(Gestionar_noticia gestionar_noticia, Periodista periodista) {
 		super();
-		this._gestionar_noticia._periodista = periodista;
+        this._gestionar_noticia = gestionar_noticia;
+        this._gestionar_noticia._periodista = periodista;		
+		
+		
 	}
 
 	public void Enviar_noticia() {

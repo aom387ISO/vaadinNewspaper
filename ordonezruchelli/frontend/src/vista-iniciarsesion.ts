@@ -28,7 +28,7 @@ export class VistaIniciarsesion extends LitElement {
  </vaadin-form-layout>
  <vaadin-form-layout style="align-self: center; background:#f5f5f5; border: 1px solid black; padding-top: var(--lumo-space-xs); padding-right: var(--lumo-space-xs); padding: 20%;">
   <vaadin-vertical-layout theme="spacing" style="align-self: center; font-size: 1.875em;font-weight: bold;">
-   <label style="height: 100%; padding: var(--lumo-space-m);">Suscribirse al periódico</label>
+   <label style="height: 100%; width: 100%; padding: var(--lumo-space-m);">Suscribirse al periódico</label>
    <vaadin-button id="suscribirseIniciarSesion" style="align-self: center;">
      Suscribirse 
    </vaadin-button>

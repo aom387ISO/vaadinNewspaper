@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaBuscarnoticiadenosuscrito;
 
 public class Buscar_noticia_de_no_suscrito  extends VistaBuscarnoticiadenosuscrito{
@@ -12,12 +14,12 @@ public class Buscar_noticia_de_no_suscrito  extends VistaBuscarnoticiadenosuscri
 		
 		_listado_noticias_cortadas = new Listado_noticias_cortadas(_usuario_no_suscrito);
 		this.getAccederNoticiaBusquedaNoSuscrito().addClickListener(event->{
-			this._usuario_no_suscrito.MainView.removeAll();
+			this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
 			Listado_noticias_cortadas();
 		});		
 	}
 
 	public void Listado_noticias_cortadas() {
-		throw new UnsupportedOperationException();
+		this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_listado_noticias_cortadas);
 	}
 }

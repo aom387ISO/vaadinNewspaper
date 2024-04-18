@@ -12,6 +12,7 @@ public class Periodista extends Usuario_general {
 		
 		//Componente estático Gestionar Noticia
 		this._gestionar_noticia = new Gestionar_noticia(this);
+		
 		this.getGestionPeriodista().addClickListener(event->{
 			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 

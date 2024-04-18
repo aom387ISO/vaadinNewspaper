@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaGestionar;
 
 public class Gestionar extends VistaGestionar{
@@ -12,21 +14,48 @@ public class Gestionar extends VistaGestionar{
 	public Gestionar (Editor editor) {
 		super();
 		this._editor = editor;
+		
+		this._gestionar_noticia_de_seccion = new Gestionar_noticia_de_seccion(this, editor);
+		this.getGestionarNoticia().addClickListener(event->{
+			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Gestionar_noticia_de_seccion();
+		});	
+		
+		this._gestionar_periodistas = new Gestionar_periodistas(this, editor);
+		this.getGestionarPeriodistas().addClickListener(event->{
+			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Gestionar_periodistas();
+		});	
+		
+		
+		this._gestionar_portada = new Gestionar_portada(this, editor);
+		this.getGestionarPortada().addClickListener(event->{
+			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Gestionar_portada();
+		});	
+		
+		this._gestion_seccion= new Gestion_seccion(this, editor); 
+		this.getGestionarSeccion().addClickListener(event->{
+			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Gestion_seccion();
+		});	
+		
+		
 	}
 
 	public void Gestionar_noticia_de_seccion() {
-		throw new UnsupportedOperationException();
+		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_noticia_de_seccion);
 	}
 
 	public void Gestionar_periodistas() {
-		throw new UnsupportedOperationException();
+		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_periodistas);
 	}
 
 	public void Gestionar_portada() {
-		throw new UnsupportedOperationException();
+		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_portada);
 	}
 
 	public void Gestion_seccion() {
-		throw new UnsupportedOperationException();
+		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestion_seccion);
 	}
 }

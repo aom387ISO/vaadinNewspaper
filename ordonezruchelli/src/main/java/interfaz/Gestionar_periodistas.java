@@ -12,15 +12,16 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas{
 	public Lista_de_periodistas _lista_de_periodistas;
 	public Introducir_datos_de_periodista _introducir_datos_de_periodista;
 
-	public Gestionar_periodistas(Editor editor) {
+	public Gestionar_periodistas(Gestionar gestionar, Editor editor) {
 		super();
+		this._gestionar = gestionar;
 		this._gestionar._editor = editor;
 		
-		_lista_de_periodistas = new Lista_de_periodistas(editor);
-		Lista_de_periodistas();
-		
-		_introducir_datos_de_periodista = new Introducir_datos_de_periodista(editor);
-		Introducir_datos_de_periodista();
+//		_lista_de_periodistas = new Lista_de_periodistas(editor);
+//		Lista_de_periodistas();
+//		
+//		_introducir_datos_de_periodista = new Introducir_datos_de_periodista(editor);
+//		Introducir_datos_de_periodista();
 	}
 	
 	public void Lista_de_periodistas() {

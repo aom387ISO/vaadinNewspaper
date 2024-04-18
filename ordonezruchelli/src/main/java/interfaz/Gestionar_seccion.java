@@ -10,17 +10,18 @@ public class Gestionar_seccion extends VistaGestionarseccion{
 	public Cambiar_nombre_a_seccion _cambiar_nombre_a_seccion;
 	public Eliminar_una_seccion _eliminar_una_seccion;
 	
-	public Gestionar_seccion (Editor editor) {
+	public Gestionar_seccion (Gestion_seccion gestion_seccion, Editor editor) {
 		super();
+		this._gestion_seccion = gestion_seccion;
 		this._gestion_seccion._gestionar._editor = editor;
 		
-		_crear_nueva_seccion = new Crear_nueva_seccion(editor);
-		_cambiar_nombre_a_seccion = new Cambiar_nombre_a_seccion(editor);
-		_eliminar_una_seccion = new Eliminar_una_seccion(editor);
-		
-		Crear_nueva_seccion();
-		Cambiar_nombre_a_seccion();
-		Eliminar_una_seccion();
+//		_crear_nueva_seccion = new Crear_nueva_seccion(editor);
+//		_cambiar_nombre_a_seccion = new Cambiar_nombre_a_seccion(editor);
+//		_eliminar_una_seccion = new Eliminar_una_seccion(editor);
+//		
+//		Crear_nueva_seccion();
+//		Cambiar_nombre_a_seccion();
+//		Eliminar_una_seccion();
 	}
 
 	public void Crear_nueva_seccion() {

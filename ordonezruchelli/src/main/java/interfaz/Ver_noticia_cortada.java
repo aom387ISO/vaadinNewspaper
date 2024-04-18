@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaVernoticiacortada;
 
 public class Ver_noticia_cortada extends VistaVernoticiacortada{
@@ -10,9 +12,17 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 	public Ver_noticia_cortada(Usuario_no_suscrito usuarioNoSuscrito) {
 		super();
 		this._usuario_no_suscrito = usuarioNoSuscrito;
+		
+//		this._ir_a_comentarioss = new Ir_a_comentarios(usuarioNoSuscrito);
+//        this.getComentariosNoSuscrito().addAttachListener(event -> {
+//			this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
+//        	
+//			Ir_a_comentarios();
+//        });
 	}
 
 	public void Ir_a_comentarios() {
-		throw new UnsupportedOperationException();
+	//	this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_ir_a_comentarios);
+//		this._usuario_no_suscrito.MainView.add(_ir_a_comentarios);
 	}
 }

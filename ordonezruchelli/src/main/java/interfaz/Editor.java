@@ -14,8 +14,11 @@ public class Editor extends Usuario_general {
 		this.getPersonalizarSuscrito().setVisible(false);
 		
 		//Componente estático Gestionar
-		_gestionar = new Gestionar(this);
-		Gestionar();
+		this._gestionar = new Gestionar(this);
+		this.getGestionEditor().addClickListener(event->{
+			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Gestionar();
+		});	
 		
 	}
 	
@@ -24,7 +27,7 @@ public class Editor extends Usuario_general {
 	}
 
 	public void Gestionar() {
-//		this.getBannerGeneral().add(_gestionar);
+		this.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);
 	}	
 	
 }
