@@ -1,8 +1,8 @@
 package interfaz;
 
-import vistas.VistaNoticiasenbusqueda_item;
+import vistas.VistaNoticiasenportada_item;
 
-public class Noticias_en_portada_item extends VistaNoticiasenbusqueda_item{
+public class Noticias_en_portada_item extends VistaNoticiasenportada_item{
 	//	private event _eliminar_de_portada;
 	public Noticias_en_portada _noticias_en_portada;
 	public Introducir_nueva_posicion_en_portada _introducir_nueva_posicion_en_portada;

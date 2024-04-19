@@ -4,9 +4,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Editor extends Usuario_general {
 	
-	
 	public Ver_comentarios_de_Editor _ver_comentarios_de_Editor;
 	public Gestionar _gestionar;
+	
 	
 	public Editor(proyectoMDS.MainView MainView) {
 		super(MainView);
@@ -20,10 +20,11 @@ public class Editor extends Usuario_general {
 			Gestionar();
 		});	
 		
+		_ver_comentarios_de_Editor = new Ver_comentarios_de_Editor(this);
 	}
 	
 	public void Ver_comentarios_de_Editor() {
-		throw new UnsupportedOperationException();
+		this.getNoticiasBanner().as(VerticalLayout.class).add(_ver_comentarios_de_Editor);;
 	}
 
 	public void Gestionar() {
