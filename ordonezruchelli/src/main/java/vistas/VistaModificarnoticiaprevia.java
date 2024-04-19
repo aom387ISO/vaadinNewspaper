@@ -13,6 +13,14 @@ public class VistaModificarnoticiaprevia extends LitTemplate {
     @Id("modificarNoticiaPrevia")
 	private Button modificarNoticiaPrevia;
 
+	public Button getModificarNoticiaPrevia() {
+		return modificarNoticiaPrevia;
+	}
+
+	public void setModificarNoticiaPrevia(Button modificarNoticiaPrevia) {
+		this.modificarNoticiaPrevia = modificarNoticiaPrevia;
+	}
+
 	public VistaModificarnoticiaprevia() {
         // You can initialise any data required for the connected UI components here.
     }

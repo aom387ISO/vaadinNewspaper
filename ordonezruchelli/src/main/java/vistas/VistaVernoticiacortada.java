@@ -10,19 +10,8 @@ import com.vaadin.flow.component.template.Id;
 @JsModule("./src/vista-vernoticiacortada.ts")
 public class VistaVernoticiacortada extends LitTemplate {
 
-    @Id("comentariosNoSuscrito")
-	private Element comentariosNoSuscrito;
-
-	public VistaVernoticiacortada() {
+    public VistaVernoticiacortada() {
         // You can initialise any data required for the connected UI components here.
     }
-
-	public Element getComentariosNoSuscrito() {
-		return comentariosNoSuscrito;
-	}
-
-	public void setComentariosNoSuscrito(Element comentariosNoSuscrito) {
-		this.comentariosNoSuscrito = comentariosNoSuscrito;
-	}
 
 }

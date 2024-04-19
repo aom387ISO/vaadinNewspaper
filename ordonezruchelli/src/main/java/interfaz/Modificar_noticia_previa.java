@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaModificarnoticiaprevia;
 
 public class Modificar_noticia_previa extends VistaModificarnoticiaprevia{
@@ -10,10 +12,16 @@ public class Modificar_noticia_previa extends VistaModificarnoticiaprevia{
 	    super();
 	    this._gestionar_noticia = gestionar_noticia;
 	    this._gestionar_noticia._periodista = periodista;
+	    
+	    _noticias_propias = new Noticias_propias(this, periodista);
+		this.getModificarNoticiaPrevia().addClickListener(event->{
+			this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Noticias_propias();
+		});
 	}
 
 	
 	public void Noticias_propias() {
-		throw new UnsupportedOperationException();
+		this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_noticias_propias);
 	}
 }
