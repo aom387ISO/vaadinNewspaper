@@ -15,24 +15,36 @@ public class Gestionar_seccion extends VistaGestionarseccion{
 		this._gestion_seccion = gestion_seccion;
 		this._gestion_seccion._gestionar._editor = editor;
 		
-//		_crear_nueva_seccion = new Crear_nueva_seccion(editor);
-//		_cambiar_nombre_a_seccion = new Cambiar_nombre_a_seccion(editor);
-//		_eliminar_una_seccion = new Eliminar_una_seccion(editor);
-//		
-//		Crear_nueva_seccion();
-//		Cambiar_nombre_a_seccion();
-//		Eliminar_una_seccion();
+		_crear_nueva_seccion = new Crear_nueva_seccion(this, editor);
+		this.getAnadirSeccion().addClickListener(event->{
+			this._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Crear_nueva_seccion();
+		});	
+	
+		_cambiar_nombre_a_seccion = new Cambiar_nombre_a_seccion(this, editor);
+		this.getCambiarNombreSeccion().addClickListener(event->{
+			this._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Cambiar_nombre_a_seccion();
+		});	
+		
+		_eliminar_una_seccion = new Eliminar_una_seccion(this, editor);
+		this.getEliminarSeccion().addClickListener(event->{
+			this._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Eliminar_una_seccion();
+
+		});	
+		
 	}
 
 	public void Crear_nueva_seccion() {
-		this.getLayoutCrear().as(VerticalLayout.class).add(_crear_nueva_seccion);
+		this._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_crear_nueva_seccion);
 	}
 
 	public void Cambiar_nombre_a_seccion() {
-		this.getLayoutCambiar().as(VerticalLayout.class).add(_cambiar_nombre_a_seccion);
+		this._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_cambiar_nombre_a_seccion);
 	}
 
 	public void Eliminar_una_seccion() {
-		this.getLayoutEliminar().as(VerticalLayout.class).add(_eliminar_una_seccion);
+		this._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_eliminar_una_seccion);
 	}
 }

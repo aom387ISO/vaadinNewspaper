@@ -1,6 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import './vista-listadodenoticiasgenerico';
-import './vista-vercomentarios';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-vernoticiacortada')
 export class VistaVernoticiacortada extends LitElement {
@@ -18,7 +18,9 @@ export class VistaVernoticiacortada extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
   Imagen noticia 
  <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
- <vista-vercomentarios id="comentariosNoSuscrito"></vista-vercomentarios>
+ <vaadin-button id="comentariosNoSuscrito">
+  Ver comentarios
+ </vaadin-button>
 </vaadin-vertical-layout>
 `;
   }

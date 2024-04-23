@@ -5,12 +5,24 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-vernoticiacortada")
 @JsModule("./src/vista-vernoticiacortada.ts")
 public class VistaVernoticiacortada extends LitTemplate {
 
-    public VistaVernoticiacortada() {
+    @Id("comentariosNoSuscrito")
+	private Button comentariosNoSuscrito;
+
+	public Button getComentariosNoSuscrito() {
+		return comentariosNoSuscrito;
+	}
+
+	public void setComentariosNoSuscrito(Button comentariosNoSuscrito) {
+		this.comentariosNoSuscrito = comentariosNoSuscrito;
+	}
+
+	public VistaVernoticiacortada() {
         // You can initialise any data required for the connected UI components here.
     }
 

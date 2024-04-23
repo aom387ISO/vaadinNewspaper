@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-gestionarnoticiaenseccion")
 @JsModule("./src/vista-gestionarnoticiaenseccion.ts")
@@ -15,6 +16,10 @@ public class VistaGestionarnoticiaenseccion extends LitTemplate {
 	private Element layoutGeneral;
 	@Id("layoutForm")
 	private FormLayout layoutForm;
+	@Id("anadirNoticia")
+	private Button anadirNoticia;
+	@Id("eliminarNoticia")
+	private Button eliminarNoticia;
 
 	public Element getLayoutGeneral() {
 		return layoutGeneral;
@@ -22,6 +27,22 @@ public class VistaGestionarnoticiaenseccion extends LitTemplate {
 
 	public void setLayoutGeneral(Element layoutGeneral) {
 		this.layoutGeneral = layoutGeneral;
+	}
+
+	public Button getAnadirNoticia() {
+		return anadirNoticia;
+	}
+
+	public void setAnadirNoticia(Button anadirNoticia) {
+		this.anadirNoticia = anadirNoticia;
+	}
+
+	public Button getEliminarNoticia() {
+		return eliminarNoticia;
+	}
+
+	public void setEliminarNoticia(Button eliminarNoticia) {
+		this.eliminarNoticia = eliminarNoticia;
 	}
 
 	public FormLayout getLayoutForm() {
