@@ -6,9 +6,11 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 	public Lista_comentarios_valorables _lista_comentarios_valorables;
 	public Comentar _comentar;
 	public Lista_de_comentarios_generico _lista_de_comentarios_generico;
-	
-	public Lista_comentarios_valorables_item(Lista_de_comentarios_generico padre) {
-		super(padre);
+	tabla.Comentario _comentario;
+	public Lista_comentarios_valorables_item(Lista_de_comentarios_generico padre, tabla.Comentario comentario) {
+		super(padre, comentario);
+		
+		this._comentario = comentario;
 		this.getEliminar().setVisible(false);
 	}
 

@@ -15,22 +15,24 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 		this._usuario_no_suscrito = _usuario_no_suscrito;
 		
 		this.getBotonLogin().addClickListener(event->{
-						
-			if(this.getLogin().getValue().equals("usuario")) {
+		    String nombreUsuario = this.getLogin().getValue();
+		    String contraseña = this.getPassword().getValue(); 
+
+		    if(this.getLogin().getValue().equals("usuario")) {
 				_usuario_no_suscrito.MainView.removeAll();
-				Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView);
+				Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView,null);
 				_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 			}
 			
 			if(this.getLogin().getValue().equals("editor")) {
 				_usuario_no_suscrito.MainView.removeAll();
-				Editor editor = new Editor(_usuario_no_suscrito.MainView);
+				Editor editor = new Editor(_usuario_no_suscrito.MainView, null);
 				_usuario_no_suscrito.MainView.add(editor);
 			}
 			
 			if(this.getLogin().getValue().equals("periodista")) {
 				_usuario_no_suscrito.MainView.removeAll();
-				Periodista periodista = new Periodista(_usuario_no_suscrito.MainView);
+				Periodista periodista = new Periodista(_usuario_no_suscrito.MainView, null);
 				_usuario_no_suscrito.MainView.add(periodista);
 			}
 		});

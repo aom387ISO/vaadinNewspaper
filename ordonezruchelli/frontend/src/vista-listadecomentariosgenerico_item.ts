@@ -24,13 +24,13 @@ export class VistaListadecomentariosgenerico_item extends LitElement {
  <vaadin-text-area id="valoracionesNegativasComentario" label="Valoraciones Negativas Comentario"></vaadin-text-area>
  <vaadin-vertical-layout theme="spacing">
   <vaadin-button id="MeGusta">
-   Me Gusta
+    Me Gusta 
   </vaadin-button>
   <vaadin-button id="NoMeGusta">
-   No me gusta
+    No me gusta 
   </vaadin-button>
   <vaadin-button id="EliminarComentario">
-   Eliminar
+    Eliminar 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>

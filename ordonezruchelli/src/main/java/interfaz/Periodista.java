@@ -4,9 +4,12 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Periodista extends Usuario_general {
 	public Gestionar_noticia _gestionar_noticia;
-
-	public Periodista(proyectoMDS.MainView MainView) {
-		super(MainView);
+	tabla.Periodista _periodista;
+	
+	public Periodista(proyectoMDS.MainView MainView, tabla.Periodista periodista) {
+		super(MainView, periodista);
+		this._periodista = periodista;
+		
 		this.getGestionEditor().setVisible(false);
 		this.getPersonalizarSuscrito().setVisible(false);
 		

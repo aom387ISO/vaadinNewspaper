@@ -13,11 +13,14 @@ public class Usuario_general extends VistaUsuariogeneral{
 	public Personalizar_perfil _personalizar_perfil;
 	public Buscar_noticia _buscar;
 
+	tabla.Usuario _usuario;
+
 
 	public MainView MainView;
-	public Usuario_general(MainView MainView) {
+	public Usuario_general(MainView MainView, tabla.Usuario usuario) {
 		this.MainView=MainView;
-		
+		this._usuario = usuario;
+				
 		//Componente estático Buscar Noticia
 		_buscar = new Buscar_noticia(this);
 		this._buscar.getListadoBusqueda().setVisible(false);

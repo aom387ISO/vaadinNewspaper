@@ -5,6 +5,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.textfield.TextField;
 
 @Tag("vista-listadecomentariosgenerico_item")
 @JsModule("./src/vista-listadecomentariosgenerico_item.ts")
@@ -16,8 +18,47 @@ public class VistaListadecomentariosgenerico_item extends LitTemplate {
 	private Button nomegusta;
 	@Id("EliminarComentario")
 	private Button eliminar;
-	
-    public VistaListadecomentariosgenerico_item() {
+	public TextArea getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+	public TextArea getContenidoComentario() {
+		return contenidoComentario;
+	}
+
+	public void setContenidoComentario(TextArea contenidoComentario) {
+		this.contenidoComentario = contenidoComentario;
+	}
+
+	public TextArea getValoracionesPositivasComentario() {
+		return valoracionesPositivasComentario;
+	}
+
+	public void setValoracionesPositivasComentario(TextArea valoracionesPositivasComentario) {
+		this.valoracionesPositivasComentario = valoracionesPositivasComentario;
+	}
+
+	public TextArea getValoracionesNegativasComentario() {
+		return valoracionesNegativasComentario;
+	}
+
+	public void setValoracionesNegativasComentario(TextArea valoracionesNegativasComentario) {
+		this.valoracionesNegativasComentario = valoracionesNegativasComentario;
+	}
+
+	public void setNombreUsuario(TextArea nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+	@Id("nombreUsuario")
+	private TextArea nombreUsuario;
+	@Id("contenidoComentario")
+	private TextArea contenidoComentario;
+	@Id("valoracionesPositivasComentario")
+	private TextArea valoracionesPositivasComentario;
+	@Id("valoracionesNegativasComentario")
+	private TextArea valoracionesNegativasComentario;
+	public VistaListadecomentariosgenerico_item() {
         // You can initialise any data required for the connected UI components here.
     }
 
