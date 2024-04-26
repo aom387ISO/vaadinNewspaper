@@ -10,6 +10,9 @@ public class Lista_de_comentarios_generico_item extends VistaListadecomentariosg
 		super();
 		this._comentario = comentario;
 		this.getContenidoComentario();
+		this.getNombreUsuario();
+		this.getValoracionesNegativasComentario();
+		this.getValoracionesPositivasComentario();
 //		this.getNombreUsuario().setName(comentario.getAutor());
 		this._lista_de_comentarios_generico = _lista_de_comentarios_generico;
 	}
