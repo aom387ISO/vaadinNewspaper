@@ -68,8 +68,8 @@ public class Comentario implements Serializable {
 	@JoinColumns(value={ @JoinColumn(name="UsuarioIdUsuario", referencedColumnName="IdUsuario", nullable=false) }, foreignKey=@ForeignKey(name="FKComentario476"))	
 	private tabla.Usuario autor;
 	
-	@Column(name="Contenido", nullable=false, length=10)	
-	private int contenido;
+	@Column(name="Contenido", nullable=false, length=255)	
+	private String contenido;
 	
 	@Column(name="NValoracionesPositvas", nullable=false, length=10)	
 	private int nValoracionesPositvas;
@@ -94,11 +94,11 @@ public class Comentario implements Serializable {
 		return getIdComentario();
 	}
 	
-	public void setContenido(int value) {
+	public void setContenido(String value) {
 		this.contenido = value;
 	}
 	
-	public int getContenido() {
+	public String getContenido() {
 		return contenido;
 	}
 	

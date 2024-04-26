@@ -7,7 +7,7 @@ public class Editor extends Usuario_general {
 	public Ver_comentarios_de_Editor _ver_comentarios_de_Editor;
 	public Gestionar _gestionar;
 	
-	tabla.Editor _editor;
+	public tabla.Editor _editor;
 	
 	public Editor(proyectoMDS.MainView MainView, tabla.Editor editor) {
 		super(MainView, editor);

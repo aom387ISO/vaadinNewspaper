@@ -27,7 +27,7 @@ export class VistaUsuariogeneral extends LitElement {
   <vaadin-horizontal-layout theme="spacing" style="position: absolute; right: 0;">
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-vertical-layout theme="spacing">
-     <vaadin-horizontal-layout theme="spacing">
+     <vaadin-horizontal-layout theme="spacing" id="Perfil">
       <vaadin-button id="personalizar">
         Personalizar perfil 
       </vaadin-button>

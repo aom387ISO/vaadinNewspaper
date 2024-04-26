@@ -11,6 +11,8 @@ public class Noticias_en_busqueda_item extends VistaNoticiasenbusqueda_item{
 		super();
 		this._noticias_en_busqueda = _noticias_en_busqueda;
 		this._noticia = noticia;
+		this.getNombreNoticiaBusqueda().setValue(_noticia.getTitulo());
+		this.getResumenNoticiaBusqueda().setValue(_noticia.getResumen());
 	}
 	
 	public void Ver_noticia() {

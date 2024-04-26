@@ -12,14 +12,12 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-listadecomentariosgenerico_item.ts")
 public class VistaListadecomentariosgenerico_item extends LitTemplate {
 
-	@Id("MeGusta")
-	private Button megusta;
-	@Id("NoMeGusta")
-	private Button nomegusta;
-	@Id("EliminarComentario")
-	private Button eliminar;
 	public TextArea getNombreUsuario() {
 		return nombreUsuario;
+	}
+
+	public void setNombreUsuario(TextArea nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
 	public TextArea getContenidoComentario() {
@@ -46,10 +44,12 @@ public class VistaListadecomentariosgenerico_item extends LitTemplate {
 		this.valoracionesNegativasComentario = valoracionesNegativasComentario;
 	}
 
-	public void setNombreUsuario(TextArea nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
-	}
-
+	@Id("MeGusta")
+	private Button megusta;
+	@Id("NoMeGusta")
+	private Button nomegusta;
+	@Id("EliminarComentario")
+	private Button eliminar;
 	@Id("nombreUsuario")
 	private TextArea nombreUsuario;
 	@Id("contenidoComentario")
@@ -58,9 +58,6 @@ public class VistaListadecomentariosgenerico_item extends LitTemplate {
 	private TextArea valoracionesPositivasComentario;
 	@Id("valoracionesNegativasComentario")
 	private TextArea valoracionesNegativasComentario;
-	public VistaListadecomentariosgenerico_item() {
-        // You can initialise any data required for the connected UI components here.
-    }
 
 	public Button getMegusta() {
 		return megusta;

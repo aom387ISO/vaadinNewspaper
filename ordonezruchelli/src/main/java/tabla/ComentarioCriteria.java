@@ -24,7 +24,7 @@ public class ComentarioCriteria extends AbstractORMCriteria {
 	public final AssociationExpression comenta;
 	public final IntegerExpression autorId;
 	public final AssociationExpression autor;
-	public final IntegerExpression contenido;
+	public final StringExpression contenido;
 	public final IntegerExpression nValoracionesPositvas;
 	public final IntegerExpression nValoracionesNegativas;
 	public final CollectionExpression valoracionComentario;
@@ -36,7 +36,7 @@ public class ComentarioCriteria extends AbstractORMCriteria {
 		comenta = new AssociationExpression("comenta", this);
 		autorId = new IntegerExpression("autor.idUsuario", this);
 		autor = new AssociationExpression("autor", this);
-		contenido = new IntegerExpression("contenido", this);
+		contenido = new StringExpression("contenido", this);
 		nValoracionesPositvas = new IntegerExpression("nValoracionesPositvas", this);
 		nValoracionesNegativas = new IntegerExpression("nValoracionesNegativas", this);
 		valoracionComentario = new CollectionExpression("ORM_valoracionComentario", this);

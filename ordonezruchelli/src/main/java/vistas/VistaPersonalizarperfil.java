@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-personalizarperfil")
 @JsModule("./src/vista-personalizarperfil.ts")
@@ -21,6 +22,16 @@ public class VistaPersonalizarperfil extends LitTemplate {
 	private Button cambiarApodo;
 	@Id("cerrarSesion")
 	private Button cerrarSesion;
+	
+	
+	public Element getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(Element perfil) {
+		this.perfil = perfil;
+	}
+
 	public TextField getNuevaImagen() {
 		return nuevaImagen;
 	}
@@ -81,6 +92,8 @@ public class VistaPersonalizarperfil extends LitTemplate {
 	private Button volverPortada;
 	@Id("bajaUsuarioSuscrito")
 	private Button bajaUsuarioSuscrito;
+	@Id("Perfil")
+	private Element perfil;
 
 	public VistaPersonalizarperfil() {
         // You can initialise any data required for the connected UI components here.

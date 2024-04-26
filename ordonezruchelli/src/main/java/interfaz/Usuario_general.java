@@ -20,6 +20,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 	public Usuario_general(MainView MainView, tabla.Usuario usuario) {
 		this.MainView=MainView;
 		this._usuario = usuario;
+		this.getPerfil().add(_usuario.getApodo());
 				
 		//Componente estático Buscar Noticia
 		_buscar = new Buscar_noticia(this);
@@ -44,7 +45,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 			Visualizar_seccion();
 		});		
 		
-		_personalizar_perfil = new Personalizar_perfil(this);
+		_personalizar_perfil = new Personalizar_perfil(this, usuario);
 		this.getPersonalizar().addClickListener(event->{
 			this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			this.MainView.remove(_ver_noticia);

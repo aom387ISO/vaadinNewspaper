@@ -39,6 +39,16 @@ public class VistaUsuariogeneral extends LitTemplate {
 	}
 
 
+	public HorizontalLayout getPerfil() {
+		return perfil;
+	}
+
+
+	public void setPerfil(HorizontalLayout perfil) {
+		this.perfil = perfil;
+	}
+
+
 	public void setBuscarSuscrito(Element buscarSuscrito) {
 		this.buscarSuscrito = buscarSuscrito;
 	}
@@ -51,6 +61,8 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Element buscarSuscrito;
 	@Id("noticiasBanner")
 	private Element noticiasBanner;
+	@Id("Perfil")
+	private HorizontalLayout perfil;
 	public HorizontalLayout getBannerGeneral() {
 		return bannerGeneral;
 	}

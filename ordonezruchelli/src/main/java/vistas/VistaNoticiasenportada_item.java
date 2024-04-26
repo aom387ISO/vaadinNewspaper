@@ -5,6 +5,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.textfield.TextField;
 
 @Tag("vista-noticiasenportada_item")
 @JsModule("./src/vista-noticiasenportada_item.ts")
@@ -14,8 +16,27 @@ public class VistaNoticiasenportada_item extends LitTemplate {
 	private Button eliminarDePortada;
 	@Id("cambiarPosicionBoton")
 	private Button cambiarPosicionBoton;
-	
-    public VistaNoticiasenportada_item() {
+	@Id("noticiaPortada")
+	private TextArea noticiaPortada;
+	@Id("resumenNoticiaPortada")
+	private TextArea resumenNoticiaPortada;
+	public TextArea getNoticiaPortada() {
+		return noticiaPortada;
+	}
+
+	public void setNoticiaPortada(TextArea noticiaPortada) {
+		this.noticiaPortada = noticiaPortada;
+	}
+
+	public TextArea getResumenNoticiaPortada() {
+		return resumenNoticiaPortada;
+	}
+
+	public void setResumenNoticiaPortada(TextArea resumenNoticiaPortada) {
+		this.resumenNoticiaPortada = resumenNoticiaPortada;
+	}
+
+	public VistaNoticiasenportada_item() {
         // You can initialise any data required for the connected UI components here.
     }
 

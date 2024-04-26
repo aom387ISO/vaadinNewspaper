@@ -22,7 +22,7 @@ public class Usuario_suscrito extends Usuario_general {
 //		_personalizar_perfil_de_Usuario_suscrito = new Personalizar_perfil_de_Usuario_suscrito(this);
 //		Personalizar_perfil_de_Usuario_suscrito();
 		
-		_personalizar_perfil_de_Usuario_suscrito = new Personalizar_perfil_de_Usuario_suscrito(this);
+		_personalizar_perfil_de_Usuario_suscrito = new Personalizar_perfil_de_Usuario_suscrito(this, _usuario_suscrito);
 		this.getPersonalizarSuscrito().addClickListener(event->{
 //			this.MainView.removeAll();
 			this._personalizar_perfil_de_Usuario_suscrito._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();

@@ -24,7 +24,7 @@ public class ComentarioDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final AssociationExpression comenta;
 	public final IntegerExpression autorId;
 	public final AssociationExpression autor;
-	public final IntegerExpression contenido;
+	public final StringExpression contenido;
 	public final IntegerExpression nValoracionesPositvas;
 	public final IntegerExpression nValoracionesNegativas;
 	public final CollectionExpression valoracionComentario;
@@ -36,7 +36,7 @@ public class ComentarioDetachedCriteria extends AbstractORMDetachedCriteria {
 		comenta = new AssociationExpression("comenta", this.getDetachedCriteria());
 		autorId = new IntegerExpression("autor.idUsuario", this.getDetachedCriteria());
 		autor = new AssociationExpression("autor", this.getDetachedCriteria());
-		contenido = new IntegerExpression("contenido", this.getDetachedCriteria());
+		contenido = new StringExpression("contenido", this.getDetachedCriteria());
 		nValoracionesPositvas = new IntegerExpression("nValoracionesPositvas", this.getDetachedCriteria());
 		nValoracionesNegativas = new IntegerExpression("nValoracionesNegativas", this.getDetachedCriteria());
 		valoracionComentario = new CollectionExpression("ORM_valoracionComentario", this.getDetachedCriteria());
@@ -49,7 +49,7 @@ public class ComentarioDetachedCriteria extends AbstractORMDetachedCriteria {
 		comenta = new AssociationExpression("comenta", this.getDetachedCriteria());
 		autorId = new IntegerExpression("autor.idUsuario", this.getDetachedCriteria());
 		autor = new AssociationExpression("autor", this.getDetachedCriteria());
-		contenido = new IntegerExpression("contenido", this.getDetachedCriteria());
+		contenido = new StringExpression("contenido", this.getDetachedCriteria());
 		nValoracionesPositvas = new IntegerExpression("nValoracionesPositvas", this.getDetachedCriteria());
 		nValoracionesNegativas = new IntegerExpression("nValoracionesNegativas", this.getDetachedCriteria());
 		valoracionComentario = new CollectionExpression("ORM_valoracionComentario", this.getDetachedCriteria());

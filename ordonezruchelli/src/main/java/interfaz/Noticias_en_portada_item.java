@@ -11,6 +11,8 @@ public class Noticias_en_portada_item extends VistaNoticiasenportada_item{
 		super();
 		this._noticias_en_portada = _noticias_en_portada;
 		this._noticia = noticia;
+		this.getNoticiaPortada().setValue(_noticia.getTitulo());
+		this.getResumenNoticiaPortada().setValue(_noticia.getResumen());
 	}
 	
 	public void Eliminar_de_portada() {
