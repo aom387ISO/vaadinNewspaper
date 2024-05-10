@@ -7,10 +7,10 @@ public class Registrarse extends VistaRegistrarse{
 	public Gestor_correo _gestor_correo;
 	public Iniciar_sesion _iniciar_sesion;
 	
-	public Registrarse(Iniciar_sesion iniciar_sesion, Usuario_no_suscrito usuarioNoSuscrito) {
+	public Registrarse(Iniciar_sesion iniciar_sesion) {
 		super();
 		this._iniciar_sesion = iniciar_sesion;
-		this._iniciar_sesion._usuario_no_suscrito = usuarioNoSuscrito;
+//		this._iniciar_sesion._usuario_no_suscrito = usuarioNoSuscrito;
 		
 		
 		

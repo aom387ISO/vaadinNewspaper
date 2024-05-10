@@ -9,12 +9,12 @@ public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 	public Gestionar_seccion _gestionar_seccion;
 	public Listado_de_secciones _listado_de_secciones;
 	
-	public Cambiar_nombre_a_seccion (Gestionar_seccion gestionar_seccion,Editor editor) {
+	public Cambiar_nombre_a_seccion (Gestionar_seccion gestionar_seccion) {
 		super();
 		this._gestionar_seccion = gestionar_seccion;
-		this._gestionar_seccion._gestion_seccion._gestionar._editor = editor;
+				
 		
-		_listado_de_secciones = new Listado_de_secciones(editor);
+		_listado_de_secciones = new Listado_de_secciones(_gestionar_seccion._gestion_seccion._gestionar._editor);
 		Listado_de_secciones();
 		
 	}

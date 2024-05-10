@@ -9,11 +9,11 @@ public class Gestionar_portada extends VistaGestionarportada{
 	public Gestionar _gestionar;
 	public Noticias_en_portada _noticias_en_portada;
 	
-    public Gestionar_portada(Gestionar gestionar, Editor editor) {
+    public Gestionar_portada(Gestionar gestionar) {
 		super();
         this._gestionar = gestionar;
-        this._gestionar._editor = editor;		
-		_noticias_en_portada = new Noticias_en_portada(this, editor);
+		
+		_noticias_en_portada = new Noticias_en_portada(this);
 //		Noticias_en_portada();
 	}
 

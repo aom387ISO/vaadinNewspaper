@@ -36,7 +36,7 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 				_usuario_no_suscrito.MainView.add(periodista);
 			}
 		});
-		_registrarse = new Registrarse(this, _usuario_no_suscrito);
+		_registrarse = new Registrarse(this);
 
         this.getSuscribirseIniciarSesion().addClickListener(event -> {
 			this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();

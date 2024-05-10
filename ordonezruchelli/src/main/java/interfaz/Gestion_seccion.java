@@ -9,12 +9,11 @@ public class Gestion_seccion extends VistaGestionseccion{
 	public Gestionar _gestionar;
 	public Gestionar_seccion _gestionar_seccion;
 	
-	public Gestion_seccion (Gestionar gestionar, Editor editor) {
+	public Gestion_seccion (Gestionar gestionar) {
 		super();
 		this._gestionar = gestionar;
-		this._gestionar._editor = editor;
 		
-		_gestionar_seccion = new Gestionar_seccion(this, editor);
+		_gestionar_seccion = new Gestionar_seccion(this);
 		this.getGestionarSeccion().addClickListener(event->{
 			this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestionar_seccion();

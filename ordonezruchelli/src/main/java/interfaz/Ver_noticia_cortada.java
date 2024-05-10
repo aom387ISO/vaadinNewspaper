@@ -13,7 +13,7 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 		super();
 		this._usuario_no_suscrito = usuarioNoSuscrito;
 		
-		this._ir_a_comentarios = new Ir_a_comentarios(this, usuarioNoSuscrito);
+		this._ir_a_comentarios = new Ir_a_comentarios(this);
         this.getComentariosNoSuscrito().addAttachListener(event -> {
 			this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
         	

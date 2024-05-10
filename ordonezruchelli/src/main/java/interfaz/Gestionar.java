@@ -15,26 +15,26 @@ public class Gestionar extends VistaGestionar{
 		super();
 		this._editor = editor;
 		
-		this._gestionar_noticia_de_seccion = new Gestionar_noticia_de_seccion(this, editor);
+		this._gestionar_noticia_de_seccion = new Gestionar_noticia_de_seccion(this);
 		this.getGestionarNoticia().addClickListener(event->{
 			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestionar_noticia_de_seccion();
 		});	
 		
-		this._gestionar_periodistas = new Gestionar_periodistas(this, editor);
+		this._gestionar_periodistas = new Gestionar_periodistas(this);
 		this.getGestionarPeriodistas().addClickListener(event->{
 			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestionar_periodistas();
 		});	
 		
 		
-		this._gestionar_portada = new Gestionar_portada(this, editor);
+		this._gestionar_portada = new Gestionar_portada(this);
 		this.getGestionarPortada().addClickListener(event->{
 			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestionar_portada();
 		});	
 		
-		this._gestion_seccion= new Gestion_seccion(this, editor); 
+		this._gestion_seccion= new Gestion_seccion(this); 
 		this.getGestionarSeccion().addClickListener(event->{
 			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestion_seccion();

@@ -8,8 +8,8 @@ public class Ver_comentarios extends VistaVercomentarios{
 	
 	public Ver_comentarios(Usuario_general usuarioGeneral) {
 		super();
-		this._ver_noticia = new Ver_noticia(usuarioGeneral);
 		this._ver_noticia._usuario_general = usuarioGeneral;
+		this._ver_noticia = new Ver_noticia(usuarioGeneral);
 	}
 
 	public void Lista_comentarios_valorables() {

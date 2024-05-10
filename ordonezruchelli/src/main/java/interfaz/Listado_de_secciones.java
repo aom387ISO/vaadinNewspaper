@@ -9,10 +9,9 @@ public class Listado_de_secciones extends Listado_de_secciones_generico {
 	public Anadir_noticia_a_seccion _anadir_noticia_a_seccion;
 	public Eliminar_noticia_de_seccion _eliminar_noticia_de_seccion;
 	public Vector<Listado_de_secciones_item> _item = new Vector<Listado_de_secciones_item>();
-	public Usuario_general usuarioGeneral;
 	
 	public Listado_de_secciones(Usuario_general usuarioGeneral) {
 		super();
-		this.usuarioGeneral = usuarioGeneral;
+		this._visualizar_seccion._usuario_general = usuarioGeneral;
 	}
 }

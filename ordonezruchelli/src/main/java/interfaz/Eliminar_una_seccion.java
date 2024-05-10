@@ -9,13 +9,11 @@ public class Eliminar_una_seccion extends VistaEliminarunaseccion{
 	public Gestionar_seccion _gestionar_seccion;
 	public Listado_de_secciones _listado_de_secciones;
 	
-	public Eliminar_una_seccion(Gestionar_seccion gestionar_seccion ,Editor editor) {
+	public Eliminar_una_seccion(Gestionar_seccion gestionar_seccion) {
 		super();
 		this._gestionar_seccion = gestionar_seccion;
-		this._gestionar_seccion._gestion_seccion._gestionar._editor = editor;
 		
-		
-		_listado_de_secciones = new Listado_de_secciones(editor);
+		_listado_de_secciones = new Listado_de_secciones(_gestionar_seccion._gestion_seccion._gestionar._editor);
 		Listado_de_secciones();
 	}
 
