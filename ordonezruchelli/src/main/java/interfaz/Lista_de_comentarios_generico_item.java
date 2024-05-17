@@ -4,9 +4,9 @@ import vistas.VistaListadecomentariosgenerico_item;
 
 public class Lista_de_comentarios_generico_item extends VistaListadecomentariosgenerico_item{
 	public Lista_de_comentarios_generico _lista_de_comentarios_generico;
-	tabla.Comentario _comentario;
+	bbdd.Comentario _comentario;
 
-	public Lista_de_comentarios_generico_item(Lista_de_comentarios_generico _lista_de_comentarios_generico,	tabla.Comentario comentario) {
+	public Lista_de_comentarios_generico_item(Lista_de_comentarios_generico _lista_de_comentarios_generico,	bbdd.Comentario comentario) {
 		super();
 		this._comentario = comentario;
 		this.getNombreUsuario().setValue(_comentario.getAutor().getApodo());

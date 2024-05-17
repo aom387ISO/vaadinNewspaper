@@ -10,90 +10,90 @@ public class ListProyectofinalData {
 	
 	public void listTestData() throws PersistentException {
 		System.out.println("Listing Noticia...");
-		tabla.Noticia[] tablaNoticias = tabla.NoticiaDAO.listNoticiaByQuery(null, null);
-		int length = Math.min(tablaNoticias.length, ROW_COUNT);
+		bbdd.Noticia[] bbddNoticias = bbdd.NoticiaDAO.listNoticiaByQuery(null, null);
+		int length = Math.min(bbddNoticias.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaNoticias[i]);
+			System.out.println(bbddNoticias[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Usuario...");
-		tabla.Usuario[] tablaUsuarios = tabla.UsuarioDAO.listUsuarioByQuery(null, null);
-		length = Math.min(tablaUsuarios.length, ROW_COUNT);
+		bbdd.Usuario[] bbddUsuarios = bbdd.UsuarioDAO.listUsuarioByQuery(null, null);
+		length = Math.min(bbddUsuarios.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaUsuarios[i]);
+			System.out.println(bbddUsuarios[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Periodista...");
-		tabla.Periodista[] tablaPeriodistas = tabla.PeriodistaDAO.listPeriodistaByQuery(null, null);
-		length = Math.min(tablaPeriodistas.length, ROW_COUNT);
+		bbdd.Periodista[] bbddPeriodistas = bbdd.PeriodistaDAO.listPeriodistaByQuery(null, null);
+		length = Math.min(bbddPeriodistas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaPeriodistas[i]);
+			System.out.println(bbddPeriodistas[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Usuario_suscrito...");
-		tabla.Usuario_suscrito[] tablaUsuario_suscritos = tabla.Usuario_suscritoDAO.listUsuario_suscritoByQuery(null, null);
-		length = Math.min(tablaUsuario_suscritos.length, ROW_COUNT);
+		bbdd.Usuario_suscrito[] bbddUsuario_suscritos = bbdd.Usuario_suscritoDAO.listUsuario_suscritoByQuery(null, null);
+		length = Math.min(bbddUsuario_suscritos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaUsuario_suscritos[i]);
+			System.out.println(bbddUsuario_suscritos[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Editor...");
-		tabla.Editor[] tablaEditors = tabla.EditorDAO.listEditorByQuery(null, null);
-		length = Math.min(tablaEditors.length, ROW_COUNT);
+		bbdd.Editor[] bbddEditors = bbdd.EditorDAO.listEditorByQuery(null, null);
+		length = Math.min(bbddEditors.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaEditors[i]);
+			System.out.println(bbddEditors[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Comentario...");
-		tabla.Comentario[] tablaComentarios = tabla.ComentarioDAO.listComentarioByQuery(null, null);
-		length = Math.min(tablaComentarios.length, ROW_COUNT);
+		bbdd.Comentario[] bbddComentarios = bbdd.ComentarioDAO.listComentarioByQuery(null, null);
+		length = Math.min(bbddComentarios.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaComentarios[i]);
+			System.out.println(bbddComentarios[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Seccion...");
-		tabla.Seccion[] tablaSeccions = tabla.SeccionDAO.listSeccionByQuery(null, null);
-		length = Math.min(tablaSeccions.length, ROW_COUNT);
+		bbdd.Seccion[] bbddSeccions = bbdd.SeccionDAO.listSeccionByQuery(null, null);
+		length = Math.min(bbddSeccions.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaSeccions[i]);
+			System.out.println(bbddSeccions[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Tematica...");
-		tabla.Tematica[] tablaTematicas = tabla.TematicaDAO.listTematicaByQuery(null, null);
-		length = Math.min(tablaTematicas.length, ROW_COUNT);
+		bbdd.Tematica[] bbddTematicas = bbdd.TematicaDAO.listTematicaByQuery(null, null);
+		length = Math.min(bbddTematicas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaTematicas[i]);
+			System.out.println(bbddTematicas[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Foto...");
-		tabla.Foto[] tablaFotos = tabla.FotoDAO.listFotoByQuery(null, null);
-		length = Math.min(tablaFotos.length, ROW_COUNT);
+		bbdd.Foto[] bbddFotos = bbdd.FotoDAO.listFotoByQuery(null, null);
+		length = Math.min(bbddFotos.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaFotos[i]);
+			System.out.println(bbddFotos[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing ValoracionNoticia...");
-		tabla.ValoracionNoticia[] tablaValoracionNoticias = tabla.ValoracionNoticiaDAO.listValoracionNoticiaByQuery(null, null);
-		length = Math.min(tablaValoracionNoticias.length, ROW_COUNT);
+		bbdd.ValoracionNoticia[] bbddValoracionNoticias = bbdd.ValoracionNoticiaDAO.listValoracionNoticiaByQuery(null, null);
+		length = Math.min(bbddValoracionNoticias.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaValoracionNoticias[i]);
+			System.out.println(bbddValoracionNoticias[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing ValoracionComentario...");
-		tabla.ValoracionComentario[] tablaValoracionComentarios = tabla.ValoracionComentarioDAO.listValoracionComentarioByQuery(null, null);
-		length = Math.min(tablaValoracionComentarios.length, ROW_COUNT);
+		bbdd.ValoracionComentario[] bbddValoracionComentarios = bbdd.ValoracionComentarioDAO.listValoracionComentarioByQuery(null, null);
+		length = Math.min(bbddValoracionComentarios.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
-			System.out.println(tablaValoracionComentarios[i]);
+			System.out.println(bbddValoracionComentarios[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
 		
@@ -101,134 +101,134 @@ public class ListProyectofinalData {
 	
 	public void listByCriteria() throws PersistentException {
 		System.out.println("Listing Noticia by Criteria...");
-		tabla.NoticiaCriteria ltablaNoticiaCriteria = new tabla.NoticiaCriteria();
+		bbdd.NoticiaCriteria lbbddNoticiaCriteria = new bbdd.NoticiaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaNoticiaCriteria.idNoticia.eq();
-		ltablaNoticiaCriteria.setMaxResults(ROW_COUNT);
-		tabla.Noticia[] tablaNoticias = ltablaNoticiaCriteria.listNoticia();
-		int length =tablaNoticias== null ? 0 : Math.min(tablaNoticias.length, ROW_COUNT); 
+		//lbbddNoticiaCriteria.idNoticia.eq();
+		lbbddNoticiaCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Noticia[] bbddNoticias = lbbddNoticiaCriteria.listNoticia();
+		int length =bbddNoticias== null ? 0 : Math.min(bbddNoticias.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaNoticias[i]);
+			 System.out.println(bbddNoticias[i]);
 		}
 		System.out.println(length + " Noticia record(s) retrieved."); 
 		
 		System.out.println("Listing Usuario by Criteria...");
-		tabla.UsuarioCriteria ltablaUsuarioCriteria = new tabla.UsuarioCriteria();
+		bbdd.UsuarioCriteria lbbddUsuarioCriteria = new bbdd.UsuarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaUsuarioCriteria.idUsuario.eq();
-		ltablaUsuarioCriteria.setMaxResults(ROW_COUNT);
-		tabla.Usuario[] tablaUsuarios = ltablaUsuarioCriteria.listUsuario();
-		length =tablaUsuarios== null ? 0 : Math.min(tablaUsuarios.length, ROW_COUNT); 
+		//lbbddUsuarioCriteria.idUsuario.eq();
+		lbbddUsuarioCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Usuario[] bbddUsuarios = lbbddUsuarioCriteria.listUsuario();
+		length =bbddUsuarios== null ? 0 : Math.min(bbddUsuarios.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaUsuarios[i]);
+			 System.out.println(bbddUsuarios[i]);
 		}
 		System.out.println(length + " Usuario record(s) retrieved."); 
 		
 		System.out.println("Listing Periodista by Criteria...");
-		tabla.PeriodistaCriteria ltablaPeriodistaCriteria = new tabla.PeriodistaCriteria();
+		bbdd.PeriodistaCriteria lbbddPeriodistaCriteria = new bbdd.PeriodistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaPeriodistaCriteria.idUsuario.eq();
-		ltablaPeriodistaCriteria.setMaxResults(ROW_COUNT);
-		tabla.Periodista[] tablaPeriodistas = ltablaPeriodistaCriteria.listPeriodista();
-		length =tablaPeriodistas== null ? 0 : Math.min(tablaPeriodistas.length, ROW_COUNT); 
+		//lbbddPeriodistaCriteria.idUsuario.eq();
+		lbbddPeriodistaCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Periodista[] bbddPeriodistas = lbbddPeriodistaCriteria.listPeriodista();
+		length =bbddPeriodistas== null ? 0 : Math.min(bbddPeriodistas.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaPeriodistas[i]);
+			 System.out.println(bbddPeriodistas[i]);
 		}
 		System.out.println(length + " Periodista record(s) retrieved."); 
 		
 		System.out.println("Listing Usuario_suscrito by Criteria...");
-		tabla.Usuario_suscritoCriteria ltablaUsuario_suscritoCriteria = new tabla.Usuario_suscritoCriteria();
+		bbdd.Usuario_suscritoCriteria lbbddUsuario_suscritoCriteria = new bbdd.Usuario_suscritoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaUsuario_suscritoCriteria.idUsuario.eq();
-		ltablaUsuario_suscritoCriteria.setMaxResults(ROW_COUNT);
-		tabla.Usuario_suscrito[] tablaUsuario_suscritos = ltablaUsuario_suscritoCriteria.listUsuario_suscrito();
-		length =tablaUsuario_suscritos== null ? 0 : Math.min(tablaUsuario_suscritos.length, ROW_COUNT); 
+		//lbbddUsuario_suscritoCriteria.idUsuario.eq();
+		lbbddUsuario_suscritoCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Usuario_suscrito[] bbddUsuario_suscritos = lbbddUsuario_suscritoCriteria.listUsuario_suscrito();
+		length =bbddUsuario_suscritos== null ? 0 : Math.min(bbddUsuario_suscritos.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaUsuario_suscritos[i]);
+			 System.out.println(bbddUsuario_suscritos[i]);
 		}
 		System.out.println(length + " Usuario_suscrito record(s) retrieved."); 
 		
 		System.out.println("Listing Editor by Criteria...");
-		tabla.EditorCriteria ltablaEditorCriteria = new tabla.EditorCriteria();
+		bbdd.EditorCriteria lbbddEditorCriteria = new bbdd.EditorCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaEditorCriteria.idUsuario.eq();
-		ltablaEditorCriteria.setMaxResults(ROW_COUNT);
-		tabla.Editor[] tablaEditors = ltablaEditorCriteria.listEditor();
-		length =tablaEditors== null ? 0 : Math.min(tablaEditors.length, ROW_COUNT); 
+		//lbbddEditorCriteria.idUsuario.eq();
+		lbbddEditorCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Editor[] bbddEditors = lbbddEditorCriteria.listEditor();
+		length =bbddEditors== null ? 0 : Math.min(bbddEditors.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaEditors[i]);
+			 System.out.println(bbddEditors[i]);
 		}
 		System.out.println(length + " Editor record(s) retrieved."); 
 		
 		System.out.println("Listing Comentario by Criteria...");
-		tabla.ComentarioCriteria ltablaComentarioCriteria = new tabla.ComentarioCriteria();
+		bbdd.ComentarioCriteria lbbddComentarioCriteria = new bbdd.ComentarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaComentarioCriteria.idComentario.eq();
-		ltablaComentarioCriteria.setMaxResults(ROW_COUNT);
-		tabla.Comentario[] tablaComentarios = ltablaComentarioCriteria.listComentario();
-		length =tablaComentarios== null ? 0 : Math.min(tablaComentarios.length, ROW_COUNT); 
+		//lbbddComentarioCriteria.idComentario.eq();
+		lbbddComentarioCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Comentario[] bbddComentarios = lbbddComentarioCriteria.listComentario();
+		length =bbddComentarios== null ? 0 : Math.min(bbddComentarios.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaComentarios[i]);
+			 System.out.println(bbddComentarios[i]);
 		}
 		System.out.println(length + " Comentario record(s) retrieved."); 
 		
 		System.out.println("Listing Seccion by Criteria...");
-		tabla.SeccionCriteria ltablaSeccionCriteria = new tabla.SeccionCriteria();
+		bbdd.SeccionCriteria lbbddSeccionCriteria = new bbdd.SeccionCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaSeccionCriteria.idSeccion.eq();
-		ltablaSeccionCriteria.setMaxResults(ROW_COUNT);
-		tabla.Seccion[] tablaSeccions = ltablaSeccionCriteria.listSeccion();
-		length =tablaSeccions== null ? 0 : Math.min(tablaSeccions.length, ROW_COUNT); 
+		//lbbddSeccionCriteria.idSeccion.eq();
+		lbbddSeccionCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Seccion[] bbddSeccions = lbbddSeccionCriteria.listSeccion();
+		length =bbddSeccions== null ? 0 : Math.min(bbddSeccions.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaSeccions[i]);
+			 System.out.println(bbddSeccions[i]);
 		}
 		System.out.println(length + " Seccion record(s) retrieved."); 
 		
 		System.out.println("Listing Tematica by Criteria...");
-		tabla.TematicaCriteria ltablaTematicaCriteria = new tabla.TematicaCriteria();
+		bbdd.TematicaCriteria lbbddTematicaCriteria = new bbdd.TematicaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaTematicaCriteria.idTematica.eq();
-		ltablaTematicaCriteria.setMaxResults(ROW_COUNT);
-		tabla.Tematica[] tablaTematicas = ltablaTematicaCriteria.listTematica();
-		length =tablaTematicas== null ? 0 : Math.min(tablaTematicas.length, ROW_COUNT); 
+		//lbbddTematicaCriteria.idTematica.eq();
+		lbbddTematicaCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Tematica[] bbddTematicas = lbbddTematicaCriteria.listTematica();
+		length =bbddTematicas== null ? 0 : Math.min(bbddTematicas.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaTematicas[i]);
+			 System.out.println(bbddTematicas[i]);
 		}
 		System.out.println(length + " Tematica record(s) retrieved."); 
 		
 		System.out.println("Listing Foto by Criteria...");
-		tabla.FotoCriteria ltablaFotoCriteria = new tabla.FotoCriteria();
+		bbdd.FotoCriteria lbbddFotoCriteria = new bbdd.FotoCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaFotoCriteria.idFoto.eq();
-		ltablaFotoCriteria.setMaxResults(ROW_COUNT);
-		tabla.Foto[] tablaFotos = ltablaFotoCriteria.listFoto();
-		length =tablaFotos== null ? 0 : Math.min(tablaFotos.length, ROW_COUNT); 
+		//lbbddFotoCriteria.idFoto.eq();
+		lbbddFotoCriteria.setMaxResults(ROW_COUNT);
+		bbdd.Foto[] bbddFotos = lbbddFotoCriteria.listFoto();
+		length =bbddFotos== null ? 0 : Math.min(bbddFotos.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaFotos[i]);
+			 System.out.println(bbddFotos[i]);
 		}
 		System.out.println(length + " Foto record(s) retrieved."); 
 		
 		System.out.println("Listing ValoracionNoticia by Criteria...");
-		tabla.ValoracionNoticiaCriteria ltablaValoracionNoticiaCriteria = new tabla.ValoracionNoticiaCriteria();
+		bbdd.ValoracionNoticiaCriteria lbbddValoracionNoticiaCriteria = new bbdd.ValoracionNoticiaCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaValoracionNoticiaCriteria.idValoracionNoticia.eq();
-		ltablaValoracionNoticiaCriteria.setMaxResults(ROW_COUNT);
-		tabla.ValoracionNoticia[] tablaValoracionNoticias = ltablaValoracionNoticiaCriteria.listValoracionNoticia();
-		length =tablaValoracionNoticias== null ? 0 : Math.min(tablaValoracionNoticias.length, ROW_COUNT); 
+		//lbbddValoracionNoticiaCriteria.idValoracionNoticia.eq();
+		lbbddValoracionNoticiaCriteria.setMaxResults(ROW_COUNT);
+		bbdd.ValoracionNoticia[] bbddValoracionNoticias = lbbddValoracionNoticiaCriteria.listValoracionNoticia();
+		length =bbddValoracionNoticias== null ? 0 : Math.min(bbddValoracionNoticias.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaValoracionNoticias[i]);
+			 System.out.println(bbddValoracionNoticias[i]);
 		}
 		System.out.println(length + " ValoracionNoticia record(s) retrieved."); 
 		
 		System.out.println("Listing ValoracionComentario by Criteria...");
-		tabla.ValoracionComentarioCriteria ltablaValoracionComentarioCriteria = new tabla.ValoracionComentarioCriteria();
+		bbdd.ValoracionComentarioCriteria lbbddValoracionComentarioCriteria = new bbdd.ValoracionComentarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//ltablaValoracionComentarioCriteria.idValoracionComentario.eq();
-		ltablaValoracionComentarioCriteria.setMaxResults(ROW_COUNT);
-		tabla.ValoracionComentario[] tablaValoracionComentarios = ltablaValoracionComentarioCriteria.listValoracionComentario();
-		length =tablaValoracionComentarios== null ? 0 : Math.min(tablaValoracionComentarios.length, ROW_COUNT); 
+		//lbbddValoracionComentarioCriteria.idValoracionComentario.eq();
+		lbbddValoracionComentarioCriteria.setMaxResults(ROW_COUNT);
+		bbdd.ValoracionComentario[] bbddValoracionComentarios = lbbddValoracionComentarioCriteria.listValoracionComentario();
+		length =bbddValoracionComentarios== null ? 0 : Math.min(bbddValoracionComentarios.length, ROW_COUNT); 
 		for (int i = 0; i < length; i++) {
-			 System.out.println(tablaValoracionComentarios[i]);
+			 System.out.println(bbddValoracionComentarios[i]);
 		}
 		System.out.println(length + " ValoracionComentario record(s) retrieved."); 
 		
@@ -242,7 +242,7 @@ public class ListProyectofinalData {
 				//listProyectofinalData.listByCriteria();
 			}
 			finally {
-				tabla.ProyectofinalPersistentManager.instance().disposePersistentManager();
+				bbdd.ProyectofinalPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

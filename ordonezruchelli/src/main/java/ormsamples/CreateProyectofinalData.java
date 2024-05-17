@@ -7,41 +7,41 @@ package ormsamples;
 import org.orm.*;
 public class CreateProyectofinalData {
 	public void createTestData() throws PersistentException {
-		PersistentTransaction t = tabla.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = bbdd.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
-			tabla.Noticia ltablaNoticia = tabla.NoticiaDAO.createNoticia();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene, incluye, comentada_por, está_contenida, nValoracionesNegativas, nValoracionesPositivas, autor
-			tabla.NoticiaDAO.save(ltablaNoticia);
-			tabla.Usuario ltablaUsuario = tabla.UsuarioDAO.createUsuario();
+			bbdd.Noticia lbbddNoticia = bbdd.NoticiaDAO.createNoticia();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene, incluye, comentada_por, esta_contenida, nValoracionesNegativas, nValoracionesPositivas, autor
+			bbdd.NoticiaDAO.save(lbbddNoticia);
+			bbdd.Usuario lbbddUsuario = bbdd.UsuarioDAO.createUsuario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : escribir, tiene_imagen
-			tabla.UsuarioDAO.save(ltablaUsuario);
-			tabla.Periodista ltablaPeriodista = tabla.PeriodistaDAO.createPeriodista();
+			bbdd.UsuarioDAO.save(lbbddUsuario);
+			bbdd.Periodista lbbddPeriodista = bbdd.PeriodistaDAO.createPeriodista();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : publica, estado
-			tabla.PeriodistaDAO.save(ltablaPeriodista);
-			tabla.Usuario_suscrito ltablaUsuario_suscrito = tabla.Usuario_suscritoDAO.createUsuario_suscrito();
+			bbdd.PeriodistaDAO.save(lbbddPeriodista);
+			bbdd.Usuario_suscrito lbbddUsuario_suscrito = bbdd.Usuario_suscritoDAO.createUsuario_suscrito();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : estado
-			tabla.Usuario_suscritoDAO.save(ltablaUsuario_suscrito);
-			tabla.Editor ltablaEditor = tabla.EditorDAO.createEditor();
+			bbdd.Usuario_suscritoDAO.save(lbbddUsuario_suscrito);
+			bbdd.Editor lbbddEditor = bbdd.EditorDAO.createEditor();
 			// Initialize the properties of the persistent object here
-			tabla.EditorDAO.save(ltablaEditor);
-			tabla.Comentario ltablaComentario = tabla.ComentarioDAO.createComentario();
+			bbdd.EditorDAO.save(lbbddEditor);
+			bbdd.Comentario lbbddComentario = bbdd.ComentarioDAO.createComentario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : nValoracionesNegativas, nValoracionesPositvas, contenido, autor, comenta
-			tabla.ComentarioDAO.save(ltablaComentario);
-			tabla.Seccion ltablaSeccion = tabla.SeccionDAO.createSeccion();
+			bbdd.ComentarioDAO.save(lbbddComentario);
+			bbdd.Seccion lbbddSeccion = bbdd.SeccionDAO.createSeccion();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : se_encuentra, portada, idSeccion
-			tabla.SeccionDAO.save(ltablaSeccion);
-			tabla.Tematica ltablaTematica = tabla.TematicaDAO.createTematica();
+			bbdd.SeccionDAO.save(lbbddSeccion);
+			bbdd.Tematica lbbddTematica = bbdd.TematicaDAO.createTematica();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : da_tematica_a, idTematica
-			tabla.TematicaDAO.save(ltablaTematica);
-			tabla.Foto ltablaFoto = tabla.FotoDAO.createFoto();
+			bbdd.TematicaDAO.save(lbbddTematica);
+			bbdd.Foto lbbddFoto = bbdd.FotoDAO.createFoto();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : le_da_imagen_a, pertenece
-			tabla.FotoDAO.save(ltablaFoto);
-			tabla.ValoracionNoticia ltablaValoracionNoticia = tabla.ValoracionNoticiaDAO.createValoracionNoticia();
+			bbdd.FotoDAO.save(lbbddFoto);
+			bbdd.ValoracionNoticia lbbddValoracionNoticia = bbdd.ValoracionNoticiaDAO.createValoracionNoticia();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : valoracion
-			tabla.ValoracionNoticiaDAO.save(ltablaValoracionNoticia);
-			tabla.ValoracionComentario ltablaValoracionComentario = tabla.ValoracionComentarioDAO.createValoracionComentario();
+			bbdd.ValoracionNoticiaDAO.save(lbbddValoracionNoticia);
+			bbdd.ValoracionComentario lbbddValoracionComentario = bbdd.ValoracionComentarioDAO.createValoracionComentario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : valoracion
-			tabla.ValoracionComentarioDAO.save(ltablaValoracionComentario);
+			bbdd.ValoracionComentarioDAO.save(lbbddValoracionComentario);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -57,7 +57,7 @@ public class CreateProyectofinalData {
 				createProyectofinalData.createTestData();
 			}
 			finally {
-				tabla.ProyectofinalPersistentManager.instance().disposePersistentManager();
+				bbdd.ProyectofinalPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

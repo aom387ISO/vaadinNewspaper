@@ -16,7 +16,7 @@
     <Column name="PeriodistaUsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Periodista.UsuarioIdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Periodista.UsuarioIdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -107,7 +107,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -132,7 +132,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -146,7 +146,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -171,7 +171,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -183,7 +183,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -355,7 +355,7 @@
     <Column name="SeccionIdSeccion">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Seccion.IdSeccion</ReferencedColumn>
+      <ReferencedColumn>bbdd.Seccion.IdSeccion</ReferencedColumn>
       <Type>27</Type>
       <Length>255</Length>
       <Nullable>true</Nullable>
@@ -380,7 +380,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -392,7 +392,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -428,7 +428,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -440,7 +440,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -476,7 +476,7 @@
     <Column name="ComentarioIdComentario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Comentario.IdComentario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Comentario.IdComentario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -488,7 +488,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -513,7 +513,7 @@
     <Column name="SeccionIdSeccion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Seccion.IdSeccion</ReferencedColumn>
+      <ReferencedColumn>bbdd.Seccion.IdSeccion</ReferencedColumn>
       <Type>27</Type>
       <Length>255</Length>
       <Nullable>false</Nullable>
@@ -525,7 +525,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -539,7 +539,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -551,7 +551,7 @@
     <Column name="TematicaIdTematica">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>tabla.Tematica.IdTematica</ReferencedColumn>
+      <ReferencedColumn>bbdd.Tematica.IdTematica</ReferencedColumn>
       <Type>27</Type>
       <Length>255</Length>
       <Nullable>false</Nullable>

@@ -13,9 +13,9 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 	//	private event _cambiar_imagen;
 	//	private event _cerrar_sesion;
 	public Usuario_general _usuario_general;
-	tabla.Usuario usuario;
+	bbdd.Usuario usuario;
 	
-	public Personalizar_perfil(Usuario_general usuarioGeneral, tabla.Usuario usuario) {
+	public Personalizar_perfil(Usuario_general usuarioGeneral, bbdd.Usuario usuario) {
 		super();
 		this._usuario_general = usuarioGeneral;
 		this.usuario = usuario;

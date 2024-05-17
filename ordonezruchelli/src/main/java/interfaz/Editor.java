@@ -7,9 +7,9 @@ public class Editor extends Usuario_general {
 	public Ver_comentarios_de_Editor _ver_comentarios_de_Editor;
 	public Gestionar _gestionar;
 	
-	public tabla.Editor _editor;
+	public bbdd.Editor _editor;
 	
-	public Editor(proyectoMDS.MainView MainView, tabla.Editor editor) {
+	public Editor(proyectoMDS.MainView MainView, bbdd.Editor editor) {
 		super(MainView, editor);
 		this._editor = editor;
 		this.getGestionPeriodista().setVisible(false);

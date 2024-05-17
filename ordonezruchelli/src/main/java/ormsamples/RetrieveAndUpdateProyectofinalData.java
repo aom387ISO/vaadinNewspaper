@@ -7,41 +7,41 @@ package ormsamples;
 import org.orm.*;
 public class RetrieveAndUpdateProyectofinalData {
 	public void retrieveAndUpdateTestData() throws PersistentException {
-		PersistentTransaction t = tabla.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = bbdd.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
-			tabla.Noticia ltablaNoticia = tabla.NoticiaDAO.loadNoticiaByQuery(null, null);
+			bbdd.Noticia lbbddNoticia = bbdd.NoticiaDAO.loadNoticiaByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.NoticiaDAO.save(ltablaNoticia);
-			tabla.Usuario ltablaUsuario = tabla.UsuarioDAO.loadUsuarioByQuery(null, null);
+			bbdd.NoticiaDAO.save(lbbddNoticia);
+			bbdd.Usuario lbbddUsuario = bbdd.UsuarioDAO.loadUsuarioByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.UsuarioDAO.save(ltablaUsuario);
-			tabla.Periodista ltablaPeriodista = tabla.PeriodistaDAO.loadPeriodistaByQuery(null, null);
+			bbdd.UsuarioDAO.save(lbbddUsuario);
+			bbdd.Periodista lbbddPeriodista = bbdd.PeriodistaDAO.loadPeriodistaByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.PeriodistaDAO.save(ltablaPeriodista);
-			tabla.Usuario_suscrito ltablaUsuario_suscrito = tabla.Usuario_suscritoDAO.loadUsuario_suscritoByQuery(null, null);
+			bbdd.PeriodistaDAO.save(lbbddPeriodista);
+			bbdd.Usuario_suscrito lbbddUsuario_suscrito = bbdd.Usuario_suscritoDAO.loadUsuario_suscritoByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.Usuario_suscritoDAO.save(ltablaUsuario_suscrito);
-			tabla.Editor ltablaEditor = tabla.EditorDAO.loadEditorByQuery(null, null);
+			bbdd.Usuario_suscritoDAO.save(lbbddUsuario_suscrito);
+			bbdd.Editor lbbddEditor = bbdd.EditorDAO.loadEditorByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.EditorDAO.save(ltablaEditor);
-			tabla.Comentario ltablaComentario = tabla.ComentarioDAO.loadComentarioByQuery(null, null);
+			bbdd.EditorDAO.save(lbbddEditor);
+			bbdd.Comentario lbbddComentario = bbdd.ComentarioDAO.loadComentarioByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.ComentarioDAO.save(ltablaComentario);
-			tabla.Seccion ltablaSeccion = tabla.SeccionDAO.loadSeccionByQuery(null, null);
+			bbdd.ComentarioDAO.save(lbbddComentario);
+			bbdd.Seccion lbbddSeccion = bbdd.SeccionDAO.loadSeccionByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.SeccionDAO.save(ltablaSeccion);
-			tabla.Tematica ltablaTematica = tabla.TematicaDAO.loadTematicaByQuery(null, null);
+			bbdd.SeccionDAO.save(lbbddSeccion);
+			bbdd.Tematica lbbddTematica = bbdd.TematicaDAO.loadTematicaByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.TematicaDAO.save(ltablaTematica);
-			tabla.Foto ltablaFoto = tabla.FotoDAO.loadFotoByQuery(null, null);
+			bbdd.TematicaDAO.save(lbbddTematica);
+			bbdd.Foto lbbddFoto = bbdd.FotoDAO.loadFotoByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.FotoDAO.save(ltablaFoto);
-			tabla.ValoracionNoticia ltablaValoracionNoticia = tabla.ValoracionNoticiaDAO.loadValoracionNoticiaByQuery(null, null);
+			bbdd.FotoDAO.save(lbbddFoto);
+			bbdd.ValoracionNoticia lbbddValoracionNoticia = bbdd.ValoracionNoticiaDAO.loadValoracionNoticiaByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.ValoracionNoticiaDAO.save(ltablaValoracionNoticia);
-			tabla.ValoracionComentario ltablaValoracionComentario = tabla.ValoracionComentarioDAO.loadValoracionComentarioByQuery(null, null);
+			bbdd.ValoracionNoticiaDAO.save(lbbddValoracionNoticia);
+			bbdd.ValoracionComentario lbbddValoracionComentario = bbdd.ValoracionComentarioDAO.loadValoracionComentarioByQuery(null, null);
 			// Update the properties of the persistent object
-			tabla.ValoracionComentarioDAO.save(ltablaValoracionComentario);
+			bbdd.ValoracionComentarioDAO.save(lbbddValoracionComentario);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -52,70 +52,70 @@ public class RetrieveAndUpdateProyectofinalData {
 	
 	public void retrieveByCriteria() throws PersistentException {
 		System.out.println("Retrieving Noticia by NoticiaCriteria");
-		tabla.NoticiaCriteria ltablaNoticiaCriteria = new tabla.NoticiaCriteria();
+		bbdd.NoticiaCriteria lbbddNoticiaCriteria = new bbdd.NoticiaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaNoticiaCriteria.idNoticia.eq();
-		System.out.println(ltablaNoticiaCriteria.uniqueNoticia());
+		//lbbddNoticiaCriteria.idNoticia.eq();
+		System.out.println(lbbddNoticiaCriteria.uniqueNoticia());
 		
 		System.out.println("Retrieving Usuario by UsuarioCriteria");
-		tabla.UsuarioCriteria ltablaUsuarioCriteria = new tabla.UsuarioCriteria();
+		bbdd.UsuarioCriteria lbbddUsuarioCriteria = new bbdd.UsuarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaUsuarioCriteria.idUsuario.eq();
-		System.out.println(ltablaUsuarioCriteria.uniqueUsuario());
+		//lbbddUsuarioCriteria.idUsuario.eq();
+		System.out.println(lbbddUsuarioCriteria.uniqueUsuario());
 		
 		System.out.println("Retrieving Periodista by PeriodistaCriteria");
-		tabla.PeriodistaCriteria ltablaPeriodistaCriteria = new tabla.PeriodistaCriteria();
+		bbdd.PeriodistaCriteria lbbddPeriodistaCriteria = new bbdd.PeriodistaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaPeriodistaCriteria.idUsuario.eq();
-		System.out.println(ltablaPeriodistaCriteria.uniquePeriodista());
+		//lbbddPeriodistaCriteria.idUsuario.eq();
+		System.out.println(lbbddPeriodistaCriteria.uniquePeriodista());
 		
 		System.out.println("Retrieving Usuario_suscrito by Usuario_suscritoCriteria");
-		tabla.Usuario_suscritoCriteria ltablaUsuario_suscritoCriteria = new tabla.Usuario_suscritoCriteria();
+		bbdd.Usuario_suscritoCriteria lbbddUsuario_suscritoCriteria = new bbdd.Usuario_suscritoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaUsuario_suscritoCriteria.idUsuario.eq();
-		System.out.println(ltablaUsuario_suscritoCriteria.uniqueUsuario_suscrito());
+		//lbbddUsuario_suscritoCriteria.idUsuario.eq();
+		System.out.println(lbbddUsuario_suscritoCriteria.uniqueUsuario_suscrito());
 		
 		System.out.println("Retrieving Editor by EditorCriteria");
-		tabla.EditorCriteria ltablaEditorCriteria = new tabla.EditorCriteria();
+		bbdd.EditorCriteria lbbddEditorCriteria = new bbdd.EditorCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaEditorCriteria.idUsuario.eq();
-		System.out.println(ltablaEditorCriteria.uniqueEditor());
+		//lbbddEditorCriteria.idUsuario.eq();
+		System.out.println(lbbddEditorCriteria.uniqueEditor());
 		
 		System.out.println("Retrieving Comentario by ComentarioCriteria");
-		tabla.ComentarioCriteria ltablaComentarioCriteria = new tabla.ComentarioCriteria();
+		bbdd.ComentarioCriteria lbbddComentarioCriteria = new bbdd.ComentarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaComentarioCriteria.idComentario.eq();
-		System.out.println(ltablaComentarioCriteria.uniqueComentario());
+		//lbbddComentarioCriteria.idComentario.eq();
+		System.out.println(lbbddComentarioCriteria.uniqueComentario());
 		
 		System.out.println("Retrieving Seccion by SeccionCriteria");
-		tabla.SeccionCriteria ltablaSeccionCriteria = new tabla.SeccionCriteria();
+		bbdd.SeccionCriteria lbbddSeccionCriteria = new bbdd.SeccionCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaSeccionCriteria.idSeccion.eq();
-		System.out.println(ltablaSeccionCriteria.uniqueSeccion());
+		//lbbddSeccionCriteria.idSeccion.eq();
+		System.out.println(lbbddSeccionCriteria.uniqueSeccion());
 		
 		System.out.println("Retrieving Tematica by TematicaCriteria");
-		tabla.TematicaCriteria ltablaTematicaCriteria = new tabla.TematicaCriteria();
+		bbdd.TematicaCriteria lbbddTematicaCriteria = new bbdd.TematicaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaTematicaCriteria.idTematica.eq();
-		System.out.println(ltablaTematicaCriteria.uniqueTematica());
+		//lbbddTematicaCriteria.idTematica.eq();
+		System.out.println(lbbddTematicaCriteria.uniqueTematica());
 		
 		System.out.println("Retrieving Foto by FotoCriteria");
-		tabla.FotoCriteria ltablaFotoCriteria = new tabla.FotoCriteria();
+		bbdd.FotoCriteria lbbddFotoCriteria = new bbdd.FotoCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaFotoCriteria.idFoto.eq();
-		System.out.println(ltablaFotoCriteria.uniqueFoto());
+		//lbbddFotoCriteria.idFoto.eq();
+		System.out.println(lbbddFotoCriteria.uniqueFoto());
 		
 		System.out.println("Retrieving ValoracionNoticia by ValoracionNoticiaCriteria");
-		tabla.ValoracionNoticiaCriteria ltablaValoracionNoticiaCriteria = new tabla.ValoracionNoticiaCriteria();
+		bbdd.ValoracionNoticiaCriteria lbbddValoracionNoticiaCriteria = new bbdd.ValoracionNoticiaCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaValoracionNoticiaCriteria.idValoracionNoticia.eq();
-		System.out.println(ltablaValoracionNoticiaCriteria.uniqueValoracionNoticia());
+		//lbbddValoracionNoticiaCriteria.idValoracionNoticia.eq();
+		System.out.println(lbbddValoracionNoticiaCriteria.uniqueValoracionNoticia());
 		
 		System.out.println("Retrieving ValoracionComentario by ValoracionComentarioCriteria");
-		tabla.ValoracionComentarioCriteria ltablaValoracionComentarioCriteria = new tabla.ValoracionComentarioCriteria();
+		bbdd.ValoracionComentarioCriteria lbbddValoracionComentarioCriteria = new bbdd.ValoracionComentarioCriteria();
 		// Please uncomment the follow line and fill in parameter(s)
-		//ltablaValoracionComentarioCriteria.idValoracionComentario.eq();
-		System.out.println(ltablaValoracionComentarioCriteria.uniqueValoracionComentario());
+		//lbbddValoracionComentarioCriteria.idValoracionComentario.eq();
+		System.out.println(lbbddValoracionComentarioCriteria.uniqueValoracionComentario());
 		
 	}
 	
@@ -128,7 +128,7 @@ public class RetrieveAndUpdateProyectofinalData {
 				//retrieveAndUpdateProyectofinalData.retrieveByCriteria();
 			}
 			finally {
-				tabla.ProyectofinalPersistentManager.instance().disposePersistentManager();
+				bbdd.ProyectofinalPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

@@ -13,11 +13,11 @@ public class Usuario_general extends VistaUsuariogeneral{
 	public Personalizar_perfil _personalizar_perfil;
 	public Buscar_noticia _buscar;
 
-	tabla.Usuario _usuario;
+	bbdd.Usuario _usuario;
 
 
 	public MainView MainView;
-	public Usuario_general(MainView MainView, tabla.Usuario usuario) {
+	public Usuario_general(MainView MainView, bbdd.Usuario usuario) {
 		this.MainView=MainView;
 		this._usuario = usuario;
 		this.getPerfil().add(_usuario.getApodo());

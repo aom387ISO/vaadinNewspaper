@@ -6,8 +6,8 @@ public class Noticias_en_portada_item extends VistaNoticiasenportada_item{
 	//	private event _eliminar_de_portada;
 	public Noticias_en_portada _noticias_en_portada;
 	public Introducir_nueva_posicion_en_portada _introducir_nueva_posicion_en_portada;
-	tabla.Noticia _noticia;
-	public Noticias_en_portada_item(Noticias_en_portada _noticias_en_portada, tabla.Noticia noticia) {
+	bbdd.Noticia _noticia;
+	public Noticias_en_portada_item(Noticias_en_portada _noticias_en_portada, bbdd.Noticia noticia) {
 		super();
 		this._noticias_en_portada = _noticias_en_portada;
 		this._noticia = noticia;

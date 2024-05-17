@@ -7,41 +7,41 @@ package ormsamples;
 import org.orm.*;
 public class DeleteProyectofinalData {
 	public void deleteTestData() throws PersistentException {
-		PersistentTransaction t = tabla.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = bbdd.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
-			tabla.Noticia ltablaNoticia = tabla.NoticiaDAO.loadNoticiaByQuery(null, null);
+			bbdd.Noticia lbbddNoticia = bbdd.NoticiaDAO.loadNoticiaByQuery(null, null);
 			// Delete the persistent object
-			tabla.NoticiaDAO.delete(ltablaNoticia);
-			tabla.Usuario ltablaUsuario = tabla.UsuarioDAO.loadUsuarioByQuery(null, null);
+			bbdd.NoticiaDAO.delete(lbbddNoticia);
+			bbdd.Usuario lbbddUsuario = bbdd.UsuarioDAO.loadUsuarioByQuery(null, null);
 			// Delete the persistent object
-			tabla.UsuarioDAO.delete(ltablaUsuario);
-			tabla.Periodista ltablaPeriodista = tabla.PeriodistaDAO.loadPeriodistaByQuery(null, null);
+			bbdd.UsuarioDAO.delete(lbbddUsuario);
+			bbdd.Periodista lbbddPeriodista = bbdd.PeriodistaDAO.loadPeriodistaByQuery(null, null);
 			// Delete the persistent object
-			tabla.PeriodistaDAO.delete(ltablaPeriodista);
-			tabla.Usuario_suscrito ltablaUsuario_suscrito = tabla.Usuario_suscritoDAO.loadUsuario_suscritoByQuery(null, null);
+			bbdd.PeriodistaDAO.delete(lbbddPeriodista);
+			bbdd.Usuario_suscrito lbbddUsuario_suscrito = bbdd.Usuario_suscritoDAO.loadUsuario_suscritoByQuery(null, null);
 			// Delete the persistent object
-			tabla.Usuario_suscritoDAO.delete(ltablaUsuario_suscrito);
-			tabla.Editor ltablaEditor = tabla.EditorDAO.loadEditorByQuery(null, null);
+			bbdd.Usuario_suscritoDAO.delete(lbbddUsuario_suscrito);
+			bbdd.Editor lbbddEditor = bbdd.EditorDAO.loadEditorByQuery(null, null);
 			// Delete the persistent object
-			tabla.EditorDAO.delete(ltablaEditor);
-			tabla.Comentario ltablaComentario = tabla.ComentarioDAO.loadComentarioByQuery(null, null);
+			bbdd.EditorDAO.delete(lbbddEditor);
+			bbdd.Comentario lbbddComentario = bbdd.ComentarioDAO.loadComentarioByQuery(null, null);
 			// Delete the persistent object
-			tabla.ComentarioDAO.delete(ltablaComentario);
-			tabla.Seccion ltablaSeccion = tabla.SeccionDAO.loadSeccionByQuery(null, null);
+			bbdd.ComentarioDAO.delete(lbbddComentario);
+			bbdd.Seccion lbbddSeccion = bbdd.SeccionDAO.loadSeccionByQuery(null, null);
 			// Delete the persistent object
-			tabla.SeccionDAO.delete(ltablaSeccion);
-			tabla.Tematica ltablaTematica = tabla.TematicaDAO.loadTematicaByQuery(null, null);
+			bbdd.SeccionDAO.delete(lbbddSeccion);
+			bbdd.Tematica lbbddTematica = bbdd.TematicaDAO.loadTematicaByQuery(null, null);
 			// Delete the persistent object
-			tabla.TematicaDAO.delete(ltablaTematica);
-			tabla.Foto ltablaFoto = tabla.FotoDAO.loadFotoByQuery(null, null);
+			bbdd.TematicaDAO.delete(lbbddTematica);
+			bbdd.Foto lbbddFoto = bbdd.FotoDAO.loadFotoByQuery(null, null);
 			// Delete the persistent object
-			tabla.FotoDAO.delete(ltablaFoto);
-			tabla.ValoracionNoticia ltablaValoracionNoticia = tabla.ValoracionNoticiaDAO.loadValoracionNoticiaByQuery(null, null);
+			bbdd.FotoDAO.delete(lbbddFoto);
+			bbdd.ValoracionNoticia lbbddValoracionNoticia = bbdd.ValoracionNoticiaDAO.loadValoracionNoticiaByQuery(null, null);
 			// Delete the persistent object
-			tabla.ValoracionNoticiaDAO.delete(ltablaValoracionNoticia);
-			tabla.ValoracionComentario ltablaValoracionComentario = tabla.ValoracionComentarioDAO.loadValoracionComentarioByQuery(null, null);
+			bbdd.ValoracionNoticiaDAO.delete(lbbddValoracionNoticia);
+			bbdd.ValoracionComentario lbbddValoracionComentario = bbdd.ValoracionComentarioDAO.loadValoracionComentarioByQuery(null, null);
 			// Delete the persistent object
-			tabla.ValoracionComentarioDAO.delete(ltablaValoracionComentario);
+			bbdd.ValoracionComentarioDAO.delete(lbbddValoracionComentario);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -57,7 +57,7 @@ public class DeleteProyectofinalData {
 				deleteProyectofinalData.deleteTestData();
 			}
 			finally {
-				tabla.ProyectofinalPersistentManager.instance().disposePersistentManager();
+				bbdd.ProyectofinalPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {
