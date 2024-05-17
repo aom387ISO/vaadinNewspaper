@@ -13,8 +13,8 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vista-cambiarnombreaseccion.ts")
 public class VistaCambiarnombreaseccion extends LitTemplate {
 
-    @Id("nuevoNombreSección")
-	private TextField nuevoNombreSección;
+    @Id("nuevoNombreSeccion")
+	private TextField nuevoNombreSeccion;
 	@Id("cambiarNombreSeccion")
 	private Button cambiarNombreSeccion;
 	@Id("seccionBox")
@@ -29,12 +29,12 @@ public class VistaCambiarnombreaseccion extends LitTemplate {
 		this.generalAnadir = generalAnadir;
 	}
 
-	public TextField getNuevoNombreSección() {
-		return nuevoNombreSección;
+	public TextField getNuevoNombreSeccion() {
+		return nuevoNombreSeccion;
 	}
 
-	public void setNuevoNombreSección(TextField nuevoNombreSección) {
-		this.nuevoNombreSección = nuevoNombreSección;
+	public void setNuevoNombreSeccion(TextField nuevoNombreSeccion) {
+		this.nuevoNombreSeccion = nuevoNombreSeccion;
 	}
 
 	public Button getCambiarNombreSeccion() {

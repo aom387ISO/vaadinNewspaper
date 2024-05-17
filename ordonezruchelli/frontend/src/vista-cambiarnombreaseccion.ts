@@ -22,7 +22,7 @@ export class VistaCambiarnombreaseccion extends LitElement {
  <vaadin-combo-box id="seccionBox">
   <vista-listadodeseccionesgenerico></vista-listadodeseccionesgenerico>
  </vaadin-combo-box>
- <vaadin-text-field label="Nuevo nombre sección" placeholder="Nuevo nombre" id="nuevoNombreSección"></vaadin-text-field>
+ <vaadin-text-field label="Nuevo nombre seccion" placeholder="Nuevo nombre" id="nuevoNombreSeccion"></vaadin-text-field>
  <vaadin-button id="cambiarNombreSeccion">
    Cambiar nombre 
  </vaadin-button>

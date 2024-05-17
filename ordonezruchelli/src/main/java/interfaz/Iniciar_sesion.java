@@ -16,7 +16,7 @@ public class Iniciar_sesion extends VistaIniciarsesion{
 		
 		this.getBotonLogin().addClickListener(event->{
 		    String nombreUsuario = this.getLogin().getValue();
-		    String contraseña = this.getPassword().getValue(); 
+		    String contrasena = this.getPassword().getValue(); 
 
 		    if(this.getLogin().getValue().equals("usuario")) {
 				_usuario_no_suscrito.MainView.removeAll();
