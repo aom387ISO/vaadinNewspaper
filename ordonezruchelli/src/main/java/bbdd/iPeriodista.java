@@ -1,11 +1,10 @@
 package bbdd;
 
-
 public interface iPeriodista extends iUsuario_general {
 
-	public void crearNoticia(String aTitulo, BD_Fotos aImagenes, BD_Tematicas aTematica, String aCuerpo, String aResumen);
+	public void eliminarNoticia(int aAIdNoticia);
 
-	public void cambiarDatosNoticia(String aTitulo, BD_Fotos aImagenes, BD_Tematicas aTematica, String aCuerpo, String aResumen);
+	public void crearNoticia(String aATitulo, BD_Fotos aAImagenes, BD_Tematicas aATematica, String aACuerpo, String aAResumen);
 
-	public void eliminarNoticia(int aIdNoticia);
+	public void cambiarDatosNoticia(String aATitulo, BD_Fotos aAImagenes, BD_Tematicas aATematica, String aACuerpo, String aAResumen);
 }

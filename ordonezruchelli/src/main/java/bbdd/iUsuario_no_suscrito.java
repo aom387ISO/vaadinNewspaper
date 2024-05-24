@@ -1,9 +1,8 @@
 package bbdd;
 
-
 public interface iUsuario_no_suscrito {
 
-	public BD_Usuarios_suscritos login(String aCorreo, String aContrasena);
+	public BD_Usuarios_suscritos login(String aACorreo, String aAContrasena);
 
-	public BD_Usuarios_suscritos registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, BD_Fotos aFoto, int aNumeroTarjeta, String aCaducidad, int aCvv);
+	public BD_Usuarios_suscritos registrarse(String aACorreo, String aAContrasena, String aAApodo, String aADni, BD_Fotos aAFoto, int aANumeroTarjeta, String aACaducidad, int aACvv);
 }

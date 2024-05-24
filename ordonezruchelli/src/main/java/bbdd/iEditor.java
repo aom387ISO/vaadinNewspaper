@@ -1,25 +1,24 @@
 package bbdd;
 
-
 public interface iEditor extends iUsuario_general {
 
-	public void crearPeriodista(String aCorreo, String aContrasena, String aApodo, String aDni, BD_Fotos aFoto);
+	public void eliminarPeriodista(int aAPeriodistaId);
 
-	public void eliminarPeriodista(int aPeriodistaId);
+	public void eliminarComentario(int aAIdComentario);
 
-	public void eliminarComentario(int aIdComentario);
+	public void anadirNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
 
-	public void anadirNoticiaSeccion(int aIdNoticia, int aIdSeccion);
+	public void eliminarNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
 
-	public void eliminarNoticiaSeccion(int aIdNoticia, int aIdSeccion);
+	public void anadirAportada(int aAIdSeccion, int aIdNoticia);
 
-	public void crearSeccion(String aNombreSeccion);
+	public void cambiarPosicion(int aAIdSeccion, int aANuevaPosicion);
 
-	public void anadirAportada(int aIdSeccion);
+	public void eliminarSeccion(int aAIdSeccion);
 
-	public void cambiarPosicion(int aIdSeccion, int aNuevaPosicion);
+	public void crearPeriodista(String aACorreo, String aAContrasena, String aAApodo, String aADni, BD_Fotos aAFoto);
 
-	public void cambiarNombreSeccion(String aIdSeccion, String aNuevoNombreSeccion);
+	public void crearSeccion(String aANombreSeccion);
 
-	public void eliminarSeccion(int aIdSeccion);
+	public void cambiarNombreSeccion(String aAIdSeccion, String aANuevoNombreSeccion);
 }

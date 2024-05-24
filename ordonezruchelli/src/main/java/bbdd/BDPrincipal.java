@@ -104,4 +104,34 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public void anadirAportada(int aAIdSeccion, int aIdNoticia) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cambiarApodo(String aANuevoApodo, int aIdUsuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void noGustarNoticia(int aAIdNoticia, int aIdUsuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cambiarImagen(BD_Fotos aAFoto, int aIdUsuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void gustarNoticia(Bd_Noticias aAIdNoticia, int aIdUsuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

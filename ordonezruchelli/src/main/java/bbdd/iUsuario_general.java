@@ -1,19 +1,18 @@
 package bbdd;
 
-
 public interface iUsuario_general {
 
-	public void cambiarApodo(String aNuevoApodo);
+	public void cambiarApodo(String aANuevoApodo, int aIdUsuario);
 
-	public void cambiarImagen(BD_Fotos aFoto);
+	public void noGustarNoticia(int aAIdNoticia, int aIdUsuario);
 
-	public void gustarNoticia(Bd_Noticias aIdNoticia);
+	public void gustarComentario(int aAIdUsuario, int aAIdComentario);
 
-	public void noGustarNoticia(int aIdNoticia);
+	public void noGustarComentario(int aAIdUsuario, int aAIdComentario);
 
-	public void comentar(int aIdUsuario, int aIdComentario, String aContenido);
+	public void cambiarImagen(BD_Fotos aAFoto, int aIdUsuario);
 
-	public void gustarComentario(int aIdUsuario, int aIdComentario);
+	public void gustarNoticia(Bd_Noticias aAIdNoticia, int aIdUsuario);
 
-	public void noGustarComentario(int aIdUsuario, int aIdComentario);
+	public void comentar(int aAIdUsuario, int aAIdComentario, String aAContenido);
 }
