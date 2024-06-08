@@ -21,7 +21,9 @@ import javax.persistence.*;
 public class Noticia implements Serializable {
 	public Noticia() {
 	}
-	
+    public Noticia(int idNoticia) {
+        setIdNoticia(idNoticia);
+    }
 	private java.util.Set this_getSet (int key) {
 		if (key == ORMConstants.KEY_NOTICIA_ESTA_CONTENIDA) {
 			return ORM_esta_contenida;

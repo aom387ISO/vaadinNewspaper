@@ -8,6 +8,9 @@ public class BD_Editores {
 	public Vector<Editor> _contiene_editor = new Vector<Editor>();
 
 	public Editor loginEditor(String aCorreo, String aContrasena) {
-		throw new UnsupportedOperationException();
+	    for (Usuario editor : _contiene_editor) {
+
+	    }
+	    return null;
 	}
 }

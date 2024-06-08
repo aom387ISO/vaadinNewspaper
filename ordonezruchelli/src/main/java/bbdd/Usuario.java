@@ -22,7 +22,9 @@ import javax.persistence.*;
 public class Usuario implements Serializable {
 	public Usuario() {
 	}
-	
+    public Usuario(int idUsuario) {
+        setIdUsuario(idUsuario);
+    }
 	private java.util.Set this_getSet (int key) {
 		if (key == ORMConstants.KEY_USUARIO_TIENE_IMAGEN) {
 			return ORM_tiene_imagen;

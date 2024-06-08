@@ -8,7 +8,13 @@ public class BD_Usuarios_suscritos {
 	public Vector<Usuario_suscrito> _contiene_usuario_suscrito = new Vector<Usuario_suscrito>();
 
 	public Usuario_suscrito login(String aCorreo, String aContrasena) {
-		throw new UnsupportedOperationException();
+	    for (Usuario_suscrito usuario : _contiene_usuario_suscrito) {
+	    	if(usuario.getCorreoElectronico().equals(aCorreo) && usuario.getPassword().equals(aContrasena)) {
+	    		return usuario;
+	    	}
+	    }
+		return null;
+
 	}
 
 	public void darDeBaja(int aIdUsuario) {

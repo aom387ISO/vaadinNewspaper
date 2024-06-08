@@ -12,6 +12,8 @@ public class Listado_de_secciones extends Listado_de_secciones_generico {
 	
 	public Listado_de_secciones(Usuario_general usuarioGeneral) {
 		super();
+		if(this._visualizar_seccion != null) {
 		this._visualizar_seccion._usuario_general = usuarioGeneral;
+		}
 	}
 }

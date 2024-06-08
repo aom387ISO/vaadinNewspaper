@@ -20,7 +20,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 	public Usuario_general(MainView MainView, bbdd.Usuario usuario) {
 		this.MainView=MainView;
 		this._usuario = usuario;
-		this.getPerfil().add(_usuario.getApodo());
+		//this.getPerfil().add(_usuario.getApodo());
 				
 		//Componente estático Buscar Noticia
 		_buscar = new Buscar_noticia(this);
