@@ -9,6 +9,8 @@ public class Listado_noticias_cortadas extends Listado_de_noticias_generico {
 	
 	public Listado_noticias_cortadas(Usuario_no_suscrito usuarioNoSuscrito) {
 		super();
+        if(this._buscar_noticia_de_no_suscrito != null) {
 		this._buscar_noticia_de_no_suscrito._usuario_no_suscrito = usuarioNoSuscrito;
-	}
+        }
+    }
 }
