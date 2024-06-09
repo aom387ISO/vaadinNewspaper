@@ -1,7 +1,7 @@
 package bbdd;
 
-
-
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriodista, iEditor, iUsuario_no_suscrito {
 	public BD_Fotos _bd_fot;
 	public BD_Editores _bd_edit;
@@ -98,6 +98,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 
 	public BD_Usuarios_suscritos login(String aCorreo, String aContrasena) {
 		throw new UnsupportedOperationException();
+        
 	}
 
 	public BD_Usuarios_suscritos registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, BD_Fotos aFoto, int aNumeroTarjeta, String aCaducidad, int aCvv) {
