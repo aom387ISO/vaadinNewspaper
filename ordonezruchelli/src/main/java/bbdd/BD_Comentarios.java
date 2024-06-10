@@ -39,7 +39,8 @@ public class BD_Comentarios {
 				nuevoComentario.setComenta(noticia);
 				nuevoComentario.setnValoracionesPositvas(0);
 				nuevoComentario.setnValoracionesNegativas(0);
-
+				nuevoComentario.setORM_Autor(autor);
+				nuevoComentario.setORM_Comenta(noticia);
 				ComentarioDAO.save(nuevoComentario);
 				t.commit();
 			} else {
