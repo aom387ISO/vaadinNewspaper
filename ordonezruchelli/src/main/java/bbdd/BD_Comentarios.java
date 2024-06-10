@@ -3,7 +3,6 @@ package bbdd;
 import bbdd.BDPrincipal;
 import java.util.Vector;
 import org.orm.PersistentException;
-import org.orm.PersistentSession;
 import org.orm.PersistentTransaction;
 
 public class BD_Comentarios {
