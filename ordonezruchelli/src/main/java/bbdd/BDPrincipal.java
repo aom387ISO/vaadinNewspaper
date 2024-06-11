@@ -68,11 +68,11 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadirNoticiaSeccion(int aIdNoticia, int aIdSeccion) {
+	public void anadirNoticiaSeccion(int aIdNoticia, String aIdSeccion) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarNoticiaSeccion(int aIdNoticia, int aIdSeccion) {
+	public void eliminarNoticiaSeccion(int aIdNoticia, String aIdSeccion) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -80,11 +80,11 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		throw new UnsupportedOperationException();
 	}
 
-	public void anadirAportada(int aIdSeccion) {
+	public void anadirAportada(String aIdSeccion) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cambiarPosicion(int aIdSeccion, int aNuevaPosicion) {
+	public void cambiarPosicion(String aIdSeccion, int aNuevaPosicion) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -92,7 +92,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarSeccion(int aIdSeccion) {
+	public void eliminarSeccion(String aIdSeccion) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -106,7 +106,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	@Override
-	public void anadirAportada(int aAIdSeccion, int aIdNoticia) {
+	public void anadirAportada(String aAIdSeccion, int aIdNoticia) {
 		// TODO Auto-generated method stub
 		
 	}

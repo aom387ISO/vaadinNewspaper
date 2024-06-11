@@ -6,15 +6,15 @@ public interface iEditor extends iUsuario_general {
 
 	public void eliminarComentario(int aAIdComentario);
 
-	public void anadirNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
+	public void anadirNoticiaSeccion(int aAIdNoticia, String aAIdSeccion);
 
-	public void eliminarNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
+	public void eliminarNoticiaSeccion(int aAIdNoticia, String aAIdSeccion);
 
-	public void anadirAportada(int aAIdSeccion, int aIdNoticia);
+	public void anadirAportada(String aAIdSeccion, int aIdNoticia);
 
-	public void cambiarPosicion(int aAIdSeccion, int aANuevaPosicion);
+	public void cambiarPosicion(String aAIdSeccion, int aANuevaPosicion);
 
-	public void eliminarSeccion(int aAIdSeccion);
+	public void eliminarSeccion(String aAIdSeccion);
 
 	public void crearPeriodista(String aACorreo, String aAContrasena, String aAApodo, String aADni, BD_Fotos aAFoto);
 
