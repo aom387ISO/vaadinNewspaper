@@ -15,7 +15,7 @@ public class BD_Comentarios {
 			Comentario comentarioAEliminar = ComentarioDAO.loadComentarioByQuery("idComentario = " + idComentario,
 					null);
 			if (comentarioAEliminar != null) {
-				ComentarioDAO.delete(comentarioAEliminar);
+				ComentarioDAO.deleteAndDissociate(comentarioAEliminar);
 			}
 			t.commit();
 		} catch (Exception e) {

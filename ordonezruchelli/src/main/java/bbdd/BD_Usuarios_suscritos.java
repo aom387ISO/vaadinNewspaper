@@ -27,32 +27,43 @@ public class BD_Usuarios_suscritos {
 
 	}
 
-	public void darDeBaja(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public void darDeBaja(int aIdUsuario) throws PersistentException {
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Usuario_suscrito usuario = Usuario_suscritoDAO.loadUsuario_suscritoByORMID(aIdUsuario);
+			if (usuario != null) {
+				Usuario_suscritoDAO.deleteAndDissociate(usuario);
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
 	}
+
 //Falta implementar el añadir foto
 	public BD_Usuarios_suscritos registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto,
 			int aNumeroTarjeta, String aCaducidad, int aCvv) throws PersistentException {
 
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-        Usuario_suscrito usuario = null;
-        try {
-            usuario = Usuario_suscritoDAO.createUsuario_suscrito();
-            usuario.setCorreoElectronico(aCorreo);
-            usuario.setPassword(aContrasena);
-            usuario.setApodo(aApodo);
-            usuario.setDni(aDni);
-            usuario.setnTarjeta(String.valueOf(aNumeroTarjeta));
-            usuario.setFechaCaducidad(aCaducidad);
-            usuario.setCvv(String.valueOf(aCvv));
-            Usuario_suscritoDAO.save(usuario);
-            t.commit();
-        } catch (Exception e) {
-                t.rollback();
+		Usuario_suscrito usuario = null;
+		try {
+			usuario = Usuario_suscritoDAO.createUsuario_suscrito();
+			usuario.setCorreoElectronico(aCorreo);
+			usuario.setPassword(aContrasena);
+			usuario.setApodo(aApodo);
+			usuario.setDni(aDni);
+			usuario.setnTarjeta(String.valueOf(aNumeroTarjeta));
+			usuario.setFechaCaducidad(aCaducidad);
+			usuario.setCvv(String.valueOf(aCvv));
+			Usuario_suscritoDAO.save(usuario);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
 
-        }
-        ProyectofinalPersistentManager.instance().disposePersistentManager();
-        //return usuario;
-        return null;
-    }
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		// return usuario;
+		return null;
+	}
 }

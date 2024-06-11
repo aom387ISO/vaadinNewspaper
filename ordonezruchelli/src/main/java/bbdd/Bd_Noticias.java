@@ -150,7 +150,7 @@ public class Bd_Noticias {
 		try {
 			Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
 			if (noticia != null) {
-				NoticiaDAO.delete(noticia);
+				NoticiaDAO.deleteAndDissociate(noticia);
 			}
 			t.commit();
 		} catch (Exception e) {

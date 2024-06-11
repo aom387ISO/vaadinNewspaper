@@ -99,7 +99,7 @@ public class BD_Secciones {
 		try {
 			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
 			if (seccion != null) {
-				SeccionDAO.delete(seccion);
+				SeccionDAO.deleteAndDissociate(seccion);
 				t.commit();
 			}
 		} catch (Exception e) {
