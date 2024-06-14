@@ -30,6 +30,6 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 	}
 
 	public void Anadir_noticia() {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException();  
 	}
 }

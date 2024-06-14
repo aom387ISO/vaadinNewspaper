@@ -13,6 +13,6 @@ public class Crear_nueva_seccion extends VistaCrearnuevaseccion{
 	}
 
 	public void Insertar_nombre_seccion() {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException();  
 	}
 }

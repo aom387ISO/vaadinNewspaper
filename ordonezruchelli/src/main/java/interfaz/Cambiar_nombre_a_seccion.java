@@ -24,6 +24,6 @@ public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 	}
 
 	public void Insertar_nuevo_nombre() {
-		throw new UnsupportedOperationException();
+		throw new UnsupportedOperationException();  
 	}
 }
