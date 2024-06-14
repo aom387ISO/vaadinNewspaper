@@ -22,6 +22,7 @@ public class Introducir_datos_noticia extends VistaIntroducirdatosnoticia{
 
 	public void Enviar_noticia() {
 		_iperodista.crearNoticia(this.getTituloNoticia().getValue(), null, null, this.getCuerpoNoticia().getValue(), this.getResumenNoticia().getValue());
+		
 	}
 
 	public void Volver_a_gestion() {
