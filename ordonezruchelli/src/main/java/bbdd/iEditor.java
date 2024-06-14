@@ -21,4 +21,6 @@ public interface iEditor extends iUsuario_general {
 	public void crearSeccion(String aANombreSeccion);
 
 	public void cambiarNombreSeccion(String aAIdSeccion, String aANuevoNombreSeccion);
+	
+	public Editor loginEditor(String aCorreo, String aContrasena);
 }

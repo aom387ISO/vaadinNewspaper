@@ -18,13 +18,14 @@ public class BD_Usuarios_suscritos {
 			logueado = Usuario_suscritoDAO.loadUsuario_suscritoByQuery(
 					"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
 			t.commit();
+			return logueado;
+
 		} catch (Exception e) {
 			t.rollback();
 
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
-		return logueado;
-
+		return null;
 	}
 
 	public void darDeBaja(int aIdUsuario) throws PersistentException {
@@ -43,7 +44,7 @@ public class BD_Usuarios_suscritos {
 
 //Falta implementar el añadir foto
 	public BD_Usuarios_suscritos registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto,
-			int aNumeroTarjeta, String aCaducidad, int aCvv) throws PersistentException {
+			String aNumeroTarjeta, String aCaducidad, String aCvv) throws PersistentException {
 
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		Usuario_suscrito usuario = null;
@@ -53,9 +54,9 @@ public class BD_Usuarios_suscritos {
 			usuario.setPassword(aContrasena);
 			usuario.setApodo(aApodo);
 			usuario.setDni(aDni);
-			usuario.setnTarjeta(String.valueOf(aNumeroTarjeta));
+			usuario.setnTarjeta(aNumeroTarjeta);
 			usuario.setFechaCaducidad(aCaducidad);
-			usuario.setCvv(String.valueOf(aCvv));
+			usuario.setCvv(aCvv);
 			Usuario_suscritoDAO.save(usuario);
 			t.commit();
 		} catch (Exception e) {

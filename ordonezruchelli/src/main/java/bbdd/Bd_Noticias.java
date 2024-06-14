@@ -106,7 +106,7 @@ public class Bd_Noticias {
 		}
 
 	   //Faltaría añadir el autor en el método.
-	   public void crearNoticia(String aTitulo, BD_Fotos aImagenes, BD_Tematicas aTematica, String aCuerpo, String aResumen) throws PersistentException {
+	   public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) throws PersistentException {
 		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		    try {
 		        Noticia nuevaNoticia = new Noticia();

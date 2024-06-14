@@ -19,18 +19,20 @@ public class BD_Periodistas {
 				periodista = PeriodistaDAO.loadPeriodistaByQuery(
 						"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
 				t.commit();
+				return periodista;
+
 			} catch (Exception e) {
 				if (t != null) {
 					t.rollback();
 				}
 				e.printStackTrace();
-			} finally {
-				ProyectofinalPersistentManager.instance().disposePersistentManager();
 			}
+
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-		return periodista;
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return null;
 	}
 
 	public void crearPeriodista(String aCorreo, String aContrasena, String aApodo, String aDni, BD_Fotos aFoto)
@@ -65,4 +67,23 @@ public class BD_Periodistas {
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
 	}
+	
+	   public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) throws PersistentException {
+		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		    try {
+		        Noticia nuevaNoticia = new Noticia();
+		        nuevaNoticia.setTitulo(aTitulo);
+		        nuevaNoticia.setCuerpo(aCuerpo);
+		        nuevaNoticia.setResumen(aResumen);
+//		        nuevaNoticia.setImagenes(aImagenes);
+//		        nuevaNoticia.setTematica(aTematica);
+
+		        NoticiaDAO.save(nuevaNoticia);
+		        t.commit();
+		    } catch (Exception e) {
+		        t.rollback();
+		    }
+		    ProyectofinalPersistentManager.instance().disposePersistentManager();
+		}
+	
 }

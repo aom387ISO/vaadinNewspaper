@@ -19,7 +19,7 @@ public class Personalizar_perfil extends VistaPersonalizarperfil{
 		super();
 		this._usuario_general = usuarioGeneral;
 		this.usuario = usuario;
-		this.getPerfil().as(VerticalLayout.class).add(this.usuario.getApodo());
+//		this.getPerfil().as(VerticalLayout.class).add(this.usuario.getApodo());
 		
 		this.getBajaUsuarioSuscrito().setVisible(false);
 		
