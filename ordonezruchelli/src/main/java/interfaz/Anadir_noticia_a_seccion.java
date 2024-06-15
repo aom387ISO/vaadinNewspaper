@@ -1,5 +1,10 @@
 package interfaz;
 
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
+import bbdd.NoticiaDAO;
+import bbdd.ProyectofinalPersistentManager;
 import vistas.VistaAnadirnoticiaaseccion;
 
 public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
@@ -29,7 +34,23 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 		this.getGeneralAnadir().add(_lista_de_noticias_que_no_estan_en__la_seccion);
 	}
 
-	public void Anadir_noticia() {
-		throw new UnsupportedOperationException();  
+	public void Anadir_noticia(bbdd.Periodista autor, String cuerpo, String resumen, String titulo) throws PersistentException{
+			PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+			bbdd.Noticia noticia = null;
+			try {
+				noticia = NoticiaDAO.createNoticia();
+				noticia.setAutor(autor);
+				noticia.setCuerpo(cuerpo);
+				noticia.setnValoracionesNegativas(0);
+				noticia.setnValoracionesPositivas(0);
+				noticia.setResumen(resumen);
+				noticia.setTitulo(titulo);
+				NoticiaDAO.save(noticia);
+				t.commit();
+			} catch (Exception e) {
+				t.rollback();
+			}
+			ProyectofinalPersistentManager.instance().disposePersistentManager();
+			return noticia;
 	}
 }

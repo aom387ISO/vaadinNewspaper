@@ -2,12 +2,15 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iEditor;
 import vistas.VistaCambiarnombreaseccion;
 
 public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 //	private event _insertar_nuevo_nombre;
 	public Gestionar_seccion _gestionar_seccion;
 	public Listado_de_secciones _listado_de_secciones;
+	iEditor ieditor = new BDPrincipal();
 	
 	public Cambiar_nombre_a_seccion (Gestionar_seccion gestionar_seccion) {
 		super();
@@ -24,6 +27,13 @@ public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 	}
 
 	public void Insertar_nuevo_nombre() {
-		throw new UnsupportedOperationException();  
+		String idSeccion = this.getSeccionBox().getValue();
+		if ((idSeccion != null) && (this.getNuevoNombreSeccion().getValue() != null)) {
+			ieditor.cambiarNombreSeccion(idSeccion, this.getNuevoNombreSeccion().getValue());
+			
+			this._gestionar_seccion._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this._gestionar_seccion._gestion_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_seccion);
+
+		} 
 	}
 }
