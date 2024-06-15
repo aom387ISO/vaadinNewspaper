@@ -2,6 +2,8 @@ package bbdd;
 
 import bbdd.BDPrincipal;
 import java.util.Vector;
+
+import org.hibernate.Hibernate;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -106,19 +108,26 @@ public class Bd_Noticias {
 		}
 
 	   //Faltaría añadir el autor en el método.
-	   public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) throws PersistentException {
+	   public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen, Periodista periodista) throws PersistentException {
 		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		System.out.println("Antes del try.");
 		    try {
-		        Noticia nuevaNoticia = new Noticia();
-		        nuevaNoticia.setTitulo(aTitulo);
-		        nuevaNoticia.setCuerpo(aCuerpo);
-		        nuevaNoticia.setResumen(aResumen);
+		    	Noticia noticia = NoticiaDAO.createNoticia();
+		    	noticia.setTitulo(aTitulo);
+		    	noticia.setCuerpo(aCuerpo);
+		    	noticia.setResumen(aResumen);
+	            
+		    	noticia.setAutor(periodista);
 //		        nuevaNoticia.setImagenes(aImagenes);
-//		        nuevaNoticia.setTematica(aTematica);
-
-		        NoticiaDAO.save(nuevaNoticia);
+		    	noticia.setnValoracionesNegativas(0);
+		    	noticia.setnValoracionesPositivas(0);
+		    	noticia.setORM_Autor(periodista);
+		        NoticiaDAO.save(noticia);
+		        System.out.println("noticiaaaaaaaaaaaaaaa");
 		        t.commit();
 		    } catch (Exception e) {
+		    	System.out.println("Se va al catch");
+		        e.printStackTrace();
 		        t.rollback();
 		    }
 		    ProyectofinalPersistentManager.instance().disposePersistentManager();

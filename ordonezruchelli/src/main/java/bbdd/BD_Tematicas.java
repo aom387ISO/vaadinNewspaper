@@ -22,4 +22,10 @@ public class BD_Tematicas {
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 	}
+	
+	   public Tematica obtenerTematicaPorId(String aIdTematica) throws PersistentException {
+	        Tematica tematica = TematicaDAO.loadTematicaByQuery("IdTematica = '" + aIdTematica + "'", null);
+	        return tematica;
+	    }
+	
 }

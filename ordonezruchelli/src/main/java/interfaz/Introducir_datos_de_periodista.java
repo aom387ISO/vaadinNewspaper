@@ -7,6 +7,6 @@ public class Introducir_datos_de_periodista extends VistaIntroducirdatosdeperiod
 	
 public Introducir_datos_de_periodista(Gestionar_periodistas gestionarPeriodistas) {
 		super();
-//		this._gestionar_periodistas._gestionar._editor = editor;
+		this._gestionar_periodistas = gestionarPeriodistas;
 	}
 }

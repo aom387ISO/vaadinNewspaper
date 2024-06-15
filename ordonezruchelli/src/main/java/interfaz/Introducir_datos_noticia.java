@@ -1,8 +1,11 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
+import bbdd.BD_Tematicas;
 import bbdd.iPeriodista;
 import vistas.VistaIntroducirdatosnoticia;
 
@@ -11,6 +14,9 @@ public class Introducir_datos_noticia extends VistaIntroducirdatosnoticia{
 	//	private event _volver_a_gestion;
 	public Gestionar_noticia _gestionar_noticia;
 	iPeriodista _iperodista = new BDPrincipal();
+    BD_Tematicas _bdTematicas = new BD_Tematicas();
+
+	
     public Introducir_datos_noticia(Gestionar_noticia gestionar_noticia) {
 		super();
         this._gestionar_noticia = gestionar_noticia;
@@ -21,7 +27,21 @@ public class Introducir_datos_noticia extends VistaIntroducirdatosnoticia{
 	}
 
 	public void Enviar_noticia() {
-		_iperodista.crearNoticia(this.getTituloNoticia().getValue(), null, null, this.getCuerpoNoticia().getValue(), this.getResumenNoticia().getValue());
+		bbdd.Periodista autor = _gestionar_noticia._periodista._periodista;
+		String tematicaNoticia = this.getTematicaNoticia().getValue();
+		bbdd.Tematica tematica = null;
+		try {
+			tematica = _bdTematicas.obtenerTematicaPorId(tematicaNoticia);
+	        if (tematica == null) {
+	            _bdTematicas.crearTematica(tematicaNoticia);
+	            tematica = _bdTematicas.obtenerTematicaPorId(tematicaNoticia);
+	        }
+	        
+			_iperodista.crearNoticia(this.getTituloNoticia().getValue(), null, tematica, this.getCuerpoNoticia().getValue(), this.getResumenNoticia().getValue(),autor);
+
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

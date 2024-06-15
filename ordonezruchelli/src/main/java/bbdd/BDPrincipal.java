@@ -14,8 +14,11 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	public BD_Tematicas _bd_tem = new BD_Tematicas();
 
 	public void darDeBaja(int aIdUsuario) {
-		throw new UnsupportedOperationException();
-	}
+		try {
+			_bd_u_sus.darDeBaja(aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}	}
 
 	public void cambiarApodo(String aANuevoApodo, int aIdUsuario) {
 		PersistentTransaction t = null;
@@ -93,9 +96,10 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) {
+	public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen, Periodista periodista) {
 		try {
-			_bd_not.crearNoticia(aTitulo, null, null, aCuerpo, aResumen);
+			System.out.println("\naaaaaaaCrearNoticiaBDDDDDDDDDDDDDDDDDD");
+			_bd_not.crearNoticia(aTitulo, null, aTematica, aCuerpo, aResumen, periodista);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -197,12 +201,13 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public Periodista loginPeriodista(String aCorreo, String aContrasena) {
+		Periodista editor = null;
 		try {
-			_bd_per.loginPeriodista(aCorreo, aContrasena);
+			editor = _bd_per.loginPeriodista(aCorreo, aContrasena);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return editor;
 	}
 
 	public Usuario_suscrito registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto,
@@ -222,12 +227,13 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 
 	@Override
 	public Editor loginEditor(String aCorreo, String aContrasena) {
+		Editor editor = null;
 		try {
-			_bd_edit.loginEditor(aCorreo, aContrasena);
+			editor = _bd_edit.loginEditor(aCorreo, aContrasena);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return editor;
 	}
 
 }
