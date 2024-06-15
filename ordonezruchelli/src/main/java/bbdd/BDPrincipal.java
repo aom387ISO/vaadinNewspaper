@@ -77,7 +77,11 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public void comentar(int aIdUsuario, int aIdComentario, String aContenido) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_comen.comentar(aIdUsuario, aIdComentario, aContenido);
+		}catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void gustarComentario(int aIdUsuario, int aIdComentario) {
