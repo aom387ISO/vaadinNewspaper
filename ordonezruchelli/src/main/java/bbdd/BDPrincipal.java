@@ -175,7 +175,11 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public void cambiarNombreSeccion(String aIdSeccion, String aNuevoNombreSeccion) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_sec.cambiarNombreSeccion(aIdSeccion, aNuevoNombreSeccion);
+		} catch(PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminarSeccion(String aIdSeccion) {
