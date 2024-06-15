@@ -12,7 +12,7 @@ public class BD_Usuarios_suscritos {
 	public Vector<Usuario_suscrito> _contiene_usuario_suscrito = new Vector<Usuario_suscrito>();
 
 	public Usuario_suscrito login(String aCorreo, String aContrasena) throws PersistentException {
-		Usuario_suscrito logueado = null;
+		Usuario_suscrito logueado;
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 
 		try {
@@ -20,24 +20,26 @@ public class BD_Usuarios_suscritos {
 					"CorreoElectronico = '" + aCorreo + "' AND Password = '" + aContrasena + "'", null);
 			t.commit();
 			System.out.println("aquassssssssssssss");
-			if (logueado != null) {
-				System.out.println("Usuario encontrado: " + logueado.toString());
-				t.commit();
-			} else {
-				System.out.println("Usuario no encontrado con correo: " + aCorreo);
-			      if (t.getStatus() != TransactionStatus.COMMITTED) {
-	                    t.rollback(); 
-	                }			}
+//			if (logueado != null) {
+//				System.out.println("Usuario encontrado: " + logueado.toString());
+//				t.commit();
+//			} else {
+//				System.out.println("Usuario no encontrado con correo: " + aCorreo);
+//			      if (t.getStatus() != TransactionStatus.COMMITTED) {
+//	                    t.rollback(); 
+//	                }
+//			      }
+			System.out.println("usuariosuscrito not null");
 			return logueado;
-
 		} catch (Exception e) {
             if (t.getStatus() != TransactionStatus.COMMITTED) {
 			t.rollback();
 			}
-
 		}
-//		ProyectofinalPersistentManager.instance().disposePersistentManager();
-		return logueado;
+		
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		System.out.println("va a ser null joder");
+		return null;
 	}
 
 	public void darDeBaja(int aIdUsuario) throws PersistentException {

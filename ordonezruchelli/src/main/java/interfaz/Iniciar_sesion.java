@@ -13,6 +13,7 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 	iEditor _ieditor = new BDPrincipal();
 	iPeriodista _iperiodista = new BDPrincipal();
 
+
 	public Iniciar_sesion(Usuario_no_suscrito usuario_no_suscrito) {
 		super();
 		this._usuario_no_suscrito = usuario_no_suscrito;
@@ -42,24 +43,25 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 			_usuario_no_suscrito.MainView.removeAll();
 			Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView, _usuarioSuscrito);
 			_usuario_no_suscrito.MainView.add(usuarioSuscrito);
-		} else {
-			System.out.println("\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadasd\n");
+			return;
+		}
+			System.out.println("usuario_suscrito es null\n");
 			bbdd.Editor _editor = _ieditor.loginEditor(this.getLogin().getValue(), this.getPassword().getValue());
 			if (_editor != null) {
-				System.out.println("ha entrado");
+				System.out.println("ha entrado a editor");
 				_usuario_no_suscrito.MainView.removeAll();
 				Editor editor = new Editor(_usuario_no_suscrito.MainView, _editor);
 				_usuario_no_suscrito.MainView.add(editor);
-			} else {
-				bbdd.Periodista _periodista = _iperiodista.loginPeriodista(this.getLogin().getValue(),
-						this.getPassword().getValue());
-				if (_periodista != null) {
-					_usuario_no_suscrito.MainView.removeAll();
-					Periodista periodista = new Periodista(_usuario_no_suscrito.MainView, _periodista);
-					_usuario_no_suscrito.MainView.add(periodista);
-				}
+				return;
 			}
-		}
-
+			bbdd.Periodista _periodista = _iperiodista.loginPeriodista(this.getLogin().getValue(),
+						this.getPassword().getValue());
+			if (_periodista != null) {
+				System.out.println("periodista");
+				_usuario_no_suscrito.MainView.removeAll();
+				Periodista periodista = new Periodista(_usuario_no_suscrito.MainView, _periodista);
+				_usuario_no_suscrito.MainView.add(periodista);
+				return;
+			}
 	}
 }

@@ -187,12 +187,13 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public Usuario_suscrito login(String aCorreo, String aContrasena) {
+		Usuario_suscrito usuarioSuscrito = null;
 		try {
-			_bd_u_sus.login(aCorreo, aContrasena);
+			usuarioSuscrito = _bd_u_sus.login(aCorreo, aContrasena);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return usuarioSuscrito;
 	}
 
 	public Periodista loginPeriodista(String aCorreo, String aContrasena) {
