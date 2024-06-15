@@ -17,7 +17,10 @@ public class Gestion_seccion extends VistaGestionseccion{
 		this.getGestionarSeccion().addClickListener(event->{
 			this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestionar_seccion();
-		});	
+		});
+		
+		this.getVolver().addClickListener(event->Volver_a_la_gestion_desde_gestion_portada());
+		
 	}
 
 	public void Gestionar_seccion() {
@@ -25,6 +28,7 @@ public class Gestion_seccion extends VistaGestionseccion{
 	}
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
-		throw new UnsupportedOperationException();
-	}
+		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_seccion);	
+		}
 }

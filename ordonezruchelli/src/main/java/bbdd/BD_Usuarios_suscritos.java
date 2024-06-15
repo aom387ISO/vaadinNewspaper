@@ -3,6 +3,7 @@ package bbdd;
 import bbdd.BDPrincipal;
 import java.util.Vector;
 
+import org.hibernate.resource.transaction.spi.TransactionStatus;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -16,16 +17,27 @@ public class BD_Usuarios_suscritos {
 
 		try {
 			logueado = Usuario_suscritoDAO.loadUsuario_suscritoByQuery(
-					"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
+					"CorreoElectronico = '" + aCorreo + "' AND Password = '" + aContrasena + "'", null);
 			t.commit();
+			System.out.println("aquassssssssssssss");
+			if (logueado != null) {
+				System.out.println("Usuario encontrado: " + logueado.toString());
+				t.commit();
+			} else {
+				System.out.println("Usuario no encontrado con correo: " + aCorreo);
+			      if (t.getStatus() != TransactionStatus.COMMITTED) {
+	                    t.rollback(); 
+	                }			}
 			return logueado;
 
 		} catch (Exception e) {
+            if (t.getStatus() != TransactionStatus.COMMITTED) {
 			t.rollback();
+			}
 
 		}
-		ProyectofinalPersistentManager.instance().disposePersistentManager();
-		return null;
+//		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return logueado;
 	}
 
 	public void darDeBaja(int aIdUsuario) throws PersistentException {

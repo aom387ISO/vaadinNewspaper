@@ -17,7 +17,10 @@ export class VistaGestionseccion extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-button id="gestionarSeccion">
-  Gestionar sección
+   Gestionar sección 
+ </vaadin-button>
+ <vaadin-button id="volver">
+  Volver a la gestión
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

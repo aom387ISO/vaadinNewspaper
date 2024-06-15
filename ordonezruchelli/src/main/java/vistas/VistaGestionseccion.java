@@ -12,6 +12,16 @@ public class VistaGestionseccion extends LitTemplate {
 
     @Id("gestionarSeccion")
 	private Button gestionarSeccion;
+	@Id("volver")
+	private Button volver;
+
+	public Button getVolver() {
+		return volver;
+	}
+
+	public void setVolver(Button volver) {
+		this.volver = volver;
+	}
 
 	public VistaGestionseccion() {
         // You can initialise any data required for the connected UI components here.
