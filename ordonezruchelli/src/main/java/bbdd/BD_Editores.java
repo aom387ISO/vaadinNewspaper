@@ -11,36 +11,27 @@ public class BD_Editores {
 	public BDPrincipal _bd_prin_edit;
 	public Vector<Editor> _contiene_editor = new Vector<Editor>();
 
-	public Editor loginEditor(String aCorreo, String aContrasena)throws PersistentException  {
+	public Editor loginEditor(String aCorreo, String aContrasena) throws PersistentException {
 		Editor editor = null;
 		PersistentTransaction t = null;
 		try {
 			t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-			try {
-				editor = EditorDAO.loadEditorByQuery(
-						"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
-				t.commit();
-				if(editor == null) {
-					Notification.show("Editor null");
+			editor = EditorDAO.loadEditorByQuery(
+					"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
+			t.commit();
+			if (editor == null) {
+				Notification.show("Editor null");
 
-				}
-				else {
-					Notification.show("Editor not null");
+			} else {
+				Notification.show("Editor not null");
 
-				}
-				return editor;
-
-			} catch (Exception e) {
-				if (t != null) {
-					t.rollback();
-				}
-				e.printStackTrace();
 			}
-			ProyectofinalPersistentManager.instance().disposePersistentManager();
+			return editor;
 
-		} catch (PersistentException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			t.rollback();
 		}
-		return null;
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return editor;
 	}
 }

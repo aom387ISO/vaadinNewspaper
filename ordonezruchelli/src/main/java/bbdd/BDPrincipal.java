@@ -17,20 +17,60 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		throw new UnsupportedOperationException();
 	}
 
-	public void cambiarApodo(String aNuevoApodo) {
+	public void cambiarApodo(String aANuevoApodo, int aIdUsuario) {
+		PersistentTransaction t = null;
+		try {
+			t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+
+			Usuario_suscrito usuario = Usuario_suscritoDAO.getUsuario_suscritoByORMID(aIdUsuario);
+			if (usuario != null) {
+				usuario.setApodo(aANuevoApodo);
+				Usuario_suscritoDAO.save(usuario);
+				t.commit();
+				return;
+			}
+
+			Editor editor = EditorDAO.getEditorByORMID(aIdUsuario);
+			if (editor != null) {
+				editor.setApodo(aANuevoApodo);
+				EditorDAO.save(editor);
+				t.commit();
+				return;
+			}
+
+			Periodista periodista = PeriodistaDAO.getPeriodistaByORMID(aIdUsuario);
+			if (periodista != null) {
+				periodista.setApodo(aANuevoApodo);
+				PeriodistaDAO.save(periodista);
+				t.commit();
+				return;
+			}
+			ProyectofinalPersistentManager.instance().disposePersistentManager();
+
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void cambiarImagen(Foto aFoto) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cambiarImagen(BD_Fotos aFoto) {
-		throw new UnsupportedOperationException();
+	public void gustarNoticia(int aAIdNoticia, int aIdUsuario) {
+		try {
+			_bd_not.gustarNoticia(aAIdNoticia, aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void gustarNoticia(Bd_Noticias aIdNoticia) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void noGustarNoticia(int aIdNoticia) {
-		throw new UnsupportedOperationException();
+	public void noGustarNoticia(int aAIdNoticia, int aIdUsuario) {
+		try {
+			_bd_not.noGustarNoticia(aAIdNoticia, aIdUsuario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void comentar(int aIdUsuario, int aIdComentario, String aContenido) {
@@ -38,11 +78,19 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public void gustarComentario(int aIdUsuario, int aIdComentario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_comen.noGustarComentario(aIdUsuario, aIdComentario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void noGustarComentario(int aIdUsuario, int aIdComentario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_comen.gustarComentario(aIdUsuario, aIdComentario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) {
@@ -59,27 +107,51 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public void eliminarNoticia(int aIdNoticia) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_not.eliminarNoticia(aIdNoticia);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void crearPeriodista(String aCorreo, String aContrasena, String aApodo, String aDni, BD_Fotos aFoto) {
-		throw new UnsupportedOperationException();
+	public void crearPeriodista(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto) {
+		try {
+			_bd_per.crearPeriodista(aCorreo, aContrasena, aApodo, aDni, aFoto);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminarPeriodista(int aPeriodistaId) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_per.eliminarPeriodista(aPeriodistaId);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminarComentario(int aIdComentario) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_comen.eliminarComentario(aIdComentario);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void anadirNoticiaSeccion(int aIdNoticia, String aIdSeccion) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_sec.anadirNoticiaSeccion(aIdNoticia, aIdSeccion);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminarNoticiaSeccion(int aIdNoticia, String aIdSeccion) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_sec.eliminarNoticiaSeccion(aIdNoticia, aIdSeccion);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void crearSeccion(String aNombreSeccion) {
@@ -90,8 +162,12 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void anadirAportada(String aIdSeccion) {
-		throw new UnsupportedOperationException();
+	public void anadirAportada(String aIdSeccion, int aIdNoticia) {
+		try {
+			_bd_sec.anadirAportada(aIdSeccion, aIdNoticia);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void cambiarPosicion(String aIdSeccion, int aNuevaPosicion) {
@@ -134,33 +210,8 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 
-	@Override
-	public void anadirAportada(String aAIdSeccion, int aIdNoticia) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void cambiarApodo(String aANuevoApodo, int aIdUsuario) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void noGustarNoticia(int aAIdNoticia, int aIdUsuario) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void cambiarImagen(BD_Fotos aAFoto, int aIdUsuario) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void gustarNoticia(Bd_Noticias aAIdNoticia, int aIdUsuario) {
-		// TODO Auto-generated method stub
+	public void cambiarImagen(Foto aAFoto, int aIdUsuario) {
+		throw new UnsupportedOperationException();
 
 	}
 

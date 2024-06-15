@@ -16,7 +16,7 @@ public interface iEditor extends iUsuario_general {
 
 	public void eliminarSeccion(String aAIdSeccion);
 
-	public void crearPeriodista(String aACorreo, String aAContrasena, String aAApodo, String aADni, BD_Fotos aAFoto);
+	public void crearPeriodista(String aACorreo, String aAContrasena, String aAApodo, String aADni, Foto aAFoto);
 
 	public void crearSeccion(String aANombreSeccion);
 

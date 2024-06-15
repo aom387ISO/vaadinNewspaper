@@ -41,9 +41,10 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 			Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView, _usuarioSuscrito);
 			_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 		}
-		
+		System.out.println("\naaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadasd\n");
 		bbdd.Editor _editor = _ieditor.loginEditor(this.getLogin().getValue(), this.getPassword().getValue());
 		if (_editor != null) {
+			System.out.println("ha entrado");
 			_usuario_no_suscrito.MainView.removeAll();
 			Editor editor = new Editor(_usuario_no_suscrito.MainView, _editor);
 			_usuario_no_suscrito.MainView.add(editor);

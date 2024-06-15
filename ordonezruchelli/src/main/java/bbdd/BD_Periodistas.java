@@ -35,7 +35,7 @@ public class BD_Periodistas {
 		return null;
 	}
 
-	public void crearPeriodista(String aCorreo, String aContrasena, String aApodo, String aDni, BD_Fotos aFoto)
+	public void crearPeriodista(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto)
 			throws PersistentException {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {

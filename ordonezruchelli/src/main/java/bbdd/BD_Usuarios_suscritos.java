@@ -43,7 +43,7 @@ public class BD_Usuarios_suscritos {
 	}
 
 //Falta implementar el añadir foto
-	public BD_Usuarios_suscritos registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto,
+	public Usuario_suscrito registrarse(String aCorreo, String aContrasena, String aApodo, String aDni, Foto aFoto,
 			String aNumeroTarjeta, String aCaducidad, String aCvv) throws PersistentException {
 
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
