@@ -22,12 +22,15 @@ export class VistaGestionarnoticiaenseccion extends LitElement {
   <vaadin-horizontal-layout theme="spacing" style="height: 100%; padding: var(--lumo-space-s); margin: var(--lumo-space-s); width: 100%;">
    <vaadin-form-layout style="align-self: center; background: #f5f5f5; border: 1px solid black; padding: 30px; height: 100%; margin: var(--lumo-space-xl); width: 40%;">
     <vaadin-button id="anadirNoticia">
-     Añadir noticia
+      Añadir noticia 
     </vaadin-button>
     <vaadin-button id="eliminarNoticia">
-     Eliminar noticia
+      Eliminar noticia 
     </vaadin-button>
    </vaadin-form-layout>
+   <vaadin-button id="volverGestion" style="flex-shrink: 0; flex-grow: 0;">
+    Volver a Gestion
+   </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-form-layout>
 </vaadin-vertical-layout>

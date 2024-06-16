@@ -24,7 +24,12 @@ public class Gestionar_noticia_en_seccion extends VistaGestionarnoticiaenseccion
 		this.getAnadirNoticia().addClickListener(event->{
 			this._gestionar_noticia_de_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Anadir_noticia_a_seccion();
-		});		
+		});	
+		
+		this.getVolverGestion().addClickListener(event->{
+			this._gestionar_noticia_de_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Volver_a_la_gestion_desde_gestion_portada();
+		});
 		}
 
 	public void Eliminar_noticia_de_seccion() {
@@ -36,6 +41,6 @@ public class Gestionar_noticia_en_seccion extends VistaGestionarnoticiaenseccion
 	}
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
-		throw new UnsupportedOperationException();
+		this._gestionar_noticia_de_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(new Gestionar (this._gestionar_noticia_de_seccion._gestionar._editor));
 	}
 }

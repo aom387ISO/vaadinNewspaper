@@ -20,6 +20,16 @@ public class VistaGestionarnoticiaenseccion extends LitTemplate {
 	private Button anadirNoticia;
 	@Id("eliminarNoticia")
 	private Button eliminarNoticia;
+	@Id("volverGestion")
+	private Button volverGestion;
+
+	public Button getVolverGestion() {
+		return volverGestion;
+	}
+
+	public void setVolverGestion(Button volverGestion) {
+		this.volverGestion = volverGestion;
+	}
 
 	public Element getLayoutGeneral() {
 		return layoutGeneral;
