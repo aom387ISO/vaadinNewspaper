@@ -19,6 +19,9 @@ export class VistaGestionarperiodistas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="gestionarLayout">
+ <vaadin-button id="volverGestion">
+  Volver a gestion
+ </vaadin-button>
  <vista-introducirdatosdeperiodista></vista-introducirdatosdeperiodista>
  <vaadin-form-layout id="periodistasLayout">
   <vista-listadeperiodistas></vista-listadeperiodistas>

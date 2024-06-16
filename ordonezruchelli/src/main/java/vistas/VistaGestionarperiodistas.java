@@ -18,6 +18,18 @@ public class VistaGestionarperiodistas extends LitTemplate {
 	private Element gestionarLayout;
 	@Id("periodistasLayout")
 	private FormLayout periodistasLayout;
+	@Id("volverGestion")
+	private Button volverGestion;
+	
+	
+	public Button getVolverGestion() {
+		return volverGestion;
+	}
+
+	public void setVolverGestion(Button volverGestion) {
+		this.volverGestion = volverGestion;
+	}
+
 	public Button getBajaPeriodista() {
 		return bajaPeriodista;
 	}

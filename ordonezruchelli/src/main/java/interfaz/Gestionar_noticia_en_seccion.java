@@ -41,6 +41,6 @@ public class Gestionar_noticia_en_seccion extends VistaGestionarnoticiaenseccion
 	}
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
-		this._gestionar_noticia_de_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(new Gestionar (this._gestionar_noticia_de_seccion._gestionar._editor));
+		this._gestionar_noticia_de_seccion._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(this._gestionar_noticia_de_seccion._gestionar);
 	}
 }

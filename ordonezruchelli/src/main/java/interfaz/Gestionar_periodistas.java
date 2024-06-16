@@ -27,6 +27,11 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas{
         this._introducir_datos_de_periodista = new Introducir_datos_de_periodista(this);
 		this._introducir_datos_de_periodista.getDarAltaPeriodista().addClickListener(event->Dar_alta_periodista());
 		Introducir_datos_de_periodista();
+		
+		this.getVolverGestion().addClickListener(event->{
+			this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Volver_a_la_gestion_desde_gestion_portada();
+		});
 
 	}
 	
@@ -60,6 +65,6 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas{
     }
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
-		throw new UnsupportedOperationException();
+		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);;
 	}
 }
