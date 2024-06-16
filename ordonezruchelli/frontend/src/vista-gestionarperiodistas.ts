@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-introducirdatosdeperiodista';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
 import './vista-listadeperiodistas';
 
 @customElement('vista-gestionarperiodistas')
@@ -20,14 +21,16 @@ export class VistaGestionarperiodistas extends LitElement {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="gestionarLayout">
  <vaadin-button id="volverGestion">
-  Volver a gestion
+   Volver a gestion 
  </vaadin-button>
  <vista-introducirdatosdeperiodista></vista-introducirdatosdeperiodista>
  <vaadin-form-layout id="periodistasLayout">
-  <vista-listadeperiodistas></vista-listadeperiodistas>
   <vaadin-button id="bajaPeriodista">
     Dar de baja periodista 
   </vaadin-button>
+  <vaadin-combo-box id="periodistaCombo">
+   <vista-listadeperiodistas></vista-listadeperiodistas>
+  </vaadin-combo-box>
  </vaadin-form-layout>
 </vaadin-vertical-layout>
 `;

@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.combobox.ComboBox;
 
 @Tag("vista-gestionarperiodistas")
 @JsModule("./src/vista-gestionarperiodistas.ts")
@@ -20,8 +21,18 @@ public class VistaGestionarperiodistas extends LitTemplate {
 	private FormLayout periodistasLayout;
 	@Id("volverGestion")
 	private Button volverGestion;
+	@Id("periodistaCombo")
+	private ComboBox<String> periodistaCombo;
 	
 	
+	public ComboBox<String> getPeriodistaCombo() {
+		return periodistaCombo;
+	}
+
+	public void setPeriodistaCombo(ComboBox<String> periodistaCombo) {
+		this.periodistaCombo = periodistaCombo;
+	}
+
 	public Button getVolverGestion() {
 		return volverGestion;
 	}

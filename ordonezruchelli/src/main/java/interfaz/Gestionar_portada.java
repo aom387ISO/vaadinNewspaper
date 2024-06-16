@@ -15,6 +15,11 @@ public class Gestionar_portada extends VistaGestionarportada{
 		
 		_noticias_en_portada = new Noticias_en_portada(this);
 //		Noticias_en_portada();
+		
+		this.getVolverGestion().addClickListener(event->{
+			this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			Volver_a_la_gestion_desde_gestion_portada();
+		});
 	}
 
 	public void Noticias_en_portada() {
@@ -22,6 +27,6 @@ public class Gestionar_portada extends VistaGestionarportada{
 	}
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
-		throw new UnsupportedOperationException();
+		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);
 	}
 }

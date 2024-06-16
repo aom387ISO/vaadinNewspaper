@@ -40,7 +40,7 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas{
 	}
 
 	public void Dar_de_baja_periodista() {
-		throw new UnsupportedOperationException();
+		_iEditor.eliminarPeriodista(Integer.valueOf(this.getPeriodistaCombo().getValue()));
 	}
 
 	public void Introducir_datos_de_periodista() {
@@ -65,6 +65,6 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas{
     }
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
-		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);;
+		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);
 	}
 }

@@ -57,7 +57,8 @@ public class BD_Periodistas {
 		try {
 			Periodista periodista = PeriodistaDAO.loadPeriodistaByORMID(aPeriodistaID);
 			if (periodista != null) {
-				PeriodistaDAO.deleteAndDissociate(periodista);
+//				PeriodistaDAO.deleteAndDissociate(periodista);
+				periodista.setEstado(false);
 				t.commit();
 			}
 		} catch (Exception e) {

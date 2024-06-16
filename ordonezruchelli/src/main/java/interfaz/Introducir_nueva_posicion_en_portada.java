@@ -5,6 +5,7 @@ import vistas.VistaIntroducirnuevaposicionenportada;
 public class Introducir_nueva_posicion_en_portada extends VistaIntroducirnuevaposicionenportada{
 	//	private event _cambiar_posicion;
 	public Noticias_en_portada_item _noticias_en_portada;
+	bbdd.iEditor ieditor;
 	
 	public Introducir_nueva_posicion_en_portada (Editor editor) {
 		super();
@@ -12,6 +13,7 @@ public class Introducir_nueva_posicion_en_portada extends VistaIntroducirnuevapo
 	}
 
 	public void Cambiar_posicion() {
-		throw new UnsupportedOperationException();
+		//falta hacer cosas en la base de datos para acabar el metodo
+		ieditor.cambiarPosicion(null, 0);
 	}
 }
