@@ -112,7 +112,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	public void cambiarDatosNoticia(int idNoticia, String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo,
 			String aResumen) {
 		try {
-			_bd_not.cambiarDatosNoticia(idNoticia, aTitulo, _bd_fot, _bd_tem, aCuerpo, aResumen);
+			_bd_not.cambiarDatosNoticia(idNoticia, aTitulo, aImagenes, aTematica, aCuerpo, aResumen);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
