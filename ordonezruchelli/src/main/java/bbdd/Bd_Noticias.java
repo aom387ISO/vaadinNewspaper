@@ -134,7 +134,7 @@ public class Bd_Noticias {
 		}
 
 
-	   public void cambiarDatosNoticia(int aIdNoticia, String aTitulo, BD_Fotos aImagenes, BD_Tematicas aTematica, String aCuerpo, String aResumen) throws PersistentException {
+	   public void cambiarDatosNoticia(int aIdNoticia, String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) throws PersistentException {
 		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		    try {
 		        Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);

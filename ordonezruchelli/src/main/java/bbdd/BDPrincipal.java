@@ -109,9 +109,13 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void cambiarDatosNoticia(String aTitulo, BD_Fotos aImagenes, BD_Tematicas aTematica, String aCuerpo,
+	public void cambiarDatosNoticia(int idNoticia, String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo,
 			String aResumen) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_not.cambiarDatosNoticia(idNoticia, aTitulo, _bd_fot, _bd_tem, aCuerpo, aResumen);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void eliminarNoticia(int aIdNoticia) {

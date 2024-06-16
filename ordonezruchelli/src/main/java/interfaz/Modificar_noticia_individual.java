@@ -26,7 +26,7 @@ public class Modificar_noticia_individual extends VistaModificarnoticiaindividua
 	}
 
 	public void Borrar_noticia() {
-		_iPeriodista.eliminarNoticia(this._elegir_noticia._noticias_propias.ge);
+		_iPeriodista.eliminarNoticia(this._elegir_noticia._noticias_propias._noticia.getIdNoticia());
 		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista
 				.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista
@@ -35,6 +35,7 @@ public class Modificar_noticia_individual extends VistaModificarnoticiaindividua
 	}
 
 	public void Enviar_cambios() {
+		_iPeriodista.cambiarDatosNoticia(this._elegir_noticia._noticias_propias._noticia.getIdNoticia(), this.getTituloNoticia().getValue(), null, this.getTematica().getValue(), this.getNoticia().getValue(), this.getResumen().getValue());
 		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista
 				.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista
