@@ -77,10 +77,13 @@ public class BD_Usuarios_suscritos {
 			usuario.setFechaCaducidad(aCaducidad);
 			usuario.setCvv(aCvv);
 			Usuario_suscritoDAO.save(usuario);
+	        Notification notification = Notification.show("Registrado con éxito");
+	        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
-
+			Notification notification = Notification.show("No se ha podido registrar");
+	        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 		// return usuario;

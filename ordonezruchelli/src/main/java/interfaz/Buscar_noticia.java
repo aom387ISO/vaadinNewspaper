@@ -12,7 +12,7 @@ public class Buscar_noticia extends VistaBuscarnoticia {
 		super();
 		this._usuario_general = _usuario_general;
 		
-//		_noticias_en_busqueda = new Noticias_en_busqueda(_usuario_general);
+		_noticias_en_busqueda = new Noticias_en_busqueda(_usuario_general);
 		this.getAccederNoticiaBusqueda().addClickListener(event->{
 		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		Noticias_en_busqueda();

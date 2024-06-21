@@ -13,9 +13,11 @@ public class Noticias_en_busqueda_item extends VistaNoticiasenbusqueda_item{
 		this._noticia = noticia;
 		this.getNombreNoticiaBusqueda().setValue(_noticia.getTitulo());
 		this.getResumenNoticiaBusqueda().setValue(_noticia.getResumen());
+        Ver_noticia();
+
 	}
 	
 	public void Ver_noticia() {
-		throw new UnsupportedOperationException();
+        Ver_noticia noticia = new Ver_noticia(_noticias_en_busqueda._buscar_noticia._usuario_general);
 	}
 }

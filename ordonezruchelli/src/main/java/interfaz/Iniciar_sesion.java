@@ -52,7 +52,8 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 			bbdd.Editor _editor = _ieditor.loginEditor(this.getLogin().getValue(), this.getPassword().getValue());
 			if (_editor != null) {
 		        Notification notification = Notification.show("Editor logueado con éxito");
-		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);				_usuario_no_suscrito.MainView.removeAll();
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+		        _usuario_no_suscrito.MainView.removeAll();
 				Editor editor = new Editor(_usuario_no_suscrito.MainView, _editor);
 				_usuario_no_suscrito.MainView.add(editor);
 				return;
