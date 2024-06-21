@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import bbdd.*;
 import vistas.VistaIniciarsesion;
@@ -40,7 +42,8 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 				this.getPassword().getValue());
 
 		if (_usuarioSuscrito != null) {
-			_usuario_no_suscrito.MainView.removeAll();
+            Notification notification = Notification.show("Usuario logueado con éxito");
+            notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);			_usuario_no_suscrito.MainView.removeAll();
 			Usuario_suscrito usuarioSuscrito = new Usuario_suscrito(_usuario_no_suscrito.MainView, _usuarioSuscrito);
 			_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 			return;
@@ -48,8 +51,8 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 			System.out.println("usuario_suscrito es null\n");
 			bbdd.Editor _editor = _ieditor.loginEditor(this.getLogin().getValue(), this.getPassword().getValue());
 			if (_editor != null) {
-				System.out.println("ha entrado a editor");
-				_usuario_no_suscrito.MainView.removeAll();
+		        Notification notification = Notification.show("Editor logueado con éxito");
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);				_usuario_no_suscrito.MainView.removeAll();
 				Editor editor = new Editor(_usuario_no_suscrito.MainView, _editor);
 				_usuario_no_suscrito.MainView.add(editor);
 				return;
@@ -57,11 +60,15 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 			bbdd.Periodista _periodista = _iperiodista.loginPeriodista(this.getLogin().getValue(),
 						this.getPassword().getValue());
 			if (_periodista != null) {
-				System.out.println("periodista");
-				_usuario_no_suscrito.MainView.removeAll();
+			    Notification notification = Notification.show("Periodista logueado con éxito");
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+		        _usuario_no_suscrito.MainView.removeAll();
 				Periodista periodista = new Periodista(_usuario_no_suscrito.MainView, _periodista);
 				_usuario_no_suscrito.MainView.add(periodista);
 				return;
 			}
+			Notification notification = Notification.show("No se ha encontrado el usuario");
+	        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+
 	}
 }

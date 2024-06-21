@@ -3,6 +3,8 @@ package interfaz;
 import proyectoMDS.MainView;
 import vistas.VistaPersonalizarperfil;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
@@ -54,6 +56,8 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 	}
 
 	public void Cerrar_sesion() {
+        Notification notification = Notification.show("Cerrado de sesión con éxito");
+        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 		this._usuario_general.MainView.removeAll();
 		this._usuario_general.MainView.add(_usuario_general.MainView.usuario_no_suscrito);
 	}

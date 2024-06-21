@@ -7,6 +7,9 @@ import org.hibernate.resource.transaction.spi.TransactionStatus;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+
 public class BD_Usuarios_suscritos {
 	public BDPrincipal _bd_prin_u_sus;
 	public Vector<Usuario_suscrito> _contiene_usuario_suscrito = new Vector<Usuario_suscrito>();
@@ -19,7 +22,6 @@ public class BD_Usuarios_suscritos {
 			logueado = Usuario_suscritoDAO.loadUsuario_suscritoByQuery(
 					"CorreoElectronico = '" + aCorreo + "' AND Password = '" + aContrasena + "'", null);
 			t.commit();
-			System.out.println("aquassssssssssssss");
 //			if (logueado != null) {
 //				System.out.println("Usuario encontrado: " + logueado.toString());
 //				t.commit();
@@ -29,7 +31,6 @@ public class BD_Usuarios_suscritos {
 //	                    t.rollback(); 
 //	                }
 //			      }
-			System.out.println("usuariosuscrito not null");
 			return logueado;
 		} catch (Exception e) {
             if (t.getStatus() != TransactionStatus.COMMITTED) {
@@ -38,7 +39,6 @@ public class BD_Usuarios_suscritos {
 		}
 		
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
-		System.out.println("va a ser null joder");
 		return null;
 	}
 
@@ -48,11 +48,16 @@ public class BD_Usuarios_suscritos {
 			Usuario_suscrito usuario = Usuario_suscritoDAO.loadUsuario_suscritoByORMID(aIdUsuario);
 			if (usuario != null) {
 				Usuario_suscritoDAO.deleteAndDissociate(usuario);
+		        Notification notification = Notification.show("Se ha dado de baja éxito");
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 				t.commit();
 			}
 		} catch (Exception e) {
-			t.rollback();
+			Notification notification = Notification.show("No se ha podido dar de baja");
+	        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+			t.rollback();			
 		}
+
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 	}
 

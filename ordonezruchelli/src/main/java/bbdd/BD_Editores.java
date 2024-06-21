@@ -19,13 +19,6 @@ public class BD_Editores {
 			editor = EditorDAO.loadEditorByQuery(
 					"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
 			t.commit();
-			if (editor == null) {
-				Notification.show("Editor null");
-
-			} else {
-				Notification.show("Editor not null");
-
-			}
 			return editor;
 
 		} catch (Exception e) {

@@ -3,6 +3,9 @@ package bbdd;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+
 public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriodista, iEditor, iUsuario_no_suscrito {
 	public BD_Fotos _bd_fot = new BD_Fotos();
 	public BD_Editores _bd_edit = new BD_Editores();
@@ -30,6 +33,8 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 				usuario.setApodo(aANuevoApodo);
 				Usuario_suscritoDAO.save(usuario);
 				t.commit();
+		        Notification notification = Notification.show("Cambiado apodo con éxito");
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 				return;
 			}
 
@@ -37,6 +42,8 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 			if (editor != null) {
 				editor.setApodo(aANuevoApodo);
 				EditorDAO.save(editor);
+		        Notification notification = Notification.show("Cambiado apodo con éxito");
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 				t.commit();
 				return;
 			}
@@ -45,6 +52,8 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 			if (periodista != null) {
 				periodista.setApodo(aANuevoApodo);
 				PeriodistaDAO.save(periodista);
+		        Notification notification = Notification.show("Cambiado apodo con éxito");
+		        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 				t.commit();
 				return;
 			}
@@ -52,6 +61,8 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 
 		} catch (PersistentException e) {
 			e.printStackTrace();
+			Notification notification = Notification.show("No se ha podido cambiar el apodo");
+	        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
 		}
 
 	}
@@ -102,7 +113,6 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 
 	public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen, Periodista periodista) {
 		try {
-			System.out.println("\naaaaaaaCrearNoticiaBDDDDDDDDDDDDDDDDDD");
 			_bd_not.crearNoticia(aTitulo, null, aTematica, aCuerpo, aResumen, periodista);
 		} catch (PersistentException e) {
 			e.printStackTrace();
