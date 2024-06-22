@@ -1,10 +1,15 @@
 package bbdd;
 
 import bbdd.BDPrincipal;
+
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
+
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 
 public class BD_Periodistas {
 	public BDPrincipal _bd_prin_per;
@@ -39,6 +44,12 @@ public class BD_Periodistas {
 			throws PersistentException {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
+			Periodista periodistaExistente = PeriodistaDAO.loadPeriodistaByQuery("correoElectronico = '" + aCorreo+ "'", null);
+			if(periodistaExistente != null) {
+				Notification.show("Ya existe un usuario con este correo y contraseña").addThemeVariants(NotificationVariant.LUMO_ERROR);
+				t.rollback();
+				return;
+			}
 			Periodista periodista = PeriodistaDAO.createPeriodista();
 			periodista.setCorreoElectronico(aCorreo);
 			periodista.setPassword(aContrasena);
