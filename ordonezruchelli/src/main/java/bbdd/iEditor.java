@@ -12,7 +12,7 @@ public interface iEditor extends iUsuario_general {
 
 	public void anadirAportada(String aAIdSeccion, int aIdNoticia);
 
-	public void cambiarPosicion(String aAIdSeccion, int aANuevaPosicion);
+	public void cambiarPosicion(String aAIdSeccion, int aIdNoticia, int aANuevaPosicion);
 
 	public void eliminarSeccion(String aAIdSeccion);
 

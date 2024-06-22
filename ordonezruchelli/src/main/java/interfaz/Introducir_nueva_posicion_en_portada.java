@@ -14,6 +14,6 @@ public class Introducir_nueva_posicion_en_portada extends VistaIntroducirnuevapo
 
 	public void Cambiar_posicion() {
 		//falta hacer cosas en la base de datos para acabar el metodo
-		ieditor.cambiarPosicion(null, 0);
+		ieditor.cambiarPosicion("portada", _noticias_en_portada._noticia.getIdNoticia(), Integer.valueOf(this.getNuevaPosicion().getValue()));
 	}
 }

@@ -193,8 +193,12 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void cambiarPosicion(String aIdSeccion, int aNuevaPosicion) {
-		throw new UnsupportedOperationException();
+	public void cambiarPosicion(String aIdSeccion, int aIdNoticia, int aNuevaPosicion) {
+		try {
+			_bd_sec.cambiarPosicion(aIdSeccion, aIdNoticia, aNuevaPosicion);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void cambiarNombreSeccion(String aIdSeccion, String aNuevoNombreSeccion) {

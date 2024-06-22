@@ -74,8 +74,21 @@ public class BD_Secciones {
 
 	}
 
-	public void cambiarPosicion(String aIdSeccion, int aNuevaPosicion) {
-		throw new UnsupportedOperationException();
+	public void cambiarPosicion(String aIdSeccion, int aIdNoticia, int aNuevaPosicion) throws PersistentException{
+//		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+//		try {
+//			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
+//			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
+//			if (noticia != null && seccion != null) {
+//				
+//				SeccionDAO.save(seccion);
+//				t.commit();
+//			}
+//		} catch (Exception e) {
+//			t.rollback();
+//		}
+//		ProyectofinalPersistentManager.instance().disposePersistentManager();
+
 	}
 
 	public void cambiarNombreSeccion(String aIdSeccion, String aNuevoNombreSeccion) throws PersistentException {
