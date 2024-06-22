@@ -55,6 +55,7 @@ public class BD_Periodistas {
 			periodista.setPassword(aContrasena);
 			periodista.setApodo(aApodo);
 			periodista.setDni(aDni);
+			periodista.setEstado(true);
 			PeriodistaDAO.save(periodista);
 			t.commit();
 		} catch (Exception e) {
