@@ -21,7 +21,8 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 			_bd_u_sus.darDeBaja(aIdUsuario);
 		} catch (PersistentException e) {
 			e.printStackTrace();
-		}	}
+		}	
+	}
 
 	public void cambiarApodo(String aANuevoApodo, int aIdUsuario) {
 		PersistentTransaction t = null;
@@ -274,4 +275,22 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
         }
         return null;
     }
+    
+	public Noticia[] cargarNoticias() {
+        try {
+			return _bd_not.cargarNoticia();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+    
+	public Seccion[] cargarSecciones() {
+        try {
+			return _bd_sec.cargarSecciones();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

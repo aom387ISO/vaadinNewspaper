@@ -167,4 +167,21 @@ public class Bd_Noticias {
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 	}
+	
+    public Noticia[] cargarNoticia() throws PersistentException {
+        PersistentTransaction t = null;
+        try {
+        	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+            NoticiaCriteria criteria = new NoticiaCriteria();
+            Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
+            t.commit();
+            return noticias;
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+            ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+        return new Noticia[0];
+    }
+	
 }

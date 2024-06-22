@@ -108,4 +108,20 @@ public class BD_Secciones {
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
 	}
+	
+    public Seccion[] cargarSecciones() throws PersistentException {
+        PersistentTransaction t = null;
+        try {
+        	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+            SeccionCriteria criteria = new SeccionCriteria();
+            Seccion[] secciones = SeccionDAO.listSeccionByCriteria(criteria);
+            t.commit();
+            return secciones;
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+            ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+        return new Seccion[0];
+    }
 }

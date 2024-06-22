@@ -44,7 +44,6 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 	        try {
 	            bbdd.Periodista[] periodistas = _iEditor.cargarPeriodistas();
 	            _lista_de_periodistas.cargarPeriodistas(periodistas);
-	            this.getPeriodistasLayout().add(_lista_de_periodistas);
 
 	            List<String> apodos = java.util.Arrays.stream(periodistas).map(bbdd.Periodista::getApodo)
 	                                                  .collect(Collectors.toList());
@@ -86,16 +85,35 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 		String dni = this._introducir_datos_de_periodista.getDniPeriodista().getValue();
 		String foto = this._introducir_datos_de_periodista.getFotoPeriodista().getValue();
 
-		if (correo.isEmpty() || contrasena.isEmpty() || apodo.isEmpty() || dni.isEmpty()) {
-			Notification.show("Todos los campos son obligatorios", 3000, Notification.Position.MIDDLE);
-			return;
-		} else {
-			_iEditor.crearPeriodista(correo, contrasena, apodo, dni, null);
-		}
+	    if (!validarCampos(correo, contrasena, dni, apodo)) {
+	        Notification.show("Todos los campos son obligatorios")
+	            .addThemeVariants(NotificationVariant.LUMO_ERROR);
+	        return;
+	    }
+		
+	    if (!validarPassword(contrasena)) {
+	        Notification.show("La contraseña debe tener al menos 8 caracteres, un número, una mayúscula y una minúscula")
+	        	.addThemeVariants(NotificationVariant.LUMO_ERROR);
+	        return;
+	    }
 
+		_iEditor.crearPeriodista(correo, contrasena, apodo, dni, null);
+		
 	}
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
 		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);
+	}
+	
+	private boolean validarPassword(String password) {
+	    if (password.length() < 8) return false;
+	    if (!password.chars().anyMatch(Character::isDigit)) return false;
+	    if (!password.chars().anyMatch(Character::isUpperCase)) return false;
+	    if (!password.chars().anyMatch(Character::isLowerCase)) return false;
+	    return true;
+	}
+//Se mira mejor por isEmpty para comprobar que todos los campos estén rellenos en vez de mirar si no son nulos para que funcione correctamente.
+	private boolean validarCampos(String correo, String password, String dni, String apodo) {
+	    return !correo.isEmpty() && !password.isEmpty() && !dni.isEmpty() && !apodo.isEmpty();
 	}
 }

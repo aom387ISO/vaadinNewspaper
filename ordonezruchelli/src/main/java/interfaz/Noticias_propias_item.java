@@ -11,7 +11,7 @@ public class Noticias_propias_item extends Listado_de_noticias_generico_item {
 	}
 
 	public void Elegir_noticia() {
-		Modificar_noticia_individual modificarNoticia = new Modificar_noticia_individual(_periodista, _noticia.getId());
+//		Modificar_noticia_individual modificarNoticia = new Modificar_noticia_individual(_periodista, _noticia.getId());
 
 	}
 }
