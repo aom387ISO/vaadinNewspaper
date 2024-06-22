@@ -16,9 +16,9 @@ export class VistaListadeperiodistas_item extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-text-area label="Apodo" placeholder="Add detailed explanation" id="apodo"></vaadin-text-area>
- <vaadin-text-area label="DNI" placeholder="Add detailed explanation" id="dni"></vaadin-text-area>
- <vaadin-text-area label="Estado" placeholder="Add detailed explanation" id="estado"></vaadin-text-area>
+ <vaadin-text-area label="Apodo" placeholder="" id="apodo"></vaadin-text-area>
+ <vaadin-text-area label="DNI" placeholder="" id="dni"></vaadin-text-area>
+ <vaadin-text-area label="Estado" placeholder="" id="estado"></vaadin-text-area>
 </vaadin-horizontal-layout>
 `;
   }

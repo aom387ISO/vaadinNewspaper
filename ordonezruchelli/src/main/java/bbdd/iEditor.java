@@ -23,4 +23,9 @@ public interface iEditor extends iUsuario_general {
 	public void cambiarNombreSeccion(String aAIdSeccion, String aANuevoNombreSeccion);
 	
 	public Editor loginEditor(String aCorreo, String aContrasena);
+	
+	public Periodista[] cargarPeriodistas();
+	
+    public Periodista buscarPeriodistaPorApodo(String apodo);
+
 }

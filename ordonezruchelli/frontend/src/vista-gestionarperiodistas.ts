@@ -1,10 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import './vista-introducirdatosdeperiodista';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-combo-box/src/vaadin-combo-box.js';
-import './vista-listadeperiodistas';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-gestionarperiodistas')
 export class VistaGestionarperiodistas extends LitElement {
@@ -23,14 +21,11 @@ export class VistaGestionarperiodistas extends LitElement {
  <vaadin-button id="volverGestion">
    Volver a gestion 
  </vaadin-button>
- <vista-introducirdatosdeperiodista></vista-introducirdatosdeperiodista>
  <vaadin-form-layout id="periodistasLayout">
   <vaadin-button id="bajaPeriodista">
     Dar de baja periodista 
   </vaadin-button>
-  <vaadin-combo-box id="periodistaCombo">
-   <vista-listadeperiodistas></vista-listadeperiodistas>
-  </vaadin-combo-box>
+  <vaadin-combo-box id="periodistaCombo"></vaadin-combo-box>
  </vaadin-form-layout>
 </vaadin-vertical-layout>
 `;

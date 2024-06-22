@@ -254,4 +254,24 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return editor;
 	}
 
+	public Periodista[] cargarPeriodistas() {
+        try {
+			return _bd_per.cargarPeriodistas();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+    public Periodista buscarPeriodistaPorApodo(String apodo) {
+        try {
+            Periodista[] periodistas = PeriodistaDAO.listPeriodistaByQuery("Apodo = '" + apodo + "'", null);
+            if (periodistas.length > 0) {
+                return periodistas[0];
+            }
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

@@ -87,4 +87,32 @@ public class BD_Periodistas {
 		    ProyectofinalPersistentManager.instance().disposePersistentManager();
 		}
 	
+	    public Periodista[] cargarPeriodistas() throws PersistentException {
+            PersistentTransaction t = null;
+	        try {
+	        	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+	            PeriodistaCriteria criteria = new PeriodistaCriteria();
+	            Periodista[] periodistas = PeriodistaDAO.listPeriodistaByCriteria(criteria);
+	            t.commit();
+	            return periodistas;
+	        } catch (PersistentException e) {
+	            e.printStackTrace();
+	        }
+	            ProyectofinalPersistentManager.instance().disposePersistentManager();
+	        
+	        return new Periodista[0];
+	    }
+	    
+	    public Periodista buscarPeriodistaPorApodo(String apodo) {
+	        try {
+	            Periodista[] periodistas = PeriodistaDAO.listPeriodistaByQuery("Apodo = '" + apodo + "'", null);
+	            if (periodistas.length > 0) {
+	                return periodistas[0];
+	            }
+	        } catch (PersistentException e) {
+	            e.printStackTrace();
+	        }
+	        return null;
+	    }
+	    
 }

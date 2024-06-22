@@ -13,7 +13,7 @@ import com.vaadin.flow.component.combobox.ComboBox;
 @JsModule("./src/vista-gestionarperiodistas.ts")
 public class VistaGestionarperiodistas extends LitTemplate {
 
-    @Id("bajaPeriodista")
+	@Id("bajaPeriodista")
 	private Button bajaPeriodista;
 	@Id("gestionarLayout")
 	private Element gestionarLayout;
@@ -23,8 +23,7 @@ public class VistaGestionarperiodistas extends LitTemplate {
 	private Button volverGestion;
 	@Id("periodistaCombo")
 	private ComboBox<String> periodistaCombo;
-	
-	
+
 	public ComboBox<String> getPeriodistaCombo() {
 		return periodistaCombo;
 	}
@@ -66,7 +65,7 @@ public class VistaGestionarperiodistas extends LitTemplate {
 	}
 
 	public VistaGestionarperiodistas() {
-        // You can initialise any data required for the connected UI components here.
-    }
+		// You can initialise any data required for the connected UI components here.
+	}
 
 }

@@ -18,7 +18,7 @@ export class VistaListadeperiodistas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing">
- <vaadin-text-area label="Listado de periodistas" placeholder="Add detailed explanation" id="listaPeriodistas" style="flex-grow: 1; flex-shrink: 1; padding: var(--lumo-space-xs); height: 10%;"></vaadin-text-area>
+ <vaadin-text-area label="Listado de periodistas" placeholder="" id="listaPeriodistas" style="flex-grow: 1; flex-shrink: 1; padding: var(--lumo-space-xs); height: 10%;"></vaadin-text-area>
  <vista-listadeperiodistas_item></vista-listadeperiodistas_item>
 </vaadin-vertical-layout>
 `;

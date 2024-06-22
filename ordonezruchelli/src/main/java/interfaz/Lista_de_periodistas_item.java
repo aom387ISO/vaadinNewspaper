@@ -10,7 +10,7 @@ public class Lista_de_periodistas_item extends VistaListadeperiodistas_item{
 		this._periodista = periodista;
 		this.getApodo().setValue(_periodista.getApodo());
 		this.getDni().setValue(_periodista.getDni());
-		this.getEstado().setValue(_periodista.getEstado() ? "Alta" : "Baja");
+		this.getEstado().setValue(_periodista.getEstado() ? "Activado" : "Desactivado");
 		this._lista_de_periodistas = _lista_de_periodistas;
 	}
 }
