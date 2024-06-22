@@ -68,6 +68,12 @@ public class BD_Usuarios_suscritos {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		Usuario_suscrito usuario = null;
 		try {
+			Usuario periodistaExistente = UsuarioDAO.loadUsuarioByQuery("correoElectronico = '" + aCorreo+ "'", null);
+			if(periodistaExistente != null) {
+				Notification.show("Ya existe un usuario con este correo y contraseña").addThemeVariants(NotificationVariant.LUMO_ERROR);
+				t.rollback();
+				return null;
+			}
 			usuario = Usuario_suscritoDAO.createUsuario_suscrito();
 			usuario.setCorreoElectronico(aCorreo);
 			usuario.setPassword(aContrasena);

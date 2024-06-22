@@ -40,10 +40,12 @@ public class Registrarse extends VistaRegistrarse {
 	        Notification.show("La contraseña debe tener al menos 8 caracteres, un número, una mayúscula y una minúscula").addThemeVariants(NotificationVariant.LUMO_ERROR);
 	        return;
 	    }
-
-	    _iusuarioSuscrito.registrarse(correo, password, apodo, dni, null, nTarjeta, fechaCaducidad, cvv);
-	    this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
-	    this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_iniciar_sesion);
+	    	_iusuarioSuscrito.registrarse(correo, password, apodo, dni, null, nTarjeta, fechaCaducidad, cvv);
+	    	this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
+		    this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_iniciar_sesion);
+		
+	    
+	    
 	}
 
 	private boolean validarPassword(String password) {

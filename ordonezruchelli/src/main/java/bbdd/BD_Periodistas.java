@@ -24,6 +24,8 @@ public class BD_Periodistas {
 				periodista = PeriodistaDAO.loadPeriodistaByQuery(
 						"correoElectronico = '" + aCorreo + "' AND password = '" + aContrasena + "'", null);
 				t.commit();
+				if(!periodista.getEstado()) return null;
+				
 				return periodista;
 
 			} catch (Exception e) {
