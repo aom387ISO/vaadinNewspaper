@@ -44,7 +44,7 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 
 	public void Volver_a_portada() {
 		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
-		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_usuario_general);
+		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_usuario_general._ver_noticia);
 
 	}
 

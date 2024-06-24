@@ -14,6 +14,8 @@ public class Gestion_seccion extends VistaGestionseccion{
 		this._gestionar = gestionar;
 		
 		_gestionar_seccion = new Gestionar_seccion(this);
+//		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+//		Gestionar_seccion();
 		this.getGestionarSeccion().addClickListener(event->{
 			this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Gestionar_seccion();

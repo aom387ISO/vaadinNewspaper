@@ -16,4 +16,10 @@ public class Listado_de_secciones extends Listado_de_secciones_generico {
 		this._visualizar_seccion._usuario_general = usuarioGeneral;
 		}
 	}
+    public void cargarSecciones(bbdd.Seccion[] secciones) {
+        for (bbdd.Seccion seccion : secciones) {
+        	Listado_de_secciones_item item = new Listado_de_secciones_item(this, seccion);
+            _item.add(item);
+        }
+    }
 }

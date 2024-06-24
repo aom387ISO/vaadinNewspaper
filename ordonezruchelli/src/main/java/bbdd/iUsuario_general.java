@@ -15,4 +15,8 @@ public interface iUsuario_general {
 	public void gustarNoticia(int aAIdNoticia, int aIdUsuario);
 
 	public void comentar(int aAIdUsuario, int aAIdComentario, String aAContenido);
+	
+    public Noticia[] cargarNoticiasPorSeccionPortada();
+    
+    public Seccion[] cargarSecciones();
 }

@@ -51,7 +51,8 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 	        } catch (Exception e) {
 	            e.printStackTrace();
 		        Notification notification = Notification.show("No se han cargado los periodistas");
-		        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);	        }
+		        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);	        
+		        }
 	    }
 
 	    public void Dar_de_baja_periodista() {

@@ -22,6 +22,7 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 		super();
 		this._gestionar_noticia_en_seccion = gestionar_noticia_en_seccion;
 		
+        getAnadirNoticiaSeccion().addClickListener(event -> Anadir_noticia());
 	
 		_listado_de_secciones = new Listado_de_secciones(_gestionar_noticia_en_seccion._gestionar_noticia_de_seccion._gestionar._editor);
 		Listado_de_secciones();		
@@ -46,5 +47,5 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 			ieditor.anadirNoticiaSeccion(noticia.getIdNoticia(), idSeccion);
 			Notification.show("Noticia añadida a seccion");
 			}
-		}
+	}
 }

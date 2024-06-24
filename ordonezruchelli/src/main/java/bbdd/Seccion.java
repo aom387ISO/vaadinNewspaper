@@ -101,7 +101,7 @@ public class Seccion implements Serializable {
 		return getIdSeccion();
 	}
 	
-	private void setORM_Se_encuentra(java.util.Set value) {
+	public void setORM_Se_encuentra(java.util.Set value) {
 		this.ORM_se_encuentra = value;
 	}
 	

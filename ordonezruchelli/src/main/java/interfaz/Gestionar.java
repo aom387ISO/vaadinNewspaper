@@ -44,7 +44,8 @@ public class Gestionar extends VistaGestionar{
 	}
 
 	public void Gestionar_noticia_de_seccion() {
-		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_noticia_de_seccion);
+		this._gestionar_noticia_de_seccion._gestionar_noticia_en_seccion = new Gestionar_noticia_en_seccion(_gestionar_noticia_de_seccion);
+		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_noticia_de_seccion._gestionar_noticia_en_seccion);
 	}
 
 	public void Gestionar_periodistas() {
@@ -56,6 +57,7 @@ public class Gestionar extends VistaGestionar{
 	}
 
 	public void Gestion_seccion() {
-		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestion_seccion);
+		this._gestion_seccion._gestionar_seccion = new Gestionar_seccion(_gestion_seccion);
+		this._editor.getNoticiasBanner().as(VerticalLayout.class).add(_gestion_seccion._gestionar_seccion);
 	}
 }

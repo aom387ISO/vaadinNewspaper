@@ -1,6 +1,9 @@
 package bbdd;
 
 import bbdd.BDPrincipal;
+
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;

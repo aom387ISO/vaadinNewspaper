@@ -210,7 +210,11 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 
 	public void eliminarSeccion(String aIdSeccion) {
-		throw new UnsupportedOperationException();
+		try {
+			_bd_sec.eliminarSeccion(aIdSeccion);
+		} catch(PersistentException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public Usuario_suscrito login(String aCorreo, String aContrasena) {
