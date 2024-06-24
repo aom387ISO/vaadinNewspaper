@@ -92,11 +92,11 @@ public class Tematica implements Serializable {
 		return getIdTematica();
 	}
 	
-	private void setORM_Da_tematica_a(java.util.Set value) {
+	public void setORM_Da_tematica_a(java.util.Set value) {
 		this.ORM_da_tematica_a = value;
 	}
 	
-	private java.util.Set getORM_Da_tematica_a() {
+	public java.util.Set getORM_Da_tematica_a() {
 		return ORM_da_tematica_a;
 	}
 	

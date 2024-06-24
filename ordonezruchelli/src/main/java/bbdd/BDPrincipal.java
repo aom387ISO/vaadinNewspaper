@@ -310,4 +310,12 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 	
+	public Noticia[] mostrarNoticiasAutor(Periodista periodista) {
+		try {
+			return _bd_not.mostrarNoticiasAutor(periodista);
+		}catch(PersistentException e) {
+			e.printStackTrace();
+	}
+		return null;
+	}
 }

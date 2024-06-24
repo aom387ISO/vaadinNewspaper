@@ -121,12 +121,14 @@ public class Bd_Noticias {
 		    	noticia.setTitulo(aTitulo);
 		    	noticia.setCuerpo(aCuerpo);
 		    	noticia.setResumen(aResumen);
-	            
+		    	aTematica.getORM_Da_tematica_a().add(noticia);
+		    	periodista.getORM_Publica().add(noticia);
 		    	noticia.setAutor(periodista);
 //		        nuevaNoticia.setImagenes(aImagenes);
 		    	noticia.setnValoracionesNegativas(0);
 		    	noticia.setnValoracionesPositivas(0);
 		    	noticia.setORM_Autor(periodista);
+	            periodista.getORM_Publica().add(noticia);
 		        NoticiaDAO.save(noticia);
 		        System.out.println("noticiaaaaaaaaaaaaaaa");
 		        t.commit();
@@ -224,4 +226,9 @@ public class Bd_Noticias {
         
         return new Noticia[0];
     }
+    
+    public Noticia[] mostrarNoticiasAutor(Periodista periodista) throws PersistentException {
+        return NoticiaDAO.listNoticiaByQuery("PeriodistaUsuarioIdUsuario = " + periodista.getIdUsuario(), null);
+    }
+    
 }

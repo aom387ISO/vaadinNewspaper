@@ -56,11 +56,11 @@ public class Periodista extends bbdd.Usuario implements Serializable {
 		return estado;
 	}
 	
-	private void setORM_Publica(java.util.Set value) {
+	public void setORM_Publica(java.util.Set value) {
 		this.ORM_publica = value;
 	}
 	
-	private java.util.Set getORM_Publica() {
+	public java.util.Set getORM_Publica() {
 		return ORM_publica;
 	}
 	
