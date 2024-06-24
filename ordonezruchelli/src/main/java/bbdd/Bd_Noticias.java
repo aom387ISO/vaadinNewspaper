@@ -1,7 +1,12 @@
 package bbdd;
 
 import bbdd.BDPrincipal;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
+import java.util.stream.Collectors;
 
 import org.hibernate.Hibernate;
 import org.orm.PersistentException;
@@ -183,5 +188,40 @@ public class Bd_Noticias {
         
         return new Noticia[0];
     }
-	
+    
+    public Noticia[] cargarNoticiasPorSeccionPortada() throws PersistentException {
+        PersistentTransaction t = null;
+
+    	try {
+        	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+
+            // Obtener todas las secciones donde portada es true
+            bbdd.Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
+            
+            if (secciones.length == 0) {
+                return new Noticia[0];
+            }
+//            String condition = "esta_contenida.IdSeccion IN (" +
+//                    Arrays.stream(secciones).map(seccion -> String.valueOf(seccion.getIdSeccion())).collect(Collectors.joining(", ")) +
+//                ")";
+            // Construir una consulta para obtener las noticias de esas secciones
+//            String condition = "esta_contenida.IdSeccion IN (" +
+//                Arrays.stream(secciones).map(seccion -> "'" + seccion.getIdSeccion() + "'").collect(Collectors.joining(", ")) +
+//            ")";
+            String condition = null;
+            
+            Noticia[] noticias = NoticiaDAO.listNoticiaByQuery(condition, null);
+            
+            
+            
+     
+            t.commit();
+            return noticias;
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+        return new Noticia[0];
+    }
 }

@@ -27,5 +27,7 @@ public interface iEditor extends iUsuario_general {
 	public Periodista[] cargarPeriodistas();
 	
     public Periodista buscarPeriodistaPorApodo(String apodo);
+    
+    public Noticia[] cargarNoticiasPorSeccionPortada();
 
 }

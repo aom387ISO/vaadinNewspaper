@@ -297,4 +297,13 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 		return null;
 	}
+	public Noticia[] cargarNoticiasPorSeccionPortada() {
+        try {
+			return _bd_not.cargarNoticiasPorSeccionPortada();
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 }
