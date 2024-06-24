@@ -18,7 +18,8 @@ public class Visualizar_noticia_propias extends VistaVisualizarnoticiapropias{
 	}
 
 	public void Volver_a_gestion() {
-		throw new UnsupportedOperationException();
+		this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+		this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(	this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia);
 	}
 
 	public void Noticias_propias() {

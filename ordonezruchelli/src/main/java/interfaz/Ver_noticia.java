@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import bbdd.BDPrincipal;
 import bbdd.iUsuario_general;
 import vistas.VistaVernoticia;
@@ -26,7 +28,8 @@ public class Ver_noticia extends VistaVernoticia {
 	}
 
 	public void Ver_comentarios() {
-		throw new UnsupportedOperationException();
+		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_ver_comentarios);
 	}
 
 	public void Dar_me_gusta_noticia() {
@@ -37,6 +40,9 @@ public class Ver_noticia extends VistaVernoticia {
 	}
 
 	public void Dar_no_me_gusta_noticia() {
-		throw new UnsupportedOperationException();
+		bbdd.Usuario usuario = _usuario_general._usuario;
+//		_iUsuario_general.gustarNoticia(this._listado_de_noticias.getId(), this._usuario_general.get);
+	
+		_iUsuario_general.noGustarNoticia(this._listado_de_noticias._noticia.getIdNoticia(), usuario.getIdUsuario());
 	}
 }
