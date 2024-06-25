@@ -8,6 +8,9 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+
 public class BD_Secciones {
 	public BDPrincipal _bd_prin_sec;
 	public Vector<Seccion> _contiene_secciones = new Vector<Seccion>();
@@ -18,9 +21,15 @@ public class BD_Secciones {
 			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
 			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
 			if (noticia != null && seccion != null) {
-				seccion.se_encuentra.add(noticia);
+//				seccion.se_encuentra.add(noticia);
+				if(!noticia.esta_contenida.contains(seccion)) {
+				noticia.esta_contenida.add(seccion);
 				SeccionDAO.save(seccion);
+			    Notification.show("Noticia añadida a sección").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 				t.commit();
+				}else {
+				Notification.show("Ya está incluida la noticia").addThemeVariants(NotificationVariant.LUMO_ERROR);
+				}
 			}
 		} catch (Exception e) {
 			t.rollback();

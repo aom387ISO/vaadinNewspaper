@@ -122,7 +122,7 @@ public class Bd_Noticias {
 		    	noticia.setCuerpo(aCuerpo);
 		    	noticia.setResumen(aResumen);
 		    	aTematica.getORM_Da_tematica_a().add(noticia);
-		    	periodista.getORM_Publica().add(noticia);
+//		    	periodista.getORM_Publica().add(noticia);
 		    	noticia.setAutor(periodista);
 //		        nuevaNoticia.setImagenes(aImagenes);
 		    	noticia.setnValoracionesNegativas(0);
@@ -230,5 +230,52 @@ public class Bd_Noticias {
     public Noticia[] mostrarNoticiasAutor(Periodista periodista) throws PersistentException {
         return NoticiaDAO.listNoticiaByQuery("PeriodistaUsuarioIdUsuario = " + periodista.getIdUsuario(), null);
     }
+    
+//    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) throws PersistentException {
+//        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+//        try {
+//        	List<Noticia> noticias = NoticiaDAO.queryNoticia(null, null);
+//            List<Noticia> noticiasNoContenidas = new ArrayList<>();
+//
+//            for (Noticia noticia : noticias) {
+//                boolean isInSeccion = false;
+//                for (Seccion seccion : noticia.esta_contenida) {
+//                    if (seccion.getIdSeccion().equals(idSeccion)) {
+//                        isInSeccion = true;
+//                        break;
+//                    }
+//                }
+//                if (!isInSeccion) {
+//                    noticiasNoContenidas.add(noticia);
+//                }
+//            }
+//
+//            t.commit();
+//            return noticiasNoContenidas.toArray(new Noticia[noticiasNoContenidas.size()]);
+//        } catch (Exception e) {
+//            t.rollback();
+//        }
+//        ProyectofinalPersistentManager.instance().disposePersistentManager();
+//
+//    }
+
+    public Noticia obtenerNoticiaPorTitulo(String titulo) throws PersistentException {
+        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+        try {
+            Noticia[] noticias = NoticiaDAO.listNoticiaByQuery("Titulo = '" + titulo + "'", null);
+            t.commit();
+            if (noticias != null && noticias.length > 0) {
+                return noticias[0];
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            t.rollback();
+        }    
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return null;
+
+    }
+
     
 }

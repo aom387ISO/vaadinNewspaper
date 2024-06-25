@@ -318,4 +318,19 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 	}
 		return null;
 	}
+
+	@Override
+	public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) {
+		return null;
+	}
+
+	
+	public Noticia obtenerNoticiaPorTitulo(String titulo) {
+		try {
+			return _bd_not.obtenerNoticiaPorTitulo(titulo);
+		}catch(PersistentException e) {
+			e.printStackTrace();
+	}
+		return null;
+	}
 }

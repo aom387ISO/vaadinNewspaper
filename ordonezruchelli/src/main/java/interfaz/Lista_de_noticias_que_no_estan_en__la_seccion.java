@@ -13,4 +13,11 @@ public class Lista_de_noticias_que_no_estan_en__la_seccion extends VistaListaden
 			this._anadir_noticia_a_seccion._gestionar_noticia_en_seccion._gestionar_noticia_de_seccion._gestionar._editor = editor;
 		}
 	}
+	
+    public void cargarNoticias(bbdd.Noticia[] noticias) {
+        for (bbdd.Noticia noticia : noticias) {
+        	Lista_de_noticias_que_no_estan_en__la_seccion_item item = new Lista_de_noticias_que_no_estan_en__la_seccion_item(this, noticia);
+            _item.add(item);
+        }
+    }
 }

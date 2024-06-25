@@ -19,4 +19,6 @@ public interface iUsuario_general {
     public Noticia[] cargarNoticiasPorSeccionPortada();
     
     public Seccion[] cargarSecciones();
+    
+    public Noticia[] cargarNoticias();
 }

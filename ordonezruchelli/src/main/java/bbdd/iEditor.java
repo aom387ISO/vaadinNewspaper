@@ -31,5 +31,9 @@ public interface iEditor extends iUsuario_general {
     public Noticia[] cargarNoticiasPorSeccionPortada();
     
     public Seccion[] cargarSecciones();
+    
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion);
+    
+    public Noticia obtenerNoticiaPorTitulo(String titulo);
 
 }

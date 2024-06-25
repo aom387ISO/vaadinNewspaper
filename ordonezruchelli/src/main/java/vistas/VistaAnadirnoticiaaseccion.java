@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.combobox.ComboBox;
 
 @Tag("vista-anadirnoticiaaseccion")
 @JsModule("./src/vista-anadirnoticiaaseccion.ts")
@@ -14,8 +15,6 @@ public class VistaAnadirnoticiaaseccion extends LitTemplate {
 
     @Id("anadirNoticiaSeccion")
 	private Button anadirNoticiaSeccion;
-	@Id("seccion")
-	private Select seccion;
 	public HorizontalLayout getGeneralAnadir() {
 		return generalAnadir;
 	}
@@ -28,10 +27,12 @@ public class VistaAnadirnoticiaaseccion extends LitTemplate {
 
 
 
-	@Id("noticia")
-	private Select noticia;
 	@Id("generalAnadir")
 	private HorizontalLayout generalAnadir;
+	@Id("comboListadoSeccion")
+	private ComboBox<String> comboListadoSeccion;
+	@Id("comboListadoNoticias")
+	private ComboBox<String> comboListadoNoticias;
 	
 	public Button getAnadirNoticiaSeccion() {
 		return anadirNoticiaSeccion;
@@ -45,26 +46,27 @@ public class VistaAnadirnoticiaaseccion extends LitTemplate {
 
 
 
-	public Select getSeccion() {
-		return seccion;
+
+	public ComboBox<String> getComboListadoSeccion() {
+		return comboListadoSeccion;
 	}
 
 
 
-	public void setSeccion(Select seccion) {
-		this.seccion = seccion;
+	public void setComboListadoSeccion(ComboBox<String> comboListadoSeccion) {
+		this.comboListadoSeccion = comboListadoSeccion;
 	}
 
 
 
-	public Select getNoticia() {
-		return noticia;
+	public ComboBox<String> getComboListadoNoticias() {
+		return comboListadoNoticias;
 	}
 
 
 
-	public void setNoticia(Select noticia) {
-		this.noticia = noticia;
+	public void setComboListadoNoticias(ComboBox<String> comboListadoNoticias) {
+		this.comboListadoNoticias = comboListadoNoticias;
 	}
 
 
