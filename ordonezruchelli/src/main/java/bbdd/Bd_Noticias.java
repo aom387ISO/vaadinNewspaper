@@ -231,33 +231,31 @@ public class Bd_Noticias {
         return NoticiaDAO.listNoticiaByQuery("PeriodistaUsuarioIdUsuario = " + periodista.getIdUsuario(), null);
     }
     
-//    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) throws PersistentException {
-//        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-//        try {
-//        	List<Noticia> noticias = NoticiaDAO.queryNoticia(null, null);
-//            List<Noticia> noticiasNoContenidas = new ArrayList<>();
-//
-//            for (Noticia noticia : noticias) {
-//                boolean isInSeccion = false;
-//                for (Seccion seccion : noticia.esta_contenida) {
-//                    if (seccion.getIdSeccion().equals(idSeccion)) {
-//                        isInSeccion = true;
-//                        break;
-//                    }
-//                }
-//                if (!isInSeccion) {
-//                    noticiasNoContenidas.add(noticia);
-//                }
-//            }
-//
-//            t.commit();
-//            return noticiasNoContenidas.toArray(new Noticia[noticiasNoContenidas.size()]);
-//        } catch (Exception e) {
-//            t.rollback();
-//        }
-//        ProyectofinalPersistentManager.instance().disposePersistentManager();
-//
-//    }
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) throws PersistentException {
+        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+        try {
+
+            NoticiaCriteria criteria = new NoticiaCriteria();
+            Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
+          List<Noticia> noticiasNoContenidas = new ArrayList<>();
+            Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
+
+            for (Noticia noticia : noticias) {
+                if(!noticia.esta_contenida.contains(seccion)) {
+                    noticiasNoContenidas.add(noticia);
+                            
+                }
+            }
+
+            t.commit();
+            return noticiasNoContenidas.toArray(new Noticia[noticiasNoContenidas.size()]);
+        } catch (Exception e) {
+            t.rollback();
+        }
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return null;
+
+    }
 
     public Noticia obtenerNoticiaPorTitulo(String titulo) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
