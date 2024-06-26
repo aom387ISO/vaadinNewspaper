@@ -228,16 +228,33 @@ public class Bd_Noticias {
     }
     
     public Noticia[] mostrarNoticiasAutor(Periodista periodista) throws PersistentException {
-        return NoticiaDAO.listNoticiaByQuery("PeriodistaUsuarioIdUsuario = " + periodista.getIdUsuario(), null);
-    }
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Integer idPeriodista = periodista.getIdUsuario();
+			NoticiaCriteria criteria = new NoticiaCriteria();
+			Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
+	        List<Noticia> noticiaDeAutor = new ArrayList<>();
+
+			for(Noticia noticia : noticias) {
+				if(periodista.publica.contains(noticia)) {
+					noticiaDeAutor.add(noticia);
+				}
+			}
+			t.commit();
+            return noticiaDeAutor.toArray(new Noticia[noticiaDeAutor.size()]);
+		} catch (Exception e) {
+			t.rollback();
+		}
+			ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return null;
+	}    
     
     public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
-
             NoticiaCriteria criteria = new NoticiaCriteria();
             Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
-          List<Noticia> noticiasNoContenidas = new ArrayList<>();
+            List<Noticia> noticiasNoContenidas = new ArrayList<>();
             Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
 
             for (Noticia noticia : noticias) {
@@ -263,7 +280,7 @@ public class Bd_Noticias {
 
             NoticiaCriteria criteria = new NoticiaCriteria();
             Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
-          List<Noticia> noticiasContenidas = new ArrayList<>();
+            List<Noticia> noticiasContenidas = new ArrayList<>();
             Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
 
             for (Noticia noticia : noticias) {

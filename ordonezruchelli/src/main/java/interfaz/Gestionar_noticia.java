@@ -92,6 +92,7 @@ public class Gestionar_noticia extends VistaGestionarnoticia{
 	}
 
 	public void Modificar_noticia_previa() {
-		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_modificar_noticia_previa);
+		this._modificar_noticia_previa._noticias_propias = new Noticias_propias(_modificar_noticia_previa);
+		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(this._modificar_noticia_previa._noticias_propias);
 	}
 }
