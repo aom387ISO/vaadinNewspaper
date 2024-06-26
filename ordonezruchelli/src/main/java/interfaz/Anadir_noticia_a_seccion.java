@@ -36,7 +36,13 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 		Listado_de_secciones();		
 
 		_lista_de_noticias_que_no_estan_en__la_seccion = new Lista_de_noticias_que_no_estan_en__la_seccion(_gestionar_noticia_en_seccion._gestionar_noticia_de_seccion._gestionar._editor);		
-		Lista_de_noticias_que_no_estan_en__la_seccion();
+//		Lista_de_noticias_que_no_estan_en__la_seccion();
+		getComboListadoSeccion().addValueChangeListener(event -> {
+            String idSeccion = event.getValue();
+            if (idSeccion != null) {
+                Lista_de_noticias_que_no_estan_en__la_seccion(idSeccion);
+            }
+        });
 		
 	}
 	
@@ -55,19 +61,19 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 		}
 	}
 
-	public void Lista_de_noticias_que_no_estan_en__la_seccion() {
+	public void Lista_de_noticias_que_no_estan_en__la_seccion(String idSeccion) {
 //		this.getGeneralAnadir().add(_lista_de_noticias_que_no_estan_en__la_seccion);
-		try {
-			bbdd.Noticia[] noticias = _iusuariogeneral.cargarNoticias();
-			_lista_de_noticias_que_no_estan_en__la_seccion.cargarNoticias(noticias);
+        try {
+            bbdd.Noticia[] noticias = _iusuariogeneral.cargarNoticiasNoContenidasEnSeccion(idSeccion);
+            _lista_de_noticias_que_no_estan_en__la_seccion.cargarNoticias(noticias);
             List<String> noticia = java.util.Arrays.stream(noticias).map(bbdd.Noticia::getTitulo)
                     .collect(Collectors.toList());
             this.getComboListadoNoticias().setItems(noticia);
-		}catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-	        Notification notification = Notification.show("No se han cargado las noticias");
-	        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);	
-		}
+            Notification notification = Notification.show("No se han cargado las noticias");
+            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+        }
 	}
 
     public void Anadir_noticia() {

@@ -319,8 +319,21 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 
-	@Override
+	public Noticia[] cargarNoticiasContenidasEnSeccion(String idSeccion) {
+		try {
+			return _bd_not.cargarNoticiasContenidasEnSeccion(idSeccion);
+		}catch(PersistentException e) {
+			e.printStackTrace();
+	}
+		return null;
+	}
+	
 	public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) {
+		try {
+			return _bd_not.cargarNoticiasNoContenidasEnSeccion(idSeccion);
+		}catch(PersistentException e) {
+			e.printStackTrace();
+	}
 		return null;
 	}
 

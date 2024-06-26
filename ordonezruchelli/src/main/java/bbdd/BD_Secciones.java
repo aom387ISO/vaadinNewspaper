@@ -44,7 +44,8 @@ public class BD_Secciones {
 			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
 			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
 			if (noticia != null && seccion != null) {
-				seccion.se_encuentra.remove(noticia);
+				noticia.esta_contenida.remove(seccion);
+//				seccion.se_encuentra.remove(noticia);
 				SeccionDAO.save(seccion);
 				t.commit();
 			}

@@ -21,4 +21,9 @@ public interface iUsuario_general {
     public Seccion[] cargarSecciones();
     
     public Noticia[] cargarNoticias();
+    
+    public Noticia[] cargarNoticiasContenidasEnSeccion(String idSeccion);
+    
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion);
+    
 }

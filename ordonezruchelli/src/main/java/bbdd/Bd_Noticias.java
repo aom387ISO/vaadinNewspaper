@@ -257,6 +257,31 @@ public class Bd_Noticias {
 
     }
 
+    public Noticia[] cargarNoticiasContenidasEnSeccion(String idSeccion) throws PersistentException {
+        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+        try {
+
+            NoticiaCriteria criteria = new NoticiaCriteria();
+            Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
+          List<Noticia> noticiasContenidas = new ArrayList<>();
+            Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
+
+            for (Noticia noticia : noticias) {
+                if(noticia.esta_contenida.contains(seccion)) {
+                    noticiasContenidas.add(noticia);
+                            
+                }
+            }
+
+            t.commit();
+            return noticiasContenidas.toArray(new Noticia[noticiasContenidas.size()]);
+        } catch (Exception e) {
+            t.rollback();
+        }
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
+		return null;
+
+    }
     public Noticia obtenerNoticiaPorTitulo(String titulo) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
