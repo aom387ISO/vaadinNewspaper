@@ -19,7 +19,7 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class SeccionDAO {
-	public static Seccion loadSeccionByORMID(String idSeccion) throws PersistentException {
+	public static Seccion loadSeccionByORMID(int idSeccion) throws PersistentException {
 		try {
 			PersistentSession session = ProyectofinalPersistentManager.instance().getSession();
 			return loadSeccionByORMID(session, idSeccion);
@@ -30,7 +30,7 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion getSeccionByORMID(String idSeccion) throws PersistentException {
+	public static Seccion getSeccionByORMID(int idSeccion) throws PersistentException {
 		try {
 			PersistentSession session = ProyectofinalPersistentManager.instance().getSession();
 			return getSeccionByORMID(session, idSeccion);
@@ -41,7 +41,7 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion loadSeccionByORMID(String idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion loadSeccionByORMID(int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectofinalPersistentManager.instance().getSession();
 			return loadSeccionByORMID(session, idSeccion, lockMode);
@@ -52,7 +52,7 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion getSeccionByORMID(String idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion getSeccionByORMID(int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectofinalPersistentManager.instance().getSession();
 			return getSeccionByORMID(session, idSeccion, lockMode);
@@ -63,9 +63,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion loadSeccionByORMID(PersistentSession session, String idSeccion) throws PersistentException {
+	public static Seccion loadSeccionByORMID(PersistentSession session, int idSeccion) throws PersistentException {
 		try {
-			return (Seccion) session.load(bbdd.Seccion.class, idSeccion);
+			return (Seccion) session.load(bbdd.Seccion.class, Integer.valueOf(idSeccion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion getSeccionByORMID(PersistentSession session, String idSeccion) throws PersistentException {
+	public static Seccion getSeccionByORMID(PersistentSession session, int idSeccion) throws PersistentException {
 		try {
-			return (Seccion) session.get(bbdd.Seccion.class, idSeccion);
+			return (Seccion) session.get(bbdd.Seccion.class, Integer.valueOf(idSeccion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion loadSeccionByORMID(PersistentSession session, String idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion loadSeccionByORMID(PersistentSession session, int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Seccion) session.load(bbdd.Seccion.class, idSeccion, lockMode);
+			return (Seccion) session.load(bbdd.Seccion.class, Integer.valueOf(idSeccion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class SeccionDAO {
 		}
 	}
 	
-	public static Seccion getSeccionByORMID(PersistentSession session, String idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static Seccion getSeccionByORMID(PersistentSession session, int idSeccion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Seccion) session.get(bbdd.Seccion.class, idSeccion, lockMode);
+			return (Seccion) session.get(bbdd.Seccion.class, Integer.valueOf(idSeccion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

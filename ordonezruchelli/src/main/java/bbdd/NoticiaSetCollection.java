@@ -77,6 +77,7 @@ public class NoticiaSetCollection extends org.orm.util.ORMSet {
 	 * <li>resumen</li>
 	 * <li>nValoracionesPositivas</li>
 	 * <li>nValoracionesNegativas</li>
+	 * <li>posicionPortada</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -94,6 +95,7 @@ public class NoticiaSetCollection extends org.orm.util.ORMSet {
 	 * <li>resumen</li>
 	 * <li>nValoracionesPositivas</li>
 	 * <li>nValoracionesNegativas</li>
+	 * <li>posicionPortada</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

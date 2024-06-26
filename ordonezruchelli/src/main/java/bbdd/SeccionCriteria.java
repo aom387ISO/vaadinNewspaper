@@ -19,18 +19,20 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class SeccionCriteria extends AbstractORMCriteria {
-	public final StringExpression idSeccion;
+	public final IntegerExpression idSeccion;
 	public final BooleanExpression portada;
+	public final StringExpression nombre;
 	public final CollectionExpression se_encuentra;
-	public final StringExpression incluyeId;
+	public final IntegerExpression incluyeId;
 	public final AssociationExpression incluye;
 	
 	public SeccionCriteria(Criteria criteria) {
 		super(criteria);
-		idSeccion = new StringExpression("idSeccion", this);
+		idSeccion = new IntegerExpression("idSeccion", this);
 		portada = new BooleanExpression("portada", this);
+		nombre = new StringExpression("nombre", this);
 		se_encuentra = new CollectionExpression("ORM_se_encuentra", this);
-		incluyeId = new StringExpression("incluye.idSeccion", this);
+		incluyeId = new IntegerExpression("incluye.idSeccion", this);
 		incluye = new AssociationExpression("incluye", this);
 	}
 	

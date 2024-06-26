@@ -161,7 +161,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void anadirNoticiaSeccion(int aIdNoticia, String aIdSeccion) {
+	public void anadirNoticiaSeccion(int aIdNoticia, int aIdSeccion) {
 		try {
 			_bd_sec.anadirNoticiaSeccion(aIdNoticia, aIdSeccion);
 		} catch (PersistentException e) {
@@ -169,7 +169,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void eliminarNoticiaSeccion(int aIdNoticia, String aIdSeccion) {
+	public void eliminarNoticiaSeccion(int aIdNoticia, int aIdSeccion) {
 		try {
 			_bd_sec.eliminarNoticiaSeccion(aIdNoticia, aIdSeccion);
 		} catch (PersistentException e) {
@@ -319,7 +319,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 
-	public Noticia[] cargarNoticiasContenidasEnSeccion(String idSeccion) {
+	public Noticia[] cargarNoticiasContenidasEnSeccion(int idSeccion) {
 		try {
 			return _bd_not.cargarNoticiasContenidasEnSeccion(idSeccion);
 		}catch(PersistentException e) {
@@ -328,7 +328,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 	
-	public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) {
+	public Noticia[] cargarNoticiasNoContenidasEnSeccion(int idSeccion) {
 		try {
 			return _bd_not.cargarNoticiasNoContenidasEnSeccion(idSeccion);
 		}catch(PersistentException e) {

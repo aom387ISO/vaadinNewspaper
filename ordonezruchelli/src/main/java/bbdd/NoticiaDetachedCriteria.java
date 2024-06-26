@@ -28,6 +28,7 @@ public class NoticiaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression resumen;
 	public final IntegerExpression nValoracionesPositivas;
 	public final IntegerExpression nValoracionesNegativas;
+	public final IntegerExpression posicionPortada;
 	public final CollectionExpression esta_contenida;
 	public final CollectionExpression comentada_por;
 	public final CollectionExpression incluye;
@@ -45,6 +46,7 @@ public class NoticiaDetachedCriteria extends AbstractORMDetachedCriteria {
 		resumen = new StringExpression("resumen", this.getDetachedCriteria());
 		nValoracionesPositivas = new IntegerExpression("nValoracionesPositivas", this.getDetachedCriteria());
 		nValoracionesNegativas = new IntegerExpression("nValoracionesNegativas", this.getDetachedCriteria());
+		posicionPortada = new IntegerExpression("posicionPortada", this.getDetachedCriteria());
 		esta_contenida = new CollectionExpression("ORM_esta_contenida", this.getDetachedCriteria());
 		comentada_por = new CollectionExpression("ORM_comentada_por", this.getDetachedCriteria());
 		incluye = new CollectionExpression("ORM_incluye", this.getDetachedCriteria());
@@ -63,6 +65,7 @@ public class NoticiaDetachedCriteria extends AbstractORMDetachedCriteria {
 		resumen = new StringExpression("resumen", this.getDetachedCriteria());
 		nValoracionesPositivas = new IntegerExpression("nValoracionesPositivas", this.getDetachedCriteria());
 		nValoracionesNegativas = new IntegerExpression("nValoracionesNegativas", this.getDetachedCriteria());
+		posicionPortada = new IntegerExpression("posicionPortada", this.getDetachedCriteria());
 		esta_contenida = new CollectionExpression("ORM_esta_contenida", this.getDetachedCriteria());
 		comentada_por = new CollectionExpression("ORM_comentada_por", this.getDetachedCriteria());
 		incluye = new CollectionExpression("ORM_incluye", this.getDetachedCriteria());

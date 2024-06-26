@@ -20,14 +20,14 @@ import org.orm.criteria.*;
 
 public class TematicaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression idTematica;
-	public final StringExpression da_tematicaId;
+	public final IntegerExpression da_tematicaId;
 	public final AssociationExpression da_tematica;
 	public final CollectionExpression da_tematica_a;
 	
 	public TematicaDetachedCriteria() {
 		super(bbdd.Tematica.class, bbdd.TematicaCriteria.class);
 		idTematica = new StringExpression("idTematica", this.getDetachedCriteria());
-		da_tematicaId = new StringExpression("da_tematica.idSeccion", this.getDetachedCriteria());
+		da_tematicaId = new IntegerExpression("da_tematica.idSeccion", this.getDetachedCriteria());
 		da_tematica = new AssociationExpression("da_tematica", this.getDetachedCriteria());
 		da_tematica_a = new CollectionExpression("ORM_da_tematica_a", this.getDetachedCriteria());
 	}
@@ -35,7 +35,7 @@ public class TematicaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public TematicaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, bbdd.TematicaCriteria.class);
 		idTematica = new StringExpression("idTematica", this.getDetachedCriteria());
-		da_tematicaId = new StringExpression("da_tematica.idSeccion", this.getDetachedCriteria());
+		da_tematicaId = new IntegerExpression("da_tematica.idSeccion", this.getDetachedCriteria());
 		da_tematica = new AssociationExpression("da_tematica", this.getDetachedCriteria());
 		da_tematica_a = new CollectionExpression("ORM_da_tematica_a", this.getDetachedCriteria());
 	}

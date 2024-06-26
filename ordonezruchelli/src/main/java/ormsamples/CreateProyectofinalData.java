@@ -10,7 +10,7 @@ public class CreateProyectofinalData {
 		PersistentTransaction t = bbdd.ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
 			bbdd.Noticia lbbddNoticia = bbdd.NoticiaDAO.createNoticia();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene, incluye, comentada_por, esta_contenida, nValoracionesNegativas, nValoracionesPositivas, autor
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene, incluye, comentada_por, esta_contenida, posicionPortada, nValoracionesNegativas, nValoracionesPositivas, autor
 			bbdd.NoticiaDAO.save(lbbddNoticia);
 			bbdd.Usuario lbbddUsuario = bbdd.UsuarioDAO.createUsuario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : escribir, tiene_imagen
@@ -28,7 +28,7 @@ public class CreateProyectofinalData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : nValoracionesNegativas, nValoracionesPositvas, contenido, autor, comenta
 			bbdd.ComentarioDAO.save(lbbddComentario);
 			bbdd.Seccion lbbddSeccion = bbdd.SeccionDAO.createSeccion();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : se_encuentra, portada, idSeccion
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : se_encuentra, nombre, portada, idSeccion
 			bbdd.SeccionDAO.save(lbbddSeccion);
 			bbdd.Tematica lbbddTematica = bbdd.TematicaDAO.createTematica();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : da_tematica_a, idTematica

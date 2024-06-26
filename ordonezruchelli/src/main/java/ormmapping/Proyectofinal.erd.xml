@@ -16,7 +16,7 @@
     <Column name="PeriodistaUsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Periodista.UsuarioIdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Periodista.UsuarioIdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -91,6 +91,17 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="PosicionPortada">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
   </Entity>
   <Entity name="Periodista" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
     <Column name="Estado">
@@ -107,7 +118,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -132,7 +143,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -146,7 +157,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -171,7 +182,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -183,7 +194,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -230,8 +241,8 @@
     <Column name="IdSeccion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
+      <Type>9</Type>
+      <Length>11</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -243,6 +254,17 @@
       <ForeignKey>false</ForeignKey>
       <Type>1</Type>
       <Length>1</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
       <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
@@ -355,9 +377,9 @@
     <Column name="SeccionIdSeccion">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Seccion.IdSeccion</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Seccion.IdSeccion</ReferencedColumn>
+      <Type>9</Type>
+      <Length>11</Length>
       <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
@@ -380,7 +402,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -392,7 +414,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -428,7 +450,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -440,7 +462,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -476,7 +498,7 @@
     <Column name="ComentarioIdComentario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Comentario.IdComentario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Comentario.IdComentario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -488,7 +510,7 @@
     <Column name="UsuarioIdUsuario">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Usuario.IdUsuario</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Usuario.IdUsuario</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>true</Nullable>
@@ -513,9 +535,9 @@
     <Column name="SeccionIdSeccion">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Seccion.IdSeccion</ReferencedColumn>
-      <Type>27</Type>
-      <Length>255</Length>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Seccion.IdSeccion</ReferencedColumn>
+      <Type>9</Type>
+      <Length>11</Length>
       <Nullable>false</Nullable>
       <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
@@ -525,7 +547,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -539,7 +561,7 @@
     <Column name="NoticiaIdNoticia">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Noticia.IdNoticia</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Noticia.IdNoticia</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -551,7 +573,7 @@
     <Column name="TematicaIdTematica">
       <PrimaryKey>true</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>bbdd.Tematica.IdTematica</ReferencedColumn>
+      <ReferencedColumn>Diagrama de clases ORM de la base de datos.Tematica.IdTematica</ReferencedColumn>
       <Type>27</Type>
       <Length>255</Length>
       <Nullable>false</Nullable>

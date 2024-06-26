@@ -19,27 +19,30 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class SeccionDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final StringExpression idSeccion;
+	public final IntegerExpression idSeccion;
 	public final BooleanExpression portada;
+	public final StringExpression nombre;
 	public final CollectionExpression se_encuentra;
-	public final StringExpression incluyeId;
+	public final IntegerExpression incluyeId;
 	public final AssociationExpression incluye;
 	
 	public SeccionDetachedCriteria() {
 		super(bbdd.Seccion.class, bbdd.SeccionCriteria.class);
-		idSeccion = new StringExpression("idSeccion", this.getDetachedCriteria());
+		idSeccion = new IntegerExpression("idSeccion", this.getDetachedCriteria());
 		portada = new BooleanExpression("portada", this.getDetachedCriteria());
+		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		se_encuentra = new CollectionExpression("ORM_se_encuentra", this.getDetachedCriteria());
-		incluyeId = new StringExpression("incluye.idSeccion", this.getDetachedCriteria());
+		incluyeId = new IntegerExpression("incluye.idSeccion", this.getDetachedCriteria());
 		incluye = new AssociationExpression("incluye", this.getDetachedCriteria());
 	}
 	
 	public SeccionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, bbdd.SeccionCriteria.class);
-		idSeccion = new StringExpression("idSeccion", this.getDetachedCriteria());
+		idSeccion = new IntegerExpression("idSeccion", this.getDetachedCriteria());
 		portada = new BooleanExpression("portada", this.getDetachedCriteria());
+		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		se_encuentra = new CollectionExpression("ORM_se_encuentra", this.getDetachedCriteria());
-		incluyeId = new StringExpression("incluye.idSeccion", this.getDetachedCriteria());
+		incluyeId = new IntegerExpression("incluye.idSeccion", this.getDetachedCriteria());
 		incluye = new AssociationExpression("incluye", this.getDetachedCriteria());
 	}
 	

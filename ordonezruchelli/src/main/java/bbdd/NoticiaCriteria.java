@@ -28,6 +28,7 @@ public class NoticiaCriteria extends AbstractORMCriteria {
 	public final StringExpression resumen;
 	public final IntegerExpression nValoracionesPositivas;
 	public final IntegerExpression nValoracionesNegativas;
+	public final IntegerExpression posicionPortada;
 	public final CollectionExpression esta_contenida;
 	public final CollectionExpression comentada_por;
 	public final CollectionExpression incluye;
@@ -45,6 +46,7 @@ public class NoticiaCriteria extends AbstractORMCriteria {
 		resumen = new StringExpression("resumen", this);
 		nValoracionesPositivas = new IntegerExpression("nValoracionesPositivas", this);
 		nValoracionesNegativas = new IntegerExpression("nValoracionesNegativas", this);
+		posicionPortada = new IntegerExpression("posicionPortada", this);
 		esta_contenida = new CollectionExpression("ORM_esta_contenida", this);
 		comentada_por = new CollectionExpression("ORM_comentada_por", this);
 		incluye = new CollectionExpression("ORM_incluye", this);

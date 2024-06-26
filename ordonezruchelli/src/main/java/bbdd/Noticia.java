@@ -21,9 +21,7 @@ import javax.persistence.*;
 public class Noticia implements Serializable {
 	public Noticia() {
 	}
-    public Noticia(int idNoticia) {
-        setIdNoticia(idNoticia);
-    }
+	
 	private java.util.Set this_getSet (int key) {
 		if (key == ORMConstants.KEY_NOTICIA_ESTA_CONTENIDA) {
 			return ORM_esta_contenida;
@@ -90,6 +88,9 @@ public class Noticia implements Serializable {
 	
 	@Column(name="NValoracionesNegativas", nullable=false, length=10)	
 	private int nValoracionesNegativas;
+	
+	@Column(name="PosicionPortada", nullable=false, length=10)	
+	private int posicionPortada;
 	
 	@ManyToMany(targetEntity=bbdd.Seccion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
@@ -175,6 +176,14 @@ public class Noticia implements Serializable {
 	
 	public int getnValoracionesNegativas() {
 		return nValoracionesNegativas;
+	}
+	
+	public void setPosicionPortada(int value) {
+		this.posicionPortada = value;
+	}
+	
+	public int getPosicionPortada() {
+		return posicionPortada;
 	}
 	
 	private void setORM_Esta_contenida(java.util.Set value) {

@@ -249,7 +249,7 @@ public class Bd_Noticias {
 		return null;
 	}    
     
-    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String idSeccion) throws PersistentException {
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(int idSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
             NoticiaCriteria criteria = new NoticiaCriteria();
@@ -274,7 +274,7 @@ public class Bd_Noticias {
 
     }
 
-    public Noticia[] cargarNoticiasContenidasEnSeccion(String idSeccion) throws PersistentException {
+    public Noticia[] cargarNoticiasContenidasEnSeccion(int idSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
 

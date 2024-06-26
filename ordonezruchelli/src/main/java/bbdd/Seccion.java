@@ -28,14 +28,14 @@ public class Seccion implements Serializable {
 		if (!(aObj instanceof Seccion))
 			return false;
 		Seccion seccion = (Seccion)aObj;
-		if ((getIdSeccion() != null && !getIdSeccion().equals(seccion.getIdSeccion())) || (getIdSeccion() == null && seccion.getIdSeccion() != null))
+		if (getIdSeccion() != seccion.getIdSeccion())
 			return false;
 		return true;
 	}
 	
 	public int hashCode() {
 		int hashcode = 0;
-		hashcode = hashcode + (getIdSeccion() == null ? 0 : getIdSeccion().hashCode());
+		hashcode = hashcode + (int) getIdSeccion();
 		return hashcode;
 	}
 	
@@ -65,12 +65,15 @@ public class Seccion implements Serializable {
 		
 	};
 	
-	@Column(name="IdSeccion", nullable=false, length=255)	
+	@Column(name="IdSeccion", nullable=false, length=11)	
 	@Id	
-	private String idSeccion;
+	private int idSeccion;
 	
 	@Column(name="Portada", nullable=false, length=1)	
 	private boolean portada;
+	
+	@Column(name="Nombre", nullable=false, length=255)	
+	private String nombre;
 	
 	@ManyToMany(mappedBy="ORM_esta_contenida", targetEntity=bbdd.Noticia.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
@@ -89,19 +92,27 @@ public class Seccion implements Serializable {
 		return portada;
 	}
 	
-	public void setIdSeccion(String value) {
+	public void setIdSeccion(int value) {
 		this.idSeccion = value;
 	}
 	
-	public String getIdSeccion() {
+	public int getIdSeccion() {
 		return idSeccion;
 	}
 	
-	public String getORMID() {
+	public int getORMID() {
 		return getIdSeccion();
 	}
 	
-	public void setORM_Se_encuentra(java.util.Set value) {
+	public void setNombre(String value) {
+		this.nombre = value;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	private void setORM_Se_encuentra(java.util.Set value) {
 		this.ORM_se_encuentra = value;
 	}
 	
