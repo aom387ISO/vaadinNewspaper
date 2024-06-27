@@ -2,6 +2,8 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import bbdd.BDPrincipal;
 import bbdd.iPeriodista;
 
@@ -20,6 +22,8 @@ public class Ver_listado_propio_de_noticias extends Listado_de_noticias_generico
         for (bbdd.Noticia noticia : noticias) {
         	Ver_listado_propio_de_noticias_item item = new Ver_listado_propio_de_noticias_item(this, noticia);
             _item.add(item);
+			this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(item);
+
         }
     }
 }

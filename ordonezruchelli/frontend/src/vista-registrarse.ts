@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-registrarse')
 export class VistaRegistrarse extends LitElement {
@@ -25,12 +25,7 @@ export class VistaRegistrarse extends LitElement {
    <vaadin-text-field label="Contraseña" placeholder="Placeholder" id="nuevaPassword"></vaadin-text-field>
    <vaadin-text-field label="Apodo" placeholder="Placeholder" id="nuevoApodo"></vaadin-text-field>
    <vaadin-text-field label="DNI" placeholder="Placeholder" id="nuevoDNI"></vaadin-text-field>
-   <vaadin-horizontal-layout theme="spacing">
-    <vaadin-text-field label="Foto de Perfil" placeholder="Placeholder" id="nuevaFoto"></vaadin-text-field>
-    <vaadin-button id="anadirFoto">
-      Añadir foto 
-    </vaadin-button>
-   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing" id="layoutFoto"></vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing">
     <vaadin-text-field label="Número de tarjeta" placeholder="Placeholder" id="anadirTarjeta"></vaadin-text-field>
     <vaadin-text-field label="Fecha de caducidad" placeholder="Placeholder" id="anadirFechaCaducidad"></vaadin-text-field>

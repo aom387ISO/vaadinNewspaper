@@ -20,9 +20,8 @@ public class Noticias_en_portada extends VistaNoticiasenportada{
 	public void cargarNoticias(bbdd.Noticia[] noticias) {
         for (bbdd.Noticia noticia : noticias) {
         	Noticias_en_portada_item item = new Noticias_en_portada_item(this, noticia);
-//            _item.add(item);
-            this._gestionar_portada.getListaPortadaLayout().as(VerticalLayout.class).add(item);
-//            this._gestionar_portada._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).add(item);
+            _item.add(item);
+        	this._gestionar_portada.getListaPortadaLayout().as(VerticalLayout.class).add(item);
         }		
 	}
 }

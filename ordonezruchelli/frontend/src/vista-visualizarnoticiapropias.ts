@@ -1,6 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-listadodenoticiasgenerico';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-visualizarnoticiapropias')
 export class VistaVisualizarnoticiapropias extends LitElement {
@@ -16,6 +17,9 @@ export class VistaVisualizarnoticiapropias extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="noticiasPropiasLayout">
+ <vaadin-button id="volverGestion">
+  Volver a gestión
+ </vaadin-button>
  <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
 </vaadin-vertical-layout>
 `;

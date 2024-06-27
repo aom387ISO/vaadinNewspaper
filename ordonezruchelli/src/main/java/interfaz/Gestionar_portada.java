@@ -34,9 +34,6 @@ public class Gestionar_portada extends VistaGestionarportada{
 		try {
 			bbdd.Noticia[] noticias = _ieditor.cargarNoticiasPorSeccionPortada();
 			_noticias_en_portada.cargarNoticias(noticias);
-//            List<Noticias_en_portada_item> items = Arrays.stream(noticias)
-//                    .map(noticia -> new Noticias_en_portada_item(_noticias_en_portada, noticia))
-//                    .collect(Collectors.toList());
 		this.getListaPortadaLayout().as(VerticalLayout.class).add(_noticias_en_portada);
 		}catch(Exception e) {
             e.printStackTrace();

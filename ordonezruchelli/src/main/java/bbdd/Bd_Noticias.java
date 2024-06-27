@@ -117,7 +117,6 @@ public class Bd_Noticias {
 	   //Faltaría añadir el autor en el método.
 	   public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen, Periodista periodista) throws PersistentException {
 		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-		System.out.println("Antes del try.");
 		    try {
 		    	Noticia noticia = NoticiaDAO.createNoticia();
 		    	noticia.setTitulo(aTitulo);
@@ -132,10 +131,8 @@ public class Bd_Noticias {
 		    	noticia.setORM_Autor(periodista);
 	            periodista.getORM_Publica().add(noticia);
 		        NoticiaDAO.save(noticia);
-		        System.out.println("noticiaaaaaaaaaaaaaaa");
 		        t.commit();
 		    } catch (Exception e) {
-		    	System.out.println("Se va al catch");
 		        e.printStackTrace();
 		        t.rollback();
 		    }
@@ -233,15 +230,17 @@ public class Bd_Noticias {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Integer idPeriodista = periodista.getIdUsuario();
+			Periodista autor = PeriodistaDAO.getPeriodistaByORMID(idPeriodista);
 			NoticiaCriteria criteria = new NoticiaCriteria();
 			Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
 	        List<Noticia> noticiaDeAutor = new ArrayList<>();
 
 			for(Noticia noticia : noticias) {
-				if(periodista.publica.contains(noticia)) {
+				if(autor.publica.contains(noticia)) {
 					noticiaDeAutor.add(noticia);
 				}
 			}
+			System.out.println(idPeriodista);
 			t.commit();
             return noticiaDeAutor.toArray(new Noticia[noticiaDeAutor.size()]);
 		} catch (Exception e) {
