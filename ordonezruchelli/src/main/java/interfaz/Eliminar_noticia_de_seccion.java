@@ -53,7 +53,7 @@ public class Eliminar_noticia_de_seccion extends VistaEliminarnoticiadeseccion {
 		try {
 			bbdd.Seccion[] secciones = _ieditor.cargarSecciones();
 			_listado_de_secciones.cargarSecciones(secciones);
-            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getIdSeccion)
+            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getNombre)
                     .collect(Collectors.toList());
             this.getSecciones().setItems(seccionid);
 		}catch (Exception e) {
@@ -64,13 +64,14 @@ public class Eliminar_noticia_de_seccion extends VistaEliminarnoticiadeseccion {
 	}
 
 	public void Confirmar_eliminar_noticia() {
-	     String idSeccion = this.getSecciones().getValue();
+			String idSeccion = this.getSecciones().getValue();
 	        String tituloNoticia = this.getNoticias().getValue();
 
 	        if (idSeccion != null && tituloNoticia != null) {
 	            bbdd.Noticia noticia = _ieditor.obtenerNoticiaPorTitulo(tituloNoticia);
+	            bbdd.Seccion seccion = _ieditor.cargarSeccionPorNombre(idSeccion);
 	            if (noticia != null) {
-	                _ieditor.eliminarNoticiaSeccion(noticia.getIdNoticia(), idSeccion);
+	                _ieditor.eliminarNoticiaSeccion(noticia.getIdNoticia(), seccion.getIdSeccion());
 	                Notification notification = Notification.show("Noticia eliminada de la sección");
 	                notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 	    			this._gestionar_noticia_en_seccion._gestionar_noticia_de_seccion._gestionar._editor.getNoticiasBanner()

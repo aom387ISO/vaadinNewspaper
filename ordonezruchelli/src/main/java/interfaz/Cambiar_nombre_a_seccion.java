@@ -34,7 +34,7 @@ public class Cambiar_nombre_a_seccion extends VistaCambiarnombreaseccion{
 		try {
 			bbdd.Seccion[] secciones = _ieditor.cargarSecciones();
 			_listado_de_secciones.cargarSecciones(secciones);
-            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getIdSeccion)
+            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getNombre)
                     .collect(Collectors.toList());
             this.getSeccionBox().setItems(seccionid);
 		}catch (Exception e) {

@@ -249,13 +249,13 @@ public class Bd_Noticias {
 		return null;
 	}    
     
-    public Noticia[] cargarNoticiasNoContenidasEnSeccion(int idSeccion) throws PersistentException {
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String nombreSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
             NoticiaCriteria criteria = new NoticiaCriteria();
             Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
             List<Noticia> noticiasNoContenidas = new ArrayList<>();
-            Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+nombreSeccion+"'", null);
 
             for (Noticia noticia : noticias) {
                 if(!noticia.esta_contenida.contains(seccion)) {
@@ -274,14 +274,14 @@ public class Bd_Noticias {
 
     }
 
-    public Noticia[] cargarNoticiasContenidasEnSeccion(int idSeccion) throws PersistentException {
+    public Noticia[] cargarNoticiasContenidasEnSeccion(String nombreSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
 
             NoticiaCriteria criteria = new NoticiaCriteria();
             Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
             List<Noticia> noticiasContenidas = new ArrayList<>();
-            Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+nombreSeccion+"'", null);
 
             for (Noticia noticia : noticias) {
                 if(noticia.esta_contenida.contains(seccion)) {

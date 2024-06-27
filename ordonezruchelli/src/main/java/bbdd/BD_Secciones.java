@@ -15,11 +15,11 @@ public class BD_Secciones {
 	public BDPrincipal _bd_prin_sec;
 	public Vector<Seccion> _contiene_secciones = new Vector<Seccion>();
 
-	public void anadirNoticiaSeccion(int aIdNoticia, int aIdSeccion) throws PersistentException {
+	public void anadirNoticiaSeccion(int aIdNoticia, String aIdSeccion) throws PersistentException {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
-			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+aIdSeccion+"'", null);
 			if (noticia != null && seccion != null) {
 //				seccion.se_encuentra.add(noticia);
 				if(!noticia.esta_contenida.contains(seccion)) {
@@ -45,7 +45,6 @@ public class BD_Secciones {
 			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
 			if (noticia != null && seccion != null) {
 				noticia.esta_contenida.remove(seccion);
-//				seccion.se_encuentra.remove(noticia);
 				SeccionDAO.save(seccion);
 				t.commit();
 			}
@@ -57,16 +56,27 @@ public class BD_Secciones {
 	}
 
 	public void crearSeccion(String aNombreSeccion) throws PersistentException {
-//		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-//		try {
-//			Seccion seccion = SeccionDAO.createSeccion();
-//			seccion.setIdSeccion(aNombreSeccion);
-//			SeccionDAO.save(seccion);
-//			t.commit();
-//		} catch (Exception e) {
-//			t.rollback();
-//		}
-//		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Seccion seccion = SeccionDAO.createSeccion();
+			SeccionCriteria criteria = new SeccionCriteria();
+			Seccion[] secciones = SeccionDAO.listSeccionByCriteria(criteria);
+			int id = 0;
+			for(Seccion seccionBusqueda : secciones) {
+				if(seccionBusqueda.getIdSeccion() == id) {
+				id++;
+				}else {
+					break;
+				}
+			}
+			seccion.setIdSeccion(id);
+			seccion.setNombre(aNombreSeccion);
+			SeccionDAO.save(seccion);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
 	}
 
@@ -105,33 +115,33 @@ public class BD_Secciones {
 	}
 
 	public void cambiarNombreSeccion(String aIdSeccion, String aNuevoNombreSeccion) throws PersistentException {
-//		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-//		try {
-//			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
-//			if (seccion != null) {
-//				seccion.setIdSeccion(aNuevoNombreSeccion);
-//				SeccionDAO.save(seccion);
-//				t.commit();
-//			}
-//		} catch (Exception e) {
-//			t.rollback();
-//		}
-//		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+aIdSeccion+"'", null);
+			if (seccion != null) {
+				seccion.setNombre(aNuevoNombreSeccion);
+				SeccionDAO.save(seccion);
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
 	}
 
 	public void eliminarSeccion(String aIdSeccion) throws PersistentException {
-//		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-//		try {
-//			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
-//			if (seccion != null) {
-//				SeccionDAO.deleteAndDissociate(seccion);
-//				t.commit();
-//			}
-//		} catch (Exception e) {
-//			t.rollback();
-//		}
-//		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+aIdSeccion+"'", null);
+			if (seccion != null) {
+				SeccionDAO.deleteAndDissociate(seccion);
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
 	}
 	
@@ -149,5 +159,22 @@ public class BD_Secciones {
             ProyectofinalPersistentManager.instance().disposePersistentManager();
         
         return new Seccion[0];
+    }
+    
+    
+    public Seccion cargarSeccionPorNombre(String nombreSeccion) throws PersistentException {
+        PersistentTransaction t = null;
+        try {
+        	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+            SeccionCriteria criteria = new SeccionCriteria();
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+nombreSeccion+"'", null);
+            t.commit();
+            return seccion;
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+            ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+        return null;
     }
 }

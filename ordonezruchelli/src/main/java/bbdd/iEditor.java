@@ -6,7 +6,7 @@ public interface iEditor extends iUsuario_general {
 
 	public void eliminarComentario(int aAIdComentario);
 
-	public void anadirNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
+	public void anadirNoticiaSeccion(int aAIdNoticia, String nombreSeccion);
 
 	public void eliminarNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
 
@@ -31,9 +31,11 @@ public interface iEditor extends iUsuario_general {
     public Noticia[] cargarNoticiasPorSeccionPortada();
     
     public Seccion[] cargarSecciones();
+
+    public Seccion cargarSeccionPorNombre(String nombreSeccion);
     
-    public Noticia[] cargarNoticiasNoContenidasEnSeccion(int idSeccion);
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String nombreSeccion);
     
-    public Noticia obtenerNoticiaPorTitulo(String titulo);
+    public Noticia obtenerNoticiaPorTitulo(String tituloNoticia);
 
 }
