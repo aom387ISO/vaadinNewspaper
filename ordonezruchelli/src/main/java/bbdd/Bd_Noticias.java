@@ -4,11 +4,13 @@ import bbdd.BDPrincipal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Vector;
 import java.util.stream.Collectors;
 
 import org.hibernate.Hibernate;
+import org.hibernate.criterion.Order;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -197,28 +199,28 @@ public class Bd_Noticias {
     	try {
         	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 
-            // Obtener todas las secciones donde portada es true
-            bbdd.Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
-            
+            Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
+
             if (secciones.length == 0) {
                 return new Noticia[0];
             }
-//            String condition = "esta_contenida.IdSeccion IN (" +
-//                    Arrays.stream(secciones).map(seccion -> String.valueOf(seccion.getIdSeccion())).collect(Collectors.joining(", ")) +
-//                ")";
-            // Construir una consulta para obtener las noticias de esas secciones
-//            String condition = "esta_contenida.IdSeccion IN (" +
-//                Arrays.stream(secciones).map(seccion -> "'" + seccion.getIdSeccion() + "'").collect(Collectors.joining(", ")) +
-//            ")";
-            String condition = null;
+            Seccion portada = secciones[0];
+
+	        List<Noticia> noticiaDePortada = new ArrayList<>();
+            NoticiaCriteria criteria = new NoticiaCriteria();
+
+            Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
             
-            Noticia[] noticias = NoticiaDAO.listNoticiaByQuery(condition, null);
-            
-            
-            
-     
-            t.commit();
-            return noticias;
+			for(Noticia noticia : noticias) {
+				if(noticia.esta_contenida.contains(portada)) {
+					noticiaDePortada.add(noticia);
+
+				}
+			}
+	        noticiaDePortada.sort(Comparator.comparingInt(Noticia::getPosicionPortada));
+
+			t.commit();
+            return noticiaDePortada.toArray(new Noticia[noticiaDePortada.size()]);
         } catch (PersistentException e) {
             e.printStackTrace();
         }

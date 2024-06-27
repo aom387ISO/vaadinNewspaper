@@ -23,7 +23,7 @@ public class Gestionar_portada extends VistaGestionarportada{
 		_noticias_en_portada = new Noticias_en_portada(this);
 		Noticias_en_portada();
 		
-		this.getVolverGestion().addClickListener(event->{
+		getVolverParaGestion().addClickListener(event->{
 			this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Volver_a_la_gestion_desde_gestion_portada();
 		});
@@ -33,14 +33,13 @@ public class Gestionar_portada extends VistaGestionarportada{
 //		this.getListaPortadaLayout().as(VerticalLayout.class).add(_noticias_en_portada);
 		try {
 			bbdd.Noticia[] noticias = _ieditor.cargarNoticiasPorSeccionPortada();
-            List<Noticias_en_portada_item> items = Arrays.stream(noticias)
-                    .map(noticia -> new Noticias_en_portada_item(_noticias_en_portada, noticia))
-                    .collect(Collectors.toList());
-            VerticalLayout layout = this.getListaPortadaLayout().as(VerticalLayout.class);
-            layout.removeAll();  // Clear existing items
-            items.forEach(layout::add);
+			_noticias_en_portada.cargarNoticias(noticias);
+//            List<Noticias_en_portada_item> items = Arrays.stream(noticias)
+//                    .map(noticia -> new Noticias_en_portada_item(_noticias_en_portada, noticia))
+//                    .collect(Collectors.toList());
+		this.getListaPortadaLayout().as(VerticalLayout.class).add(_noticias_en_portada);
 		}catch(Exception e) {
-			
+            e.printStackTrace();
 		}
 	}
 

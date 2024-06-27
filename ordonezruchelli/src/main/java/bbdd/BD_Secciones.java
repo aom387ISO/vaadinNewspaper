@@ -2,7 +2,9 @@ package bbdd;
 
 import bbdd.BDPrincipal;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.Vector;
 import org.orm.PersistentException;
@@ -22,7 +24,9 @@ public class BD_Secciones {
 			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+aIdSeccion+"'", null);
 			if (noticia != null && seccion != null) {
 //				seccion.se_encuentra.add(noticia);
-				if(!noticia.esta_contenida.contains(seccion)) {
+				if(!noticia.esta_contenida.contains(seccion) && seccion.getNombre().equals("portada")) {
+				anadirAportada(seccion, aIdNoticia);
+				}else if(!noticia.esta_contenida.contains(seccion)) {
 				noticia.esta_contenida.add(seccion);
 				SeccionDAO.save(seccion);
 			    Notification.show("Noticia añadida a sección").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
@@ -80,13 +84,15 @@ public class BD_Secciones {
 
 	}
 
-	public void anadirAportada(String aIdSeccion, int aIdNoticia) throws PersistentException {
+	public void anadirAportada(Seccion seccion, int aIdNoticia) throws PersistentException {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
-			Seccion seccion = SeccionDAO.loadSeccionByQuery("nombre = 'portada'", null);
-			if (noticia != null && seccion != null) {
-				seccion.se_encuentra.add(noticia);
+			if (noticia != null) {
+				noticia.esta_contenida.add(seccion);
+				int id = noticia.esta_contenida.size()+1;
+				noticia.setPosicionPortada(id);
+				NoticiaDAO.save(noticia);
 				SeccionDAO.save(seccion);
 				t.commit();
 			}
@@ -98,19 +104,44 @@ public class BD_Secciones {
 	}
 
 	public void cambiarPosicion(String aIdSeccion, int aIdNoticia, int aNuevaPosicion) throws PersistentException{
-//		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-//		try {
-//			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
-//			Seccion seccion = SeccionDAO.loadSeccionByORMID(aIdSeccion);
-//			if (noticia != null && seccion != null) {
-//				
-//				SeccionDAO.save(seccion);
-//				t.commit();
-//			}
-//		} catch (Exception e) {
-//			t.rollback();
-//		}
-//		ProyectofinalPersistentManager.instance().disposePersistentManager();
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+            Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
+
+            if (secciones.length == 0) {
+                return;
+            }
+            Seccion portada = secciones[0];
+
+            Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
+            
+            
+			if (noticia != null) {
+				noticia.setPosicionPortada(aNuevaPosicion);
+				NoticiaCriteria criteria = new NoticiaCriteria();
+				Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
+		        List<Noticia> noticiaPortada = new ArrayList<>();
+				for(Noticia noticiaBucle : noticias) {
+					if(noticia.esta_contenida.contains(portada)) {
+						noticiaPortada.add(noticiaBucle);
+					}
+				}
+				noticiaPortada.sort((n1, n2) -> Integer.compare(n1.getPosicionPortada(), n2.getPosicionPortada()));
+				noticiaPortada.remove(noticia);
+				noticiaPortada.add(aNuevaPosicion - 1, noticia);
+
+			       for (int i = 0; i < noticiaPortada.size(); i++) {
+		                Noticia noticiaReordenada = noticiaPortada.get(i);
+		                noticiaReordenada.setPosicionPortada(i + 1);
+		                NoticiaDAO.save(noticiaReordenada);
+		            }
+				
+				t.commit();
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
 	}
 
@@ -176,5 +207,48 @@ public class BD_Secciones {
             ProyectofinalPersistentManager.instance().disposePersistentManager();
         
         return null;
+    }
+    
+    public void eliminarDePortada(int aIdNoticia)throws PersistentException {
+        PersistentTransaction t = null;
+
+    	try {
+        	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+
+            Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
+
+            if (secciones.length == 0) {
+                return;
+            }
+            Seccion portada = secciones[0];
+
+            Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
+            
+				if(noticia.esta_contenida.contains(portada)) {
+					noticia.esta_contenida.remove(portada);
+					noticia.setPosicionPortada(0);
+					NoticiaDAO.save(noticia);
+					
+					NoticiaCriteria criteria = new NoticiaCriteria();
+					Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
+			        List<Noticia> noticiaPortada = new ArrayList<>();
+					for(Noticia noticiaBucle : noticias) {
+						if(noticia.esta_contenida.contains(portada)) {
+							noticiaPortada.add(noticiaBucle);
+						}
+					}
+				    for (int i = 0; i < noticiaPortada.size(); i++) {
+				        Noticia noticiaNuevaPosicion = noticiaPortada.get(i);
+				        noticia.setPosicionPortada(i + 1);
+				        NoticiaDAO.save(noticiaNuevaPosicion);
+				    }
+				}
+			
+
+			t.commit();
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
     }
 }

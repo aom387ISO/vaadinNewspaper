@@ -27,7 +27,6 @@ public class Gestionar extends VistaGestionar{
 			Gestionar_periodistas();
 		});	
 		
-		
 		this._gestionar_portada = new Gestionar_portada(this);
 		this.getGestionarPortada().addClickListener(event->{
 			this._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();

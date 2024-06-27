@@ -10,8 +10,10 @@ public interface iEditor extends iUsuario_general {
 
 	public void eliminarNoticiaSeccion(int aAIdNoticia, int aAIdSeccion);
 
-	public void anadirAportada(String aAIdSeccion, int aIdNoticia);
+	public void anadirAportada(Seccion seccion, int aIdNoticia);
 
+	public void eliminarDePortada(int aIdNoticia);
+	
 	public void cambiarPosicion(String aAIdSeccion, int aIdNoticia, int aANuevaPosicion);
 
 	public void eliminarSeccion(String aAIdSeccion);

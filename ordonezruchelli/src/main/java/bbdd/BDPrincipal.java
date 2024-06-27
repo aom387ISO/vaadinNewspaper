@@ -185,9 +185,9 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void anadirAportada(String aIdSeccion, int aIdNoticia) {
+	public void anadirAportada(Seccion seccion, int aIdNoticia) {
 		try {
-			_bd_sec.anadirAportada(aIdSeccion, aIdNoticia);
+			_bd_sec.anadirAportada(seccion, aIdNoticia);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -355,6 +355,14 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 			e.printStackTrace();
 	}
 		return null;
+	}
+
+	public void eliminarDePortada(int aIdNoticia) {
+		try {
+			_bd_sec.eliminarDePortada(aIdNoticia);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}		
 	}
 
 }

@@ -13,17 +13,16 @@ public class VistaGestionarportada extends LitTemplate {
 
     @Id("listaPortadaLayout")
 	private Element listaPortadaLayout;
-	@Id("volverGestion")
-	private Button volverGestion;
-
-	
-	public Button getVolverGestion() {
-		return volverGestion;
+	public Button getVolverParaGestion() {
+		return volverParaGestion;
 	}
 
-	public void setVolverGestion(Button volverGestion) {
-		this.volverGestion = volverGestion;
+	public void setVolverParaGestion(Button volverParaGestion) {
+		this.volverParaGestion = volverParaGestion;
 	}
+
+	@Id("volverParaGestion")
+	private Button volverParaGestion;
 
 	public Element getListaPortadaLayout() {
 		return listaPortadaLayout;
