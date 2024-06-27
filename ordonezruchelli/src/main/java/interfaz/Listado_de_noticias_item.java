@@ -10,10 +10,14 @@ public class Listado_de_noticias_item extends Listado_de_noticias_generico_item 
 		super(_listado_de_noticias_generico, noticia);
 		this._noticia = noticia;
 
-		
+		Ver_noticia();
 	}
 
 	public void Ver_noticia() {
-		throw new UnsupportedOperationException();
+		this.getTitulo().setValue(_noticia.getTitulo());
+		this.getResumen().setValue(_noticia.getResumen());
+		this.getCuerpo().setValue(_noticia.getCuerpo());
+		this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
+		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 	}
 }

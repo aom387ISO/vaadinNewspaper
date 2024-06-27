@@ -28,13 +28,13 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 		});
 		
 		_ver_noticia_cortada = new Ver_noticia_cortada(this);
-		this.getVerNoticiaCortada().addClickListener(event->{
+//		this.getVerNoticiaCortada().addClickListener(event->{
 		    this.getNoticiasPortada().as(VerticalLayout.class).removeAll();
 			this.MainView.remove(_ver_noticia_cortada);
-			this.MainView.remove(_iniciar_sesion);
+//			this.MainView.remove(_iniciar_sesion);
 			this.MainView.remove(_ver_seccion_de_Usuario_no_suscrito);
 			Ver_noticia_cortada();
-		});		
+//		});		
 		
 		
 		_ver_seccion_de_Usuario_no_suscrito = new Ver_seccion_de_Usuario_no_suscrito(this);
