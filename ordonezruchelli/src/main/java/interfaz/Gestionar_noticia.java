@@ -43,36 +43,16 @@ public class Gestionar_noticia extends VistaGestionarnoticia{
 	}
 
 	public void Ver_listado_propio_de_noticias() {
-		ListBox<String> noticiasListBox = new ListBox<>();
 		try {
 			bbdd.Noticia[] noticias = _iperiodista.mostrarNoticiasAutor(_periodista._periodista);
 			_ver_listado_propio_de_noticias.cargarNoticias(noticias);
-            List<String> noticiasTitulos = java.util.Arrays.stream(noticias)
-                    .map(bbdd.Noticia::getTitulo)
-                    .collect(Collectors.toList());
-//            this.getNotici().setItems(noticiasTitulos);
-//            noticiasListBox = new ListBox<>();
-            noticiasListBox.setItems(noticiasTitulos);
-    		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(noticiasListBox);
+//			this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_ver_listado_propio_de_noticias);
 
-            noticiasListBox.addValueChangeListener(event -> {
-                String selectedTitulo = event.getValue();
-                if (selectedTitulo != null) {
-                    bbdd.Noticia selectedNoticia = java.util.Arrays.stream(noticias)
-                            .filter(noticia -> noticia.getTitulo().equals(selectedTitulo))
-                            .findFirst()
-                            .orElse(null);
-                    if (selectedNoticia != null) {
-                        mostrarNoticiaCompleta(selectedNoticia);
-                    }
-                }
-            });
 		}catch (Exception e) {
             e.printStackTrace();
 	        Notification notification = Notification.show("No se han cargado las secciones");
 	        notification.addThemeVariants(NotificationVariant.LUMO_ERROR);	
 		}
-//		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(noticiasListBox);
 
 	}
     public void mostrarNoticiaCompleta(bbdd.Noticia noticia) {

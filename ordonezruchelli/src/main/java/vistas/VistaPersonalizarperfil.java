@@ -7,6 +7,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-personalizarperfil")
 @JsModule("./src/vista-personalizarperfil.ts")
@@ -20,6 +21,14 @@ public class VistaPersonalizarperfil extends LitTemplate {
 	private TextField nuevoApodo;
 	@Id("cambiarApodo")
 	private Button cambiarApodo;
+	public HorizontalLayout getLayoutFotos() {
+		return layoutFotos;
+	}
+
+	public void setLayoutFotos(HorizontalLayout layoutFotos) {
+		this.layoutFotos = layoutFotos;
+	}
+
 	@Id("cerrarSesion")
 	private Button cerrarSesion;
 	
@@ -94,6 +103,8 @@ public class VistaPersonalizarperfil extends LitTemplate {
 	private Button bajaUsuarioSuscrito;
 	@Id("Perfil")
 	private Element perfil;
+	@Id("layoutFotos")
+	private HorizontalLayout layoutFotos;
 
 	public VistaPersonalizarperfil() {
         // You can initialise any data required for the connected UI components here.

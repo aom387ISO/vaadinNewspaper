@@ -6,12 +6,21 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-registrarse")
 @JsModule("./src/vista-registrarse.ts")
 public class VistaRegistrarse extends LitTemplate {
 
-    @Id("nuevoCorreo")
+    public HorizontalLayout getLayoutFoto() {
+		return layoutFoto;
+	}
+
+	public void setLayoutFoto(HorizontalLayout layoutFoto) {
+		this.layoutFoto = layoutFoto;
+	}
+
+	@Id("nuevoCorreo")
 	private TextField nuevoCorreo;
 	@Id("nuevaPassword")
 	private TextField nuevaPassword;
@@ -19,10 +28,6 @@ public class VistaRegistrarse extends LitTemplate {
 	private TextField nuevoApodo;
 	@Id("nuevoDNI")
 	private TextField nuevoDNI;
-	@Id("nuevaFoto")
-	private TextField nuevaFoto;
-	@Id("anadirFoto")
-	private Button anadirFoto;
 	@Id("anadirTarjeta")
 	private TextField anadirTarjeta;
 	@Id("anadirFechaCaducidad")
@@ -31,6 +36,8 @@ public class VistaRegistrarse extends LitTemplate {
 	private TextField anadirCVV;
 	@Id("terminarSuscripcion")
 	private Button terminarSuscripcion;
+	@Id("layoutFoto")
+	private HorizontalLayout layoutFoto;
 
 	public VistaRegistrarse() {
         // You can initialise any data required for the connected UI components here.
@@ -66,22 +73,6 @@ public class VistaRegistrarse extends LitTemplate {
 
 	public void setNuevoDNI(TextField nuevoDNI) {
 		this.nuevoDNI = nuevoDNI;
-	}
-
-	public TextField getNuevaFoto() {
-		return nuevaFoto;
-	}
-
-	public void setNuevaFoto(TextField nuevaFoto) {
-		this.nuevaFoto = nuevaFoto;
-	}
-
-	public Button getAnadirFoto() {
-		return anadirFoto;
-	}
-
-	public void setAnadirFoto(Button anadirFoto) {
-		this.anadirFoto = anadirFoto;
 	}
 
 	public TextField getAnadirTarjeta() {

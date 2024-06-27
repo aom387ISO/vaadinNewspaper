@@ -23,12 +23,12 @@ export class VistaNoticiasenportada_item extends LitElement {
  <vaadin-text-area label="Resumen Noticia Portada" placeholder="Add detailed explanation" id="resumenNoticiaPortada"></vaadin-text-area>
  <vaadin-vertical-layout theme="spacing">
   <vaadin-text-area label="Posición actual" placeholder="Add detailed explanation" id="posicionEnPortada"></vaadin-text-area>
-  <vaadin-button id="EliminarDePortada">
+  <vaadin-button id="eliminarDePortada">
     Eliminar de portada 
   </vaadin-button>
-  <vaadin-text-field label="Nueva Posición" placeholder="Nueva Posición" id="cambiarPosicionCuadro"></vaadin-text-field>
+  <vaadin-text-field label="Nueva Posición" placeholder="Nueva Posición" id="nuevaPosicionCuadro"></vaadin-text-field>
   <vaadin-button id="cambiarPosicionBoton">
-   Cambiar posición
+    Cambiar posición 
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>

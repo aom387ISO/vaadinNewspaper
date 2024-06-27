@@ -12,14 +12,34 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-noticiasenportada_item.ts")
 public class VistaNoticiasenportada_item extends LitTemplate {
 
-    @Id("eliminarDePortada")
-	private Button eliminarDePortada;
-	@Id("cambiarPosicionBoton")
+    @Id("cambiarPosicionBoton")
 	private Button cambiarPosicionBoton;
 	@Id("noticiaPortada")
 	private TextArea noticiaPortada;
 	@Id("resumenNoticiaPortada")
 	private TextArea resumenNoticiaPortada;
+	public TextArea getPosicionEnPortada() {
+		return posicionEnPortada;
+	}
+
+	public void setPosicionEnPortada(TextArea posicionEnPortada) {
+		this.posicionEnPortada = posicionEnPortada;
+	}
+
+	public TextField getNuevaPosicionCuadro() {
+		return nuevaPosicionCuadro;
+	}
+
+	public void setNuevaPosicionCuadro(TextField nuevaPosicionCuadro) {
+		this.nuevaPosicionCuadro = nuevaPosicionCuadro;
+	}
+
+	@Id("eliminarDePortada")
+	private Button eliminarDePortada;
+	@Id("nuevaPosicionCuadro")
+	private TextField nuevaPosicionCuadro;
+	@Id("posicionEnPortada")
+	private TextArea posicionEnPortada;
 	public TextArea getNoticiaPortada() {
 		return noticiaPortada;
 	}

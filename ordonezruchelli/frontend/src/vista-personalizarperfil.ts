@@ -21,6 +21,8 @@ export class VistaPersonalizarperfil extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-vertical-layout theme="spacing" id="Perfil">
   <vaadin-form-layout style="align-self: center; background: #f5f5f5; border: 1px solid black; padding: 20px;">
+   <vaadin-horizontal-layout theme="spacing" id="layoutFotos"></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
    <vaadin-text-field label="Nueva imagen" placeholder="Nueva imagen" id="nuevaImagen"></vaadin-text-field>
    <vaadin-button id="cambiarImagen">
      Cambiar imagen 

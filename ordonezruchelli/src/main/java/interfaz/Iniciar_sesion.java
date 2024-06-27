@@ -48,7 +48,6 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 			_usuario_no_suscrito.MainView.add(usuarioSuscrito);
 			return;
 		}
-			System.out.println("usuario_suscrito es null\n");
 			bbdd.Editor _editor = _ieditor.loginEditor(this.getLogin().getValue(), this.getPassword().getValue());
 			if (_editor != null) {
 		        Notification notification = Notification.show("Editor logueado con éxito");

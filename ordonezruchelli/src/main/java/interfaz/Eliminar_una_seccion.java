@@ -31,7 +31,7 @@ public class Eliminar_una_seccion extends VistaEliminarunaseccion {
 		try {
 			bbdd.Seccion[] secciones = _ieditor.cargarSecciones();
 			_listado_de_secciones.cargarSecciones(secciones);
-            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getIdSeccion)
+            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getNombre)
                     .collect(Collectors.toList());
             this.getSecciones().setItems(seccionid);
 		}catch (Exception e) {

@@ -51,7 +51,7 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 		try {
 			bbdd.Seccion[] secciones = _ieditor.cargarSecciones();
 			_listado_de_secciones.cargarSecciones(secciones);
-            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getIdSeccion)
+            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getNombre)
                     .collect(Collectors.toList());
             this.getComboListadoSeccion().setItems(seccionid);
 		}catch (Exception e) {
@@ -79,10 +79,11 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
     public void Anadir_noticia() {
         String idSeccion = this.getComboListadoSeccion().getValue();
         String tituloNoticia = this.getComboListadoNoticias().getValue();
-
+        System.out.println("hola");
         if (idSeccion != null && tituloNoticia != null) {
             bbdd.Noticia noticia = _ieditor.obtenerNoticiaPorTitulo(tituloNoticia);
 			if (noticia != null) {
+				
 			    _ieditor.anadirNoticiaSeccion(noticia.getIdNoticia(), idSeccion);
 			}
         } else {

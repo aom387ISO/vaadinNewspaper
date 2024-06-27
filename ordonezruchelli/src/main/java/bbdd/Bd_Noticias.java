@@ -4,11 +4,13 @@ import bbdd.BDPrincipal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Vector;
 import java.util.stream.Collectors;
 
 import org.hibernate.Hibernate;
+import org.hibernate.criterion.Order;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -115,7 +117,6 @@ public class Bd_Noticias {
 	   //Faltaría añadir el autor en el método.
 	   public void crearNoticia(String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen, Periodista periodista) throws PersistentException {
 		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
-		System.out.println("Antes del try.");
 		    try {
 		    	Noticia noticia = NoticiaDAO.createNoticia();
 		    	noticia.setTitulo(aTitulo);
@@ -130,10 +131,8 @@ public class Bd_Noticias {
 		    	noticia.setORM_Autor(periodista);
 	            periodista.getORM_Publica().add(noticia);
 		        NoticiaDAO.save(noticia);
-		        System.out.println("noticiaaaaaaaaaaaaaaa");
 		        t.commit();
 		    } catch (Exception e) {
-		    	System.out.println("Se va al catch");
 		        e.printStackTrace();
 		        t.rollback();
 		    }
@@ -197,28 +196,28 @@ public class Bd_Noticias {
     	try {
         	t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 
-            // Obtener todas las secciones donde portada es true
-            bbdd.Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
-            
+            Seccion[] secciones = SeccionDAO.listSeccionByQuery("Portada = true", null);
+
             if (secciones.length == 0) {
                 return new Noticia[0];
             }
-//            String condition = "esta_contenida.IdSeccion IN (" +
-//                    Arrays.stream(secciones).map(seccion -> String.valueOf(seccion.getIdSeccion())).collect(Collectors.joining(", ")) +
-//                ")";
-            // Construir una consulta para obtener las noticias de esas secciones
-//            String condition = "esta_contenida.IdSeccion IN (" +
-//                Arrays.stream(secciones).map(seccion -> "'" + seccion.getIdSeccion() + "'").collect(Collectors.joining(", ")) +
-//            ")";
-            String condition = null;
+            Seccion portada = secciones[0];
+
+	        List<Noticia> noticiaDePortada = new ArrayList<>();
+            NoticiaCriteria criteria = new NoticiaCriteria();
+
+            Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
             
-            Noticia[] noticias = NoticiaDAO.listNoticiaByQuery(condition, null);
-            
-            
-            
-     
-            t.commit();
-            return noticias;
+			for(Noticia noticia : noticias) {
+				if(noticia.esta_contenida.contains(portada)) {
+					noticiaDePortada.add(noticia);
+
+				}
+			}
+	        noticiaDePortada.sort(Comparator.comparingInt(Noticia::getPosicionPortada));
+
+			t.commit();
+            return noticiaDePortada.toArray(new Noticia[noticiaDePortada.size()]);
         } catch (PersistentException e) {
             e.printStackTrace();
         }
@@ -231,15 +230,17 @@ public class Bd_Noticias {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Integer idPeriodista = periodista.getIdUsuario();
+			Periodista autor = PeriodistaDAO.getPeriodistaByORMID(idPeriodista);
 			NoticiaCriteria criteria = new NoticiaCriteria();
 			Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
 	        List<Noticia> noticiaDeAutor = new ArrayList<>();
 
 			for(Noticia noticia : noticias) {
-				if(periodista.publica.contains(noticia)) {
+				if(autor.publica.contains(noticia)) {
 					noticiaDeAutor.add(noticia);
 				}
 			}
+			System.out.println(idPeriodista);
 			t.commit();
             return noticiaDeAutor.toArray(new Noticia[noticiaDeAutor.size()]);
 		} catch (Exception e) {
@@ -249,13 +250,13 @@ public class Bd_Noticias {
 		return null;
 	}    
     
-    public Noticia[] cargarNoticiasNoContenidasEnSeccion(int idSeccion) throws PersistentException {
+    public Noticia[] cargarNoticiasNoContenidasEnSeccion(String nombreSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
             NoticiaCriteria criteria = new NoticiaCriteria();
             Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
             List<Noticia> noticiasNoContenidas = new ArrayList<>();
-            Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+nombreSeccion+"'", null);
 
             for (Noticia noticia : noticias) {
                 if(!noticia.esta_contenida.contains(seccion)) {
@@ -274,14 +275,14 @@ public class Bd_Noticias {
 
     }
 
-    public Noticia[] cargarNoticiasContenidasEnSeccion(int idSeccion) throws PersistentException {
+    public Noticia[] cargarNoticiasContenidasEnSeccion(String nombreSeccion) throws PersistentException {
         PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
         try {
 
             NoticiaCriteria criteria = new NoticiaCriteria();
             Noticia[] noticias = NoticiaDAO.listNoticiaByCriteria(criteria);
             List<Noticia> noticiasContenidas = new ArrayList<>();
-            Seccion seccion = SeccionDAO.loadSeccionByORMID(idSeccion);
+			Seccion seccion = SeccionDAO.loadSeccionByQuery("Nombre = '"+nombreSeccion+"'", null);
 
             for (Noticia noticia : noticias) {
                 if(noticia.esta_contenida.contains(seccion)) {

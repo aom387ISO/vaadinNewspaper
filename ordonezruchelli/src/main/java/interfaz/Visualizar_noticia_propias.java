@@ -15,14 +15,16 @@ public class Visualizar_noticia_propias extends VistaVisualizarnoticiapropias{
 		
 		_noticias_propias = new Noticias_propias(periodista);
 		Noticias_propias();
+		
+		getVolverGestion().addClickListener(event->{Volver_a_gestion();});
 	}
 
 	public void Volver_a_gestion() {
 		this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).removeAll();
-		this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(	this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia);
+		this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(this._ver_listado_propio_de_noticias._ver_listado_propio_de_noticias._gestionar_noticia);
 	}
 
 	public void Noticias_propias() {
-		this.getNoticiasPropiasLayout().as(VerticalLayout.class).add(_noticias_propias);
+//		this.getNoticiasPropiasLayout().as(VerticalLayout.class).add(_noticias_propias);
 	}
 }
