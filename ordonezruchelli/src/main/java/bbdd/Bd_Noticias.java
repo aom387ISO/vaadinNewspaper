@@ -14,6 +14,9 @@ import org.hibernate.criterion.Order;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+
 public class Bd_Noticias {
 	public BDPrincipal _bd_prin_not;
 	public Vector<Noticia> _contiene_noticias = new Vector<Noticia>();
@@ -130,10 +133,12 @@ public class Bd_Noticias {
 		    	noticia.setnValoracionesPositivas(0);
 		    	noticia.setORM_Autor(periodista);
 	            periodista.getORM_Publica().add(noticia);
+			    Notification.show("La noticia ha sido creada con éxito").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 		        NoticiaDAO.save(noticia);
 		        t.commit();
 		    } catch (Exception e) {
 		        e.printStackTrace();
+			    Notification.show("La noticia no ha sido creada").addThemeVariants(NotificationVariant.LUMO_ERROR);
 		        t.rollback();
 		    }
 		    ProyectofinalPersistentManager.instance().disposePersistentManager();
@@ -142,34 +147,43 @@ public class Bd_Noticias {
 
 	   public void cambiarDatosNoticia(int aIdNoticia, String aTitulo, Foto aImagenes, Tematica aTematica, String aCuerpo, String aResumen) throws PersistentException {
 		    PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+	        Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
+			String titulo = noticia.getTitulo();
+
 		    try {
-		        Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
 		        if (noticia != null) {
 		            noticia.setTitulo(aTitulo);
 		            noticia.setCuerpo(aCuerpo);
 		            noticia.setResumen(aResumen);
 //		            noticia.setImagenes(aImagenes);
 //		            noticia.setTematica(aTematica);
+				    Notification.show("La noticia "+titulo+" ha sido eliminada con éxito").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 
 		            NoticiaDAO.save(noticia);
 		        }
 		        t.commit();
 		    } catch (Exception e) {
 		        t.rollback();
+			    Notification.show("La noticia "+titulo+" no ha sido eliminada con éxito").addThemeVariants(NotificationVariant.LUMO_ERROR);
+
 		    }
 		    ProyectofinalPersistentManager.instance().disposePersistentManager();
 		}
 
 	public void eliminarNoticia(int aIdNoticia) throws PersistentException {
 		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
+		String titulo = noticia.getTitulo();
 		try {
-			Noticia noticia = NoticiaDAO.getNoticiaByORMID(aIdNoticia);
 			if (noticia != null) {
 				NoticiaDAO.deleteAndDissociate(noticia);
+			    Notification.show("La noticia "+titulo+" ha sido eliminada con éxito").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 			}
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
+		    Notification.show("La noticia "+titulo+" no ha sido eliminada con éxito").addThemeVariants(NotificationVariant.LUMO_ERROR);
+
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 	}

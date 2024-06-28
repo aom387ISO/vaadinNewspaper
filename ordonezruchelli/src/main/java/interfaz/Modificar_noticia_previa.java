@@ -14,6 +14,7 @@ public class Modificar_noticia_previa extends VistaModificarnoticiaprevia{
 //	    this._gestionar_noticia._periodista = periodista;
 	    
 	    _noticias_propias = new Noticias_propias(this);
+//	    Noticias_propias();
 		this.getModificarNoticiaPrevia().addClickListener(event->{
 			this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 			Noticias_propias();
@@ -22,6 +23,9 @@ public class Modificar_noticia_previa extends VistaModificarnoticiaprevia{
 
 	
 	public void Noticias_propias() {
-		this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_noticias_propias);
+//		this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_noticias_propias);
+	     bbdd.Noticia[] noticias = _gestionar_noticia._iperiodista.mostrarNoticiasAutor(_gestionar_noticia._periodista._periodista);
+	     _noticias_propias.cargarNoticias(noticias);
+//	     this._gestionar_noticia._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_noticias_propias);
 	}
 }

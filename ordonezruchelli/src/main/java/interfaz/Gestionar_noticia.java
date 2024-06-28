@@ -55,24 +55,14 @@ public class Gestionar_noticia extends VistaGestionarnoticia{
 		}
 
 	}
-    public void mostrarNoticiaCompleta(bbdd.Noticia noticia) {
-        VerticalLayout noticiaLayout = new VerticalLayout();
-        noticiaLayout.add("Titulo: " + noticia.getTitulo());
-        noticiaLayout.add("Cuerpo: " + noticia.getCuerpo());
-        noticiaLayout.add("Resumen: " + noticia.getResumen());
-        noticiaLayout.add("Imágenes: " + noticia.getImagenes());
-        noticiaLayout.add("Valoraciones Positivas: " + noticia.getnValoracionesPositivas());
-        noticiaLayout.add("Valoraciones Negativas: " + noticia.getnValoracionesNegativas());
 
-        this._periodista.getNoticiasBanner().as(VerticalLayout.class).removeAll();
-        this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(noticiaLayout);
-    }
 	public void Introducir_datos_noticia() {
 		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(_introducir_datos_noticia);
 	}
 
 	public void Modificar_noticia_previa() {
-		this._modificar_noticia_previa._noticias_propias = new Noticias_propias(_modificar_noticia_previa);
-		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(this._modificar_noticia_previa._noticias_propias);
+//		this._modificar_noticia_previa._noticias_propias = new Noticias_propias(_modificar_noticia_previa);
+//		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(this._modificar_noticia_previa._noticias_propias);
+		this._periodista.getNoticiasBanner().as(VerticalLayout.class).add(this._modificar_noticia_previa);
 	}
 }

@@ -14,10 +14,14 @@ public class Modificar_noticia_individual extends VistaModificarnoticiaindividua
 	iPeriodista _iPeriodista = new BDPrincipal();
     BD_Tematicas _bdTematicas = new BD_Tematicas();
 
-	public Modificar_noticia_individual(Periodista periodista) {
+	public Modificar_noticia_individual(Periodista periodista, bbdd.Noticia noticia, Noticias_propias_item noticias_propias_item) {
 		super();
-		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista = periodista;
-
+//		this._elegir_noticia._noticias_propias._noticias_propias._modificar_noticia_previa._gestionar_noticia._periodista = periodista;
+		this._elegir_noticia = new Elegir_noticia(noticias_propias_item);
+        this.getTituloNoticia().setValue(noticia.getTitulo());
+//        this.getImagenes().setValue(noticia.getImagenes());
+        this.getNoticia().setValue(noticia.getCuerpo());
+        this.getResumen().setValue(noticia.getResumen()); 
 		this.getEliminarNoticia().addClickListener(event -> Borrar_noticia());
 
 		this.getCambiarNoticia().addClickListener(event -> Enviar_cambios());
