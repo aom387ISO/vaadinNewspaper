@@ -376,4 +376,61 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 
+	public void subirFotoUsuario(int idUsuario, String uploadedImageUrl) {
+		try {
+			_bd_fot.subirFotoUsuario(idUsuario,uploadedImageUrl);
+		}catch (PersistentException e) {
+			e.printStackTrace();
+		}	
+		
+	}
+	
+    public Usuario buscarUsuarioPorCorreo(String correoElectronico) {
+        PersistentTransaction t = null;
+        try {
+            t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+            
+            Usuario_suscrito usuarioSuscrito = Usuario_suscritoDAO.loadUsuario_suscritoByQuery("CorreoElectronico = '" +correoElectronico+"'",null);
+            if (usuarioSuscrito != null) {
+                t.commit();
+                return usuarioSuscrito;
+            }
+
+            Editor editor = EditorDAO.loadEditorByQuery("CorreoElectronico = '" +correoElectronico+"'",null);
+            if (editor != null) {
+                t.commit();
+                return editor;
+            }
+
+            Periodista periodista = PeriodistaDAO.loadPeriodistaByQuery("CorreoElectronico = '" +correoElectronico+"'",null);
+            if (periodista != null) {
+                t.commit();
+                return periodista;
+            }
+
+            t.commit();
+        } catch (PersistentException e) {
+
+            e.printStackTrace();
+        }        
+        return null;
+    }
+
+	public String cargarFoto(Usuario usuario) {
+        try {
+           return _bd_fot.cargarFoto(usuario);
+            
+        } catch (PersistentException e) {
+            e.printStackTrace();
+        }
+        return "";
+	}
+
+	public void borrarFotoUsuario(int idUsuario) {
+		try {
+			_bd_fot.borrarFotoUsuario(idUsuario);
+		}catch (PersistentException e) {
+			e.printStackTrace();	
+		}
+	}
 }

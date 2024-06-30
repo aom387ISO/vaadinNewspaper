@@ -30,4 +30,11 @@ public interface iUsuario_general {
 
 	public List<Noticia> buscarNoticia(String busqueda);
     
+	public void subirFotoUsuario(int idUsuario, String uploadedImageUrl);
+	
+	public Usuario buscarUsuarioPorCorreo(String correoElectronico);
+
+	public String cargarFoto(Usuario usuario);
+
+	public void borrarFotoUsuario(int idUsuario);
 }
