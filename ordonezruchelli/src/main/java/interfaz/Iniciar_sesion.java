@@ -26,7 +26,7 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 		_registrarse = new Registrarse(this);
 
 		this.getSuscribirseIniciarSesion().addClickListener(event -> {
-			this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
+			this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
 
 			Registrarse();
 		});
@@ -34,7 +34,7 @@ public class Iniciar_sesion extends VistaIniciarsesion {
 	}
 
 	public void Registrarse() {
-		this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_registrarse);
+		this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(_registrarse);
 	}
 
 	public void Completar_Iniciar_sesion() {

@@ -18,7 +18,7 @@ export class VistaNoticiasenportada extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-text-area label="Listado Noticias Portada" placeholder="Add detailed explanation" id="listadoNoticiasPortada"></vaadin-text-area>
- <vista-noticiasenportada_item></vista-noticiasenportada_item>
+ <vista-noticiasenportada_item id="item"></vista-noticiasenportada_item>
 </vaadin-vertical-layout>
 `;
   }

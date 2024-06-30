@@ -1,10 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import './vista-listadodenoticiasgenerico';
 import './vista-veranuncios';
 import './vista-buscarnoticiadenosuscrito';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import './vista-noticiasenportada';
 
 @customElement('vista-usuarionosuscrito')
 export class VistaUsuarionosuscrito extends LitElement {
@@ -49,8 +49,8 @@ render() {
   <vaadin-vertical-layout theme="spacing" id="bannerAnuncios">
    <vista-veranuncios id="verAnuncios"></vista-veranuncios>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="noticiasPortada">
-   <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
+  <vaadin-vertical-layout theme="spacing" id="bannerNoticiasPortada">
+   <vista-noticiasenportada id="noticiasPortada"></vista-noticiasenportada>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>

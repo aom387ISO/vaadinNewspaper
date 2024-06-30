@@ -13,7 +13,7 @@ public class Buscar_noticia_de_no_suscrito  extends VistaBuscarnoticiadenosuscri
 		this._usuario_no_suscrito = _usuario_no_suscrito;
 		getAccederNoticiaBusquedaNoSuscrito().addClickListener(event->{
 			if(!getBarraBusquedaUsuarioNoSuscrito().isEmpty()) {
-				this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
+				this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
 				Listado_noticias_cortadas();
 			}
 		});		
@@ -21,6 +21,6 @@ public class Buscar_noticia_de_no_suscrito  extends VistaBuscarnoticiadenosuscri
 
 	public void Listado_noticias_cortadas() {
 		_listado_noticias_cortadas = new Listado_noticias_cortadas(_usuario_no_suscrito, getBarraBusquedaUsuarioNoSuscrito().getValue());
-		this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_listado_noticias_cortadas);
+		this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(_listado_noticias_cortadas);
 	}
 }

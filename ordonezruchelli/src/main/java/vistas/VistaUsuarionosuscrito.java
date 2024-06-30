@@ -20,6 +20,8 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private Button verSeccionNoSuscrito;
 	@Id("iniciarSesion")
 	private Button iniciarSesion;
+	
+
 	public HorizontalLayout getBanner() {
 		return banner;
 	}
@@ -32,12 +34,12 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		this.bannerAnuncios = bannerAnuncios;
 	}
 
-	public Element getNoticiasPortada() {
-		return noticiasPortada;
+	public Element getBannerNoticiasPortada() {
+		return bannerNoticiasPortada;
 	}
 
-	public void setNoticiasPortada(Element noticiasPortada) {
-		this.noticiasPortada = noticiasPortada;
+	public void setBannerNoticiasPortada(Element bannerNoticiasPortada) {
+		this.bannerNoticiasPortada = bannerNoticiasPortada;
 	}
 
 	public void setBanner(HorizontalLayout banner) {
@@ -48,10 +50,10 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private HorizontalLayout banner;
 	@Id("buscarNoticiaNoSuscrito")
 	private Element buscarNoticiaNoSuscrito;
-	@Id("noticiasPortada")
-	private Element noticiasPortada;
 	@Id("bannerAnuncios")
 	private Element bannerAnuncios;
+	@Id("bannerNoticiasPortada")
+	private Element bannerNoticiasPortada;
 	public VistaUsuarionosuscrito() {
         // You can initialise any data required for the connected UI components here.
     }

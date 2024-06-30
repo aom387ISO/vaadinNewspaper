@@ -16,13 +16,13 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 		
 		this._ir_a_comentarios = new Ir_a_comentarios(this);
         this.getComentariosNoSuscrito().addAttachListener(event -> {
-			this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
+			this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
         	Ir_a_comentarios();
         });
 	}
 
 	public void Ir_a_comentarios() {
-		this._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_ir_a_comentarios);
+		this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(_ir_a_comentarios);
 		this._usuario_no_suscrito.MainView.add(_ir_a_comentarios);
 	}
 }

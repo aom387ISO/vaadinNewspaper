@@ -91,8 +91,8 @@ public class Registrarse extends VistaRegistrarse {
 	            _iusuarioSuscrito.subirFotoUsuario(usuario.getIdUsuario(), urlFoto);
 	        }
 		
-		this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
-		this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_iniciar_sesion);
+		this._iniciar_sesion._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
+		this._iniciar_sesion._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(_iniciar_sesion);
 
 	}
 

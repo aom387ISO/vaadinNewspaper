@@ -21,7 +21,7 @@ public class Listado_noticias_cortadas extends Listado_de_noticias_generico {
             for (bbdd.Noticia noticia : noticias) {
             	Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(this, noticia);
                 _item.add(item);
-                usuarioNoSuscrito.getNoticiasPortada().as(VerticalLayout.class).add(item);
+                usuarioNoSuscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
 //                this._buscar_noticia_de_no_suscrito._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(item);
             }
         	
