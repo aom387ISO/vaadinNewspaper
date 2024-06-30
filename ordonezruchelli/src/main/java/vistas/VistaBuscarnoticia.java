@@ -16,16 +16,7 @@ public class VistaBuscarnoticia extends LitTemplate {
 	private TextField barraBusqueda;
 	@Id("accederNoticiaBusqueda")
 	private Button accederNoticiaBusqueda;
-	public Element getListadoBusqueda() {
-		return listadoBusqueda;
-	}
 
-	public void setListadoBusqueda(Element listadoBusqueda) {
-		this.listadoBusqueda = listadoBusqueda;
-	}
-
-	@Id("listadoBusqueda")
-	private Element listadoBusqueda;
 
 	public TextField getBarraBusqueda() {
 		return barraBusqueda;

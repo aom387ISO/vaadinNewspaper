@@ -16,16 +16,6 @@ public class VistaBuscarnoticiadenosuscrito extends LitTemplate {
 	private TextField barraBusquedaUsuarioNoSuscrito;
 	@Id("accederNoticiaBusquedaNoSuscrito")
 	private Button accederNoticiaBusquedaNoSuscrito;
-	public Element getListadoBusqueda() {
-		return listadoBusqueda;
-	}
-
-	public void setListadoBusqueda(Element listadoBusqueda) {
-		this.listadoBusqueda = listadoBusqueda;
-	}
-
-	@Id("listadoBusqueda")
-	private Element listadoBusqueda;
 
 	public TextField getBarraBusquedaUsuarioNoSuscrito() {
 		return barraBusquedaUsuarioNoSuscrito;

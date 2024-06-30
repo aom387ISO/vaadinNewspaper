@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaNoticiasenbusqueda_item;
 
 public class Noticias_en_busqueda_item extends VistaNoticiasenbusqueda_item{
@@ -13,11 +16,14 @@ public class Noticias_en_busqueda_item extends VistaNoticiasenbusqueda_item{
 		this._noticia = noticia;
 		this.getNombreNoticiaBusqueda().setValue(_noticia.getTitulo());
 		this.getResumenNoticiaBusqueda().setValue(_noticia.getResumen());
-        Ver_noticia();
+
+        getVerNoticia().addClickListener(event -> Ver_noticia());
 
 	}
 	
 	public void Ver_noticia() {
-        Ver_noticia noticia = new Ver_noticia(_noticias_en_busqueda._buscar_noticia._usuario_general);
+        _ver_noticia = new Ver_noticia(_noticias_en_busqueda._buscar_noticia._usuario_general);
+        this._noticias_en_busqueda._buscar_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+        this._noticias_en_busqueda._buscar_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_ver_noticia);
 	}
 }

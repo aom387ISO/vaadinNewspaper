@@ -6,6 +6,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-listadodenoticiasgenerico_item")
 @JsModule("./src/vista-listadodenoticiasgenerico_item.ts")
@@ -17,6 +18,14 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private Button nomegusta;
 	@Id("titulo")
 	private TextArea titulo;
+	public HorizontalLayout getModificarNoticia() {
+		return modificarNoticia;
+	}
+
+	public void setModificarNoticia(HorizontalLayout modificarNoticia) {
+		this.modificarNoticia = modificarNoticia;
+	}
+
 	@Id("resumen")
 	private TextArea resumen;
 	@Id("cuerpo")
@@ -25,8 +34,9 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private TextArea valoracionesPositivas;
 	@Id("valoracionesNegativas")
 	private TextArea valoracionesNegativas;
-	
-    public TextArea getTitulo() {
+	@Id("modificarNoticia")
+	private HorizontalLayout modificarNoticia;
+	public TextArea getTitulo() {
 		return titulo;
 	}
 
@@ -85,5 +95,5 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	public void setNomegusta(Button nomegusta) {
 		this.nomegusta = nomegusta;
 	}
-
+	
 }

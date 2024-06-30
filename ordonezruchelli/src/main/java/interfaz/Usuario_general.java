@@ -24,7 +24,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 				
 		//Componente estático Buscar Noticia
 		_buscar = new Buscar_noticia(this);
-		this._buscar.getListadoBusqueda().setVisible(false);
+//		this._buscar.getListadoBusqueda().setVisible(false);
 		Buscar_noticia();
 		
 		_ver_noticia = new Ver_noticia(this);

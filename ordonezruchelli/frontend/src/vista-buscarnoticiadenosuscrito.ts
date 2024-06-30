@@ -1,7 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
-import './vista-listadodenoticiasgenerico';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
@@ -27,7 +26,6 @@ export class VistaBuscarnoticiadenosuscrito extends LitElement {
   <vaadin-button id="accederNoticiaBusquedaNoSuscrito" style="width: 20%;">
     Acceder a Noticia 
   </vaadin-button>
-  <vista-listadodenoticiasgenerico id="listadoBusqueda"></vista-listadodenoticiasgenerico>
  </vaadin-form-layout>
 </vaadin-horizontal-layout>
 `;

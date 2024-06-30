@@ -4,7 +4,6 @@ import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@polymer/iron-icon/iron-icon.js';
-import './vista-noticiasenbusqueda';
 
 @customElement('vista-buscarnoticia')
 export class VistaBuscarnoticia extends LitElement {
@@ -27,7 +26,6 @@ export class VistaBuscarnoticia extends LitElement {
   <vaadin-button id="accederNoticiaBusqueda" style="width: 20%;">
     Acceder a noticia 
   </vaadin-button>
-  <vista-noticiasenbusqueda id="listadoBusqueda"></vista-noticiasenbusqueda>
  </vaadin-form-layout>
 </vaadin-horizontal-layout>
 `;
