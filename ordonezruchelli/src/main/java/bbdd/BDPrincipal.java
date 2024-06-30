@@ -433,4 +433,13 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 			e.printStackTrace();	
 		}
 	}
+
+	public void subirFotoNoticia(int idNoticia, String urlFoto) {
+		try {
+			_bd_fot.subirFotoNoticia(idNoticia,urlFoto);
+		}catch (PersistentException e) {
+			e.printStackTrace();
+		}	
+		
+	}
 }

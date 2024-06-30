@@ -7,6 +7,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-introducirdatosnoticia")
 @JsModule("./src/vista-introducirdatosnoticia.ts")
@@ -14,6 +15,14 @@ public class VistaIntroducirdatosnoticia extends LitTemplate {
 
     @Id("tituloNoticia")
 	private TextField tituloNoticia;
+	public HorizontalLayout getLayoutFotos() {
+		return layoutFotos;
+	}
+
+	public void setLayoutFotos(HorizontalLayout layoutFotos) {
+		this.layoutFotos = layoutFotos;
+	}
+
 	@Id("tematicaNoticia")
 	private TextField tematicaNoticia;
 	@Id("cuerpoNoticia")
@@ -24,9 +33,8 @@ public class VistaIntroducirdatosnoticia extends LitTemplate {
 	private Button enviarNoticia;
 	@Id("volverGestionNoticia")
 	private Button volverGestionNoticia;
-	@Id("imagenesYvideos")
-	private Upload imagenesYvideos;
-
+	@Id("layoutFotos")
+	private HorizontalLayout layoutFotos;
 	public TextField getTituloNoticia() {
 		return tituloNoticia;
 	}

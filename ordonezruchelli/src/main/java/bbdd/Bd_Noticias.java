@@ -127,12 +127,12 @@ public class Bd_Noticias {
 		    	noticia.setResumen(aResumen);
 		    	aTematica.getORM_Da_tematica_a().add(noticia);
 //		    	periodista.getORM_Publica().add(noticia);
-		    	noticia.setAutor(periodista);
+//		    	noticia.setAutor(periodista);
 //		        nuevaNoticia.setImagenes(aImagenes);
 		    	noticia.setnValoracionesNegativas(0);
 		    	noticia.setnValoracionesPositivas(0);
 		    	noticia.setORM_Autor(periodista);
-	            periodista.getORM_Publica().add(noticia);
+//	            periodista.getORM_Publica().add(noticia);
 			    Notification.show("La noticia ha sido creada con éxito").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 		        NoticiaDAO.save(noticia);
 		        t.commit();

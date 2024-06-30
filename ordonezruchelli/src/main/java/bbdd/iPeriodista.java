@@ -12,4 +12,6 @@ public interface iPeriodista extends iUsuario_general {
 	public Periodista loginPeriodista(String aCorreo, String aContrasena);
 	
 	public Noticia[] mostrarNoticiasAutor(Periodista periodista);
+
+	public void subirFotoNoticia(int idNoticia, String urlFoto);
 }
