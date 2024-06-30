@@ -17,7 +17,7 @@ export class VistaListadodenoticiasgenerico_item extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="banner">
  <vaadin-text-area label="Título" placeholder="Título de la noticia" id="titulo">
    Título de la noticia 
  </vaadin-text-area>
@@ -31,6 +31,9 @@ export class VistaListadodenoticiasgenerico_item extends LitElement {
 </vaadin-button>
 <vaadin-button id="noMeGusta">
   No me gusta 
+</vaadin-button>
+<vaadin-button id="comentar">
+  Comentar 
 </vaadin-button>
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 <vaadin-horizontal-layout theme="spacing" id="modificarNoticia" style="width: 100%; height: 100%;"></vaadin-horizontal-layout>

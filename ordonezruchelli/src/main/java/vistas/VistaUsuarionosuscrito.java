@@ -26,6 +26,14 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 		return banner;
 	}
 
+	public HorizontalLayout getParaNoticias() {
+		return paraNoticias;
+	}
+
+	public void setParaNoticias(HorizontalLayout paraNoticias) {
+		this.paraNoticias = paraNoticias;
+	}
+
 	public Element getBannerAnuncios() {
 		return bannerAnuncios;
 	}
@@ -54,6 +62,8 @@ public class VistaUsuarionosuscrito extends LitTemplate {
 	private Element bannerAnuncios;
 	@Id("bannerNoticiasPortada")
 	private Element bannerNoticiasPortada;
+	@Id("paraNoticias")
+	private HorizontalLayout paraNoticias;
 	public VistaUsuarionosuscrito() {
         // You can initialise any data required for the connected UI components here.
     }

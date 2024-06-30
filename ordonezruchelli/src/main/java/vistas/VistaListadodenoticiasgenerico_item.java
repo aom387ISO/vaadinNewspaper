@@ -18,8 +18,24 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 		return modificarNoticia;
 	}
 
+	public HorizontalLayout getBanner() {
+		return banner;
+	}
+
+	public void setBanner(HorizontalLayout banner) {
+		this.banner = banner;
+	}
+
 	public void setModificarNoticia(HorizontalLayout modificarNoticia) {
 		this.modificarNoticia = modificarNoticia;
+	}
+
+	public Button getComentar() {
+		return comentar;
+	}
+
+	public void setComentar(Button comentar) {
+		this.comentar = comentar;
 	}
 
 	@Id("resumen")
@@ -36,6 +52,10 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private Button meGusta;
 	@Id("noMeGusta")
 	private Button noMeGusta;
+	@Id("comentar")
+	private Button comentar;
+	@Id("banner")
+	private HorizontalLayout banner;
 	public TextArea getTitulo() {
 		return titulo;
 	}

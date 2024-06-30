@@ -21,6 +21,7 @@ public class Buscar_noticia_de_no_suscrito  extends VistaBuscarnoticiadenosuscri
 
 	public void Listado_noticias_cortadas() {
 		_listado_noticias_cortadas = new Listado_noticias_cortadas(_usuario_no_suscrito, getBarraBusquedaUsuarioNoSuscrito().getValue());
-		this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(_listado_noticias_cortadas);
+		this._usuario_no_suscrito.getParaNoticias().add(_listado_noticias_cortadas);
+//		this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(_listado_noticias_cortadas);
 	}
 }
