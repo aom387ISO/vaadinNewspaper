@@ -1,5 +1,7 @@
 package bbdd;
 
+import java.util.List;
+
 public interface iUsuario_general {
 
 	public void cambiarApodo(String aANuevoApodo, int aIdUsuario);
@@ -25,5 +27,7 @@ public interface iUsuario_general {
     public Noticia[] cargarNoticiasContenidasEnSeccion(String nombreSeccion);
     
     public Noticia[] cargarNoticiasNoContenidasEnSeccion(String nombreSeccion);
+
+	public List<Noticia> buscarNoticia(String busqueda);
     
 }

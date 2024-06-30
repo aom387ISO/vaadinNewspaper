@@ -332,5 +332,20 @@ public class Bd_Noticias {
 
     }
 
+	public List<Noticia> buscarNoticia(String busqueda)throws PersistentException {
+		List<Noticia> noticias = null;
+        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+        try {
+            noticias = NoticiaDAO.queryNoticia("Titulo = '" + busqueda + "'", null);
+            t.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+        return noticias;
+		
+	}
+
     
 }

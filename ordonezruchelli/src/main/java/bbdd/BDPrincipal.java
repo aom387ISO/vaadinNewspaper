@@ -1,5 +1,7 @@
 package bbdd;
 
+import java.util.List;
+
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -363,6 +365,15 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}		
+	}
+
+	public List<Noticia> buscarNoticia(String busqueda) {
+		try {
+			return _bd_not.buscarNoticia(busqueda);
+		}catch (PersistentException e) {
+			e.printStackTrace();
+		}	
+		return null;
 	}
 
 }
