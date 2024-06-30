@@ -32,7 +32,7 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 		    this.getNoticiasPortada().as(VerticalLayout.class).removeAll();
 			this.MainView.remove(_ver_noticia_cortada);
 //			this.MainView.remove(_iniciar_sesion);
-			this.MainView.remove(_ver_seccion_de_Usuario_no_suscrito);
+//			this.MainView.remove(_ver_seccion_de_Usuario_no_suscrito);
 			Ver_noticia_cortada();
 //		});		
 		

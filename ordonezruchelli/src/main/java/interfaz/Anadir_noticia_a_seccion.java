@@ -61,10 +61,10 @@ public class Anadir_noticia_a_seccion  extends VistaAnadirnoticiaaseccion{
 		}
 	}
 
-	public void Lista_de_noticias_que_no_estan_en__la_seccion(String idSeccion) {
+	public void Lista_de_noticias_que_no_estan_en__la_seccion(String nombreSeccion) {
 //		this.getGeneralAnadir().add(_lista_de_noticias_que_no_estan_en__la_seccion);
         try {
-            bbdd.Noticia[] noticias = _iusuariogeneral.cargarNoticiasNoContenidasEnSeccion(idSeccion);
+            bbdd.Noticia[] noticias = _iusuariogeneral.cargarNoticiasNoContenidasEnSeccion(nombreSeccion);
             _lista_de_noticias_que_no_estan_en__la_seccion.cargarNoticias(noticias);
             List<String> noticia = java.util.Arrays.stream(noticias).map(bbdd.Noticia::getTitulo)
                     .collect(Collectors.toList());
