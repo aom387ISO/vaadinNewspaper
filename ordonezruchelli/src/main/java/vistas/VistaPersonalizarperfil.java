@@ -13,11 +13,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-personalizarperfil.ts")
 public class VistaPersonalizarperfil extends LitTemplate {
 
-    @Id("nuevaImagen")
-	private TextField nuevaImagen;
-	@Id("cambiarImagen")
-	private Button cambiarImagen;
-	@Id("nuevoApodo")
+    @Id("nuevoApodo")
 	private TextField nuevoApodo;
 	@Id("cambiarApodo")
 	private Button cambiarApodo;
@@ -39,22 +35,6 @@ public class VistaPersonalizarperfil extends LitTemplate {
 
 	public void setPerfil(Element perfil) {
 		this.perfil = perfil;
-	}
-
-	public TextField getNuevaImagen() {
-		return nuevaImagen;
-	}
-
-	public void setNuevaImagen(TextField nuevaImagen) {
-		this.nuevaImagen = nuevaImagen;
-	}
-
-	public Button getCambiarImagen() {
-		return cambiarImagen;
-	}
-
-	public void setCambiarImagen(Button cambiarImagen) {
-		this.cambiarImagen = cambiarImagen;
 	}
 
 	public TextField getNuevoApodo() {

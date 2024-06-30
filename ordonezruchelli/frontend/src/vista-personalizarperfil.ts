@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-form-layout/src/vaadin-form-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-personalizarperfil')
@@ -23,10 +23,6 @@ export class VistaPersonalizarperfil extends LitElement {
   <vaadin-form-layout style="align-self: center; background: #f5f5f5; border: 1px solid black; padding: 20px;">
    <vaadin-horizontal-layout theme="spacing" id="layoutFotos"></vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
-   <vaadin-text-field label="Nueva imagen" placeholder="Nueva imagen" id="nuevaImagen"></vaadin-text-field>
-   <vaadin-button id="cambiarImagen">
-     Cambiar imagen 
-   </vaadin-button>
    <vaadin-text-field label="Nuevo apodo" placeholder="Nuevo apodo" id="nuevoApodo"></vaadin-text-field>
    <vaadin-button id="cambiarApodo">
      Cambiar apodo 
