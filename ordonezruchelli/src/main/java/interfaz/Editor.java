@@ -22,7 +22,7 @@ public class Editor extends Usuario_general {
 			Gestionar();
 		});	
 		
-		_ver_comentarios_de_Editor = new Ver_comentarios_de_Editor(this);
+		_ver_comentarios_de_Editor = new Ver_comentarios_de_Editor(this, new bbdd.Noticia());
 	}
 	
 	public void Ver_comentarios_de_Editor() {

@@ -23,7 +23,7 @@ public class Ver_noticia extends VistaVernoticia {
 		if (_listado_de_noticias != null) {
 			this._listado_de_noticias.getMeGusta().addClickListener(event -> Dar_me_gusta_noticia());
 			this._listado_de_noticias.getNoMeGusta().addClickListener(event -> Dar_no_me_gusta_noticia());
-			this._ver_comentarios = new Ver_comentarios(usuarioGeneral);
+			this._ver_comentarios = new Ver_comentarios(usuarioGeneral, _noticia);
 			this._ver_comentarios.getVerComentarios().addClickListener(event -> Ver_comentarios());
 
 		}
@@ -33,8 +33,6 @@ public class Ver_noticia extends VistaVernoticia {
 		super();
 		this._usuario_general = usuarioGeneral;
 		this._noticia = noticia;
-		System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println(noticia.getTitulo());
         _listado_de_noticias = new Listado_de_noticias_item(this, noticia);
 		if (_listado_de_noticias != null) {
 			this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
@@ -43,7 +41,7 @@ public class Ver_noticia extends VistaVernoticia {
 			this._usuario_general.getParaNoticias().add(_listado_de_noticias);
 			this._listado_de_noticias.getMeGusta().addClickListener(event -> Dar_me_gusta_noticia());
 			this._listado_de_noticias.getNoMeGusta().addClickListener(event -> Dar_no_me_gusta_noticia());
-			this._ver_comentarios = new Ver_comentarios(usuarioGeneral);
+			this._ver_comentarios = new Ver_comentarios(usuarioGeneral, noticia);
 			this._ver_comentarios.getVerComentarios().addClickListener(event -> Ver_comentarios());
 
 		}

@@ -5,6 +5,9 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
+
 public class BD_Comentarios {
 	public BDPrincipal _bd_prin_comen;
 	public Vector<Comentario> _contiene_comentario = new Vector<Comentario>();
@@ -16,10 +19,13 @@ public class BD_Comentarios {
 					null);
 			if (comentarioAEliminar != null) {
 				ComentarioDAO.deleteAndDissociate(comentarioAEliminar);
+				Notification.show("Comentario eliminado con éxito").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 			}
 			t.commit();
 		} catch (Exception e) {
+			Notification.show("Comentario no eliminado").addThemeVariants(NotificationVariant.LUMO_ERROR);
 			t.rollback();
+			
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
