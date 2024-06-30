@@ -26,6 +26,8 @@ public class Usuario_suscrito extends Usuario_general {
 		this.getPersonalizarSuscrito().addClickListener(event->{
 //			this.MainView.removeAll();
 			this._personalizar_perfil_de_Usuario_suscrito._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this._personalizar_perfil_de_Usuario_suscrito._usuario_general.getParaNoticias().removeAll();
+
 			this._personalizar_perfil_de_Usuario_suscrito._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_personalizar_perfil_de_Usuario_suscrito);
 			Personalizar_perfil_de_Usuario_suscrito();
 		});	

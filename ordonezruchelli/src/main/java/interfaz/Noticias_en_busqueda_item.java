@@ -22,7 +22,7 @@ public class Noticias_en_busqueda_item extends VistaNoticiasenbusqueda_item{
 	}
 	
 	public void Ver_noticia() {
-        _ver_noticia = new Ver_noticia(_noticias_en_busqueda._buscar_noticia._usuario_general);
+        _ver_noticia = new Ver_noticia(_noticias_en_busqueda._buscar_noticia._usuario_general, _noticia);
         this._noticias_en_busqueda._buscar_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
         this._noticias_en_busqueda._buscar_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_ver_noticia);
 	}

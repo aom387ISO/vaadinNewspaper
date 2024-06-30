@@ -12,8 +12,16 @@ public class Listado_de_noticias_item extends Listado_de_noticias_generico_item 
 
 		Ver_noticia();
 	}
+    public Listado_de_noticias_item(Ver_noticia verNoticia, bbdd.Noticia noticia) {
+        super(verNoticia, noticia);
+        this._ver_noticia = verNoticia;
+        this._noticia = noticia;
 
+        Ver_noticia();
+    }
 	public void Ver_noticia() {
+		System.out.println("Está en ver noticias de listado noticias item.");
+		System.out.println(_noticia.getTitulo());
 		this.getTitulo().setValue(_noticia.getTitulo());
 		this.getResumen().setValue(_noticia.getResumen());
 		this.getCuerpo().setValue(_noticia.getCuerpo());

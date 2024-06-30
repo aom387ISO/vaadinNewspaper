@@ -56,6 +56,7 @@ export class VistaUsuariogeneral extends LitElement {
   </vaadin-button>
   <vista-buscarnoticia id="buscarSuscrito"></vista-buscarnoticia>
  </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing" id="paraNoticias"></vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" id="noticiasBanner">
   <vista-noticiasenportada></vista-noticiasenportada>
  </vaadin-vertical-layout>

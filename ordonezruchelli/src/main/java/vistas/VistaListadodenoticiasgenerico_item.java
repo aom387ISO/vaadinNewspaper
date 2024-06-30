@@ -12,10 +12,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-listadodenoticiasgenerico_item.ts")
 public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 
-	@Id("MeGusta")
-	private Button megusta;
-	@Id("NoMeGusta")
-	private Button nomegusta;
 	@Id("titulo")
 	private TextArea titulo;
 	public HorizontalLayout getModificarNoticia() {
@@ -36,6 +32,10 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private TextArea valoracionesNegativas;
 	@Id("modificarNoticia")
 	private HorizontalLayout modificarNoticia;
+	@Id("meGusta")
+	private Button meGusta;
+	@Id("noMeGusta")
+	private Button noMeGusta;
 	public TextArea getTitulo() {
 		return titulo;
 	}
@@ -72,6 +72,22 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 		return valoracionesNegativas;
 	}
 
+	public Button getMeGusta() {
+		return meGusta;
+	}
+
+	public void setMeGusta(Button meGusta) {
+		this.meGusta = meGusta;
+	}
+
+	public Button getNoMeGusta() {
+		return noMeGusta;
+	}
+
+	public void setNoMeGusta(Button noMeGusta) {
+		this.noMeGusta = noMeGusta;
+	}
+
 	public void setValoracionesNegativas(TextArea valoracionesNegativas) {
 		this.valoracionesNegativas = valoracionesNegativas;
 	}
@@ -80,20 +96,6 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Button getMegusta() {
-		return megusta;
-	}
 
-	public void setMegusta(Button megusta) {
-		this.megusta = megusta;
-	}
-
-	public Button getNomegusta() {
-		return nomegusta;
-	}
-
-	public void setNomegusta(Button nomegusta) {
-		this.nomegusta = nomegusta;
-	}
 	
 }

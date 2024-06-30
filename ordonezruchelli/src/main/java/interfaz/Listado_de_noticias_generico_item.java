@@ -1,5 +1,6 @@
 package interfaz;
 
+import bbdd.Noticia;
 import vistas.VistaListadodenoticiasgenerico_item;
 
 public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgenerico_item{
@@ -17,4 +18,15 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 		this._listado_de_noticias_generico = _listado_de_noticias_generico;
 	}
+
+	public Listado_de_noticias_generico_item(Ver_noticia verNoticia, Noticia noticia) {
+		super();
+		this._noticia = noticia;
+		this.getTitulo().setValue(_noticia.getTitulo());
+		this.getResumen().setValue(_noticia.getResumen());
+		this.getCuerpo().setValue(_noticia.getCuerpo());
+		this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
+		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
+		this._listado_de_noticias_generico = _listado_de_noticias_generico;
+		}
 }

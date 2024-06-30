@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
@@ -14,19 +15,39 @@ public class Ver_noticia extends VistaVernoticia {
 	public Noticias_en_busqueda_item _noticias_en_busqueda;
 	public Ver_comentarios _ver_comentarios;
 	iUsuario_general _iUsuario_general = new BDPrincipal();
-
+	bbdd.Noticia _noticia;
+	
 	public Ver_noticia(Usuario_general usuarioGeneral) {
 		super();
 		this._usuario_general = usuarioGeneral;
 		if (_listado_de_noticias != null) {
-			this._listado_de_noticias.getMegusta().addClickListener(event -> Dar_me_gusta_noticia());
-			this._listado_de_noticias.getNomegusta().addClickListener(event -> Dar_no_me_gusta_noticia());
+			this._listado_de_noticias.getMeGusta().addClickListener(event -> Dar_me_gusta_noticia());
+			this._listado_de_noticias.getNoMeGusta().addClickListener(event -> Dar_no_me_gusta_noticia());
 			this._ver_comentarios = new Ver_comentarios(usuarioGeneral);
 			this._ver_comentarios.getVerComentarios().addClickListener(event -> Ver_comentarios());
 
 		}
 	}
+	
+	public Ver_noticia(Usuario_general usuarioGeneral, bbdd.Noticia noticia) {
+		super();
+		this._usuario_general = usuarioGeneral;
+		this._noticia = noticia;
+		System.out.println("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		System.out.println(noticia.getTitulo());
+        _listado_de_noticias = new Listado_de_noticias_item(this, noticia);
+		if (_listado_de_noticias != null) {
+			this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_listado_de_noticias);
+			this._usuario_general.getParaNoticias().removeAll();
+			this._usuario_general.getParaNoticias().add(_listado_de_noticias);
+			this._listado_de_noticias.getMeGusta().addClickListener(event -> Dar_me_gusta_noticia());
+			this._listado_de_noticias.getNoMeGusta().addClickListener(event -> Dar_no_me_gusta_noticia());
+			this._ver_comentarios = new Ver_comentarios(usuarioGeneral);
+			this._ver_comentarios.getVerComentarios().addClickListener(event -> Ver_comentarios());
 
+		}
+	}
 	public void Ver_comentarios() {
 		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_ver_comentarios);

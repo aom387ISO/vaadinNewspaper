@@ -29,6 +29,16 @@ public class VistaUsuariogeneral extends LitTemplate {
 	}
 
 
+	public HorizontalLayout getParaNoticias() {
+		return paraNoticias;
+	}
+
+
+	public void setParaNoticias(HorizontalLayout paraNoticias) {
+		this.paraNoticias = paraNoticias;
+	}
+
+
 	public void setNoticiasBanner(Element noticiasBanner) {
 		this.noticiasBanner = noticiasBanner;
 	}
@@ -63,6 +73,8 @@ public class VistaUsuariogeneral extends LitTemplate {
 	private Element noticiasBanner;
 	@Id("Perfil")
 	private HorizontalLayout perfil;
+	@Id("paraNoticias")
+	private HorizontalLayout paraNoticias;
 	public HorizontalLayout getBannerGeneral() {
 		return bannerGeneral;
 	}

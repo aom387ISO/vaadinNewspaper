@@ -33,6 +33,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 			this.MainView.remove(_ver_noticia);
 			this.MainView.remove(_visualizar_seccion);
 			this.MainView.remove(_personalizar_perfil);
+			this.getParaNoticias().removeAll();
 			Ver_noticia();
 		});		
 		
@@ -42,6 +43,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 			this.MainView.remove(_ver_noticia);
 			this.MainView.remove(_visualizar_seccion);
 			this.MainView.remove(_personalizar_perfil);
+			this.getParaNoticias().removeAll();
 			Visualizar_seccion();
 		});		
 		
@@ -51,6 +53,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 			this.MainView.remove(_ver_noticia);
 			this.MainView.remove(_visualizar_seccion);
 			this.MainView.remove(_personalizar_perfil);
+			this.getParaNoticias().removeAll();
 			Personalizar_perfil();
 		});	
 		

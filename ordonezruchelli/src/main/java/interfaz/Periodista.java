@@ -24,6 +24,7 @@ public class Periodista extends Usuario_general {
 	}
 	
 	public void Gestionar_noticia() {
+		this.getParaNoticias().removeAll();
 		this.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar_noticia);
 	}
 

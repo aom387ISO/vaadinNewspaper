@@ -23,7 +23,6 @@ public class Buscar_noticia extends VistaBuscarnoticia {
 
 	public void Noticias_en_busqueda() {
 		_noticias_en_busqueda = new Noticias_en_busqueda(_usuario_general, getBarraBusqueda().getValue());
-
 		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_noticias_en_busqueda);
 	}
 }

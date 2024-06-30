@@ -26,10 +26,12 @@ public class Editor extends Usuario_general {
 	}
 	
 	public void Ver_comentarios_de_Editor() {
+		this.getParaNoticias().removeAll();
 		this.getNoticiasBanner().as(VerticalLayout.class).add(_ver_comentarios_de_Editor);
 	}
 
 	public void Gestionar() {
+		this.getParaNoticias().removeAll();
 		this.getNoticiasBanner().as(VerticalLayout.class).add(_gestionar);
 	}	
 	

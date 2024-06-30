@@ -12,11 +12,11 @@ public class Listado_noticias_cortadas_item extends Listado_de_noticias_generico
 		super(_listado_de_noticias_generico, noticia);
 		this._noticia = noticia;
 		
-		this.getMegusta().addAttachListener(event -> {
+		this.getMeGusta().addAttachListener(event -> {
 	        Notification notification = Notification.show("Es necesario iniciar sesion para valorar");
 	        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 		});
-		this.getNomegusta().addAttachListener(event -> {
+		this.getNoMeGusta().addAttachListener(event -> {
 	        Notification notification = Notification.show("Es necesario iniciar sesion para valorar");
 	        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 		});
