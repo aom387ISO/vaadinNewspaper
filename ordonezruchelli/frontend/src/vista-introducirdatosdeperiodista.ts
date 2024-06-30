@@ -26,12 +26,7 @@ export class VistaIntroducirdatosdeperiodista extends LitElement {
    <vaadin-text-field label="Contraseña" placeholder="Contraseña" id="contrasenaPeriodista"></vaadin-text-field>
    <vaadin-text-field label="Apodo" placeholder="Apodo" id="apodoPeriodista"></vaadin-text-field>
    <vaadin-text-field label="DNI" placeholder="DNI" id="dniPeriodista"></vaadin-text-field>
-   <vaadin-horizontal-layout theme="spacing">
-    <vaadin-text-field label="Foto de Perfil" placeholder="Foto de Perfil" id="fotoPeriodista"></vaadin-text-field>
-    <vaadin-button id="anadirFotoPeriodista" style="align-self: center;">
-      Añadir Foto 
-    </vaadin-button>
-   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing" id="layoutFoto"></vaadin-horizontal-layout>
    <vaadin-button id="darAltaPeriodista">
      Dar de alta 
    </vaadin-button>

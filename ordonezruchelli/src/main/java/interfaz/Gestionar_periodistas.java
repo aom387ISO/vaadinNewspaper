@@ -1,14 +1,26 @@
 package interfaz;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.FileBuffer;
+import com.vaadin.flow.server.StreamResource;
 
 import bbdd.BDPrincipal;
 import bbdd.iEditor;
+import bbdd.iUsuario_suscrito;
 import vistas.VistaGestionarperiodistas;
 
 public class Gestionar_periodistas extends VistaGestionarperiodistas {
@@ -19,7 +31,11 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 	public Lista_de_periodistas _lista_de_periodistas;
 	public Introducir_datos_de_periodista _introducir_datos_de_periodista;
 	iEditor _iEditor = new BDPrincipal();
-
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/uploads/";
+	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/uploads/";
+    private String urlFoto;
+    
+    
 	public Gestionar_periodistas(Gestionar gestionar) {
 		super();
 		this._gestionar = gestionar;
@@ -37,6 +53,35 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 			Volver_a_la_gestion_desde_gestion_portada();
 		});
         this.getBajaPeriodista().addClickListener(event -> Dar_de_baja_periodista());
+		createUploadDirectory();
+
+		FileBuffer buffer = new FileBuffer();
+
+		Upload upload = new Upload(buffer);
+
+		upload.setAcceptedFileTypes("image/jpeg", "image/png", "image/gif");
+		this._introducir_datos_de_periodista.getLayoutFoto().add(upload);
+		upload.addSucceededListener(event -> {
+			File uploadedFile = buffer.getFileData().getFile();
+			try {
+				Path destinationPath = Paths.get(UPLOAD_DIR + event.getFileName());
+				Files.move(uploadedFile.toPath(), destinationPath);
+				urlFoto = IMAGE_PATH + event.getFileName();
+				Notification.show("Image uploaded successfully!");
+				Image img = createImageFromFile(IMAGE_PATH + event.getFileName());
+				this._introducir_datos_de_periodista.getLayoutFoto().add(img);
+			} catch (IOException e) {
+				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+			}
+			Notification.show("Image uploaded successfully!");
+		});
+		upload.addFailedListener(event -> {
+			Notification.show("Image upload failed: " + event.getReason().getMessage(), 5000,
+					Notification.Position.MIDDLE);
+		});
+		upload.addFileRejectedListener(event -> {
+			Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
+		});
 
 	}
 
@@ -84,7 +129,6 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 		String contrasena = this._introducir_datos_de_periodista.getContrasenaPeriodista().getValue();
 		String apodo = this._introducir_datos_de_periodista.getApodoPeriodista().getValue();
 		String dni = this._introducir_datos_de_periodista.getDniPeriodista().getValue();
-		String foto = this._introducir_datos_de_periodista.getFotoPeriodista().getValue();
 
 	    if (!validarCampos(correo, contrasena, dni, apodo)) {
 	        Notification.show("Todos los campos son obligatorios")
@@ -100,6 +144,12 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 
 		_iEditor.crearPeriodista(correo, contrasena, apodo, dni, null);
 		
+	    bbdd.Usuario usuario = _iEditor.buscarUsuarioPorCorreo(correo);
+	    if (usuario != null && urlFoto != null && !urlFoto.isEmpty()) {
+	       	_iEditor.subirFotoUsuario(usuario.getIdUsuario(), urlFoto);
+	    }
+		this._gestionar._editor.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+		Volver_a_la_gestion_desde_gestion_portada();
 	}
 
 	public void Volver_a_la_gestion_desde_gestion_portada() {
@@ -116,5 +166,36 @@ public class Gestionar_periodistas extends VistaGestionarperiodistas {
 //Se mira mejor por isEmpty para comprobar que todos los campos estén rellenos en vez de mirar si no son nulos para que funcione correctamente.
 	private boolean validarCampos(String correo, String password, String dni, String apodo) {
 	    return !correo.isEmpty() && !password.isEmpty() && !dni.isEmpty() && !apodo.isEmpty();
+	}
+	
+	private void createUploadDirectory() {
+		Path uploadDirPath = Paths.get(UPLOAD_DIR);
+		if (!Files.exists(uploadDirPath)) {
+			try {
+				Files.createDirectories(uploadDirPath);
+			} catch (IOException e) {
+				throw new RuntimeException("Could not create upload directory: " + e.getMessage(), e);
+			}
+		}
+	}
+
+	private Image createImageFromFile(String filePath) {
+		File file = new File(filePath);
+		if (file.exists()) {
+			StreamResource resource = new StreamResource(file.getName(), () -> {
+				try {
+					return new FileInputStream(file);
+				} catch (FileNotFoundException e) {
+					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+					return null;
+				}
+			});
+			Image image = new Image(resource, "Image not found");
+			image.setMaxWidth("500px");
+			return image;
+		} else {
+			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
+			return new Image();
+		}
 	}
 }

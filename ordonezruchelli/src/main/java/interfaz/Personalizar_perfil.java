@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
@@ -59,6 +60,8 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 
 		upload.setAcceptedFileTypes("image/jpeg", "image/png", "image/gif");
 		getLayoutFotos().add(upload);
+        upload.setUploadButton(new Button("Cambiar Foto"));
+
 		upload.addSucceededListener(event -> {
 			File uploadedFile = buffer.getFileData().getFile();
 			try {

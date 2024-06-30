@@ -59,6 +59,7 @@ public class BD_Periodistas {
 			periodista.setDni(aDni);
 			periodista.setEstado(true);
 			PeriodistaDAO.save(periodista);
+			Notification.show("Se ha creado el periodista correctamente.").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

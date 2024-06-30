@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-introducirdatosdeperiodista")
 @JsModule("./src/vista-introducirdatosdeperiodista.ts")
@@ -19,12 +20,10 @@ public class VistaIntroducirdatosdeperiodista extends LitTemplate {
 	private TextField apodoPeriodista;
 	@Id("dniPeriodista")
 	private TextField dniPeriodista;
-	@Id("fotoPeriodista")
-	private TextField fotoPeriodista;
-	@Id("anadirFotoPeriodista")
-	private Button anadirFotoPeriodista;
 	@Id("darAltaPeriodista")
 	private Button darAltaPeriodista;
+	@Id("layoutFoto")
+	private HorizontalLayout layoutFoto;
 
 	public TextField getCorreoPeriodista() {
 		return correoPeriodista;
@@ -58,20 +57,12 @@ public class VistaIntroducirdatosdeperiodista extends LitTemplate {
 		this.dniPeriodista = dniPeriodista;
 	}
 
-	public TextField getFotoPeriodista() {
-		return fotoPeriodista;
+	public HorizontalLayout getLayoutFoto() {
+		return layoutFoto;
 	}
 
-	public void setFotoPeriodista(TextField fotoPeriodista) {
-		this.fotoPeriodista = fotoPeriodista;
-	}
-
-	public Button getAnadirFotoPeriodista() {
-		return anadirFotoPeriodista;
-	}
-
-	public void setAnadirFotoPeriodista(Button anadirFotoPeriodista) {
-		this.anadirFotoPeriodista = anadirFotoPeriodista;
+	public void setLayoutFoto(HorizontalLayout layoutFoto) {
+		this.layoutFoto = layoutFoto;
 	}
 
 	public Button getDarAltaPeriodista() {
