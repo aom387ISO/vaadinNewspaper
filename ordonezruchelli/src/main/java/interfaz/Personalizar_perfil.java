@@ -34,7 +34,8 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 	iUsuario_general _iUsuario = new BDPrincipal();
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/uploads/";
 	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/uploads/";
-	
+    private String urlFoto;
+
 	
 	public Personalizar_perfil(Usuario_general usuarioGeneral, bbdd.Usuario usuario) {
 		super();
@@ -63,9 +64,11 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 			try {
 				Path destinationPath = Paths.get(UPLOAD_DIR + event.getFileName());
 				Files.move(uploadedFile.toPath(), destinationPath);
+				urlFoto = IMAGE_PATH + event.getFileName();
 				Notification.show("Image uploaded successfully!");
 				Image img = createImageFromFile(IMAGE_PATH + event.getFileName());
 				getLayoutFotos().add(img);
+				Cambiar_imagen();
 			} catch (IOException e) {
 				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
 			}
@@ -79,6 +82,11 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 			Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
 		});
 		
+		String fotoUsuario = _iUsuario.cargarFoto(usuario);
+        if (fotoUsuario != null && !fotoUsuario.isEmpty()) {
+            Image img = createImageFromFile(fotoUsuario);
+            getLayoutFotos().add(img);
+        }
 		
 	}
 
@@ -95,10 +103,12 @@ public class Personalizar_perfil extends VistaPersonalizarperfil {
 	}
 
 	public void Cambiar_imagen() {
-		Foto nuevaFoto = new Foto();
-		_iUsuario.cambiarImagen(nuevaFoto, usuario.getIdUsuario());
-		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
-		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_usuario_general._personalizar_perfil);
+		_iUsuario.borrarFotoUsuario(usuario.getIdUsuario());
+		if(urlFoto != null && !urlFoto.isEmpty()) {
+			_iUsuario.subirFotoUsuario(usuario.getIdUsuario(), urlFoto);
+			this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+			this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_usuario_general._personalizar_perfil);
+		}
 	}
 
 	public void Cerrar_sesion() {

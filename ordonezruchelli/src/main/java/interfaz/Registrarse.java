@@ -27,6 +27,7 @@ public class Registrarse extends VistaRegistrarse {
 	iUsuario_suscrito _iusuarioSuscrito = new BDPrincipal();
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/uploads/";
 	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/uploads/";
+    private String urlFoto;
 
 	public Registrarse(Iniciar_sesion iniciar_sesion) {
 		super();
@@ -45,6 +46,7 @@ public class Registrarse extends VistaRegistrarse {
 			try {
 				Path destinationPath = Paths.get(UPLOAD_DIR + event.getFileName());
 				Files.move(uploadedFile.toPath(), destinationPath);
+				urlFoto = IMAGE_PATH + event.getFileName();
 				Notification.show("Image uploaded successfully!");
 				Image img = createImageFromFile(IMAGE_PATH + event.getFileName());
 				getLayoutFoto().add(img);
@@ -83,6 +85,12 @@ public class Registrarse extends VistaRegistrarse {
 			return;
 		}
 		_iusuarioSuscrito.registrarse(correo, password, apodo, dni, null, nTarjeta, fechaCaducidad, cvv);
+		
+	       bbdd.Usuario usuario = _iusuarioSuscrito.buscarUsuarioPorCorreo(correo);
+	        if (usuario != null && urlFoto != null && !urlFoto.isEmpty()) {
+	            _iusuarioSuscrito.subirFotoUsuario(usuario.getIdUsuario(), urlFoto);
+	        }
+		
 		this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).removeAll();
 		this._iniciar_sesion._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(_iniciar_sesion);
 

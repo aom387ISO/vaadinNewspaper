@@ -346,6 +346,5 @@ public class Bd_Noticias {
         return noticias;
 		
 	}
-
     
 }
