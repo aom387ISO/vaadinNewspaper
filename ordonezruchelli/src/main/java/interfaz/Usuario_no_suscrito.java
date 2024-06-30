@@ -5,6 +5,9 @@ import vistas.VistaUsuarionosuscrito;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bbdd.BDPrincipal;
+import bbdd.iUsuario_general;
+import bbdd.iUsuario_no_suscrito;
 import proyectoMDS.MainView;
 
 public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
@@ -14,6 +17,7 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 	public Iniciar_sesion _iniciar_sesion;
 	public Buscar_noticia_de_no_suscrito _buscar_noticia_de_no_suscrito;
 	public MainView MainView;
+	public iUsuario_general iUsuarioGeneral = new BDPrincipal();
 
 	public Usuario_no_suscrito(MainView MainView) {
 		this.MainView=MainView;
@@ -55,7 +59,15 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 		//Componente estático de ver anuncios.
 //		Ver_anuncios _anuncio = new Ver_anuncios(this);
 //		this.getBannerAnuncios().as(VerticalLayout.class).add(_anuncio);
-		
+		this.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
+		Listado_noticias_cortadas lista = new Listado_noticias_cortadas(this, "");
+		for (bbdd.Noticia noticiaPortada : iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
+			Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(lista, noticiaPortada);
+			this._ver_noticia_cortada._listado_noticias_cortadas = item;
+			this._ver_noticia_cortada._listado_noticias_cortadas._listado_noticias_cortadas = lista;
+			this.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
+		}
+
 
 	}
 

@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaVernoticiacortada;
@@ -12,7 +14,6 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 	public Ver_noticia_cortada(Usuario_no_suscrito usuarioNoSuscrito) {
 		super();
 		this._usuario_no_suscrito = usuarioNoSuscrito;
-		
 		
 		this._ir_a_comentarios = new Ir_a_comentarios(this);
         this.getComentariosNoSuscrito().addAttachListener(event -> {

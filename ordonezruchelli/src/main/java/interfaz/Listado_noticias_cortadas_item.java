@@ -12,13 +12,13 @@ public class Listado_noticias_cortadas_item extends Listado_de_noticias_generico
 		super(_listado_de_noticias_generico, noticia);
 		this._noticia = noticia;
 		
-		this.getMeGusta().addAttachListener(event -> {
+		this.getMeGusta().addClickListener(event -> {
 	        Notification notification = Notification.show("Es necesario iniciar sesion para valorar");
-	        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+	        notification.addThemeVariants(NotificationVariant.LUMO_PRIMARY);
 		});
-		this.getNoMeGusta().addAttachListener(event -> {
+		this.getNoMeGusta().addClickListener(event -> {
 	        Notification notification = Notification.show("Es necesario iniciar sesion para valorar");
-	        notification.addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+	        notification.addThemeVariants(NotificationVariant.LUMO_PRIMARY);
 		});
 		
 		Ver_noticia_cortada();
@@ -27,6 +27,7 @@ public class Listado_noticias_cortadas_item extends Listado_de_noticias_generico
 	public void Ver_noticia_cortada() {
 		this.getTitulo().setValue(_noticia.getTitulo());
 		this.getResumen().setValue(_noticia.getResumen());
+		this.getCuerpo().setVisible(false);
 		this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
 		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 	}
