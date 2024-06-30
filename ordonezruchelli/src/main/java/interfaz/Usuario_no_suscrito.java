@@ -56,7 +56,6 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 //		Ver_anuncios _anuncio = new Ver_anuncios(this);
 //		this.getBannerAnuncios().as(VerticalLayout.class).add(_anuncio);
 		
-		this.getBannerNoticiasPortada();
 
 	}
 
