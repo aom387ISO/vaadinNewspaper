@@ -19,7 +19,6 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 		this._listado_de_noticias_generico = _listado_de_noticias_generico;
         getComentar().addClickListener(event -> verComentarios());
-		
 	}
 
 	public Listado_de_noticias_generico_item(Ver_noticia verNoticia, Noticia noticia) {
