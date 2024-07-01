@@ -16,7 +16,6 @@ public class Ver_comentarios_de_Editor extends Ver_comentarios {
 		this._noticia = noticia;
 		
 //		this.().addClickListener(event -> Eliminar_comentario());
-
 		
 	}
 

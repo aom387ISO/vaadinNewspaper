@@ -33,7 +33,6 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 			this._listado_noticias_cortadas._listado_noticias_cortadas._item.add(item);
 			this.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
 		}
-
 	}
 
 	public void Ir_a_comentarios() {
