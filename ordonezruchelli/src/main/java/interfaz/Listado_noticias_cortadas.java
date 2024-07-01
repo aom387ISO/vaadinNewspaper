@@ -22,9 +22,17 @@ public class Listado_noticias_cortadas extends Listado_de_noticias_generico {
                 _item.add(item);
                 usuarioNoSuscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
 //                this._buscar_noticia_de_no_suscrito._usuario_no_suscrito.getNoticiasPortada().as(VerticalLayout.class).add(item);
-            }
-        	
-        	
-        
+            }     	
     }
+	 public Listado_noticias_cortadas(Listado_secciones_cortadas_item listadoSeccionesCortadasItem, List<bbdd.Noticia> listaNoticias) {
+	        super();
+	        if(listadoSeccionesCortadasItem != null) {
+	        this._listado_secciones_cortadas = listadoSeccionesCortadasItem;
+	        for (bbdd.Noticia noticia : listaNoticias) {
+	            Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(this, noticia);
+	            _item.add(item);
+	            if(this._listado_secciones_cortadas._listado_secciones_cortadas._ver_seccion_de_Usuario_no_suscrito != null) {
+	            listadoSeccionesCortadasItem._listado_secciones_cortadas._ver_seccion_de_Usuario_no_suscrito._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
+	        }}}
+	    }
 }
