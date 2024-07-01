@@ -90,7 +90,7 @@ public class BD_Secciones {
 			Noticia noticia = NoticiaDAO.loadNoticiaByORMID(aIdNoticia);
 			if (noticia != null) {
 				noticia.esta_contenida.add(seccion);
-				int id = noticia.esta_contenida.size()+1;
+				int id = noticia.esta_contenida.size();
 				noticia.setPosicionPortada(id);
 				NoticiaDAO.save(noticia);
 				SeccionDAO.save(seccion);

@@ -18,7 +18,7 @@ export class VistaListadecomentariosgenerico_item extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-text-area label="Nombre Usuario" placeholder="Add detailed explanation" id="nombreUsuario"></vaadin-text-area>
+ <vaadin-text-area label="Nombre Usuario" id="nombreUsuario"></vaadin-text-area>
  <vaadin-text-area id="contenidoComentario" label="Contenido Comentario"></vaadin-text-area>
  <vaadin-text-area id="valoracionesPositivasComentario" label="Valoraciones Positivas Comentario"></vaadin-text-area>
  <vaadin-text-area id="valoracionesNegativasComentario" label="Valoraciones Negativas Comentario"></vaadin-text-area>
@@ -31,6 +31,9 @@ export class VistaListadecomentariosgenerico_item extends LitElement {
   </vaadin-button>
   <vaadin-button id="EliminarComentario">
     Eliminar 
+  </vaadin-button>
+  <vaadin-button id="comentar">
+   Comentar
   </vaadin-button>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>

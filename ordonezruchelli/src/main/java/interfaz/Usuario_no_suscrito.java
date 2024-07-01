@@ -67,8 +67,9 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 		for (bbdd.Noticia noticia : iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
 			lista.add(noticia);
 		}
+		if(this._ver_noticia_cortada != null && this._ver_noticia_cortada._listado_noticias_cortadas != null){
 		this._ver_noticia_cortada._listado_noticias_cortadas._listado_noticias_cortadas = new Listado_noticias_cortadas(this, lista);
-
+		}
 	}
 
 	

@@ -16,13 +16,20 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 	bbdd.Noticia _noticia;
 	iUsuario_general _iUsuario_general = new BDPrincipal();
 	
-	public Lista_comentarios_valorables_item(Lista_de_comentarios_generico padre, bbdd.Noticia noticia,bbdd.Comentario comentario) {
-		super(padre, comentario);
+	public Lista_comentarios_valorables_item(Lista_de_comentarios_generico lista_de_comentarios_generico, bbdd.Noticia noticia,bbdd.Comentario comentario) {
+		super(lista_de_comentarios_generico, comentario);
 		
 		this._noticia = noticia;
 		this._comentario = comentario;
+		this._lista_de_comentarios_generico = lista_de_comentarios_generico;
 		this.getEliminar().setVisible(false);
+		System.out.println("eeeeeeeeeeeeeeeeeeeeh");
+		getMegusta().addClickListener(event->{Dar_me_gusta_a_comentario();});
+		getNomegusta().addClickListener(event->{Dar_no_me_gusta_a_comentario();});
+		getComentar().addClickListener(event->{Comentar();});
+
 	}
+	
 
 	public void Dar_me_gusta_a_comentario() {
 		if(this._comentario != null)
@@ -30,16 +37,11 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 	}
 
 	public void Comentar() {
-		//Ingresa un comentario en la bd.
-		Integer idUsuario = this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general._usuario.getIdUsuario();
-		Integer idNoticia = this._noticia.getIdNoticia();
-		String comentario = getContenidoComentario().getValue();
-		if(comentario != null && idUsuario != null) {
-		_iUsuario_general.comentar(idUsuario, idNoticia, comentario);
-		}else {
-			Notification.show("Es necesario escribir un comentario para comentar").addThemeVariants(NotificationVariant.LUMO_ERROR);
-		}
-		
+//		
+		System.out.println("holaaaa");
+		this._lista_de_comentarios_generico.getComentariosBaner().removeAll();
+		this._comentar = new Comentar(this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general);
+		this._lista_de_comentarios_generico.getComentariosBaner().add(this._comentar);
 	}
 
 	public void Dar_no_me_gusta_a_comentario() {

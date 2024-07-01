@@ -20,6 +20,14 @@ public class VistaListadecomentariosgenerico_item extends LitTemplate {
 		this.nombreUsuario = nombreUsuario;
 	}
 
+	public Button getComentar() {
+		return comentar;
+	}
+
+	public void setComentar(Button comentar) {
+		this.comentar = comentar;
+	}
+
 	public TextArea getContenidoComentario() {
 		return contenidoComentario;
 	}
@@ -58,6 +66,8 @@ public class VistaListadecomentariosgenerico_item extends LitTemplate {
 	private TextArea valoracionesPositivasComentario;
 	@Id("valoracionesNegativasComentario")
 	private TextArea valoracionesNegativasComentario;
+	@Id("comentar")
+	private Button comentar;
 
 	public Button getMegusta() {
 		return megusta;

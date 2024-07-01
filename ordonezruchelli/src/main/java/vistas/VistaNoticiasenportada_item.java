@@ -7,6 +7,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-noticiasenportada_item")
 @JsModule("./src/vista-noticiasenportada_item.ts")
@@ -20,6 +21,14 @@ public class VistaNoticiasenportada_item extends LitTemplate {
 	private TextArea resumenNoticiaPortada;
 	public TextArea getPosicionEnPortada() {
 		return posicionEnPortada;
+	}
+
+	public HorizontalLayout getBannerFotos() {
+		return bannerFotos;
+	}
+
+	public void setBannerFotos(HorizontalLayout bannerFotos) {
+		this.bannerFotos = bannerFotos;
 	}
 
 	public void setPosicionEnPortada(TextArea posicionEnPortada) {
@@ -40,6 +49,8 @@ public class VistaNoticiasenportada_item extends LitTemplate {
 	private TextField nuevaPosicionCuadro;
 	@Id("posicionEnPortada")
 	private TextArea posicionEnPortada;
+	@Id("bannerFotos")
+	private HorizontalLayout bannerFotos;
 	public TextArea getNoticiaPortada() {
 		return noticiaPortada;
 	}

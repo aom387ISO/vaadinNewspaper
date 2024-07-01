@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextArea;
 
 @Tag("vista-listadecomentariosgenerico")
 @JsModule("./src/vista-listadecomentariosgenerico.ts")
@@ -21,9 +22,9 @@ public class VistaListadecomentariosgenerico extends LitTemplate {
 
 	@Id("Comentar")
 	private Button comentar;
+
 	@Id("comentariosBaner")
 	private HorizontalLayout comentariosBaner;
-
 	public VistaListadecomentariosgenerico() {
         // You can initialise any data required for the connected UI components here.
     }

@@ -84,6 +84,25 @@ public class Registrarse extends VistaRegistrarse {
 					.addThemeVariants(NotificationVariant.LUMO_ERROR);
 			return;
 		}
+		
+		if (!validarNumeroTarjeta(nTarjeta)) {
+            Notification.show("El número de la tarjeta debe tener entre 5 y 14 dígitos y no contener letras")
+                    .addThemeVariants(NotificationVariant.LUMO_ERROR);
+            return;
+        }
+
+        if (!validarFechaCaducidad(fechaCaducidad)) {
+            Notification.show("La fecha de caducidad debe tener 4 números y no contener letras")
+                    .addThemeVariants(NotificationVariant.LUMO_ERROR);
+            return;
+        }
+
+        if (!validarCVV(cvv)) {
+            Notification.show("El CVV debe tener 3 números y no contener letras")
+                    .addThemeVariants(NotificationVariant.LUMO_ERROR);
+            return;
+        }
+		
 		_iusuarioSuscrito.registrarse(correo, password, apodo, dni, null, nTarjeta, fechaCaducidad, cvv);
 		
 	       bbdd.Usuario usuario = _iusuarioSuscrito.buscarUsuarioPorCorreo(correo);
@@ -115,8 +134,20 @@ public class Registrarse extends VistaRegistrarse {
 				&& !fechaCaducidad.isEmpty() && !cvv.isEmpty();
 	}
 
+	 private boolean validarNumeroTarjeta(String nTarjeta) {
+	        return nTarjeta.chars().allMatch(Character::isDigit) && nTarjeta.length() > 4 && nTarjeta.length() < 15;
+	    }
+
+	    private boolean validarFechaCaducidad(String fechaCaducidad) {
+	        return fechaCaducidad.chars().allMatch(Character::isDigit) && fechaCaducidad.length() == 4;
+	    }
+
+	    private boolean validarCVV(String cvv) {
+	        return cvv.chars().allMatch(Character::isDigit) && cvv.length() == 3;
+	    }
+	
 	public void Enviar_correo() {
-		throw new UnsupportedOperationException();
+		//Sin implementar
 	}
 
 	private void createUploadDirectory() {
