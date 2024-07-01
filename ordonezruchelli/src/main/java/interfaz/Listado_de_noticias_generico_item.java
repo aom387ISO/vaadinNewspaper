@@ -20,7 +20,7 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 		this._listado_de_noticias_generico = _listado_de_noticias_generico;
         getComentar().addClickListener(event -> verComentarios());
 	}
-
+	
 	public Listado_de_noticias_generico_item(Ver_noticia verNoticia, Noticia noticia) {
 		super();
 		this._noticia = noticia;
@@ -44,7 +44,7 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
             getBanner().add(verComentarios._lista_comentarios_valorables);
         }else if(_listado_de_noticias_generico != null) {
             Ver_comentarios verComentarios = new Ver_comentarios(_listado_de_noticias_generico, _noticia);
-            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_ver_noticia._usuario_general, _noticia);
+            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_listado_de_noticias_generico, _noticia);
             getBanner().removeAll();
             getBanner().add(verComentarios._lista_comentarios_valorables);
         }

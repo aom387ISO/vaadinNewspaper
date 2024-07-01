@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import './vista-listadecomentariosgenerico_item';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-listadecomentariosgenerico')
 export class VistaListadecomentariosgenerico extends LitElement {
@@ -18,10 +19,11 @@ export class VistaListadecomentariosgenerico extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
+ <vaadin-horizontal-layout theme="spacing" id="comentariosBaner"></vaadin-horizontal-layout>
  <vaadin-text-area id="listadoComentarios" label="Listado Comentarios"></vaadin-text-area>
  <vista-listadecomentariosgenerico_item></vista-listadecomentariosgenerico_item>
  <vaadin-button id="Comentar">
-  Comentar
+   Comentar 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

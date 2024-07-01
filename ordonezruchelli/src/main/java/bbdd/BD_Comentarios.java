@@ -1,6 +1,10 @@
 package bbdd;
 
 import bbdd.BDPrincipal;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
@@ -155,6 +159,33 @@ public class BD_Comentarios {
 		}
 		ProyectofinalPersistentManager.instance().disposePersistentManager();
 
+	}
+
+	public Comentario[] cargarComentariosNoticia(int idNoticia) throws PersistentException  {
+		PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Noticia noticia = NoticiaDAO.getNoticiaByORMID(idNoticia);
+			if (noticia != null) {
+				List<Comentario> comentarios = new ArrayList<>();
+	            ComentarioCriteria criteria = new ComentarioCriteria();
+	            Comentario[] comentariosNoticia = ComentarioDAO.listComentarioByCriteria(criteria);
+	            
+				for(Comentario comentario : comentariosNoticia) {
+					if(noticia.comentada_por.contains(comentario))
+						comentarios.add(comentario);
+				}
+				t.commit();
+	            return comentarios.toArray(new Comentario[comentarios.size()]);
+
+			} else {
+				t.rollback();
+				System.out.println("Usuario o Noticia no encontrado.");
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		ProyectofinalPersistentManager.instance().disposePersistentManager();
+        return new Comentario[0];
 	}
 
 }

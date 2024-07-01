@@ -16,7 +16,7 @@ public interface iUsuario_general {
 
 	public void gustarNoticia(int aAIdNoticia, int aIdUsuario);
 
-	public void comentar(int aAIdUsuario, int aAIdComentario, String aAContenido);
+	public void comentar(int aAIdUsuario, int idNoticia, String aAContenido);
 	
     public Noticia[] cargarNoticiasPorSeccionPortada();
     
@@ -37,4 +37,6 @@ public interface iUsuario_general {
 	public String cargarFoto(Usuario usuario);
 
 	public void borrarFotoUsuario(int idUsuario);
+
+	public Comentario[] cargarComentariosNoticia(int idNoticia);
 }

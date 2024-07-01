@@ -90,9 +90,9 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 	}
 
-	public void comentar(int aIdUsuario, int aIdComentario, String aContenido) {
+	public void comentar(int aIdUsuario, int idNoticia, String aContenido) {
 		try {
-			_bd_comen.comentar(aIdUsuario, aIdComentario, aContenido);
+			_bd_comen.comentar(aIdUsuario, idNoticia, aContenido);
 		}catch (PersistentException e) {
 			e.printStackTrace();
 		}
@@ -441,5 +441,14 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 			e.printStackTrace();
 		}	
 		
+	}
+	
+	public Comentario[] cargarComentariosNoticia(int idNoticia) {
+        try {
+			return _bd_comen.cargarComentariosNoticia(idNoticia);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
