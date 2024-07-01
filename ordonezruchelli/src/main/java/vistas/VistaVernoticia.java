@@ -5,6 +5,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-vernoticia")
 @JsModule("./src/vista-vernoticia.ts")
@@ -14,6 +15,8 @@ public class VistaVernoticia extends LitTemplate {
 	private Element verComentarioGeneral;
 	@Id("bannerPortada")
 	private Element bannerPortada;
+	@Id("fotos")
+	private HorizontalLayout fotos;
 
 	public Element getBannerPortada() {
 		return bannerPortada;

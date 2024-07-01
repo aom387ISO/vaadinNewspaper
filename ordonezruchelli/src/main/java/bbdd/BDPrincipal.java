@@ -451,4 +451,14 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 		return null;
 	}
+
+	public String cargarFotoNoticia(Noticia _noticia) {
+        try {
+            return _bd_fot.cargarFotoNoticia(_noticia);
+             
+         } catch (PersistentException e) {
+             e.printStackTrace();
+         }
+         return "";
+	}
 }

@@ -18,6 +18,14 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 		return modificarNoticia;
 	}
 
+	public HorizontalLayout getBannerFoto() {
+		return bannerFoto;
+	}
+
+	public void setBannerFoto(HorizontalLayout bannerFoto) {
+		this.bannerFoto = bannerFoto;
+	}
+
 	public HorizontalLayout getBanner() {
 		return banner;
 	}
@@ -56,6 +64,8 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private Button comentar;
 	@Id("banner")
 	private HorizontalLayout banner;
+	@Id("bannerFoto")
+	private HorizontalLayout bannerFoto;
 	public TextArea getTitulo() {
 		return titulo;
 	}

@@ -39,4 +39,6 @@ public interface iUsuario_general {
 	public void borrarFotoUsuario(int idUsuario);
 
 	public Comentario[] cargarComentariosNoticia(int idNoticia);
+
+	public String cargarFotoNoticia(Noticia _noticia);
 }

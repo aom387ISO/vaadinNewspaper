@@ -76,5 +76,24 @@ public class BD_Fotos {
         
 	}
 
+	public String cargarFotoNoticia(Noticia noticia)throws PersistentException {
+        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+        try {
+        	
+        	Foto foto = FotoDAO.loadFotoByQuery("NoticiaIdNoticia = '"+noticia.getIdNoticia()+"'", null);
+        	t.commit();
+        	if(foto != null) {
+        		String url = foto.getUrl();
+        		if(url != null) return url;
+        	}
+        	return "";
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+		return null;
+	}
+
 
 }
