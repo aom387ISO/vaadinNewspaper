@@ -29,16 +29,7 @@ public class Visualizar_seccion extends VistaVisualizarseccion{
 		try {
 			bbdd.Seccion[] secciones = _iUsuario_general.cargarSecciones();
 			_listado_de_secciones.cargarSecciones(secciones);
-            List<String> seccionid = java.util.Arrays.stream(secciones).map(bbdd.Seccion::getNombre)
-                    .collect(Collectors.toList());
-//            VerticalLayout layoutSecciones = this.getLayoutSecciones().as(VerticalLayout.class);
-//            layoutSecciones.removeAll();
-            
-            for (String id : seccionid) {
-                Button button = new Button(id);
-            	this.getFormSecciones().add(button);
-//                layoutSecciones.add(button);
-            }
+			getLayoutSecciones().as(VerticalLayout.class).add(_listado_de_secciones);
 
 		}catch (Exception e) {
             e.printStackTrace();

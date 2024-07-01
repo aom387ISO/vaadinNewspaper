@@ -13,16 +13,6 @@ public class VistaVisualizarseccion extends LitTemplate {
 
     @Id("layoutSecciones")
 	private Element layoutSecciones;
-	public FormLayout getFormSecciones() {
-		return formSecciones;
-	}
-
-	public void setFormSecciones(FormLayout formSecciones) {
-		this.formSecciones = formSecciones;
-	}
-
-	@Id("formSecciones")
-	private FormLayout formSecciones;
 
 	public Element getLayoutSecciones() {
 		return layoutSecciones;

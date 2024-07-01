@@ -17,10 +17,10 @@ export class VistaNoticiasenbusqueda_item extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-text-area label="Nombre noticia" placeholder="Add detailed explanation" id="nombreNoticiaBusqueda"></vaadin-text-area>
- <vaadin-text-area label="Resumen noticia" placeholder="Add detailed explanation" id="resumenNoticiaBusqueda"></vaadin-text-area>
+ <vaadin-text-area label="Nombre noticia" placeholder="Nombre de la noticia" id="nombreNoticiaBusqueda"></vaadin-text-area>
+ <vaadin-text-area label="Resumen noticia" placeholder="Resumen de la noticia" id="resumenNoticiaBusqueda"></vaadin-text-area>
  <vaadin-button id="verNoticia">
-  Ver Noticia
+   Ver Noticia 
  </vaadin-button>
 </vaadin-horizontal-layout>
 `;

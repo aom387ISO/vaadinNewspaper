@@ -20,6 +20,7 @@ public class Listado_de_secciones extends Listado_de_secciones_generico {
         for (bbdd.Seccion seccion : secciones) {
         	Listado_de_secciones_item item = new Listado_de_secciones_item(this, seccion);
             _item.add(item);
+            getBanner().add(item);
         }
     }
 }
