@@ -14,11 +14,10 @@ public class Listado_noticias_cortadas extends Listado_de_noticias_generico {
 	public Vector<Listado_noticias_cortadas_item> _item = new Vector<Listado_noticias_cortadas_item>();
 	iUsuario_general _iUsuarioGeneral = new BDPrincipal();
 
-	public Listado_noticias_cortadas(Usuario_no_suscrito usuarioNoSuscrito, String busqueda) {
+	public Listado_noticias_cortadas(Usuario_no_suscrito usuarioNoSuscrito, List<bbdd.Noticia> listaNoticias) {
 		super();
 //        	this._buscar_noticia_de_no_suscrito._usuario_no_suscrito = usuarioNoSuscrito;
-            List<bbdd.Noticia> noticias = _iUsuarioGeneral.buscarNoticia(busqueda);
-            for (bbdd.Noticia noticia : noticias) {
+            for (bbdd.Noticia noticia : listaNoticias) {
             	Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(this, noticia);
                 _item.add(item);
                 usuarioNoSuscrito.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);

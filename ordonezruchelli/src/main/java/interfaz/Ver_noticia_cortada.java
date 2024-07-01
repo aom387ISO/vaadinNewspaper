@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.util.List;
+import java.util.Vector;
+
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -22,13 +25,15 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
         });
         
 		this.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
-		Listado_noticias_cortadas lista = new Listado_noticias_cortadas(_usuario_no_suscrito, "");
+		Listado_noticias_cortadas noticiaLista = new Listado_noticias_cortadas(_usuario_no_suscrito, new Vector<bbdd.Noticia>());
 		for (bbdd.Noticia noticiaPortada : _usuario_no_suscrito.iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
-			Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(lista, noticiaPortada);
-			this._listado_noticias_cortadas = item;
-			this._listado_noticias_cortadas._listado_noticias_cortadas = lista;
+        	Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(noticiaLista, noticiaPortada);
+        	this._listado_noticias_cortadas = item;
+        	this._listado_noticias_cortadas._listado_noticias_cortadas = noticiaLista;
+			this._listado_noticias_cortadas._listado_noticias_cortadas._item.add(item);
 			this.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
 		}
+
 	}
 
 	public void Ir_a_comentarios() {

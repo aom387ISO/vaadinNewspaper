@@ -2,6 +2,9 @@ package interfaz;
 
 import vistas.VistaUsuarionosuscrito;
 
+import java.util.List;
+import java.util.Vector;
+
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -60,14 +63,11 @@ public class Usuario_no_suscrito extends VistaUsuarionosuscrito{
 //		Ver_anuncios _anuncio = new Ver_anuncios(this);
 //		this.getBannerAnuncios().as(VerticalLayout.class).add(_anuncio);
 		this.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
-		Listado_noticias_cortadas lista = new Listado_noticias_cortadas(this, "");
-		for (bbdd.Noticia noticiaPortada : iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
-			Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(lista, noticiaPortada);
-			this._ver_noticia_cortada._listado_noticias_cortadas = item;
-			this._ver_noticia_cortada._listado_noticias_cortadas._listado_noticias_cortadas = lista;
-			this.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
+		List<bbdd.Noticia> lista = new Vector<bbdd.Noticia>();
+		for (bbdd.Noticia noticia : iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
+			lista.add(noticia);
 		}
-
+		this._ver_noticia_cortada._listado_noticias_cortadas._listado_noticias_cortadas = new Listado_noticias_cortadas(this, lista);
 
 	}
 

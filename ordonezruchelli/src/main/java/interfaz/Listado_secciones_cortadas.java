@@ -11,6 +11,7 @@ public class Listado_secciones_cortadas extends Listado_de_secciones_generico {
 	    if (this._ver_seccion_de_Usuario_no_suscrito != null) {
 	        this._ver_seccion_de_Usuario_no_suscrito._usuario_no_suscrito = usuarioNoSuscrito;
 	    }
+	    
 	}
 
 }
