@@ -45,7 +45,7 @@ render() {
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing-l" style="flex-grow: 1;">
+ <vaadin-horizontal-layout theme="spacing-l" style="flex-grow: 1;" id="paraNoticias">
   <vaadin-vertical-layout theme="spacing" id="bannerAnuncios">
    <vista-veranuncios id="verAnuncios"></vista-veranuncios>
   </vaadin-vertical-layout>

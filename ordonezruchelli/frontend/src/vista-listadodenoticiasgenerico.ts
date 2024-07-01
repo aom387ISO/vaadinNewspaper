@@ -1,7 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
-import './vista-listadodenoticiasgenerico_item';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-listadodenoticiasgenerico')
 export class VistaListadodenoticiasgenerico extends LitElement {
@@ -16,10 +14,7 @@ export class VistaListadodenoticiasgenerico extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-text-area label="listadoNoticias" placeholder="Add detailed explanation" id="listadoNoticias"></vaadin-text-area>
- <vista-listadodenoticiasgenerico_item style="height: 20%;"></vista-listadodenoticiasgenerico_item>
-</vaadin-vertical-layout>
+<vaadin-horizontal-layout theme="spacing" id="banner" style="width: 100%; height: 100%;"></vaadin-horizontal-layout>
 `;
   }
 
