@@ -12,6 +12,16 @@ public class VistaVernoticia extends LitTemplate {
 
     @Id("verComentarioGeneral")
 	private Element verComentarioGeneral;
+	@Id("bannerPortada")
+	private Element bannerPortada;
+
+	public Element getBannerPortada() {
+		return bannerPortada;
+	}
+
+	public void setBannerPortada(Element bannerPortada) {
+		this.bannerPortada = bannerPortada;
+	}
 
 	public Element getVerComentarioGeneral() {
 		return verComentarioGeneral;

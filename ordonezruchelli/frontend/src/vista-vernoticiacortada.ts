@@ -15,11 +15,11 @@ export class VistaVernoticiacortada extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="bannerNoticiasPortada">
   Imagen noticia 
  <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
  <vaadin-button id="comentariosNoSuscrito">
-  Ver comentarios
+   Ver comentarios 
  </vaadin-button>
 </vaadin-vertical-layout>
 `;

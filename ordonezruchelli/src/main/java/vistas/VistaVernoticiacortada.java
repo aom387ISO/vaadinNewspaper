@@ -13,6 +13,16 @@ public class VistaVernoticiacortada extends LitTemplate {
 
     @Id("comentariosNoSuscrito")
 	private Button comentariosNoSuscrito;
+	@Id("bannerNoticiasPortada")
+	private Element bannerNoticiasPortada;
+
+	public Element getBannerNoticiasPortada() {
+		return bannerNoticiasPortada;
+	}
+
+	public void setBannerNoticiasPortada(Element bannerNoticiasPortada) {
+		this.bannerNoticiasPortada = bannerNoticiasPortada;
+	}
 
 	public Button getComentariosNoSuscrito() {
 		return comentariosNoSuscrito;

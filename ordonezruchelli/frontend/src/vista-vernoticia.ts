@@ -16,7 +16,7 @@ export class VistaVernoticia extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="bannerPortada">
   Imagen noticia 
  <vista-listadodenoticiasgenerico></vista-listadodenoticiasgenerico>
  <vista-vercomentarios id="verComentarioGeneral"></vista-vercomentarios>

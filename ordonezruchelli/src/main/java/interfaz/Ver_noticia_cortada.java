@@ -20,6 +20,15 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 			this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
         	Ir_a_comentarios();
         });
+        
+		this.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
+		Listado_noticias_cortadas lista = new Listado_noticias_cortadas(_usuario_no_suscrito, "");
+		for (bbdd.Noticia noticiaPortada : _usuario_no_suscrito.iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
+			Listado_noticias_cortadas_item item = new Listado_noticias_cortadas_item(lista, noticiaPortada);
+			this._listado_noticias_cortadas = item;
+			this._listado_noticias_cortadas._listado_noticias_cortadas = lista;
+			this.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
+		}
 	}
 
 	public void Ir_a_comentarios() {
