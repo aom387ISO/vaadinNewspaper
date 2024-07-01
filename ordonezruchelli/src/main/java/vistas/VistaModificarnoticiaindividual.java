@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-modificarnoticiaindividual")
 @JsModule("./src/vista-modificarnoticiaindividual.ts")
@@ -13,8 +14,6 @@ public class VistaModificarnoticiaindividual extends LitTemplate {
 
     @Id("tituloNoticia")
 	private TextField tituloNoticia;
-	@Id("imagenes")
-	private TextField imagenes;
 	@Id("tematica")
 	private TextField tematica;
 	@Id("noticia")
@@ -27,6 +26,8 @@ public class VistaModificarnoticiaindividual extends LitTemplate {
 	private Button eliminarNoticia;
 	@Id("volverGestion")
 	private Button volverGestion;
+	@Id("bannerImagen")
+	private HorizontalLayout bannerImagen;
 
 	public TextField getTituloNoticia() {
 		return tituloNoticia;
@@ -36,12 +37,12 @@ public class VistaModificarnoticiaindividual extends LitTemplate {
 		this.tituloNoticia = tituloNoticia;
 	}
 
-	public TextField getImagenes() {
-		return imagenes;
+	public HorizontalLayout getBannerImagen() {
+		return bannerImagen;
 	}
 
-	public void setImagenes(TextField imagenes) {
-		this.imagenes = imagenes;
+	public void setBannerImagen(HorizontalLayout bannerImagen) {
+		this.bannerImagen = bannerImagen;
 	}
 
 	public TextField getTematica() {

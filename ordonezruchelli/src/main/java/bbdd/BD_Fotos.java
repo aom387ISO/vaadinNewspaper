@@ -95,5 +95,26 @@ public class BD_Fotos {
 		return null;
 	}
 
+	public void cambiarImagenNoticia(int idNoticia, String urlFoto)throws PersistentException {
+        PersistentTransaction t = ProyectofinalPersistentManager.instance().getSession().beginTransaction();
+        try {
+        	Foto fotoEliminar = FotoDAO.loadFotoByQuery("NoticiaIdNoticia = '"+idNoticia+"'", null);
+        	FotoDAO.deleteAndDissociate(fotoEliminar);
+            Foto foto = FotoDAO.createFoto();
+            foto.setUrl(urlFoto);
+            Usuario usuario = UsuarioDAO.loadUsuarioByQuery("CorreoElectronico = 'usuarioFotos'", null);
+            Noticia noticia = NoticiaDAO.getNoticiaByORMID(idNoticia);
+            foto.setORM_Pertenece(noticia);
+            foto.setORM_Le_da_imagen_a(usuario);
+            
+            FotoDAO.save(foto);
+            t.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ProyectofinalPersistentManager.instance().disposePersistentManager();
+        
+	}
+
 
 }

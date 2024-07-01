@@ -69,11 +69,7 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		}
 
 	}
-
-	public void cambiarImagen(Foto aFoto) {
-		throw new UnsupportedOperationException();
-	}
-
+	
 	public void gustarNoticia(int aAIdNoticia, int aIdUsuario) {
 		try {
 			_bd_not.gustarNoticia(aAIdNoticia, aIdUsuario);
@@ -249,12 +245,6 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
 		return null;
 	}
 
-	public void cambiarImagen(Foto aAFoto, int aIdUsuario) {
-		throw new UnsupportedOperationException();
-
-	}
-
-	@Override
 	public Editor loginEditor(String aCorreo, String aContrasena) {
 		Editor editor = null;
 		try {
@@ -461,4 +451,14 @@ public class BDPrincipal implements iUsuario_suscrito, iUsuario_general, iPeriod
          }
          return "";
 	}
+
+	@Override
+	public void cambiarImagenNoticia(int idNoticia, String urlFoto) {
+		try {
+			_bd_fot.cambiarImagenNoticia(idNoticia,urlFoto);
+		}catch (PersistentException e) {
+			e.printStackTrace();
+		}	
+	}
+
 }
