@@ -25,14 +25,15 @@ public class BD_Secciones {
 			if (noticia != null && seccion != null) {
 //				seccion.se_encuentra.add(noticia);
 				if(!noticia.esta_contenida.contains(seccion) && seccion.getNombre().equals("portada")) {
-				anadirAportada(seccion, aIdNoticia);
+					anadirAportada(seccion, aIdNoticia);
+					Notification.show("Noticia añadida a la portada").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
 				}else if(!noticia.esta_contenida.contains(seccion)) {
-				noticia.esta_contenida.add(seccion);
-				SeccionDAO.save(seccion);
-			    Notification.show("Noticia añadida a sección").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
-				t.commit();
+					noticia.esta_contenida.add(seccion);
+					SeccionDAO.save(seccion);
+					Notification.show("Noticia añadida a sección").addThemeVariants(NotificationVariant.LUMO_SUCCESS);
+					t.commit();
 				}else {
-				Notification.show("Ya está incluida la noticia").addThemeVariants(NotificationVariant.LUMO_ERROR);
+					Notification.show("Ya está incluida la noticia").addThemeVariants(NotificationVariant.LUMO_ERROR);
 				}
 			}
 		} catch (Exception e) {
