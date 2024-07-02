@@ -17,12 +17,6 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 	public Ver_noticia_cortada(Usuario_no_suscrito usuarioNoSuscrito) {
 		super();
 		this._usuario_no_suscrito = usuarioNoSuscrito;
-		
-		this._ir_a_comentarios = new Ir_a_comentarios(this);
-        this.getComentariosNoSuscrito().addAttachListener(event -> {
-			this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
-        	Ir_a_comentarios();
-        });
         
 		this.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
 		Listado_noticias_cortadas noticiaLista = new Listado_noticias_cortadas(_usuario_no_suscrito, new Vector<bbdd.Noticia>());
@@ -33,6 +27,12 @@ public class Ver_noticia_cortada extends VistaVernoticiacortada{
 			this._listado_noticias_cortadas._listado_noticias_cortadas._item.add(item);
 			this.getBannerNoticiasPortada().as(VerticalLayout.class).add(item);
 		}
+		
+		this._ir_a_comentarios = new Ir_a_comentarios(this);
+        this.getComentariosNoSuscrito().addAttachListener(event -> {
+//			this._usuario_no_suscrito.getBannerNoticiasPortada().as(VerticalLayout.class).removeAll();
+        	Ir_a_comentarios();
+        });
 	}
 
 	public void Ir_a_comentarios() {

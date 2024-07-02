@@ -39,7 +39,7 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 
 	public void Comentar() {
 		System.out.println("holaaaa");
-		this._lista_de_comentarios_generico.getComentariosBaner().removeAll();
+//		this._lista_de_comentarios_generico.getComentariosBaner().removeAll();
 		this._comentar = new Comentar(this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general);
 		this._lista_de_comentarios_generico.getComentariosBaner().add(this._comentar);
 	}

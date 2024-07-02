@@ -36,7 +36,7 @@ public class Ver_comentarios extends VistaVercomentarios {
 		}
 
 	public void Lista_comentarios_valorables() {
-		this._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+//		this._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		this._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_lista_comentarios_valorables);
 	}
 }

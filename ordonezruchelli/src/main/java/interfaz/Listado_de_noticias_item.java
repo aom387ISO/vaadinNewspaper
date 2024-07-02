@@ -31,18 +31,22 @@ public class Listado_de_noticias_item extends Listado_de_noticias_generico_item 
 			if(this._ver_noticia != null) {
 			bbdd.Usuario usuario = _ver_noticia._usuario_general._usuario;
 			_iUsuario_general.gustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
+			this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
 			}else {
 				bbdd.Usuario usuario = _listado_de_noticias.usuarioGeneral._usuario;
 				_iUsuario_general.gustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
+				this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
 			}
 		});
 		getNoMeGusta().addClickListener(event ->{
 			if(this._ver_noticia != null) {
 			bbdd.Usuario usuario = _ver_noticia._usuario_general._usuario;
 			_iUsuario_general.noGustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
+			this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 			}else {
 				bbdd.Usuario usuario = _listado_de_noticias.usuarioGeneral._usuario;
-				_iUsuario_general.noGustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());	
+				_iUsuario_general.noGustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
+				this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 			}
 		});
 	}

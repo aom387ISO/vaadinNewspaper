@@ -56,7 +56,7 @@ public class Ver_noticia extends VistaVernoticia {
 	}
 	public void Ver_comentarios() {
 		System.out.println("hola");
-		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+//		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		this._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_ver_comentarios);
 	}
 

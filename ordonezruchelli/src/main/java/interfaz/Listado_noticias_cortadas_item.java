@@ -11,7 +11,7 @@ public class Listado_noticias_cortadas_item extends Listado_de_noticias_generico
 	public Listado_noticias_cortadas_item(Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
 		super(_listado_de_noticias_generico, noticia);
 		this._noticia = noticia;
-		this.getComentar().setVisible(false);
+//		this.getComentar().setVisible(false);
 		this.getMeGusta().addClickListener(event -> {
 	        Notification notification = Notification.show("Es necesario iniciar sesion para valorar");
 	        notification.addThemeVariants(NotificationVariant.LUMO_PRIMARY);

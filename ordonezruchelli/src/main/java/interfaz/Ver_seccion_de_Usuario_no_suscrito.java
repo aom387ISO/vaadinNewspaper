@@ -19,6 +19,7 @@ public class Ver_seccion_de_Usuario_no_suscrito extends VistaVersecciondeusuario
 	}
 
 	public void Listado_secciones_cortadas() {
+		this.getLayoutSecciones().as(VerticalLayout.class).removeAll();
 		bbdd.Seccion [] seccion = _iUsuario_general.cargarSecciones();
 		_listado_secciones_cortadas.cargarSecciones(seccion);
 		this.getLayoutSecciones().as(VerticalLayout.class).add(_listado_secciones_cortadas);
