@@ -67,6 +67,14 @@ public class BD_Secciones {
 			SeccionCriteria criteria = new SeccionCriteria();
 			Seccion[] secciones = SeccionDAO.listSeccionByCriteria(criteria);
 			int id = 0;
+			Seccion seccionExistente = SeccionDAO.loadSeccionByQuery("Nombre = '"+aNombreSeccion+"'", null);
+	        if (seccionExistente != null) {
+	            Notification notification = Notification.show("La sección con el nombre " + aNombreSeccion + " ya existe.");
+	            notification.addThemeVariants(NotificationVariant.LUMO_ERROR);
+	            t.rollback();
+	            return;
+	        }
+	        
 			for(Seccion seccionBusqueda : secciones) {
 				if(seccionBusqueda.getIdSeccion() == id) {
 				id++;
