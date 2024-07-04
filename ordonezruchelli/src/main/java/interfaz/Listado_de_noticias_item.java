@@ -1,10 +1,14 @@
 package interfaz;
 
+import bbdd.BDPrincipal;
+import bbdd.iEditor;
+
 public class Listado_de_noticias_item extends Listado_de_noticias_generico_item {
 
 	public Listado_de_noticias _listado_de_noticias;
 	public Ver_noticia _ver_noticia;
 	bbdd.Noticia _noticia;
+	iEditor _iEditor = new BDPrincipal();
 	
 	public Listado_de_noticias_item(Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
 		super(_listado_de_noticias_generico, noticia);
@@ -31,22 +35,26 @@ public class Listado_de_noticias_item extends Listado_de_noticias_generico_item 
 			if(this._ver_noticia != null) {
 			bbdd.Usuario usuario = _ver_noticia._usuario_general._usuario;
 			_iUsuario_general.gustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
-			this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
+			this.getValoracionesPositivas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesPositivas()));
+			this.getValoracionesNegativas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesNegativas()));
 			}else {
 				bbdd.Usuario usuario = _listado_de_noticias.usuarioGeneral._usuario;
 				_iUsuario_general.gustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
-				this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
+				this.getValoracionesPositivas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesPositivas()));
+				this.getValoracionesNegativas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesNegativas()));
 			}
 		});
 		getNoMeGusta().addClickListener(event ->{
 			if(this._ver_noticia != null) {
 			bbdd.Usuario usuario = _ver_noticia._usuario_general._usuario;
 			_iUsuario_general.noGustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
-			this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
+			this.getValoracionesPositivas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesPositivas()));
+			this.getValoracionesNegativas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesNegativas()));
 			}else {
 				bbdd.Usuario usuario = _listado_de_noticias.usuarioGeneral._usuario;
 				_iUsuario_general.noGustarNoticia(this._noticia.getIdNoticia(), usuario.getIdUsuario());
-				this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
+				this.getValoracionesPositivas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesPositivas()));
+				this.getValoracionesNegativas().setValue(Integer.toString(_iEditor.obtenerNoticiaPorTitulo(_noticia.getTitulo()).getnValoracionesNegativas()));
 			}
 		});
 	}
