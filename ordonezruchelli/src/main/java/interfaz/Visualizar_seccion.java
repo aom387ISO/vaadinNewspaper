@@ -20,7 +20,7 @@ public class Visualizar_seccion extends VistaVisualizarseccion{
 		super();
 		this._usuario_general = usuarioGeneral;
 		
-		_listado_de_secciones = new Listado_de_secciones(usuarioGeneral);
+		_listado_de_secciones = new Listado_de_secciones(this);
 		Listado_de_secciones();
 	}
 
