@@ -63,7 +63,7 @@ public class Usuario_general extends VistaUsuariogeneral{
 		this.getNoticiasBanner().as(VerticalLayout.class).removeAll();
 		Listado_de_noticias lista = new Listado_de_noticias(this);
 		for (bbdd.Noticia noticiaPortada : iUsuarioGeneral.cargarNoticiasPorSeccionPortada()) {
-			Listado_de_noticias_item item = new Listado_de_noticias_item(lista, noticiaPortada);
+			Listado_de_noticias_item item = new Listado_de_noticias_item(this, lista, noticiaPortada);
 			this._ver_noticia._listado_de_noticias = item;
 			this._ver_noticia._listado_de_noticias._listado_de_noticias = lista;
 			this.getNoticiasBanner().as(VerticalLayout.class).add(item);

@@ -71,26 +71,26 @@ public class Lista_comentarios_valorables extends Lista_de_comentarios_generico 
         this._ver_comentarios = verComentarios;
         this._ver_comentarios._ver_noticia._usuario_general = usuarioGeneral;
         this._noticia = noticia;
-        this.getItemComentario().removeAllChildren();
+//        this.getItemComentario().removeAllChildren();
         bbdd.Comentario[] comentarios = _iUsuario_general.cargarComentariosNoticia(this._noticia.getIdNoticia());
         for (bbdd.Comentario comentario : comentarios) {
-            Lista_comentarios_valorables_item item = new Lista_comentarios_valorables_item(this, noticia, comentario);
+            Lista_comentarios_valorables_item item = new Lista_comentarios_valorables_item(usuarioGeneral, this, noticia, comentario);
             _item.add(item);
             getComentariosBanner().as(VerticalLayout.class).add(item);
         }
-        this.getComentar().addClickListener(event -> {
+        getComentar().addClickListener(event -> {
             comentar = new Comentar(this._ver_comentarios._ver_noticia._usuario_general, this, noticia);
             getComentariosBanner().as(VerticalLayout.class).add(comentar);
         });
     }
 
-    public Lista_comentarios_valorables(Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
+    public Lista_comentarios_valorables(Usuario_general usuarioGeneral ,Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
         super();
         this._noticia = noticia;
         System.out.println("Estoy en lista de comentarios valorables");
         bbdd.Comentario[] comentarios = _iUsuario_general.cargarComentariosNoticia(this._noticia.getIdNoticia());
         for (bbdd.Comentario comentario : comentarios) {
-            Lista_comentarios_valorables_item item = new Lista_comentarios_valorables_item(this, noticia, comentario);
+            Lista_comentarios_valorables_item item = new Lista_comentarios_valorables_item(usuarioGeneral, this, noticia, comentario);
             _item.add(item);
             getComentariosBanner().as(VerticalLayout.class).add(item);
         }

@@ -17,7 +17,7 @@ public class Ver_comentarios extends VistaVercomentarios {
 	public Ver_comentarios(Usuario_general usuarioGeneral, bbdd.Noticia noticia) {
 		super();
 		System.out.println("estoy en ver comentarios");
-		this._ver_noticia = new Ver_noticia(usuarioGeneral);
+		if(this._ver_noticia == null)this._ver_noticia = new Ver_noticia(usuarioGeneral);
 		this._ver_noticia._usuario_general = usuarioGeneral;
 		this._lista_comentarios_valorables = new Lista_comentarios_valorables(this, usuarioGeneral, noticia);
 		this._ver_noticia = new Ver_noticia(usuarioGeneral);
@@ -29,13 +29,13 @@ public class Ver_comentarios extends VistaVercomentarios {
 		}
 	}
 	
-	public Ver_comentarios(Listado_de_noticias_generico listado_de_noticias_generico, Noticia noticia) {
+	public Ver_comentarios(Usuario_general usuarioGeneral, Listado_de_noticias_generico listado_de_noticias_generico, Noticia noticia) {
 		super();
 		System.out.println("estoy en ver comentarios");
 		this._listado_de_noticias_generico = listado_de_noticias_generico;
 		if (_listado_de_noticias_generico != null) {
 			this._noticia = noticia;
-	        this._lista_comentarios_valorables = new Lista_comentarios_valorables(listado_de_noticias_generico, noticia);
+	        this._lista_comentarios_valorables = new Lista_comentarios_valorables(usuarioGeneral, listado_de_noticias_generico, noticia);
 			}
 		}
 

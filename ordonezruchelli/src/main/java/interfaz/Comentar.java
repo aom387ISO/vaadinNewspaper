@@ -47,8 +47,8 @@ public class Comentar extends VistaComentar {
         this.usuario_general = usuarioGeneral;
         this._noticia = noticia;
         this._lista_comentarios_valorables = lista_comentarios_valorables;
-  	  	Escribir_comentario();
-      getEnviarComentario().addClickListener(event->{
+//  	  	Escribir_comentario();
+  	  	getEnviarComentario().addClickListener(event->{
     	  Escribir_comentario();
     });
     }
@@ -57,7 +57,7 @@ public class Comentar extends VistaComentar {
         usuarioGeneral.comentar(this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general._usuario.getIdUsuario(), _noticia.getIdNoticia(), this.getIntroducirComentario().getValue());
         numComentarios++;
         this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).removeAll();
-        this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(this._lista_comentarios_valorables._ver_comentarios);
+        this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(this._lista_comentarios_valorables._ver_comentarios._ver_noticia);
 //        this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general.getNoticiasBanner().as(VerticalLayout.class).add(_lista_comentarios_valorables);
     }
 }

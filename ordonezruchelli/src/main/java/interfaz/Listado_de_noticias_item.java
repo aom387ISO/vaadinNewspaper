@@ -10,8 +10,8 @@ public class Listado_de_noticias_item extends Listado_de_noticias_generico_item 
 	bbdd.Noticia _noticia;
 	iEditor _iEditor = new BDPrincipal();
 	
-	public Listado_de_noticias_item(Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
-		super(_listado_de_noticias_generico, noticia);
+	public Listado_de_noticias_item(Usuario_general usuario_general, Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
+		super(usuario_general, _listado_de_noticias_generico, noticia);
 		this._noticia = noticia;
 		this._listado_de_noticias = (Listado_de_noticias) _listado_de_noticias_generico;
 		Ver_noticia();

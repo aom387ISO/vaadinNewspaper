@@ -20,7 +20,7 @@ public class Listado_noticias_cortadas_item extends Listado_de_noticias_generico
 	        Notification notification = Notification.show("Es necesario iniciar sesion para valorar");
 	        notification.addThemeVariants(NotificationVariant.LUMO_PRIMARY);
 		});
-		
+//		this._ver_noticia._ver_comentarios._lista_comentarios_valorables.getComentar().setVisible(false);
 		Ver_noticia_cortada();
 	}
 	

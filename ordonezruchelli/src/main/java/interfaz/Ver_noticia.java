@@ -30,7 +30,7 @@ public class Ver_noticia extends VistaVernoticia {
 		this.getBannerPortada().as(VerticalLayout.class).removeAll();
 		Listado_de_noticias lista = new Listado_de_noticias(_usuario_general);
 		for (bbdd.Noticia noticiaPortada : _iUsuario_general.cargarNoticiasPorSeccionPortada()) {
-			Listado_de_noticias_item item = new Listado_de_noticias_item(lista, noticiaPortada);
+			Listado_de_noticias_item item = new Listado_de_noticias_item(usuarioGeneral, lista, noticiaPortada);
 			this._listado_de_noticias = item;
 			this._listado_de_noticias._listado_de_noticias = lista;
 			this.getBannerPortada().as(VerticalLayout.class).add(item);

@@ -16,7 +16,7 @@ public class Listado_de_secciones_item extends Listado_de_secciones_generico_ite
 		super(_listado_de_secciones_generico, seccion);
 		this._seccion = seccion;
 		_listado_de_secciones = (Listado_de_secciones) _listado_de_secciones_generico;
-        this.button = new Button(seccion.getNombre(), event -> mostrarNoticiasDeSeccion(seccion));
+		this.button = new Button(seccion.getNombre(), event -> mostrarNoticiasDeSeccion(seccion));
         if(_listado_de_secciones != null) {
 		_listado_de_secciones.getBanner().add(button);
 		}
@@ -29,17 +29,35 @@ public class Listado_de_secciones_item extends Listado_de_secciones_generico_ite
 		}
 	}
 	
+//    private void mostrarNoticiasDeSeccion(bbdd.Seccion seccion) {
+//        if (_listado_de_secciones != null) {
+////        if (_listado_de_secciones != null && _listado_de_secciones._visualizar_seccion != null) {
+////        	this._listado_de_secciones._visualizar_seccion = new Visualizar_seccion(this);
+//            Usuario_general usuarioGeneral = _listado_de_secciones._visualizar_seccion._usuario_general;
+//            _listado_de_noticias = new Listado_de_noticias(usuarioGeneral);
+//            usuarioGeneral.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+//
+//            bbdd.Noticia[] noticias = _iUsuarioGeneral.cargarNoticiasContenidasEnSeccion(seccion.getNombre());
+//            for (bbdd.Noticia noticia : noticias) {
+//                Listado_de_noticias_item item = new Listado_de_noticias_item(usuarioGeneral, _listado_de_noticias, noticia);
+//                _listado_de_noticias._item.add(item);
+//                usuarioGeneral.getNoticiasBanner().as(VerticalLayout.class).add(item);
+//            }
+//        }
+//    }
     private void mostrarNoticiasDeSeccion(bbdd.Seccion seccion) {
-        if (_listado_de_secciones != null) {
-//        if (_listado_de_secciones != null && _listado_de_secciones._visualizar_seccion != null) {
-//        	this._listado_de_secciones._visualizar_seccion = new Visualizar_seccion(this);
+        if (_listado_de_secciones != null && _listado_de_secciones._visualizar_seccion != null) {
             Usuario_general usuarioGeneral = _listado_de_secciones._visualizar_seccion._usuario_general;
-            _listado_de_noticias = new Listado_de_noticias(usuarioGeneral);
-            usuarioGeneral.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+
+            if (_listado_de_noticias == null) {
+                _listado_de_noticias = new Listado_de_noticias(usuarioGeneral);
+            } else {
+                usuarioGeneral.getNoticiasBanner().as(VerticalLayout.class).removeAll();
+            }
 
             bbdd.Noticia[] noticias = _iUsuarioGeneral.cargarNoticiasContenidasEnSeccion(seccion.getNombre());
             for (bbdd.Noticia noticia : noticias) {
-                Listado_de_noticias_item item = new Listado_de_noticias_item(_listado_de_noticias, noticia);
+                Listado_de_noticias_item item = new Listado_de_noticias_item(usuarioGeneral, _listado_de_noticias, noticia);
                 _listado_de_noticias._item.add(item);
                 usuarioGeneral.getNoticiasBanner().as(VerticalLayout.class).add(item);
             }

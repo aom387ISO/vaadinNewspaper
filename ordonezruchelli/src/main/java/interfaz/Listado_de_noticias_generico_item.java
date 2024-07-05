@@ -27,10 +27,12 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 	bbdd.Noticia _noticia;
     public Ver_noticia _ver_noticia;
     iUsuario_general _iUsuario_general = new BDPrincipal();
+    Usuario_general _usuario_general;
 
-	public Listado_de_noticias_generico_item(Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
+	public Listado_de_noticias_generico_item(Usuario_general usuario_general, Listado_de_noticias_generico _listado_de_noticias_generico, bbdd.Noticia noticia) {
 		super();
 		this._noticia = noticia;
+		this._usuario_general = usuario_general;
 		this.getTitulo().setValue(_noticia.getTitulo());
 		this.getResumen().setValue(_noticia.getResumen());
 		this.getCuerpo().setValue(_noticia.getCuerpo());
@@ -67,15 +69,35 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
         
 	}
 	
-    private void verComentarios() {
+    public Listado_de_noticias_generico_item(Listado_de_noticias_generico _listado_de_noticias_generico,Noticia noticia) {
+		super();
+		this._noticia = noticia;
+		this.getTitulo().setValue(_noticia.getTitulo());
+		this.getResumen().setValue(_noticia.getResumen());
+		this.getCuerpo().setValue(_noticia.getCuerpo());
+		this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
+		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
+		this._listado_de_noticias_generico = _listado_de_noticias_generico;
+        getComentar().addClickListener(event -> verComentarios());
+        
+		String fotoNoticia = _iUsuario_general.cargarFotoNoticia(_noticia);
+        if (fotoNoticia != null && !fotoNoticia.isEmpty()) {
+            Image img = createImageFromFile(fotoNoticia);
+            getBannerFoto().add(img);
+        }	}
+
+	private void verComentarios() {
+    	System.out.println("Ver noticia "+_ver_noticia);
+    	System.out.println("_listado_de_noticias_generico "+_listado_de_noticias_generico);
+
         if (_ver_noticia != null) {
             verComentarios = new Ver_comentarios(_ver_noticia._usuario_general, _noticia);
 //            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_ver_noticia._usuario_general, _noticia);
 //            getBanner().removeAll();
             getBannerComentarios().as(VerticalLayout.class).add(verComentarios._lista_comentarios_valorables);
         }else if(_listado_de_noticias_generico != null) {
-            verComentarios = new Ver_comentarios(_listado_de_noticias_generico, _noticia);
-            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_listado_de_noticias_generico, _noticia);
+            verComentarios = new Ver_comentarios(_usuario_general ,_listado_de_noticias_generico, _noticia);
+            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_usuario_general, _listado_de_noticias_generico, _noticia);
 //            getBanner().removeAll();
             getBannerComentarios().as(VerticalLayout.class).add(verComentarios._lista_comentarios_valorables);
         }
