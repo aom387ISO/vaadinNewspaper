@@ -7,6 +7,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-listadodenoticiasgenerico_item")
 @JsModule("./src/vista-listadodenoticiasgenerico_item.ts")
@@ -66,6 +67,8 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private HorizontalLayout banner;
 	@Id("bannerFoto")
 	private HorizontalLayout bannerFoto;
+	@Id("bannerComentarios")
+	private Element bannerComentarios;
 	public TextArea getTitulo() {
 		return titulo;
 	}
@@ -120,6 +123,14 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 
 	public void setValoracionesNegativas(TextArea valoracionesNegativas) {
 		this.valoracionesNegativas = valoracionesNegativas;
+	}
+
+	public Element getBannerComentarios() {
+		return bannerComentarios;
+	}
+
+	public void setBannerComentarios(Element bannerComentarios) {
+		this.bannerComentarios = bannerComentarios;
 	}
 
 	public VistaListadodenoticiasgenerico_item() {

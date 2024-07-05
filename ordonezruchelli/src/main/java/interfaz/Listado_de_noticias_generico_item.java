@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
 import com.vaadin.flow.server.StreamResource;
@@ -22,6 +23,7 @@ import vistas.VistaListadodenoticiasgenerico_item;
 
 public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgenerico_item{
 	public Listado_de_noticias_generico _listado_de_noticias_generico;
+	Ver_comentarios verComentarios;
 	bbdd.Noticia _noticia;
     public Ver_noticia _ver_noticia;
     iUsuario_general _iUsuario_general = new BDPrincipal();
@@ -67,16 +69,17 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 	
     private void verComentarios() {
         if (_ver_noticia != null) {
-            Ver_comentarios verComentarios = new Ver_comentarios(_ver_noticia._usuario_general, _noticia);
-            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_ver_noticia._usuario_general, _noticia);
-            getBanner().removeAll();
-            getBanner().add(verComentarios._lista_comentarios_valorables);
+            verComentarios = new Ver_comentarios(_ver_noticia._usuario_general, _noticia);
+//            verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_ver_noticia._usuario_general, _noticia);
+//            getBanner().removeAll();
+            getBannerComentarios().as(VerticalLayout.class).add(verComentarios._lista_comentarios_valorables);
         }else if(_listado_de_noticias_generico != null) {
-            Ver_comentarios verComentarios = new Ver_comentarios(_listado_de_noticias_generico, _noticia);
+            verComentarios = new Ver_comentarios(_listado_de_noticias_generico, _noticia);
             verComentarios._lista_comentarios_valorables = new Lista_comentarios_valorables(_listado_de_noticias_generico, _noticia);
-            getBanner().removeAll();
-            getBanner().add(verComentarios._lista_comentarios_valorables);
+//            getBanner().removeAll();
+            getBannerComentarios().as(VerticalLayout.class).add(verComentarios._lista_comentarios_valorables);
         }
+        this.getComentar().setVisible(false);
     }
 	
 	private Image createImageFromFile(String filePath) {

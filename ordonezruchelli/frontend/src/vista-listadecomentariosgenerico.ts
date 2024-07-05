@@ -19,14 +19,14 @@ export class VistaListadecomentariosgenerico extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing" id="comentariosBaner"></vaadin-horizontal-layout>
- <vaadin-text-area id="listadoComentarios" label="Listado Comentarios"></vaadin-text-area>
- <vista-listadecomentariosgenerico_item></vista-listadecomentariosgenerico_item>
- <vaadin-horizontal-layout theme="spacing">
+ <vaadin-horizontal-layout theme="spacing" id="nuevoComentario">
   <vaadin-button id="Comentar">
     Comentar 
   </vaadin-button>
  </vaadin-horizontal-layout>
+ <vaadin-text-area id="listadoComentarios" label="Listado Comentarios"></vaadin-text-area>
+ <vaadin-horizontal-layout theme="spacing" id="comentariosBaner"></vaadin-horizontal-layout>
+ <vista-listadecomentariosgenerico_item id="itemComentario"></vista-listadecomentariosgenerico_item>
 </vaadin-vertical-layout>
 `;
   }

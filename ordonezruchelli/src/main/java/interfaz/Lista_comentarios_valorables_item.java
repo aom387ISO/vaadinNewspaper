@@ -11,7 +11,7 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 	//	private event _dar_no_me_gusta_a_comentario;
 	public Lista_comentarios_valorables _lista_comentarios_valorables;
 	public Comentar _comentar;
-	public Lista_de_comentarios_generico _lista_de_comentarios_generico;
+//	public Lista_de_comentarios_generico _lista_de_comentarios_generico;
 	bbdd.Comentario _comentario;
 	bbdd.Noticia _noticia;
 	iUsuario_general _iUsuario_general = new BDPrincipal();
@@ -19,10 +19,10 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 	public Lista_comentarios_valorables_item(Lista_de_comentarios_generico lista_de_comentarios_generico, bbdd.Noticia noticia,bbdd.Comentario comentario) {
 		super(lista_de_comentarios_generico, comentario);
 		System.out.println("Estoy en lista de comentarios valorables item.");
-
+		this.getComentar().setVisible(false);
 		this._noticia = noticia;
 		this._comentario = comentario;
-		this._lista_de_comentarios_generico = lista_de_comentarios_generico;
+		this._lista_comentarios_valorables =(Lista_comentarios_valorables) lista_de_comentarios_generico;
 		this.getEliminar().setVisible(false);
 		System.out.println("eeeeeeeeeeeeeeeeeeeeh");
 		getMegusta().addClickListener(event->{Dar_me_gusta_a_comentario();});
