@@ -13,25 +13,25 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vista-listadecomentariosgenerico.ts")
 public class VistaListadecomentariosgenerico extends LitTemplate {
 
-	public HorizontalLayout getComentariosBaner() {
-		return comentariosBaner;
+	public Element getComentariosBanner() {
+		return comentariosBanner;
 	}
 
-	public void setComentariosBaner(HorizontalLayout comentariosBaner) {
-		this.comentariosBaner = comentariosBaner;
+	public void setComentariosBanner(Element comentariosBanner) {
+		this.comentariosBanner = comentariosBanner;
 	}
 
 	@Id("Comentar")
 	private Button comentar;
-
-	@Id("comentariosBaner")
-	private HorizontalLayout comentariosBaner;
 
 	@Id("itemComentario")
 	private Element itemComentario;
 
 	@Id("nuevoComentario")
 	private HorizontalLayout nuevoComentario;
+
+	@Id("comentariosBanner")
+	private Element comentariosBanner;
 	public VistaListadecomentariosgenerico() {
         // You can initialise any data required for the connected UI components here.
     }
