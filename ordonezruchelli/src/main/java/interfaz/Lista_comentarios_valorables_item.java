@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bbdd.BDPrincipal;
 import bbdd.iUsuario_general;
@@ -40,8 +41,8 @@ public class Lista_comentarios_valorables_item extends Lista_de_comentarios_gene
 	public void Comentar() {
 		System.out.println("holaaaa");
 //		this._lista_de_comentarios_generico.getComentariosBaner().removeAll();
-		this._comentar = new Comentar(this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general);
-		this._lista_de_comentarios_generico.getComentariosBaner().add(this._comentar);
+		this._comentar = new Comentar(this._lista_comentarios_valorables._ver_comentarios._ver_noticia._usuario_general,_lista_comentarios_valorables, _noticia);
+		this._lista_de_comentarios_generico.getComentariosBanner().as(VerticalLayout.class).add(this._comentar);
 	}
 
 	public void Dar_no_me_gusta_a_comentario() {
