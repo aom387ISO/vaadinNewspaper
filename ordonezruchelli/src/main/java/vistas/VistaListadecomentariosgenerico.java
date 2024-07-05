@@ -21,9 +21,6 @@ public class VistaListadecomentariosgenerico extends LitTemplate {
 		this.comentariosBanner = comentariosBanner;
 	}
 
-	@Id("Comentar")
-	private Button comentar;
-
 	@Id("itemComentario")
 	private Element itemComentario;
 
@@ -32,16 +29,19 @@ public class VistaListadecomentariosgenerico extends LitTemplate {
 
 	@Id("comentariosBanner")
 	private Element comentariosBanner;
+
+	@Id("paraComentar")
+	private Button paraComentar;
 	public VistaListadecomentariosgenerico() {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Button getComentar() {
-		return comentar;
+	public Button getParaComentar() {
+		return paraComentar;
 	}
 
-	public void setComentar(Button comentar) {
-		this.comentar = comentar;
+	public void setParaComentar(Button paraComentar) {
+		this.paraComentar = paraComentar;
 	}
 
 	public Element getItemComentario() {

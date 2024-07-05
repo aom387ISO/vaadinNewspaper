@@ -39,7 +39,7 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 		this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
 		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 		this._listado_de_noticias_generico = _listado_de_noticias_generico;
-        getComentar().addClickListener(event -> verComentarios());
+        getVercomentar().addClickListener(event -> verComentarios());
         
 		String fotoNoticia = _iUsuario_general.cargarFotoNoticia(_noticia);
         if (fotoNoticia != null && !fotoNoticia.isEmpty()) {
@@ -59,7 +59,7 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 		this._listado_de_noticias_generico = _listado_de_noticias_generico;
 		
-        getComentar().addClickListener(event -> verComentarios());
+		getVercomentar().addClickListener(event -> verComentarios());
 
 		String fotoNoticia = _iUsuario_general.cargarFotoNoticia(_noticia);
         if (fotoNoticia != null && !fotoNoticia.isEmpty()) {
@@ -78,7 +78,7 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 		this.getValoracionesPositivas().setValue(Integer.toString(_noticia.getnValoracionesPositivas()));
 		this.getValoracionesNegativas().setValue(Integer.toString(_noticia.getnValoracionesNegativas()));
 		this._listado_de_noticias_generico = _listado_de_noticias_generico;
-        getComentar().addClickListener(event -> verComentarios());
+		getVercomentar().addClickListener(event -> verComentarios());
         
 		String fotoNoticia = _iUsuario_general.cargarFotoNoticia(_noticia);
         if (fotoNoticia != null && !fotoNoticia.isEmpty()) {
@@ -101,7 +101,7 @@ public class Listado_de_noticias_generico_item extends VistaListadodenoticiasgen
 //            getBanner().removeAll();
             getBannerComentarios().as(VerticalLayout.class).add(verComentarios._lista_comentarios_valorables);
         }
-        this.getComentar().setVisible(false);
+        this.getVercomentar().setVisible(false);
     }
 	
 	private Image createImageFromFile(String filePath) {

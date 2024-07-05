@@ -35,8 +35,8 @@ export class VistaListadodenoticiasgenerico_item extends LitElement {
   <vaadin-button id="noMeGusta">
     No me gusta 
   </vaadin-button>
-  <vaadin-button id="comentar">
-   Ver comentarios
+  <vaadin-button id="vercomentar">
+    Ver comentarios 
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;" id="bannerComentarios"></vaadin-vertical-layout>

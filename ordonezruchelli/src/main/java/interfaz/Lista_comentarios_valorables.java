@@ -78,7 +78,7 @@ public class Lista_comentarios_valorables extends Lista_de_comentarios_generico 
             _item.add(item);
             getComentariosBanner().as(VerticalLayout.class).add(item);
         }
-        getComentar().addClickListener(event -> {
+        getParaComentar().addClickListener(event -> {
             comentar = new Comentar(this._ver_comentarios._ver_noticia._usuario_general, this, noticia);
             getComentariosBanner().as(VerticalLayout.class).add(comentar);
         });
@@ -94,5 +94,9 @@ public class Lista_comentarios_valorables extends Lista_de_comentarios_generico 
             _item.add(item);
             getComentariosBanner().as(VerticalLayout.class).add(item);
         }
+        getParaComentar().addClickListener(event -> {
+            comentar = new Comentar(usuarioGeneral, this, noticia);
+            getComentariosBanner().as(VerticalLayout.class).add(comentar);
+        });
     }
 }

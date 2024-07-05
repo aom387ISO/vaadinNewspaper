@@ -39,12 +39,12 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 		this.modificarNoticia = modificarNoticia;
 	}
 
-	public Button getComentar() {
-		return comentar;
+	public Button getVercomentar() {
+		return vercomentar;
 	}
 
-	public void setComentar(Button comentar) {
-		this.comentar = comentar;
+	public void setVercomentar(Button vercomentar) {
+		this.vercomentar = vercomentar;
 	}
 
 	@Id("resumen")
@@ -61,14 +61,14 @@ public class VistaListadodenoticiasgenerico_item extends LitTemplate {
 	private Button meGusta;
 	@Id("noMeGusta")
 	private Button noMeGusta;
-	@Id("comentar")
-	private Button comentar;
 	@Id("banner")
 	private HorizontalLayout banner;
 	@Id("bannerFoto")
 	private HorizontalLayout bannerFoto;
 	@Id("bannerComentarios")
 	private Element bannerComentarios;
+	@Id("vercomentar")
+	private Button vercomentar;
 	public TextArea getTitulo() {
 		return titulo;
 	}
